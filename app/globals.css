@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* ─── Brand Theme ─────────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-brand-primary:     #5f1e42;
+  --color-brand-primary-dark: #4a1733;
+  --color-brand-gold:        #e8b80d;
+  --color-brand-gold-light:  #f6dd86;
+  --color-brand-gold-pale:   #fdf5d6;
+  --color-cream:             #fdf8f5;
+  --color-cream-dark:        #f5ece4;
+  --color-warm-gray:         #8c7b72;
+
+  /* Fonts — loaded via <link> in layout.tsx at runtime */
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans:    "DM Sans", system-ui, -apple-system, sans-serif;
+
+  /* Container */
+  --container-max-width: 1280px;
+  --container-padding:   1.5rem;
+}
+
+/* ─── Custom Utilities ─────────────────────────────────────── */
+@layer utilities {
+  .btn-gold {
+    background: radial-gradient(circle at 0% 0%, #e8b80d, #f6dd86);
+    color: #3a1a00;
+    font-weight: 600;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .btn-gold:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+
+  .text-gradient-gold {
+    background: radial-gradient(circle at 0% 50%, #e8b80d, #f6dd86);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-warm-gray);
+  }
+  .section-label::before {
+    content: "—";
+    color: var(--color-brand-gold);
+  }
+
+  .card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px -12px rgba(95, 30, 66, 0.12);
+  }
+
+  /* Subtle grain overlay — matches luxury editorial aesthetic */
+  .grain-overlay::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+}
+
+/* ─── Base Styles ──────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: #1a0d0d;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Nav Dropdown ─────────────────────────────────────────── */
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 24px 60px rgba(95, 30, 66, 0.12), 0 4px 16px rgba(0,0,0,0.06);
+  min-width: 220px;
+  padding: 0.5rem;
+  border: 1px solid rgba(95, 30, 66, 0.07);
+  z-index: 50;
+}
+.nav-dropdown-trigger:hover .nav-dropdown,
+.nav-dropdown-trigger:focus-within .nav-dropdown {
+  display: block;
+}
+
+/* ─── Scroll Reveal ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
