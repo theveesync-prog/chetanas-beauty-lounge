@@ -1,6 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import Features from "@/components/sections/Features";
+import Reviews from "@/components/sections/Reviews";
+import FAQ from "@/components/sections/FAQ";
+import Contact from "@/components/sections/Contact";
+import Gallery from "@/components/sections/Gallery";
 
 export default function Home() {
   return (
@@ -18,13 +22,17 @@ export default function Home() {
         - About (#about)
         - Services — 4 verticals (#services)
         - Trust Signals / Credentials
-        - Customer Reviews (#reviews)
         - Before & After Results
         - Community Bridal Block (#bridal)
-        - FAQ (#faq)
-        - Contact & Booking (#contact)
-        - Footer
         ──────────────────────────────────────────────────────────── */}
+
+      <Reviews />
+      <FAQ />
+      <Gallery />
+      <Contact />
+
+      {/* ─── FOOTER ─────────────────────────────────────────────── */}
+      {/* TODO: Add footer section */}
     </main>
   );
 }
