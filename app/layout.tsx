@@ -70,7 +70,7 @@ export default function RootLayout({
               description:
                 "CIDESCO-certified ladies-only beauty salon and academy in Kankanady, Mangalore offering bridal makeup, skin treatments and professional beauty courses.",
               url: "https://chetanasbeauty.in",
-              telephone: "+91-XXXXXXXXXX", // TODO: replace with actual number
+              telephone: "+91-9845292411",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Kankanady",

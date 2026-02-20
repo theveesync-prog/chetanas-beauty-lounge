@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef, FormEvent } from "react";
 
-// TODO: Replace with actual salon WhatsApp number before launch
-const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+const WHATSAPP_NUMBER = "919845292411";
 
 const SERVICES = [
   "Bridal Makeup",

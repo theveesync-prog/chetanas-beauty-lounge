@@ -22,8 +22,7 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-// TODO: Replace with actual WhatsApp numbers
-const WHATSAPP_SALON = "https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
+const WHATSAPP_SALON = "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
