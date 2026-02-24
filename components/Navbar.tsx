@@ -5,12 +5,12 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const serviceLinks = [
-  { label: "Hair Care", href: "#services" },
-  { label: "Body Care", href: "#services" },
-  { label: "Skin Care", href: "#services" },
-  { label: "Bridal Services", href: "#bridal" },
-  { label: "Nails", href: "#services" },
-  { label: "For Kids", href: "#services" },
+  { label: "Hair Care", href: "/services/hair-care" },
+  { label: "Body Care", href: "/services/body-care" },
+  { label: "Skin Care", href: "/services/skin-care" },
+  { label: "Bridal Services", href: "/services/bridal" },
+  { label: "Nails", href: "/services/nails" },
+  { label: "For Kids", href: "/services/for-kids" },
 ];
 
 const navLinks = [
