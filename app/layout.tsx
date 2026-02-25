@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CartProvider } from "@/lib/cart-context";
+import CartDrawer from "@/components/CartDrawer";
 
 export const metadata: Metadata = {
   title: "Best Ladies Salon in Mangalore | Chetana's Beauty — CIDESCO Certified",
@@ -114,7 +116,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
+      </body>
     </html>
   );
 }
