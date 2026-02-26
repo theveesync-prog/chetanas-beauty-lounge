@@ -46,13 +46,11 @@ export default function Hero() {
 
           {/* H1 */}
           <h1
-            className="hero-reveal reveal reveal-delay-1 font-display text-[#111111] mb-7"
-            style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)", fontWeight: 700, lineHeight: 1.04, letterSpacing: "-0.02em" }}
+            className="hero-reveal reveal reveal-delay-1 text-[#111111] mb-7"
+            style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3rem, 7vw, 5.5rem)", fontWeight: 800, lineHeight: 1.04, letterSpacing: "-0.02em" }}
           >
             Mangalore&apos;s Best{" "}
-            <em className="text-[#5f1e42]" style={{ fontStyle: "italic" }}>
-              Ladies
-            </em>{" "}
+            <span className="text-[#5f1e42]">Ladies</span>{" "}
             Salon
           </h1>
 
@@ -143,7 +141,10 @@ export default function Hero() {
                 className="inline-flex items-center gap-2.5 rounded-2xl px-4 py-3 shadow-lg"
                 style={{ backgroundColor: "rgba(255,255,255,0.92)", backdropFilter: "blur(8px)" }}
               >
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse flex-shrink-0" aria-hidden="true" />
+                <span className="relative flex h-2.5 w-2.5 flex-shrink-0" aria-hidden="true">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
+                </span>
                 <span className="text-xs font-semibold text-[#111]">Women-only · Mon–Sat 9AM–7PM</span>
               </div>
             </div>
