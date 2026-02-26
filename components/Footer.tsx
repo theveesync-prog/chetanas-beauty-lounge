@@ -4,8 +4,7 @@ import Link from "next/link";
 const WHATSAPP =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
 const INSTAGRAM = "https://www.instagram.com/chetanasbeautylounge";
-// Update this URL to your exact YouTube channel handle once confirmed
-const YOUTUBE = "https://www.youtube.com/@chetanasbeautylounge";
+const YOUTUBE = "https://www.youtube.com/@ChetanasBeautyLounge";
 const GMB =
   "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEqqKK6Kz7I0YLRSNagwTko0Nk00NksyTE0xT01OsTKoSLFMS000TTQzNbA0SjNLMvcST85ILUnMS1QvVkhKTSwtqVTIyS_NS08FAL8sGSg&q=chetana%27s+beauty+lounge&sourceid=chrome&ie=UTF-8";
 
