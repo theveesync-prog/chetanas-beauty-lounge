@@ -1,117 +1,152 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { Heart, Award, ShieldCheck } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
-const features = [
+const stats = [
   {
-    icon: Heart,
     stat: "1000+",
     title: "Happy Brides",
     description:
       "Trusted for bridal makeup and wedding beauty services in Mangalore across Tulu Hindu, Konkani Catholic and Beary Muslim ceremonies.",
-    accentColor: "#c4849a",
   },
   {
-    icon: Award,
     stat: "28+",
     title: "Years in the Beauty Industry",
     description:
       "One of the most experienced beauty salons in Mangalore since 1998 — a legacy of craft, care and deep community trust.",
-    accentColor: "#b8860b",
   },
   {
-    icon: ShieldCheck,
     stat: "100%",
     title: "Women-Exclusive Salon",
     description:
       "Mangalore's only women-exclusive beauty salon — offering complete privacy and comfort for every client, every visit.",
-    accentColor: "#5f1e42",
   },
 ];
 
+const INTERVAL_MS = 4000;
+
 export default function Features() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(0);
+  const [fading, setFading] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    const items = sectionRef.current?.querySelectorAll(".reveal");
-    items?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
+  const goTo = useCallback((idx: number) => {
+    setFading(true);
+    setTimeout(() => {
+      setActive(idx);
+      setFading(false);
+    }, 250);
   }, []);
+
+  const next = useCallback(() => {
+    goTo((active + 1) % stats.length);
+  }, [active, goTo]);
+
+  const prev = useCallback(() => {
+    goTo((active - 1 + stats.length) % stats.length);
+  }, [active, goTo]);
+
+  // Auto-advance
+  useEffect(() => {
+    timerRef.current = setInterval(next, INTERVAL_MS);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [next]);
+
+  const resetTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(next, INTERVAL_MS);
+  };
+
+  const handlePrev = () => { resetTimer(); prev(); };
+  const handleNext = () => { resetTimer(); next(); };
+  const handleDot = (i: number) => { resetTimer(); goTo(i); };
+
+  const current = stats[active];
 
   return (
     <section
-      ref={sectionRef}
       id="features"
-      className="py-16 md:py-24 px-4"
-      style={{ backgroundColor: "#f5ece4" }}
+      className="relative py-24 md:py-32 overflow-hidden"
+      style={{ backgroundColor: "#111111" }}
       aria-label="Why choose Chetana's Beauty"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {features.map((feature, i) => {
-            const Icon = feature.icon;
-            return (
-              <article
-                key={feature.title}
-                className={`reveal reveal-delay-${i + 1} card-hover bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-[#5f1e42]/5 flex flex-col gap-5`}
-                aria-label={`${feature.stat} ${feature.title}`}
-              >
-                {/* Icon container */}
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: `${feature.accentColor}15` }}
-                  aria-hidden="true"
-                >
-                  <Icon
-                    size={22}
-                    style={{ color: feature.accentColor }}
-                    strokeWidth={1.75}
-                  />
-                </div>
+      {/* ── Content ────────────────────────────────────────── */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
 
-                {/* Stat */}
-                <div className="space-y-1">
-                  <p
-                    className="font-display text-4xl md:text-5xl font-semibold leading-none"
-                    style={{ color: feature.accentColor }}
-                  >
-                    {feature.stat}
-                  </p>
-                  <h3 className="font-display text-xl md:text-2xl font-semibold text-[#1a0d0d] leading-tight">
-                    {feature.title}
-                  </h3>
-                </div>
+        {/* Stat number */}
+        <div
+          className="transition-opacity duration-250"
+          style={{ opacity: fading ? 0 : 1 }}
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <p
+            className="font-display text-white leading-none mb-4"
+            style={{ fontSize: "clamp(5rem, 18vw, 10rem)", fontWeight: 700, letterSpacing: "-0.03em" }}
+          >
+            {current.stat}
+          </p>
+          <h3
+            className="font-display mb-5"
+            style={{ fontSize: "clamp(1.25rem, 3vw, 2rem)", color: "rgba(255,255,255,0.65)", fontWeight: 500 }}
+          >
+            {current.title}
+          </h3>
+          {/* Thin divider */}
+          <div className="flex justify-center mb-5" aria-hidden="true">
+            <div className="h-px w-12 rounded-full" style={{ backgroundColor: "#5f1e42" }} />
+          </div>
+          <p className="text-sm md:text-base max-w-sm mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.38)" }}>
+            {current.description}
+          </p>
+        </div>
 
-                {/* Thin gold divider */}
-                <div
-                  className="h-px w-10 rounded-full"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 0% 50%, #e8b80d, #f6dd86)",
-                  }}
-                  aria-hidden="true"
-                />
+        {/* ── Controls ───────────────────────────────────────── */}
+        <div className="flex items-center justify-center gap-8 mt-14">
 
-                {/* Description */}
-                <p className="text-[#8c7b72] text-sm md:text-base leading-relaxed font-light">
-                  {feature.description}
-                </p>
-              </article>
-            );
-          })}
+          {/* Prev */}
+          <button
+            onClick={handlePrev}
+            aria-label="Previous stat"
+            className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:border-white/50 hover:text-white"
+            style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.4)" }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
+              <path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          {/* Dots */}
+          <div className="flex items-center gap-2.5" role="tablist" aria-label="Stat navigation">
+            {stats.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => handleDot(i)}
+                role="tab"
+                aria-selected={i === active}
+                aria-label={`Stat ${i + 1}: ${stats[i].title}`}
+                className="rounded-full transition-all duration-300"
+                style={{
+                  width: i === active ? "24px" : "8px",
+                  height: "8px",
+                  backgroundColor: i === active ? "#5f1e42" : "rgba(255,255,255,0.25)",
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Next */}
+          <button
+            onClick={handleNext}
+            aria-label="Next stat"
+            className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:border-white/50 hover:text-white"
+            style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.4)" }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
         </div>
       </div>
     </section>

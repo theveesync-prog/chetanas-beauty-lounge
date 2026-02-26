@@ -71,8 +71,8 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="py-16 md:py-24 px-4"
-      style={{ backgroundColor: "#f5ece4" }}
+      className="py-24 md:py-32 px-4"
+      style={{ backgroundColor: "#ffffff" }}
       aria-label="Book an appointment at Chetana's Beauty"
     >
       <div className="max-w-6xl mx-auto">
@@ -92,7 +92,7 @@ export default function Contact() {
           {/* ── Left panel — warm cream ── */}
           <div
             className="flex flex-col justify-between gap-8 p-8 md:p-12"
-            style={{ backgroundColor: "#fdf0e6" }}
+            style={{ backgroundColor: "#F7F4F1" }}
           >
             {/* Top content */}
             <div className="space-y-6">
@@ -184,7 +184,7 @@ export default function Contact() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Priya Shetty"
-                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#fdf8f5] px-4 py-3 text-sm text-[#1a0d0d] placeholder:text-[#c0b0a8] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all"
+                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#F7F4F1] px-4 py-3 text-sm text-[#1a0d0d] placeholder:text-[#c0b0a8] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all"
                 />
               </div>
 
@@ -198,7 +198,7 @@ export default function Contact() {
                   required
                   value={service}
                   onChange={(e) => setService(e.target.value)}
-                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#fdf8f5] px-4 py-3 text-sm text-[#1a0d0d] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all appearance-none cursor-pointer"
+                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#F7F4F1] px-4 py-3 text-sm text-[#1a0d0d] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all appearance-none cursor-pointer"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238c7b72' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
                     backgroundRepeat: "no-repeat",
@@ -225,7 +225,7 @@ export default function Contact() {
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
                   min={todayStr}
-                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#fdf8f5] px-4 py-3 text-sm text-[#1a0d0d] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all"
+                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#F7F4F1] px-4 py-3 text-sm text-[#1a0d0d] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all"
                 />
               </div>
 
@@ -240,7 +240,7 @@ export default function Contact() {
                   onChange={(e) => setInfo(e.target.value)}
                   rows={3}
                   placeholder="e.g. Tulu wedding, 15 guests, need bridal trial first…"
-                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#fdf8f5] px-4 py-3 text-sm text-[#1a0d0d] placeholder:text-[#c0b0a8] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all resize-none"
+                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#F7F4F1] px-4 py-3 text-sm text-[#1a0d0d] placeholder:text-[#c0b0a8] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all resize-none"
                 />
               </div>
 

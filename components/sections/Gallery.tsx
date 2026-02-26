@@ -141,8 +141,8 @@ export default function Gallery() {
     <section
       ref={sectionRef}
       id="gallery"
-      className="py-16 md:py-24 px-4"
-      style={{ backgroundColor: "#fdf8f5" }}
+      className="py-24 md:py-32 px-4"
+      style={{ backgroundColor: "#F7F4F1" }}
       aria-label="Instagram feed — Chetana's Beauty Lounge"
     >
       <div className="max-w-7xl mx-auto">
@@ -153,7 +153,7 @@ export default function Gallery() {
         </div>
         <div className="reveal reveal-delay-1 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-10 md:mb-12">
           <div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a0d0d] leading-tight max-w-lg">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[#111111] leading-tight max-w-lg">
               Follow our journey &amp;{" "}
               <em className="italic text-[#5f1e42]">daily transformations</em>
             </h2>

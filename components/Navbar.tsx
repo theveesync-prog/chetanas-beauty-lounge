@@ -47,8 +47,8 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#5f1e42]/6"
-          : "bg-white/80 backdrop-blur-sm"
+          ? "bg-white shadow-sm border-b border-black/6"
+          : "bg-white/95 backdrop-blur-sm"
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-18 flex items-center justify-between gap-6">
@@ -76,7 +76,7 @@ export default function Navbar() {
             link.hasDropdown ? (
               <li key={link.label} className="relative nav-dropdown-trigger">
                 <button
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#1a0d0d]/75 hover:text-[#5f1e42] transition-colors rounded-full hover:bg-[#5f1e42]/5"
+                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#333333] hover:text-[#5f1e42] transition-colors rounded-full hover:bg-[#5f1e42]/5"
                   aria-haspopup="true"
                 >
                   {link.label}
@@ -90,7 +90,7 @@ export default function Navbar() {
                       key={s.label}
                       href={s.href}
                       role="menuitem"
-                      className="block px-4 py-2.5 text-sm font-medium text-[#1a0d0d]/75 hover:text-[#5f1e42] hover:bg-[#5f1e42]/5 rounded-lg transition-colors"
+                      className="block px-4 py-2.5 text-sm font-medium text-[#333333] hover:text-[#5f1e42] hover:bg-[#5f1e42]/5 rounded-lg transition-colors"
                     >
                       {s.label}
                     </a>
@@ -101,7 +101,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="block px-3 py-2 text-sm font-medium text-[#1a0d0d]/75 hover:text-[#5f1e42] transition-colors rounded-full hover:bg-[#5f1e42]/5"
+                  className="block px-3 py-2 text-sm font-medium text-[#333333] hover:text-[#5f1e42] transition-colors rounded-full hover:bg-[#5f1e42]/5"
                 >
                   {link.label}
                 </a>
@@ -154,7 +154,7 @@ export default function Navbar() {
               <div key={link.label}>
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-[#1a0d0d]/75 hover:text-[#5f1e42] hover:bg-[#5f1e42]/5 rounded-xl transition-colors"
+                  className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-[#333333] hover:text-[#5f1e42] hover:bg-[#5f1e42]/5 rounded-xl transition-colors"
                   aria-expanded={mobileServicesOpen}
                 >
                   {link.label}
@@ -183,7 +183,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={closeMobile}
-                className="block px-4 py-3 text-sm font-medium text-[#1a0d0d]/75 hover:text-[#5f1e42] hover:bg-[#5f1e42]/5 rounded-xl transition-colors"
+                className="block px-4 py-3 text-sm font-medium text-[#333333] hover:text-[#5f1e42] hover:bg-[#5f1e42]/5 rounded-xl transition-colors"
               >
                 {link.label}
               </a>

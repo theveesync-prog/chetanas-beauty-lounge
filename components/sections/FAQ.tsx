@@ -75,8 +75,8 @@ export default function FAQ() {
     <section
       ref={sectionRef}
       id="faq"
-      className="py-16 md:py-24 px-4"
-      style={{ backgroundColor: "#fdf8f5" }}
+      className="py-24 md:py-32 px-4"
+      style={{ backgroundColor: "#ffffff" }}
       aria-label="Frequently asked questions"
     >
       <div className="max-w-3xl mx-auto">
@@ -98,7 +98,7 @@ export default function FAQ() {
               <div
                 key={i}
                 className={`reveal reveal-delay-${Math.min(i + 1, 4)} transition-colors duration-300 ${
-                  isOpen ? "bg-[#fdf0e6]" : "bg-transparent"
+                  isOpen ? "bg-[#F7F4F1]" : "bg-transparent"
                 }`}
               >
                 <button
