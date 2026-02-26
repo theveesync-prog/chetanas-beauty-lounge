@@ -454,6 +454,119 @@ export const serviceCategories: ServiceCategory[] = [
         duration: "90 min",
         bestseller: true,
       },
+      // ── Spa treatments ───────────────────────────────────────
+      {
+        name: "Swedish Body Massage",
+        slug: "swedish-body-massage",
+        description: "Classic 60-minute Swedish massage for full-body relaxation and tension relief.",
+        price: "₹1,800",
+        duration: "60 min",
+        bestseller: true,
+      },
+      {
+        name: "Thermal Wrap",
+        slug: "thermal-wrap",
+        description: "20-minute warming thermal wrap to detoxify, soothe, and hydrate the body.",
+        price: "₹699",
+        duration: "20 min",
+      },
+      {
+        name: "Indian Head Massage",
+        slug: "indian-head-massage",
+        description: "Traditional 30-minute head massage to relieve tension, improve scalp health, and calm the mind.",
+        price: "₹600",
+        duration: "30 min",
+        bestseller: true,
+      },
+      {
+        name: "Head Massage with Wash",
+        slug: "head-massage-with-wash",
+        description: "Relaxing head massage followed by a nourishing hair wash for complete scalp care.",
+        price: "₹800",
+        duration: "40 min",
+      },
+      {
+        name: "Foot Reflexology",
+        slug: "foot-reflexology",
+        description: "30-minute pressure-point foot massage to relieve stress and improve circulation.",
+        price: "₹649",
+        duration: "30 min",
+        bestseller: true,
+      },
+      {
+        name: "Hand Reflexology",
+        slug: "hand-reflexology",
+        description: "30-minute hand reflexology targeting pressure points for relaxation and well-being.",
+        price: "₹499",
+        duration: "30 min",
+      },
+      {
+        name: "Body Polishing",
+        slug: "body-polishing",
+        description: "Full-body polishing treatment to exfoliate, brighten, and soften skin all over.",
+        price: "₹1,400",
+        duration: "15 min",
+        bestseller: true,
+      },
+      {
+        name: "Body Wrap",
+        slug: "body-wrap",
+        description: "Nourishing 20-minute body wrap to hydrate, detoxify, and firm the skin.",
+        price: "₹1,499",
+        duration: "20 min",
+      },
+      {
+        name: "Back Polishing",
+        slug: "back-polishing",
+        description: "Targeted 15-minute back polish to remove dead skin and leave a smooth, even finish.",
+        price: "₹700",
+        duration: "15 min",
+      },
+      {
+        name: "Back Massage",
+        slug: "back-massage",
+        description: "30-minute deep-tissue back massage to release knots and ease upper-body tension.",
+        price: "₹750",
+        duration: "30 min",
+      },
+      {
+        name: "Hand Polishing",
+        slug: "hand-polishing",
+        description: "20-minute hand polishing treatment for silky, smooth, and radiant hands.",
+        price: "₹650",
+        duration: "20 min",
+      },
+      {
+        name: "Leg Polishing",
+        slug: "leg-polishing",
+        description: "20-minute leg polishing treatment to exfoliate and revive dull, tired leg skin.",
+        price: "₹800",
+        duration: "20 min",
+      },
+      // ── A-Z Body Spa combos ──────────────────────────────────
+      {
+        name: "A-Z Spa — Head, Face & Body Massage",
+        slug: "az-spa-head-face-body-massage",
+        description: "Indian Head Massage + Face Massage + Full Body Massage — the complete relaxation combo.",
+        price: "₹2,500+",
+        duration: "1 hr 15 min",
+        bestseller: true,
+      },
+      {
+        name: "A-Z Spa — Body Polish & Massage",
+        slug: "az-spa-body-polish-massage",
+        description: "Full Body Polishing + Swedish Body Massage — smooth, glowing skin and deep relaxation.",
+        price: "₹3,500+",
+        duration: "1 hr 45 min",
+      },
+      {
+        name: "A-Z Spa — Ultimate Body Experience",
+        slug: "az-spa-ultimate-body-experience",
+        description: "Body Polishing + Body Massage + Cold Compression + Body Wrap + Thermal Wrap — the full spa journey.",
+        price: "₹5,000+",
+        duration: "2 hrs",
+        bestseller: true,
+      },
     ],
   },
   {
@@ -853,10 +966,10 @@ export const serviceCategories: ServiceCategory[] = [
         description: "Expert draping in your preferred regional style — perfectly pleated every time.",
         longDescription:
           "A saree worn imperfectly — no matter how beautiful the fabric — can dampen your confidence. Our expert saree draping service ensures crisp pleats, a perfectly positioned pallu, and a comfortable, secure drape that stays in place all day. We are experienced in Nivi, Maharashtrian, Gujarati, Bengali, and traditional Tulu/Mangalorean saree styles, and will work around your jewellery and blouse fit to create a polished, cohesive bridal look.",
-        price: "₹800",
+        price: "₹500",
         duration: "30 min",
       },
-      // ── Menu addition ────────────────────────────────────────
+      // ── Bride Facial & Makeover (menu additions) ─────────────
       {
         name: "Bride Facial Treatment — Brightening / Hydrating",
         slug: "bride-facial-treatment",
@@ -867,6 +980,58 @@ export const serviceCategories: ServiceCategory[] = [
         price: "₹10,000",
         duration: "6 sessions",
         bestseller: true,
+      },
+      {
+        name: "Party Makeover",
+        slug: "party-makeover",
+        description: "Full glam party look — flawless base, defined eyes, and a look that lasts all night.",
+        price: "₹3,500–₹7,500",
+        duration: "2–3 hrs",
+        bestseller: true,
+      },
+      {
+        name: "Party Hairstyle",
+        slug: "party-hairstyle",
+        description: "Statement party-ready hairstyle — from elegant up-dos to glamorous blowouts.",
+        price: "₹1,500–₹4,500",
+        duration: "1–2 hrs",
+        bestseller: true,
+      },
+      {
+        name: "HD Makeup",
+        slug: "hd-makeup",
+        description: "High-definition makeup formulated to look flawless in photos and on HD cameras.",
+        price: "₹1,500–₹4,500",
+        duration: "1.5–2 hrs",
+      },
+      {
+        name: "HD Bridal Makeover (Chetana's Team)",
+        slug: "hd-bridal-makeover-chetanas-team",
+        description: "HD bridal makeup and hairstyle by Chetana's in-house expert team — the full bridal look.",
+        price: "₹10,000–₹15,000",
+        duration: "3–4 hrs",
+        bestseller: true,
+      },
+      {
+        name: "HD Bridal Makeover",
+        slug: "hd-bridal-makeover",
+        description: "Premium HD bridal makeover for a stunning, camera-perfect wedding day look.",
+        price: "₹18,000–₹20,000",
+        duration: "4 hrs",
+      },
+      {
+        name: "Air Brush Makeover",
+        slug: "air-brush-makeover",
+        description: "Luxury airbrush makeup for a flawless, skin-like finish that lasts all day.",
+        price: "₹20,000–₹25,000",
+        duration: "4–5 hrs",
+      },
+      {
+        name: "Saree Pre Folding",
+        slug: "saree-pre-folding",
+        description: "Saree pre-folded and pleat-set in advance so draping on the day is quick and perfect.",
+        price: "₹500",
+        duration: "20 min",
       },
     ],
   },
@@ -1033,12 +1198,12 @@ export const serviceCategories: ServiceCategory[] = [
     icon: "🎀",
     services: [
       {
-        name: "Kids Hair Cut (Under 12)",
+        name: "Kids Hair Cut",
         slug: "kids-hair-cut",
         description: "A fun, stress-free haircut in a child-friendly environment.",
         longDescription:
           "We understand that a child's first salon experience can be nerve-wracking — for both child and parent. Our kids' hair cut service is designed to be relaxed, fun, and completely stress-free. Our stylists are experienced in working with children of all ages and temperaments, and take time to make the little one feel comfortable before picking up scissors. We cut to the parents' brief and always check in throughout to ensure both the child and parent are happy.",
-        price: "₹200",
+        price: "₹300–₹450",
         duration: "20 min",
         bestseller: true,
       },
@@ -1048,7 +1213,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: "Gentle wash with kid-safe products, finished with a soft blowout.",
         longDescription:
           "A professional hair wash and blow-dry using 100% kid-safe, tear-free, sulphate-free shampoos and conditioners. Our stylists are trained to make the washing experience comfortable even for children who are apprehensive about water. The result is clean, shiny, manageable hair that a parent can easily maintain at home. Add a light detangling treatment for an extra ₹50.",
-        price: "₹150",
+        price: "₹200",
         duration: "20 min",
       },
       {
@@ -1077,7 +1242,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: "File, buff, and a fun pop of colour — safe and non-toxic polish only.",
         longDescription:
           "Little nails deserve the same care as grown-up ones. Our kids' basic manicure includes a gentle soak, nail shaping, cuticle care, and a coat of non-toxic, water-based nail polish in the child's favourite colour. We carry a range of bright, fun shades that are completely free from formaldehyde, toluene, and DBP — so parents can relax knowing the products are totally safe.",
-        price: "₹150",
+        price: "₹250",
         duration: "20 min",
       },
       {
@@ -1088,6 +1253,88 @@ export const serviceCategories: ServiceCategory[] = [
           "Mehendi for kids is a celebration in itself! Our artists use fresh, natural henna paste — free from any synthetic additives or black henna chemicals — to create simple, playful designs that children adore: butterflies, flowers, peacocks, hearts, and cartoon motifs. The designs are applied on hands and fingers, and the paste is kept on for at least 30 minutes to ensure a good stain. We also advise parents on aftercare to get the deepest, longest-lasting colour.",
         price: "₹200",
         duration: "20 min",
+      },
+      // ── Kids menu additions ──────────────────────────────────
+      {
+        name: "Kids Nail Grooming & Polish",
+        slug: "kids-nail-grooming-polish",
+        description: "Gentle nail shaping, grooming, and a fun coat of kid-safe polish.",
+        price: "₹250",
+        duration: "20 min",
+        bestseller: true,
+      },
+      {
+        name: "Kids Pedicure",
+        slug: "kids-pedicure",
+        description: "A gentle, relaxing pedicure with a warm soak, soft scrub, and non-toxic polish.",
+        price: "₹350",
+        duration: "30 min",
+      },
+      {
+        name: "Kids Head Massage",
+        slug: "kids-head-massage",
+        description: "Soothing head massage with kid-friendly oils to promote relaxation and scalp health.",
+        price: "₹350",
+        duration: "20 min",
+      },
+      {
+        name: "Kids Hair Spa",
+        slug: "kids-hair-spa",
+        description: "Nourishing hair spa treatment designed for children's hair — softens, strengthens, and adds shine.",
+        price: "₹1,000",
+        duration: "40 min",
+      },
+    ],
+  },
+  // ── PACKAGES ────────────────────────────────────────────────
+  {
+    slug: "packages",
+    label: "Packages",
+    tagline: "More value, more pampering — curated bundles for every occasion",
+    icon: "🎁",
+    services: [
+      {
+        name: "Classic Package",
+        slug: "classic-package",
+        description:
+          "Classic Clean Up + Full Arms & Underarms Wax + Haircut with Wash + Eyebrow Threading — your essential salon refresh.",
+        longDescription:
+          "The Classic Package is our most popular entry-level bundle, covering everything you need for a complete refresh in one appointment. Includes a thorough classic clean-up facial, full arms and underarms lipo wax, a professional haircut with wash, and eyebrow threading. Perfectly priced for a regular monthly maintenance session that keeps you looking your best without the planning hassle.",
+        price: "₹1,999",
+        duration: "3 hrs",
+        bestseller: true,
+      },
+      {
+        name: "Elite Package",
+        slug: "elite-package",
+        description:
+          "Vitamin C Facial + Classic Pedi & Mani + Hair Spa + Full Wax (Arms, Underarms, Legs) + Face De-Tan — the complete elite experience.",
+        longDescription:
+          "The Elite Package elevates your salon day with a step-up in every service. A brightening Vitamin C facial to even and illuminate skin, a classic manicure and pedicure for perfectly groomed hands and feet, a nourishing hair spa, comprehensive full-arms, underarms, and legs wax, and a face de-tan to reverse sun damage — all in one curated session. Exceptional value for everything included.",
+        price: "₹5,500",
+        duration: "4.5 hrs",
+        bestseller: true,
+      },
+      {
+        name: "Divine Package",
+        slug: "divine-package",
+        description:
+          "Skeyndor Hydrating Facial + Lotus Pedi & Mani + Hair Spa + Full Wax + Face De-Tan + Full Back Bleach — pure indulgence.",
+        longDescription:
+          "The Divine Package is your complete day of indulgence. A premium Skeyndor hydrating facial for deep skin nourishment, an elevated Lotus manicure and pedicure, a hair spa for glossy, strengthened hair, full waxing, a face de-tan pack, and a full back bleach for luminous, even-toned skin. Everything in one expertly sequenced appointment.",
+        price: "₹8,000",
+        duration: "5 hrs",
+      },
+      {
+        name: "Royal Package",
+        slug: "royal-package",
+        description:
+          "Power C Brightening Facial + Crystal Pedi & Mani + Luxury Hair Spa + Full Body Wax + Full Back Bleach + Body Polishing + De-Tan Face & Neck — the ultimate salon experience.",
+        longDescription:
+          "The Royal Package is our most comprehensive offering — an entire day of premium treatments curated for maximum impact. A powerful Power C Brightening Antioxidant facial, an indulgent Crystal spa manicure and pedicure, a luxury hair spa, complete full-body wax, full back bleach, revitalising body polishing, and a face and neck de-tan. Reserved for those who want the absolute best in a single, beautifully orchestrated visit.",
+        price: "₹8,000",
+        duration: "5.5 hrs",
+        bestseller: true,
       },
     ],
   },
