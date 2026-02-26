@@ -125,3 +125,23 @@ body {
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── Marquee / Auto-Scroll ────────────────────────────────── */
+@keyframes marquee-ltr {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-rtl {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.animate-marquee-ltr {
+  animation: marquee-ltr 44s linear infinite;
+}
+.animate-marquee-rtl {
+  animation: marquee-rtl 48s linear infinite;
+}
+.marquee-outer:hover .animate-marquee-ltr,
+.marquee-outer:hover .animate-marquee-rtl {
+  animation-play-state: paused;
+}
