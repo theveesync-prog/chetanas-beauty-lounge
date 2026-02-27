@@ -53,87 +53,110 @@ export default async function ServiceDetailPage({ params }: Props) {
       <Navbar />
 
       {/* Breadcrumb */}
-      <section className="pt-20 pb-2 bg-[#fdf8f5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-white pt-24 pb-6 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
           <nav
-            className="flex items-center gap-2 text-xs text-[#8c7b72]"
+            className="flex items-center gap-1.5 text-xs text-[#aaa]"
             aria-label="Breadcrumb"
           >
             <Link href="/" className="hover:text-[#5f1e42] transition-colors">
               Home
             </Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <Link
               href={`/services/${cat.slug}`}
               className="hover:text-[#5f1e42] transition-colors"
             >
               {cat.label}
             </Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <span className="text-[#5f1e42] font-medium">{svc.name}</span>
           </nav>
         </div>
-      </section>
+      </div>
 
-      {/* Main Content — 2 column */}
-      <section className="py-8 md:py-12 bg-[#fdf8f5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      {/* Main content */}
+      <section className="bg-white py-8 md:py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+
             {/* Left: Image */}
             <ServiceImage
               categorySlug={cat.slug}
               serviceName={svc.name}
-              className="w-full aspect-[4/3] rounded-2xl"
+              className="w-full aspect-[4/3] rounded-3xl"
               size="lg"
             />
 
             {/* Right: Details */}
             <div className="space-y-6">
-              {/* Badges */}
-              <div className="flex gap-2">
-                {svc.bestseller && (
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-[#e8b80d]/15 text-[#8a6c00]">
-                    ★ Bestseller
-                  </span>
-                )}
-                {svc.onSale && (
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-green-50 text-green-700">
-                    On Sale
-                  </span>
-                )}
-              </div>
 
-              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1a0d0d]">
+              {/* Badges */}
+              {(svc.bestseller || svc.onSale) && (
+                <div className="flex gap-2">
+                  {svc.bestseller && (
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-[#e8b80d]/12 text-[#7a5c00]">
+                      ★ Bestseller
+                    </span>
+                  )}
+                  {svc.onSale && (
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-green-50 text-green-700">
+                      On Sale
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {/* Service name */}
+              <h1
+                className="text-[#111]"
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+                  fontWeight: 700,
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.02em",
+                }}
+              >
                 {svc.name}
               </h1>
 
               {/* Price + Duration */}
-              <div className="flex items-center gap-3">
-                <span className="font-display text-3xl font-semibold text-[#5f1e42]">
+              <div className="flex items-baseline gap-3">
+                <span
+                  className="text-[#5f1e42]"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "clamp(2rem, 4vw, 2.5rem)",
+                    fontWeight: 700,
+                    lineHeight: 1,
+                  }}
+                >
                   {svc.price}
                 </span>
                 {svc.originalPrice && (
-                  <span className="text-lg text-[#8c7b72] line-through">
+                  <span className="text-base text-[#bbb] line-through">
                     {svc.originalPrice}
                   </span>
                 )}
-                <span className="text-sm text-[#8c7b72]">
-                  · {svc.duration}
-                </span>
+                <span className="text-sm text-[#aaa]">· {svc.duration}</span>
               </div>
 
+              {/* Divider */}
+              <div className="h-px bg-black/6" />
+
               {/* Description */}
-              <p className="text-[#5a4040] text-base leading-relaxed">
+              <p className="text-[#555] text-base leading-relaxed">
                 {svc.longDescription ?? svc.description}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
                   href={waLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-gold flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm font-semibold shadow-md"
+                  className="btn-gold flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold shadow-sm"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -165,9 +188,17 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* FAQs */}
       {faqs.length > 0 && (
-        <section className="py-12 md:py-16 bg-white">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-[#1a0d0d] mb-8">
+        <section className="bg-white py-12 md:py-16 px-4 sm:px-6 lg:px-8 border-t border-black/5">
+          <div className="max-w-3xl mx-auto">
+            <h2
+              className="text-[#111] mb-8"
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "clamp(1.3rem, 2.5vw, 1.75rem)",
+                fontWeight: 700,
+                letterSpacing: "-0.015em",
+              }}
+            >
               Frequently Asked Questions
             </h2>
             <FAQAccordion faqs={faqs} />
@@ -177,42 +208,53 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* Related Services */}
       {relatedServices.length > 0 && (
-        <section className="py-12 md:py-16 bg-[#fdf8f5]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-[#1a0d0d] mb-8">
+        <section className="bg-white py-12 md:py-16 px-4 sm:px-6 lg:px-8 border-t border-black/5">
+          <div className="max-w-5xl mx-auto">
+            <h2
+              className="text-[#111] mb-8"
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "clamp(1.3rem, 2.5vw, 1.75rem)",
+                fontWeight: 700,
+                letterSpacing: "-0.015em",
+              }}
+            >
               More in {cat.label}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
               {relatedServices.map((related) => (
                 <Link
                   key={related.slug}
                   href={`/services/${cat.slug}/${related.slug}`}
-                  className="bg-white rounded-2xl border border-[#5f1e42]/8 overflow-hidden card-hover shadow-sm block"
+                  className="rounded-2xl p-5 hover:border-[#5f1e42]/25 hover:-translate-y-0.5 transition-all shadow-sm block group"
+                  style={{ border: "1px solid rgba(0,0,0,0.07)" }}
                 >
-                  <ServiceImage
-                    categorySlug={cat.slug}
-                    serviceName={related.name}
-                    className="h-32 w-full"
-                    size="sm"
-                  />
-                  <div className="p-5">
-                    <h3 className="font-display text-lg font-semibold text-[#1a0d0d] mb-1">
-                      {related.name}
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-[#5f1e42]">
-                        {related.price}
+                  <h3
+                    className="text-[#111] mb-2 group-hover:text-[#5f1e42] transition-colors leading-snug"
+                    style={{
+                      fontFamily: "var(--font-sans)",
+                      fontWeight: 600,
+                      fontSize: "0.9375rem",
+                    }}
+                  >
+                    {related.name}
+                  </h3>
+                  <div className="flex items-center gap-2 text-sm">
+                    <span className="font-semibold text-[#5f1e42]">
+                      {related.price}
+                    </span>
+                    {related.originalPrice && (
+                      <span className="text-xs text-[#bbb] line-through">
+                        {related.originalPrice}
                       </span>
-                      {related.originalPrice && (
-                        <span className="text-xs text-[#8c7b72] line-through">
-                          {related.originalPrice}
-                        </span>
-                      )}
-                      <span className="text-xs text-[#8c7b72]">
-                        · {related.duration}
-                      </span>
-                    </div>
+                    )}
+                    <span className="text-xs text-[#aaa]">
+                      · {related.duration}
+                    </span>
                   </div>
+                  <p className="mt-3 text-xs font-medium text-[#5f1e42]">
+                    View details →
+                  </p>
                 </Link>
               ))}
             </div>
