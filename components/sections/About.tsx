@@ -82,8 +82,8 @@ export default function About() {
           </div>
 
           <h2
-            className="reveal reveal-delay-1 font-display text-[#111111] mb-7"
-            style={{ fontSize: "clamp(2.5rem, 5.5vw, 4rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em" }}
+            className="reveal reveal-delay-1 text-[#111111] mb-7"
+            style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif', fontSize: "clamp(2.5rem, 5.5vw, 4rem)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em" }}
           >
             With us, you are<br />
             <em className="text-[#5f1e42]" style={{ fontStyle: "italic" }}>seen &amp; heard.</em>

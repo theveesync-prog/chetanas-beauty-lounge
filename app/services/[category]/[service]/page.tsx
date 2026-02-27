@@ -111,9 +111,9 @@ export default async function ServiceDetailPage({ params }: Props) {
               <h1
                 className="text-[#111]"
                 style={{
-                  fontFamily: "var(--font-sans)",
+                  fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
                   fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  fontWeight: 700,
+                  fontWeight: 800,
                   lineHeight: 1.1,
                   letterSpacing: "-0.02em",
                 }}
@@ -124,7 +124,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               {/* Price + Duration */}
               <div className="flex items-baseline gap-3">
                 <span
-                  className="text-[#5f1e42]"
+                  className="text-[#111]"
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "clamp(2rem, 4vw, 2.5rem)",
@@ -193,7 +193,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             <h2
               className="text-[#111] mb-8"
               style={{
-                fontFamily: "var(--font-sans)",
+                fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
                 fontSize: "clamp(1.3rem, 2.5vw, 1.75rem)",
                 fontWeight: 700,
                 letterSpacing: "-0.015em",
@@ -213,7 +213,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             <h2
               className="text-[#111] mb-8"
               style={{
-                fontFamily: "var(--font-sans)",
+                fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
                 fontSize: "clamp(1.3rem, 2.5vw, 1.75rem)",
                 fontWeight: 700,
                 letterSpacing: "-0.015em",
@@ -232,7 +232,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   <h3
                     className="text-[#111] mb-2 group-hover:text-[#5f1e42] transition-colors leading-snug"
                     style={{
-                      fontFamily: "var(--font-sans)",
+                      fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
                       fontWeight: 600,
                       fontSize: "0.9375rem",
                     }}
@@ -240,7 +240,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     {related.name}
                   </h3>
                   <div className="flex items-center gap-2 text-sm">
-                    <span className="font-semibold text-[#5f1e42]">
+                    <span className="font-semibold text-[#111]">
                       {related.price}
                     </span>
                     {related.originalPrice && (

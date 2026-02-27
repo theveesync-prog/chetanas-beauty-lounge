@@ -153,9 +153,12 @@ export default function Gallery() {
         </div>
         <div className="reveal reveal-delay-1 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-10 md:mb-12">
           <div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[#111111] leading-tight max-w-lg">
+            <h2
+              className="text-[#111111] leading-tight max-w-lg"
+              style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif', fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.02em" }}
+            >
               Follow our journey &amp;{" "}
-              <em className="italic text-[#5f1e42]">daily transformations</em>
+              <em className="text-[#5f1e42]" style={{ fontStyle: "italic" }}>daily transformations</em>
             </h2>
             <p className="mt-3 text-sm text-[#8c7b72] flex items-center gap-1.5">
               <InstagramIcon className="w-4 h-4 text-[#5f1e42]" />

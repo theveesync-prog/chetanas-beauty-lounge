@@ -43,9 +43,9 @@ export default async function ServiceCategoryPage({ params }: Props) {
           <h1
             className="mt-3 text-[#111]"
             style={{
-              fontFamily: "var(--font-sans)",
+              fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
               fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
-              fontWeight: 700,
+              fontWeight: 800,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
             }}
@@ -116,7 +116,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
               <h2
                 className="text-[#111]"
                 style={{
-                  fontFamily: "var(--font-sans)",
+                  fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
                   fontSize: "clamp(1.5rem, 3vw, 2rem)",
                   fontWeight: 700,
                   letterSpacing: "-0.015em",
@@ -166,7 +166,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
 
                   {/* Price */}
                   <div className="flex items-center gap-1.5 flex-shrink-0">
-                    <span className="text-sm font-semibold text-[#5f1e42]">
+                    <span className="text-sm font-semibold text-[#111]">
                       {svc.price}
                     </span>
                     {svc.originalPrice && (

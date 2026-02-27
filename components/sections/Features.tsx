@@ -209,9 +209,9 @@ export default function Features() {
         <h2
           className="reveal reveal-delay-1 text-[#111] mb-14 md:mb-16"
           style={{
-            fontFamily: "var(--font-display)",
+            fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
             fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
-            fontWeight: 700,
+            fontWeight: 800,
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
           }}

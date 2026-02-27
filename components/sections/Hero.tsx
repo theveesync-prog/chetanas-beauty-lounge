@@ -18,7 +18,7 @@ const AVATAR_URLS = [
   "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=64&h=64&q=80&auto=format&fit=crop&crop=faces",
 ];
 
-const CARD_BG = "#f0eeea";
+const CARD_BG = "#ffffff";
 
 // Shared Google G SVG
 function GoogleIcon() {

@@ -85,9 +85,12 @@ export default function FAQ() {
         <div className="reveal mb-3">
           <span className="section-label">FAQ</span>
         </div>
-        <h2 className="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a0d0d] leading-tight mb-12 md:mb-14">
+        <h2
+          className="reveal reveal-delay-1 text-[#111111] leading-tight mb-12 md:mb-14"
+          style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif', fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.02em" }}
+        >
           Answers to your most{" "}
-          <em className="italic text-[#5f1e42]">common questions</em>
+          <em className="text-[#5f1e42]" style={{ fontStyle: "italic" }}>common questions</em>
         </h2>
 
         {/* ─── Accordion ──── */}
