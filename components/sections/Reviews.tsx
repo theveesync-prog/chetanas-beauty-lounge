@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const GMB_URL =
   "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEqqKK6Kz7I0YLRSNagwTko0Nk00NksyTE0xT01OsTKoSLFMS000TTQzNbA0SjNLMvcST85ILUnMS1QvVkhKTSwtqVTIyS_NS08FAL8sGSg&q=chetana%27s+beauty+lounge&sourceid=chrome&ie=UTF-8";
@@ -16,11 +16,48 @@ const reviews = [
   { id: 8, initials: "V", bg: "#3d4a8b", name: "Vidya P.", service: "HD Bridal Package", rating: 5, text: "Booked the Royal Bridal Package for my daughter's wedding — we couldn't be happier. From the makeup to the saree draping, every detail was perfect." },
 ];
 
-function StarRating({ count }: { count: number }) {
+const n = reviews.length;
+
+function getRelPos(index: number, active: number): number {
+  let rel = ((index - active) % n + n) % n;
+  if (rel > n / 2) rel -= n;
+  return rel;
+}
+
+function getCardStyle(rel: number): React.CSSProperties {
+  const OFFSET = 66;
+  if (rel === 0) {
+    return {
+      transform: "translateX(-50%) translateX(0) scale(1)",
+      opacity: 1,
+      zIndex: 10,
+      pointerEvents: "auto",
+      boxShadow: "0 20px 60px rgba(0,0,0,0.11)",
+    };
+  }
+  if (rel === -1 || rel === 1) {
+    return {
+      transform: `translateX(-50%) translateX(${rel * OFFSET}%) scale(0.87)`,
+      opacity: 0.5,
+      zIndex: 5,
+      pointerEvents: "none",
+      boxShadow: "none",
+    };
+  }
+  return {
+    transform: `translateX(-50%) translateX(${rel * OFFSET}%) scale(0.74)`,
+    opacity: 0,
+    zIndex: 1,
+    pointerEvents: "none",
+    boxShadow: "none",
+  };
+}
+
+function StarRating() {
   return (
-    <div className="flex items-center gap-0.5" aria-label={`${count} out of 5 stars`}>
+    <div className="flex items-center gap-0.5" aria-label="5 out of 5 stars">
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} viewBox="0 0 24 24" className={`w-3.5 h-3.5 ${i < count ? "fill-[#e8b80d]" : "fill-[#e8b80d]/20"}`} aria-hidden="true">
+        <svg key={i} viewBox="0 0 24 24" className="w-4 h-4 fill-[#e8b80d]" aria-hidden="true">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
@@ -30,7 +67,7 @@ function StarRating({ count }: { count: number }) {
 
 function GoogleIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" className="flex-shrink-0">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
       <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
@@ -39,41 +76,42 @@ function GoogleIcon() {
   );
 }
 
-function ReviewCard({ review, delay }: { review: typeof reviews[number]; delay: number }) {
+function ReviewCard({ review }: { review: typeof reviews[number] }) {
   return (
     <article
-      className={`reveal reveal-delay-${delay} flex flex-col gap-3 p-6 rounded-2xl border`}
-      style={{ backgroundColor: "#ffffff", borderColor: "rgba(0,0,0,0.07)" }}
+      className="w-full bg-white rounded-3xl p-8 flex flex-col gap-5"
+      style={{ minHeight: "280px" }}
       aria-label={`Review by ${review.name}`}
     >
-      {/* Stars */}
-      <StarRating count={review.rating} />
+      {/* Top row: stars + Google icon */}
+      <div className="flex items-center justify-between">
+        <StarRating />
+        <GoogleIcon />
+      </div>
 
-      {/* Text */}
-      <p className="text-sm text-[#444] leading-relaxed flex-1">
+      {/* Review text */}
+      <p
+        className="flex-1 text-[#111] leading-relaxed"
+        style={{ fontSize: "1rem", fontFamily: "var(--font-sans)" }}
+      >
         &ldquo;{review.text}&rdquo;
       </p>
 
-      {/* Thin divider */}
-      <div className="h-px rounded-full" style={{ backgroundColor: "rgba(0,0,0,0.07)" }} aria-hidden="true" />
+      {/* Divider */}
+      <div className="h-px bg-black/7 rounded-full" aria-hidden="true" />
 
       {/* Author */}
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2.5">
-          <div
-            className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-semibold flex-shrink-0"
-            style={{ backgroundColor: review.bg }}
-            aria-hidden="true"
-          >
-            {review.initials}
-          </div>
-          <div>
-            <p className="text-xs font-semibold text-[#111] leading-none">{review.name}</p>
-            <p className="text-[11px] text-[#999] mt-0.5">{review.service}</p>
-          </div>
+      <div className="flex items-center gap-3">
+        <div
+          className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-semibold flex-shrink-0"
+          style={{ backgroundColor: review.bg }}
+          aria-hidden="true"
+        >
+          {review.initials}
         </div>
-        <div className="opacity-50">
-          <GoogleIcon />
+        <div>
+          <p className="text-sm font-semibold text-[#111] leading-none">{review.name}</p>
+          <p className="text-xs text-[#999] mt-1">{review.service}</p>
         </div>
       </div>
     </article>
@@ -81,8 +119,10 @@ function ReviewCard({ review, delay }: { review: typeof reviews[number]; delay: 
 }
 
 export default function Reviews() {
+  const [active, setActive] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
+  // Reveal animation on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
@@ -92,14 +132,17 @@ export default function Reviews() {
     return () => observer.disconnect();
   }, []);
 
+  const prev = () => setActive((active - 1 + n) % n);
+  const next = () => setActive((active + 1) % n);
+
   return (
     <section
       ref={sectionRef}
       id="reviews"
-      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white"
+      className="py-24 md:py-32 bg-white overflow-hidden"
       aria-label="Client reviews of Chetana's Beauty"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── Header ─────────────────────────────────────────── */}
         <div className="text-center mb-16 md:mb-20">
@@ -108,83 +151,114 @@ export default function Reviews() {
           </div>
 
           <h2
-            className="reveal reveal-delay-1 font-display text-[#111111] mb-6"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 700, lineHeight: 1.08, letterSpacing: "-0.02em" }}
+            className="reveal reveal-delay-1 text-[#111111] mb-5"
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+              fontWeight: 700,
+              lineHeight: 1.08,
+              letterSpacing: "-0.02em",
+            }}
           >
-            The wall of<br />
+            The wall of{" "}
             <em className="text-[#5f1e42]" style={{ fontStyle: "italic" }}>appreciation</em>
           </h2>
 
-          <p className="reveal reveal-delay-2 text-base md:text-lg text-[#888] max-w-md mx-auto font-light mb-8">
+          <p className="reveal reveal-delay-2 text-base text-[#888] max-w-md mx-auto">
             Real stories from real clients — from bridal transformations to everyday care.
           </p>
-
-          {/* Google rating badge */}
-          <div className="reveal reveal-delay-2 flex justify-center">
-            <a
-              href={GMB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full border transition-all hover:-translate-y-0.5"
-              style={{ borderColor: "rgba(0,0,0,0.1)", backgroundColor: "#F7F4F1" }}
-              aria-label="View all Google reviews"
-            >
-              <GoogleIcon />
-              <span className="text-sm font-semibold text-[#111]">4.8</span>
-              <div className="flex items-center gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <svg key={i} viewBox="0 0 24 24" className="w-3 h-3 fill-[#e8b80d]" aria-hidden="true">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="text-sm text-[#888]">315+ Google reviews</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-[#5f1e42]" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-          </div>
         </div>
+      </div>
 
-        {/* ── Review grid ────────────────────────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-14 md:mb-16">
-          {reviews.map((review, i) => (
-            <ReviewCard
+      {/* ── Carousel (full bleed, no px padding so side cards bleed to edges) ── */}
+      <div
+        role="region"
+        aria-label="Client reviews carousel"
+        className="relative"
+        style={{ height: "340px" }}
+      >
+        {reviews.map((review, i) => {
+          const rel = getRelPos(i, active);
+          const cardStyle = getCardStyle(rel);
+
+          return (
+            <div
               key={review.id}
-              review={review}
-              delay={Math.min((i % 3) + 1, 4)}
+              className="absolute top-0 left-1/2 w-full"
+              style={{
+                maxWidth: "520px",
+                ...cardStyle,
+                transition:
+                  "transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, box-shadow 0.4s ease",
+              }}
+              aria-hidden={rel !== 0}
+            >
+              <ReviewCard review={review} />
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ── Navigation: arrows + dots ──────────────────────── */}
+      <div className="flex items-center justify-center gap-5 mt-10">
+        {/* Prev arrow */}
+        <button
+          onClick={prev}
+          aria-label="Previous review"
+          className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:bg-[#111] hover:text-white hover:border-[#111] text-[#444]"
+          style={{ borderColor: "rgba(0,0,0,0.15)" }}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        {/* Dot indicators */}
+        <div className="flex items-center gap-2" role="tablist" aria-label="Review navigation">
+          {reviews.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              role="tab"
+              aria-selected={i === active}
+              aria-label={`Review ${i + 1}: ${reviews[i].name}`}
+              className="rounded-full transition-all duration-300"
+              style={{
+                width: i === active ? "20px" : "7px",
+                height: "7px",
+                backgroundColor: i === active ? "#5f1e42" : "#ddd",
+              }}
             />
           ))}
         </div>
 
-        {/* ── Bottom CTAs ────────────────────────────────────── */}
-        <div className="reveal flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href={GMB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-[#111] border border-black/12 hover:border-black/25 transition-all hover:-translate-y-0.5"
-          >
-            <GoogleIcon />
-            See all 315+ reviews on Google
-          </a>
-          <a
-            href={GMB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-85 hover:-translate-y-0.5"
-            style={{ backgroundColor: "#5f1e42" }}
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
-              <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Leave us a review
-          </a>
-        </div>
+        {/* Next arrow */}
+        <button
+          onClick={next}
+          aria-label="Next review"
+          className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:bg-[#111] hover:text-white hover:border-[#111] text-[#444]"
+          style={{ borderColor: "rgba(0,0,0,0.15)" }}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
 
-        <p className="reveal text-center text-xs text-[#bbb] mt-6">
-          All reviews are from verified clients on Google · We never edit or filter feedback
-        </p>
+      {/* ── Read more reviews CTA ───────────────────────────── */}
+      <div className="flex justify-center mt-8">
+        <a
+          href={GMB_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold border transition-all hover:bg-[#111] hover:text-white hover:border-[#111] hover:-translate-y-0.5 text-[#111]"
+          style={{ borderColor: "rgba(0,0,0,0.12)" }}
+        >
+          Read more reviews
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5" aria-hidden="true">
+            <path d="M7 17L17 7M17 7H7M17 7v10" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
       </div>
     </section>
   );
