@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, FormEvent } from "react";
 
 const WHATSAPP_NUMBER = "919845292411";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const SERVICES = [
   "Bridal Makeup",
@@ -19,247 +20,317 @@ const SERVICES = [
   "Other",
 ];
 
-const features = [
-  { icon: "⚡", label: "Quick reply on WhatsApp — usually within 2 hours" },
-  { icon: "🔒", label: "100% women-only salon — complete privacy" },
-  { icon: "📅", label: "Flexible timings — Mon to Sat, 9 AM – 7 PM" },
+const TIME_SLOTS = [
+  "Morning (9–11 AM)",
+  "Noon (11 AM–1 PM)",
+  "Afternoon (1–4 PM)",
+  "Evening (4–7 PM)",
 ];
+
+// Shared input / select / textarea class
+const fieldCls =
+  "w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-[#111] placeholder:text-gray-400 outline-none transition-all focus:border-[#5f1e42]/50 focus:ring-2 focus:ring-[#5f1e42]/10";
+
+const labelCls = "block text-xs text-[#888] mb-1.5";
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
+  const [customService, setCustomService] = useState("");
   const [date, setDate] = useState("");
-  const [info, setInfo] = useState("");
+  const [time, setTime] = useState("");
+  const [comment, setComment] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     );
     sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
-  const handleWhatsApp = (e: FormEvent) => {
-    e.preventDefault();
+  const todayStr = new Date().toISOString().split("T")[0];
 
-    // Build pre-filled WhatsApp message
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const finalService = service === "Other" ? customService : service;
     const lines = [
       "Hi! I'd like to book an appointment at Chetana's Beauty Lounge, Mangalore.",
       "",
-      name ? `Name: ${name}` : null,
-      service ? `Service: ${service}` : null,
+      (firstName || lastName) ? `Name: ${[firstName, lastName].filter(Boolean).join(" ")}` : null,
+      phone ? `Phone: +91 ${phone}` : null,
+      finalService ? `Service: ${finalService}` : null,
       date ? `Preferred Date: ${date}` : null,
-      info ? `Additional Info: ${info}` : null,
+      time ? `Preferred Time: ${time}` : null,
+      comment ? `Notes: ${comment}` : null,
       "",
       "Looking forward to hearing from you!",
     ]
       .filter((l) => l !== null)
       .join("\n");
 
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
-
-  // Get today's date string for min date attribute
-  const todayStr = new Date().toISOString().split("T")[0];
 
   return (
     <section
       ref={sectionRef}
       id="contact"
-      className="py-24 md:py-32 px-4"
-      style={{ backgroundColor: "#ffffff" }}
+      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8"
+      style={{ backgroundColor: "#f4f3ef" }}
       aria-label="Book an appointment at Chetana's Beauty"
     >
       <div className="max-w-6xl mx-auto">
 
-        {/* ─── Section header (above card) ──── */}
+        {/* ── Section header ─────────────────────────────────── */}
         <div className="reveal mb-3">
           <span className="section-label">Contact</span>
         </div>
-        <h2 className="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a0d0d] leading-tight mb-10 md:mb-12">
+        <h2
+          className="reveal reveal-delay-1 text-[#111] mb-10 md:mb-12"
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
+            fontWeight: 700,
+            lineHeight: 1.1,
+            letterSpacing: "-0.02em",
+          }}
+        >
           Book your appointment at{" "}
-          <em className="italic text-[#5f1e42]">Chetana&apos;s</em>
+          <em className="text-[#5f1e42]" style={{ fontStyle: "italic" }}>
+            Chetana&apos;s
+          </em>
         </h2>
 
-        {/* ─── Two-column card ──── */}
-        <div className="reveal reveal-delay-2 grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-xl border border-[#5f1e42]/8">
+        {/* ── Two-column card ────────────────────────────────── */}
+        <div className="reveal reveal-delay-2 grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl">
 
-          {/* ── Left panel — warm cream ── */}
-          <div
-            className="flex flex-col justify-between gap-8 p-8 md:p-12"
-            style={{ backgroundColor: "#F7F4F1" }}
-          >
-            {/* Top content */}
-            <div className="space-y-6">
-              <p className="text-[#5a4040] text-base md:text-lg leading-relaxed font-light max-w-sm">
-                Fill in a few quick details on the right and we&apos;ll open WhatsApp with your
-                message ready to send — no forms to submit, no waiting.
-              </p>
+          {/* ══ LEFT: full-bleed image + text overlay ════════════ */}
+          <div className="relative hidden lg:block" style={{ minHeight: "600px" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=85&auto=format&fit=crop"
+              alt="Beauty treatment at Chetana's Beauty Lounge"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
 
-              {/* Feature list */}
-              <ul className="space-y-3">
-                {features.map((f) => (
-                  <li key={f.label} className="flex items-start gap-3">
-                    <span className="text-base mt-0.5" aria-hidden="true">{f.icon}</span>
-                    <span className="text-sm text-[#5a4040] leading-snug">{f.label}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* "How it works" pill */}
-              <div className="inline-flex items-center gap-2 bg-[#5f1e42] text-white rounded-full px-4 py-2 text-xs font-medium tracking-wide">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 8v4l3 3" stroke="white" fill="none" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-                How it works: Fill → Tap → Chat on WhatsApp
-              </div>
-            </div>
-
-            {/* Bottom — testimonial */}
+            {/* Gradient overlay — dark at bottom, fades to transparent */}
             <div
-              className="rounded-2xl p-5 border border-[#5f1e42]/10"
-              style={{ backgroundColor: "rgba(255,255,255,0.6)" }}
-            >
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-3" aria-label="5 star rating">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <svg key={i} viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-[#e8b80d]" aria-hidden="true">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                ))}
-              </div>
-              {/*
-                TODO: Replace this placeholder quote with a real client testimonial.
-                Recommended: a bridal makeup client, 1–2 sentences, specific and authentic.
-              */}
-              <p className="text-sm text-[#4a3a3a] leading-relaxed italic mb-4">
-                &ldquo;Booking on WhatsApp was so easy. Chetana ma&apos;am confirmed within the hour
-                and my bridal day was absolutely perfect.&rdquo;
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0) 100%)",
+              }}
+            />
+
+            {/* Text overlay at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
+              <h3
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+                  fontWeight: 700,
+                  lineHeight: 1.15,
+                }}
+              >
+                Your beauty journey<br />begins here
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed max-w-xs" style={{ color: "rgba(255,255,255,0.72)" }}>
+                Expert care trusted for over 28 years in Mangalore. Book your session in seconds.
               </p>
-              <div className="flex items-center gap-3">
-                {/*
-                  TODO: Replace with real reviewer photo.
-                  <img src="/images/testimonial-bride.jpg" alt="Ananya" className="w-9 h-9 rounded-full object-cover" />
-                */}
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-semibold flex-shrink-0"
-                  style={{ backgroundColor: "#c4849a" }}
-                  aria-hidden="true"
-                >
-                  A
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-[#1a0d0d]">Ananya R.</p>
-                  <p className="text-[10px] text-[#8c7b72]">Bridal Makeup, Tulu Wedding</p>
-                </div>
-              </div>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-white transition-opacity hover:opacity-75"
+                style={{ textDecoration: "underline", textUnderlineOffset: "4px", textDecorationColor: "rgba(255,255,255,0.5)" }}
+              >
+                Chat with us
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
             </div>
           </div>
 
-          {/* ── Right panel — white form ── */}
-          <div className="bg-white flex flex-col justify-center p-8 md:p-12">
-            <h3 className="font-display text-2xl md:text-3xl font-semibold text-[#1a0d0d] mb-2">
-              Quick booking details
+          {/* ══ RIGHT: form panel ════════════════════════════════ */}
+          <div className="bg-white p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+            <h3
+              className="text-[#111] mb-1"
+              style={{ fontFamily: "var(--font-heading)", fontSize: "1.35rem", fontWeight: 700 }}
+            >
+              Book an appointment
             </h3>
-            <p className="text-[#8c7b72] text-sm mb-8">
-              Takes less than 60 seconds. We&apos;ll do the rest on WhatsApp.
+            <p className="text-sm text-[#999] mb-8">
+              Fill in your details and we&apos;ll open WhatsApp with your message ready to send.
             </p>
 
-            <form onSubmit={handleWhatsApp} className="space-y-5" noValidate>
+            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
 
-              {/* Full Name */}
-              <div>
-                <label htmlFor="contact-name" className="block text-xs font-medium text-[#5a4040] mb-1.5 tracking-wide uppercase">
-                  Your Name
-                </label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Priya Shetty"
-                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#F7F4F1] px-4 py-3 text-sm text-[#1a0d0d] placeholder:text-[#c0b0a8] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all"
-                />
+              {/* First + Last name */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="contact-first" className={labelCls}>First name</label>
+                  <input
+                    id="contact-first"
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="Priya"
+                    className={fieldCls}
+                    autoComplete="given-name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-last" className={labelCls}>Last name</label>
+                  <input
+                    id="contact-last"
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Shetty"
+                    className={fieldCls}
+                    autoComplete="family-name"
+                  />
+                </div>
               </div>
 
-              {/* Preferred Service */}
+              {/* Phone with +91 prefix */}
               <div>
-                <label htmlFor="contact-service" className="block text-xs font-medium text-[#5a4040] mb-1.5 tracking-wide uppercase">
-                  Preferred Service <span className="text-[#5f1e42]">*</span>
+                <label htmlFor="contact-phone" className={labelCls}>Phone</label>
+                <div className="flex rounded-xl border border-gray-200 overflow-hidden transition-all focus-within:border-[#5f1e42]/50 focus-within:ring-2 focus-within:ring-[#5f1e42]/10">
+                  <span className="flex items-center gap-1.5 px-3 bg-gray-50 border-r border-gray-200 text-sm text-[#555] flex-shrink-0 select-none">
+                    🇮🇳 +91
+                  </span>
+                  <input
+                    id="contact-phone"
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="98452 92411"
+                    className="flex-1 px-3 py-3 text-sm outline-none bg-white text-[#111] placeholder:text-gray-400"
+                    autoComplete="tel"
+                  />
+                </div>
+              </div>
+
+              {/* Treatment dropdown */}
+              <div>
+                <label htmlFor="contact-service" className={labelCls}>
+                  Treatment <span className="text-[#5f1e42]">*</span>
                 </label>
                 <select
                   id="contact-service"
                   required
                   value={service}
                   onChange={(e) => setService(e.target.value)}
-                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#F7F4F1] px-4 py-3 text-sm text-[#1a0d0d] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all appearance-none cursor-pointer"
+                  className={fieldCls}
                   style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238c7b72' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
                     backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 1rem center",
+                    backgroundPosition: "right 0.75rem center",
                     backgroundSize: "1rem",
-                    paddingRight: "2.5rem",
+                    paddingRight: "2.25rem",
+                    appearance: "none",
                   }}
                 >
-                  <option value="" disabled>Select a service…</option>
+                  <option value="" disabled>Select a treatment…</option>
                   {SERVICES.map((s) => (
                     <option key={s} value={s}>{s}</option>
                   ))}
                 </select>
+
+                {/* "Other" free-text reveal */}
+                {service === "Other" && (
+                  <input
+                    type="text"
+                    value={customService}
+                    onChange={(e) => setCustomService(e.target.value)}
+                    placeholder="Describe your treatment…"
+                    className={`${fieldCls} mt-2`}
+                    aria-label="Describe your custom treatment"
+                  />
+                )}
               </div>
 
-              {/* Preferred Date */}
-              <div>
-                <label htmlFor="contact-date" className="block text-xs font-medium text-[#5a4040] mb-1.5 tracking-wide uppercase">
-                  Preferred Date
-                </label>
-                <input
-                  id="contact-date"
-                  type="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  min={todayStr}
-                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#F7F4F1] px-4 py-3 text-sm text-[#1a0d0d] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all"
-                />
+              {/* Date + Time */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="contact-date" className={labelCls}>Date</label>
+                  <input
+                    id="contact-date"
+                    type="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    min={todayStr}
+                    className={fieldCls}
+                    style={{ colorScheme: "light" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-time" className={labelCls}>Time</label>
+                  <select
+                    id="contact-time"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                    className={fieldCls}
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "right 0.75rem center",
+                      backgroundSize: "1rem",
+                      paddingRight: "2.25rem",
+                      appearance: "none",
+                    }}
+                  >
+                    <option value="" disabled>Select…</option>
+                    {TIME_SLOTS.map((t) => (
+                      <option key={t} value={t}>{t}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
 
-              {/* Additional Information */}
+              {/* Comment */}
               <div>
-                <label htmlFor="contact-info" className="block text-xs font-medium text-[#5a4040] mb-1.5 tracking-wide uppercase">
-                  Additional Information
-                </label>
+                <label htmlFor="contact-comment" className={labelCls}>Comment</label>
                 <textarea
-                  id="contact-info"
-                  value={info}
-                  onChange={(e) => setInfo(e.target.value)}
+                  id="contact-comment"
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
                   rows={3}
-                  placeholder="e.g. Tulu wedding, 15 guests, need bridal trial first…"
-                  className="w-full rounded-xl border border-[#5f1e42]/15 bg-[#F7F4F1] px-4 py-3 text-sm text-[#1a0d0d] placeholder:text-[#c0b0a8] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all resize-none"
+                  placeholder="I would like…"
+                  className={`${fieldCls} resize-none`}
                 />
               </div>
 
-              {/* Submit → opens WhatsApp */}
+              {/* Send button */}
               <button
                 type="submit"
-                disabled={!service}
-                className="w-full btn-gold flex items-center justify-center gap-2.5 rounded-xl py-4 text-sm font-semibold shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={!service || (service === "Other" && !customService.trim())}
+                className="w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white transition-all hover:opacity-85 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:translate-y-0"
+                style={{ backgroundColor: "#111" }}
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0" aria-hidden="true">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.199-1.435A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.366l-.358-.213-3.683.853.879-3.596-.234-.37A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
+                Send
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                Send on WhatsApp — Book Now
               </button>
 
-              <p className="text-center text-[10px] text-[#8c7b72]">
-                Tapping above will open WhatsApp with your message pre-filled.
-                Select a service to continue.
+              <p className="text-center text-[11px] text-[#bbb]">
+                Tapping Send opens WhatsApp with your details pre-filled.
               </p>
             </form>
           </div>
