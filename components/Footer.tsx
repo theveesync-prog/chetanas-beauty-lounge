@@ -88,7 +88,7 @@ export default function Footer() {
               Visit us
             </h2>
             <p className="mt-3 text-sm text-[#888] leading-relaxed max-w-xs">
-              Questions or want to book? Come find us in Kankanady — we&apos;re here Mon to Sat, 9 AM to 7 PM.
+              Questions or want to book? Come find us in Kankanady — we&apos;re here every day, 9 AM to 8 PM.
             </p>
 
             {/* CTA buttons */}
@@ -155,84 +155,32 @@ export default function Footer() {
                 <path d="M12 6v6l4 2" strokeLinecap="round" />
               </svg>
               <div className="text-sm text-[#555]">
-                <p>Mon – Sat: 9:00 AM – 7:00 PM</p>
-                <p className="text-[#aaa] text-xs mt-0.5">Sunday: Closed</p>
+                <p>Every day: 9:00 AM – 8:00 PM</p>
               </div>
             </div>
 
             {/* Amenities */}
             <div className="flex flex-col gap-2.5">
-              {/* Free underground parking */}
-              <div className="flex items-center gap-2.5 text-sm text-[#555]">
-                <span
-                  className="flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
-                  style={{ backgroundColor: "#2563eb14", color: "#2563eb" }}
-                  aria-hidden="true"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
-                    <rect x="2" y="7" width="20" height="14" rx="2" />
-                    <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" strokeLinecap="round" />
-                    <path d="M9 13h2.5a1.5 1.5 0 010 3H9v-3zm0 0V11" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                Free underground parking
-              </div>
-
-              {/* Wheelchair accessible lift */}
-              <div className="flex items-center gap-2.5 text-sm text-[#555]">
-                <span
-                  className="flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
-                  style={{ backgroundColor: "#0891b214", color: "#0891b2" }}
-                  aria-hidden="true"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
-                    <circle cx="12" cy="4" r="1.5" fill="currentColor" stroke="none" />
-                    <path d="M12 7v5l3 3" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M9 19c.6 1.2 1.8 2 3.2 2a3.6 3.6 0 003.4-4.8L14 13H9.5A1.5 1.5 0 008 14.5V17" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                Wheelchair accessible lift
-              </div>
-
-              {/* LGBTQ+ friendly */}
-              <div className="flex items-center gap-2.5 text-sm text-[#555]">
-                <span
-                  className="flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0 overflow-hidden"
-                  style={{
-                    background: "linear-gradient(135deg, #e40303 0%, #ff8c00 20%, #ffed00 40%, #008026 60%, #004dff 80%, #750787 100%)",
-                  }}
-                  aria-hidden="true"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" className="w-3.5 h-3.5">
-                    <path d="M12 21.7C5.4 17 2 12.5 2 9a7 7 0 0114 0c0 3.5-3.4 8-7 12.7z" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                LGBTQ+ friendly
-              </div>
+              {["Free underground parking", "Wheelchair accessible lift", "LGBTQ+ friendly"].map((label) => (
+                <div key={label} className="flex items-center gap-2.5 text-sm text-[#555]">
+                  <span
+                    className="flex items-center justify-center w-5 h-5 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: "#5f1e42", color: "#fff" }}
+                    aria-hidden="true"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-3 h-3">
+                      <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  {label}
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Right: Google Maps + custom animated marker */}
         <div className="relative min-h-[320px] lg:min-h-0 overflow-hidden">
-          {/* keyframes injected here so they scope to the map panel */}
-          <style>{`
-            @keyframes floatPin {
-              0%, 100% { transform: translateY(0px); }
-              50%       { transform: translateY(-6px); }
-            }
-            @keyframes pulseRing {
-              0%   { transform: scale(1);   opacity: 0.5; }
-              70%  { transform: scale(2.2); opacity: 0; }
-              100% { transform: scale(2.2); opacity: 0; }
-            }
-            @keyframes shimmer {
-              0%   { opacity: 0.7; }
-              50%  { opacity: 1; }
-              100% { opacity: 0.7; }
-            }
-          `}</style>
-
           {/* Google Maps iframe */}
           <iframe
             src={MAPS_EMBED}
@@ -243,106 +191,12 @@ export default function Footer() {
             allowFullScreen
           />
 
-          {/* Custom salon marker overlay — floats above the map center */}
-          <div
-            className="absolute pointer-events-none z-10 flex flex-col items-center"
-            style={{
-              left: "50%",
-              top: "44%",
-              transform: "translate(-50%, -100%)",
-              animation: "floatPin 2.8s ease-in-out infinite",
-            }}
-          >
-            {/* Pulsing ring */}
-            <span
-              className="absolute rounded-full"
-              style={{
-                width: "44px",
-                height: "44px",
-                top: 0,
-                left: "50%",
-                transform: "translateX(-50%)",
-                backgroundColor: "rgba(95,30,66,0.35)",
-                animation: "pulseRing 2.2s ease-out infinite",
-              }}
-            />
-
-            {/* Pin circle */}
-            <div
-              className="relative w-11 h-11 rounded-full flex items-center justify-center shadow-2xl"
-              style={{
-                background: "linear-gradient(145deg, #7a2555, #5f1e42)",
-                boxShadow: "0 8px 24px rgba(95,30,66,0.55), 0 2px 6px rgba(0,0,0,0.3)",
-                border: "2.5px solid rgba(232,184,13,0.6)",
-              }}
-            >
-              {/* Scissors / salon icon */}
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.7" className="w-5 h-5" aria-hidden="true">
-                <circle cx="6" cy="6" r="2.5" />
-                <circle cx="6" cy="18" r="2.5" />
-                <path d="M20 4L8.5 15.5" strokeLinecap="round" />
-                <path d="M14.5 14.5L20 20" strokeLinecap="round" />
-                <path d="M8.5 8.5L11.5 11.5" strokeLinecap="round" />
-              </svg>
-
-              {/* Gold sparkle dot */}
-              <span
-                className="absolute top-0.5 right-0.5 w-2 h-2 rounded-full"
-                style={{
-                  background: "#e8b80d",
-                  boxShadow: "0 0 6px #e8b80d",
-                  animation: "shimmer 1.8s ease-in-out infinite",
-                }}
-              />
-            </div>
-
-            {/* Pin tail */}
-            <div
-              className="w-3.5 h-3.5 -mt-2 rotate-45 rounded-sm"
-              style={{
-                background: "linear-gradient(145deg, #7a2555, #5f1e42)",
-                boxShadow: "2px 2px 6px rgba(95,30,66,0.4)",
-              }}
-            />
-
-            {/* Name label */}
-            <div
-              className="mt-1 px-3 py-1 rounded-xl text-[11px] font-semibold text-[#111] whitespace-nowrap"
-              style={{
-                background: "rgba(255,255,255,0.95)",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.18), 0 1px 0 rgba(255,255,255,0.9) inset",
-                border: "1px solid rgba(255,255,255,0.7)",
-              }}
-            >
-              Chetana&apos;s Beauty Lounge
-            </div>
-          </div>
-
           {/* Bottom gradient bar with "Open in Maps" CTA */}
           <div
-            className="absolute bottom-0 inset-x-0 h-20 flex items-end justify-between px-4 pb-3.5 pointer-events-none z-10"
+            className="absolute bottom-0 inset-x-0 h-20 flex items-end justify-end px-4 pb-3.5 pointer-events-none z-10"
             style={{ background: "linear-gradient(to top, rgba(0,0,0,0.42) 0%, transparent 100%)" }}
           >
-            {/* left: address pill */}
-            <div
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] text-white/80"
-              style={{
-                background: "rgba(0,0,0,0.28)",
-                backdropFilter: "blur(8px)",
-                WebkitBackdropFilter: "blur(8px)",
-                border: "1px solid rgba(255,255,255,0.15)",
-              }}
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3 flex-shrink-0" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" strokeLinecap="round" />
-              </svg>
-              Mon–Sat 9AM–7PM
-            </div>
-
-            {/* right: Open in Maps button */}
+            {/* Open in Maps button */}
             <a
               href={MAPS_DIRECTIONS}
               target="_blank"
@@ -471,12 +325,9 @@ export default function Footer() {
               Open times
             </h3>
             <div className="mb-6">
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>Mon – Sat</p>
+              <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>Every day</p>
               <p className="text-sm font-semibold mt-0.5" style={{ color: "rgba(255,255,255,0.85)" }}>
-                9:00 AM – 7:00 PM
-              </p>
-              <p className="text-xs mt-2" style={{ color: "rgba(255,255,255,0.28)" }}>
-                Sunday: Closed
+                9:00 AM – 8:00 PM
               </p>
             </div>
 
