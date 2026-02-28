@@ -8,6 +8,7 @@ export interface Service {
   onSale?: boolean;
   duration: string;
   bestseller?: boolean;
+  isNew?: boolean;
 }
 
 export interface ServiceCategory {
@@ -188,6 +189,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: "One bold or blended streak — perfect for a subtle pop of colour.",
         price: "₹450+",
         duration: "30 min",
+        isNew: true,
       },
       {
         name: "Global Highlights",
@@ -469,6 +471,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: "20-minute warming thermal wrap to detoxify, soothe, and hydrate the body.",
         price: "₹699",
         duration: "20 min",
+        isNew: true,
       },
       {
         name: "Indian Head Massage",
@@ -737,6 +740,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: "High-potency antioxidant facial with Power C complex for visible brightening.",
         price: "₹4,999",
         duration: "90 min",
+        isNew: true,
       },
       {
         name: "Power C Brightening Meso Therapy",
@@ -1032,6 +1036,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: "Saree pre-folded and pleat-set in advance so draping on the day is quick and perfect.",
         price: "₹500",
         duration: "20 min",
+        isNew: true,
       },
     ],
   },
@@ -1122,6 +1127,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: "Luxurious spa manicure with a crystal mineral treatment for deeply hydrated hands.",
         price: "₹800",
         duration: "55 min",
+        isNew: true,
       },
       {
         name: "Dry Manicure",
@@ -1283,6 +1289,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: "Nourishing hair spa treatment designed for children's hair — softens, strengthens, and adds shine.",
         price: "₹1,000",
         duration: "40 min",
+        isNew: true,
       },
     ],
   },
