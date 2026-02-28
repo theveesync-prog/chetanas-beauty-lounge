@@ -164,10 +164,10 @@ export default function ServicePriceListClient({
   }, []);
 
   return (
-    <div className="flex-1 min-w-0 pt-2">
+    <div>
 
       {/* ── Search bar ────────────────────────────────────────────────────── */}
-      <div className="relative mb-5">
+      <div className="relative mb-4">
         <Search
           size={15}
           className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#ccc] pointer-events-none"
@@ -192,7 +192,7 @@ export default function ServicePriceListClient({
       </div>
 
       {/* ── Filter pills ──────────────────────────────────────────────────── */}
-      <div className="flex items-center gap-2 mb-6 flex-wrap">
+      <div className="flex items-center gap-2 mb-4 flex-wrap">
         {FILTERS.map((f) => {
           const isActive = filter === f.key;
           return (

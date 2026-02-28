@@ -38,7 +38,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
       <Navbar />
 
       {/* Page header */}
-      <div className="bg-white pt-28 pb-10 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white pt-28 pb-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <span className="section-label">Our Services</span>
           <h1

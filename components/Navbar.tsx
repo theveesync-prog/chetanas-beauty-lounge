@@ -15,12 +15,12 @@ const serviceLinks = [
 ];
 
 const navLinks = [
-  { label: "About", href: "#about" },
+  { label: "About", href: "/#about" },
   { label: "Services", href: "#services", hasDropdown: true },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Reviews", href: "/#reviews" },
   { label: "Blog", href: "/blog" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const WHATSAPP_SALON = "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
@@ -75,13 +75,14 @@ export default function Navbar() {
           {navLinks.map((link) =>
             link.hasDropdown ? (
               <li key={link.label} className="relative nav-dropdown-trigger">
-                <button
+                <a
+                  href="/services"
                   className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#333333] hover:text-[#5f1e42] transition-colors rounded-full hover:bg-[#5f1e42]/5"
                   aria-haspopup="true"
                 >
                   {link.label}
                   <ChevronDown size={13} className="opacity-60" />
-                </button>
+                </a>
 
                 {/* Dropdown */}
                 <div className="nav-dropdown" role="menu">
