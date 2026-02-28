@@ -32,17 +32,23 @@ CSS vars (defined in `app/globals.css`):
 ```
 
 ### Typography
-| Role | Font | CSS var | Weight |
-|------|------|---------|--------|
-| Display headings (Hero, section h1) | Cormorant Garamond | `var(--font-display)` | 700 |
-| UI headings (services, cards) | DM Sans | `var(--font-sans)` | 600–700 |
-| Body copy | DM Sans | `var(--font-sans)` | 400 |
-| Sub-headings | Plus Jakarta Sans | `var(--font-heading)` | 600–700 |
-| Price numerals | Cormorant Garamond | `var(--font-display)` | 700 |
+| Role | Font | Weight |
+|------|------|--------|
+| Hero h1 **(exception only)** | Cormorant Garamond `var(--font-display)` | 700 |
+| Section h2 (About, Gallery, FAQ, Features) | Plus Jakarta Sans (inline string) | 800 |
+| Services page h1 | Plus Jakarta Sans (inline string) | 800 |
+| Services page h2 | Plus Jakarta Sans (inline string) | 700 |
+| Card / related h3 | Plus Jakarta Sans (inline string) | 600 |
+| Body copy / labels / metadata | DM Sans `var(--font-sans)` | 400–600 |
+| Price numerals | Cormorant Garamond `var(--font-display)` | 700 |
 
-**Rule**: Landing page hero/section headings → Cormorant Garamond. Services/utility pages headings → DM Sans.
+**Rules**:
+- Hero h1 is the **only** exception that uses Cormorant Garamond
+- All other headings use `'"Plus Jakarta Sans", system-ui, sans-serif'` as a **direct inline string** (not a CSS var) — CSS var resolution can be unreliable at large sizes
+- Primary color `#5f1e42` used **subtly**: hover states, active nav items, CTA buttons, small accents — NOT for prices or body text
+- Hero card background: `#ffffff` (pure white) — no warm cream tones
 
-Fonts are loaded via Google Fonts `<link>` in `app/layout.tsx` (Cormorant Garamond 300–700 + italics, DM Sans 300–700, Plus Jakarta Sans 400–800).
+Fonts loaded in `app/layout.tsx`: Cormorant Garamond 300–700 + italics, DM Sans 300–700, Plus Jakarta Sans 400–800.
 
 ---
 
