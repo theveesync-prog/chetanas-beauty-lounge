@@ -10,9 +10,9 @@ const YOUTUBE = "https://www.youtube.com/@ChetanasBeautyLounge";
 const GMB =
   "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEqqKK6Kz7I0YLRSNagwTko0Nk00NksyTE0xT01OsTKoSLFMS000TTQzNbA0SjNLMvcST85ILUnMS1QvVkhKTSwtqVTIyS_NS08FAL8sGSg&q=chetana%27s+beauty+lounge&sourceid=chrome&ie=UTF-8";
 const MAPS_EMBED =
-  "https://maps.google.com/maps?q=12.869923638607291,74.86059000035216&z=17&ie=UTF8&iwloc=&output=embed";
+  "https://maps.google.com/maps?q=12.8699033,74.8605861&z=17&ie=UTF8&iwloc=&output=embed";
 const MAPS_DIRECTIONS =
-  "https://www.google.com/maps/dir/?api=1&destination=12.869923638607291%2C74.86059000035216&destination_place_id=Chetana%27s+Beauty+Lounge%2C+Kankanady+Bypass+Rd%2C+Mangaluru";
+  "https://www.google.com/maps/place/Chetana's+Beauty+Lounge/@12.8699033,74.8605861,17z/data=!3m1!5s0x3ba35a324415639f:0xc6fd06eb698bc783!4m14!1m7!3m6!1s0x3ba35a36b1ed7ecd:0xd9fea5a65092f6b7!2sChetana's+Beauty+Lounge!8m2!3d12.8699033!4d74.8605861!16s%2Fg%2F11bbxsz_j9!3m5!1s0x3ba35a36b1ed7ecd:0xd9fea5a65092f6b7!8m2!3d12.8699033!4d74.8605861!16s%2Fg%2F11bbxsz_j9";
 
 const pageLinks = [
   { label: "Home", href: "/" },
