@@ -2,7 +2,7 @@
 
 import { useState, useRef, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { ShoppingBag, Check, Sparkles, Star, Tag } from "lucide-react";
+import { ShoppingBag, Check, Sparkles, Star, Tag, Search, X, Phone } from "lucide-react";
 import type { Service } from "@/lib/services-data";
 import { useCart } from "@/lib/cart-context";
 
@@ -88,6 +88,21 @@ const FILTERS: {
   },
 ];
 
+// ── Smart search scoring (no external library needed) ────────────────────────
+function scoreMatch(svc: Service, raw: string): number {
+  const q = raw.toLowerCase().trim();
+  if (!q) return 1;
+  const haystack = `${svc.name} ${svc.description ?? ""} ${svc.slug}`
+    .toLowerCase()
+    .replace(/-/g, " ");
+  let score = 0;
+  for (const word of q.split(/\s+/)) {
+    if (word.length < 2) continue;
+    if (haystack.includes(word)) score += word.length > 3 ? 2 : 1;
+  }
+  return score;
+}
+
 // ── Main component ───────────────────────────────────────────────────────────
 export default function ServicePriceListClient({
   services,
@@ -96,17 +111,27 @@ export default function ServicePriceListClient({
   waLink,
 }: Props) {
   const [filter, setFilter] = useState<Filter>(null);
+  const [query, setQuery] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // ── Filtered list ──────────────────────────────────────────────────────────
+  // ── Filtered + searched list ───────────────────────────────────────────────
   const filtered = useMemo(() => {
-    if (!filter) return services;
-    if (filter === "bestseller") return services.filter((s) => s.bestseller);
-    if (filter === "sale") return services.filter((s) => s.onSale);
-    if (filter === "new") return services.filter((s) => s.isNew);
-    return services;
-  }, [filter, services]);
+    let result = services;
+    if (filter === "bestseller") result = result.filter((s) => s.bestseller);
+    else if (filter === "sale")  result = result.filter((s) => s.onSale);
+    else if (filter === "new")   result = result.filter((s) => s.isNew);
+
+    const q = query.trim();
+    if (q) {
+      result = result
+        .map((s) => ({ s, score: scoreMatch(s, q) }))
+        .filter(({ score }) => score > 0)
+        .sort((a, b) => b.score - a.score)
+        .map(({ s }) => s);
+    }
+    return result;
+  }, [filter, services, query]);
 
   // ── Proximity lift animation ───────────────────────────────────────────────
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
@@ -141,6 +166,31 @@ export default function ServicePriceListClient({
   return (
     <div className="flex-1 min-w-0 pt-2">
 
+      {/* ── Search bar ────────────────────────────────────────────────────── */}
+      <div className="relative mb-5">
+        <Search
+          size={15}
+          className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#ccc] pointer-events-none"
+        />
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search services, e.g. threading, facial…"
+          className="w-full pl-10 pr-9 py-3 rounded-2xl text-sm text-[#111] placeholder:text-[#bbb] bg-white outline-none focus:ring-2 focus:ring-[#5f1e42]/10 focus:border-[#5f1e42]/30 transition-all"
+          style={{ border: "1px solid rgba(0,0,0,0.09)" }}
+        />
+        {query && (
+          <button
+            onClick={() => setQuery("")}
+            aria-label="Clear search"
+            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#ccc] hover:text-[#888] transition-colors"
+          >
+            <X size={14} />
+          </button>
+        )}
+      </div>
+
       {/* ── Filter pills ──────────────────────────────────────────────────── */}
       <div className="flex items-center gap-2 mb-6 flex-wrap">
         {FILTERS.map((f) => {
@@ -170,7 +220,7 @@ export default function ServicePriceListClient({
           );
         })}
 
-        {filter && (
+        {(filter || query.trim()) && filtered.length > 0 && (
           <span className="text-xs text-[#bbb] ml-1">
             {filtered.length} result{filtered.length !== 1 ? "s" : ""}
           </span>
@@ -179,15 +229,53 @@ export default function ServicePriceListClient({
 
       {/* ── Price list card ────────────────────────────────────────────────── */}
       {filtered.length === 0 ? (
-        <div className="rounded-2xl border border-black/6 px-6 py-12 text-center">
-          <p className="text-[#aaa] text-sm">No services match this filter.</p>
-          <button
-            onClick={() => setFilter(null)}
-            className="mt-3 text-xs text-[#5f1e42] font-medium hover:opacity-75 transition-opacity"
-          >
-            Show all →
-          </button>
-        </div>
+        query.trim() ? (
+          /* Search returned nothing → invite them to call */
+          <div className="rounded-2xl border border-black/6 px-6 py-10 text-center">
+            <p className="text-[#555] text-sm leading-relaxed">
+              Couldn&apos;t find what you&apos;re looking for? Our team is happy
+              to help — give us a call and we&apos;ll guide you to the right treatment.
+            </p>
+            <p className="mt-5 text-[10px] uppercase tracking-widest text-[#bbb] font-semibold">
+              Reach us directly
+            </p>
+            <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+              <a
+                href="tel:+919845292411"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium text-[#111] transition-all duration-200 hover:bg-[#5f1e42] hover:text-white"
+                style={{ background: "rgba(0,0,0,0.04)" }}
+              >
+                <Phone size={13} />
+                +91 98452 92411
+              </a>
+              <a
+                href="tel:+919108583714"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium text-[#111] transition-all duration-200 hover:bg-[#5f1e42] hover:text-white"
+                style={{ background: "rgba(0,0,0,0.04)" }}
+              >
+                <Phone size={13} />
+                +91 91085 83714
+              </a>
+            </div>
+            <button
+              onClick={() => setQuery("")}
+              className="mt-5 text-xs text-[#5f1e42] font-medium hover:opacity-75 transition-opacity"
+            >
+              Clear search →
+            </button>
+          </div>
+        ) : (
+          /* Filter returned nothing, no search active */
+          <div className="rounded-2xl border border-black/6 px-6 py-12 text-center">
+            <p className="text-[#aaa] text-sm">No services match this filter.</p>
+            <button
+              onClick={() => setFilter(null)}
+              className="mt-3 text-xs text-[#5f1e42] font-medium hover:opacity-75 transition-opacity"
+            >
+              Show all →
+            </button>
+          </div>
+        )
       ) : (
         <div
           ref={containerRef}
