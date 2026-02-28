@@ -108,9 +108,9 @@ function StatCard({
       {/* Counter number */}
       <p
         style={{
-          fontFamily: "var(--font-display)",
+          fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
           fontSize: "clamp(3.5rem, 7vw, 5.5rem)",
-          fontWeight: 700,
+          fontWeight: 800,
           lineHeight: 1,
           color: "#111",
           letterSpacing: "-0.03em",
@@ -135,7 +135,6 @@ function StatCard({
 export default function Features() {
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
-  const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
 
   // Trigger counters once on scroll into view
   useEffect(() => {
@@ -162,43 +161,13 @@ export default function Features() {
     return () => revealObserver.disconnect();
   }, []);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setCursor({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
-  const handleMouseLeave = () => setCursor(null);
-
   return (
     <section
       ref={sectionRef}
       id="features"
       className="relative overflow-hidden py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       aria-label="Why choose Chetana's Beauty"
     >
-      {/* Static warm radial glow behind cards */}
-      <div
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 60%, rgba(95,30,66,0.07) 0%, rgba(232,184,13,0.03) 45%, transparent 75%)",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Cursor spotlight */}
-      {cursor && (
-        <div
-          className="absolute inset-0 pointer-events-none z-0"
-          style={{
-            background: `radial-gradient(500px circle at ${cursor.x}px ${cursor.y}px, rgba(95,30,66,0.11), transparent 70%)`,
-            transition: "background 0.05s ease",
-          }}
-          aria-hidden="true"
-        />
-      )}
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto">

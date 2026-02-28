@@ -43,15 +43,21 @@ export default function Navbar() {
   };
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white shadow-sm border-b border-black/6"
-          : "bg-white/95 backdrop-blur-sm"
-      )}
-    >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-18 flex items-center justify-between gap-6">
+    <header className="fixed top-0 inset-x-0 z-50 pt-3 px-4 pointer-events-none">
+      <nav
+        className={cn(
+          "max-w-6xl mx-auto px-4 sm:px-5 h-14 flex items-center justify-between gap-6 rounded-2xl pointer-events-auto transition-all duration-300",
+        )}
+        style={{
+          background: scrolled ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.78)",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+          border: "1px solid rgba(255,255,255,0.75)",
+          boxShadow: scrolled
+            ? "0 8px 32px rgba(0,0,0,0.10), 0 1px 0 rgba(255,255,255,0.95) inset"
+            : "0 2px 20px rgba(0,0,0,0.06), 0 1px 0 rgba(255,255,255,0.95) inset",
+        }}
+      >
 
         {/* ─── Logo ─────────────────────────────────── */}
         <a
@@ -144,12 +150,19 @@ export default function Navbar() {
       {/* ─── Mobile Menu ────────────────────────────── */}
       <div
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
-          mobileOpen ? "max-h-screen border-t border-[#5f1e42]/8" : "max-h-0"
+          "md:hidden pointer-events-auto mx-4 mt-2 overflow-hidden rounded-2xl transition-all duration-300 ease-in-out",
+          mobileOpen ? "max-h-screen" : "max-h-0"
         )}
+        style={{
+          background: "rgba(255,255,255,0.95)",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+          border: mobileOpen ? "1px solid rgba(255,255,255,0.75)" : "none",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+        }}
         aria-hidden={!mobileOpen}
       >
-        <div className="bg-white/98 backdrop-blur-sm px-4 pt-4 pb-6 space-y-1">
+        <div className="px-4 pt-4 pb-6 space-y-1">
           {navLinks.map((link) =>
             link.hasDropdown ? (
               <div key={link.label}>
