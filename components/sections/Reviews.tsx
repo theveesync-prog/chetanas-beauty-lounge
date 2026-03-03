@@ -139,7 +139,7 @@ export default function Reviews() {
     <section
       ref={sectionRef}
       id="reviews"
-      className="py-24 md:py-32 bg-white overflow-hidden"
+      className="py-14 md:py-20 bg-white overflow-hidden"
       aria-label="Client reviews of Chetana's Beauty"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,9 +153,9 @@ export default function Reviews() {
           <h2
             className="reveal reveal-delay-1 text-[#111111] mb-5"
             style={{
-              fontFamily: "var(--font-display)",
+              fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
               fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-              fontWeight: 700,
+              fontWeight: 800,
               lineHeight: 1.08,
               letterSpacing: "-0.02em",
             }}

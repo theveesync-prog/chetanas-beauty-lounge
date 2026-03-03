@@ -86,7 +86,7 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8"
+      className="py-14 md:py-20 px-4 sm:px-6 lg:px-8"
       style={{ backgroundColor: "#ffffff" }}
       aria-label="Book an appointment at Chetana's Beauty"
     >

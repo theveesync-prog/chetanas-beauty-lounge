@@ -165,7 +165,7 @@ export default function Features() {
     <section
       ref={sectionRef}
       id="features"
-      className="relative overflow-hidden py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white"
+      className="relative overflow-hidden py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-white"
       aria-label="Why choose Chetana's Beauty"
     >
 

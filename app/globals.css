@@ -117,6 +117,16 @@ body {
 .nav-dropdown-trigger:focus-within .nav-dropdown {
   display: block;
 }
+/* Invisible bridge fills the gap so mouse can travel from trigger → dropdown */
+.nav-dropdown-trigger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.75rem;
+  height: 0.75rem;
+  display: block;
+}
 
 /* ─── Scroll Reveal ────────────────────────────────────────── */
 .reveal {
