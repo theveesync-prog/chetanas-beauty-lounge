@@ -21,8 +21,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cat = getCategoryBySlug(category);
   if (!cat) return {};
   return {
-    title: `${cat.label} — Chetana's Beauty Lounge`,
+    title: `${cat.label} in Mangalore | Chetana's Beauty`,
     description: cat.tagline,
+    keywords: [
+      `${cat.label} Mangalore`,
+      `${cat.label} Mangaluru`,
+      `best ${cat.label.toLowerCase()} salon Mangalore`,
+      `${cat.label.toLowerCase()} near me Mangalore`,
+      "ladies salon Mangalore",
+      "Chetana's Beauty Lounge",
+    ],
+    openGraph: {
+      title: `${cat.label} in Mangalore | Chetana's Beauty`,
+      description: cat.tagline,
+      type: "website",
+    },
+    alternates: {
+      canonical: `https://chetanasbeauty.in/services/${category}`,
+    },
   };
 }
 
@@ -33,9 +49,22 @@ export default async function ServiceCategoryPage({ params }: Props) {
 
   const waLink = `${WHATSAPP_BASE}${encodeURIComponent(cat.label)}%20services.`;
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://chetanasbeauty.in" },
+      { "@type": "ListItem", position: 2, name: cat.label, item: `https://chetanasbeauty.in/services/${cat.slug}` },
+    ],
+  };
+
   return (
     <>
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
       {/* Page header */}
       <div className="bg-white pt-28 pb-4 px-4 sm:px-6 lg:px-8">
@@ -51,13 +80,10 @@ export default async function ServiceCategoryPage({ params }: Props) {
               letterSpacing: "-0.02em",
             }}
           >
-            Affordable beauty,
-            <br />
-            exceptional results
+            {cat.label}
           </h1>
-          <p className="mt-4 text-[#888] text-sm max-w-md leading-relaxed">
-            Six categories, every treatment crafted for Mangalore&rsquo;s
-            women — all under one roof.
+          <p className="mt-3 text-[#888] text-sm max-w-md leading-relaxed">
+            {cat.tagline}
           </p>
         </div>
       </div>

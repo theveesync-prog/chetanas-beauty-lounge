@@ -29,9 +29,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, service } = await params;
   const result = getServiceBySlug(category, service);
   if (!result) return {};
+  const { category: cat, service: svc } = result;
+  const description = svc.longDescription ?? svc.description;
   return {
-    title: `${result.service.name} — ${result.category.label} | Chetana's Beauty Lounge`,
-    description: result.service.longDescription ?? result.service.description,
+    title: `${svc.name} in Mangalore — ${cat.label} | Chetana's Beauty`,
+    description,
+    keywords: [
+      `${svc.name} Mangalore`,
+      `${svc.name} Mangaluru`,
+      `${cat.label.toLowerCase()} Mangalore`,
+      `best ${svc.name.toLowerCase()} Mangalore`,
+      "ladies salon Mangalore",
+      "Chetana's Beauty Lounge",
+    ],
+    openGraph: {
+      title: `${svc.name} — Chetana's Beauty Mangalore`,
+      description,
+      type: "website",
+    },
+    alternates: {
+      canonical: `https://chetanasbeauty.in/services/${category}/${service}`,
+    },
   };
 }
 
@@ -48,9 +66,50 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   const waLink = `${WHATSAPP_BASE}${encodeURIComponent(svc.name)}%20(${encodeURIComponent(svc.price)}).`;
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://chetanasbeauty.in" },
+      { "@type": "ListItem", position: 2, name: cat.label, item: `https://chetanasbeauty.in/services/${cat.slug}` },
+      { "@type": "ListItem", position: 3, name: svc.name, item: `https://chetanasbeauty.in/services/${cat.slug}/${svc.slug}` },
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: svc.name,
+    description: svc.longDescription ?? svc.description,
+    url: `https://chetanasbeauty.in/services/${cat.slug}/${svc.slug}`,
+    provider: {
+      "@type": "BeautySalon",
+      name: "Chetana's Beauty",
+      url: "https://chetanasbeauty.in",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Mangalore",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mangalore",
+    },
+  };
+
   return (
     <>
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
 
       {/* Breadcrumb */}
       <div className="bg-white pt-24 pb-6 px-4 sm:px-6 lg:px-8">

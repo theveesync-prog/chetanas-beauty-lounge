@@ -99,9 +99,9 @@ export default function Contact() {
         <h2
           className="reveal reveal-delay-1 text-[#111] mb-10 md:mb-12"
           style={{
-            fontFamily: "var(--font-display)",
+            fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
             fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
-            fontWeight: 700,
+            fontWeight: 800,
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
           }}
@@ -139,7 +139,7 @@ export default function Contact() {
             <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
               <h3
                 style={{
-                  fontFamily: "var(--font-display)",
+                  fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
                   fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
                   fontWeight: 700,
                   lineHeight: 1.15,
@@ -169,7 +169,7 @@ export default function Contact() {
           <div className="bg-white p-8 md:p-10 lg:p-12 flex flex-col justify-center">
             <h3
               className="text-[#111] mb-1"
-              style={{ fontFamily: "var(--font-heading)", fontSize: "1.35rem", fontWeight: 700 }}
+              style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif', fontSize: "1.35rem", fontWeight: 700 }}
             >
               Book an appointment
             </h3>

@@ -78,9 +78,9 @@ export default function Footer() {
             <h2
               className="text-[#111]"
               style={{
-                fontFamily: "var(--font-display)",
+                fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
                 fontSize: "clamp(2rem, 4vw, 3rem)",
-                fontWeight: 700,
+                fontWeight: 800,
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
               }}
