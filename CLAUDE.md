@@ -5,7 +5,7 @@
 **Chetana's Beauty Lounge** — Mangalore's CIDESCO-certified women-only beauty salon & academy, established 1998.
 - **Framework**: Next.js 15 App Router + TypeScript
 - **Styling**: Tailwind CSS v4 (`@import "tailwindcss"` syntax — no `tailwind.config.js`)
-- **Branch**: `claude/hero-image-glowing-button-uOENC`
+- **Branch**: `main`
 
 ---
 
@@ -172,6 +172,6 @@ CartProvider, useCart(), CartItem { serviceSlug, categorySlug, name, price, ... 
 
 ## Git
 
-- **Branch**: `claude/hero-image-glowing-button-uOENC`
-- **Push**: `git push -u origin claude/hero-image-glowing-button-uOENC`
+- **Branch**: `main` (commit directly, no feature branches)
+- **Push**: `git push` (local `main` pushes to remote via configured refspec)
 - Session URL for commits: `https://claude.ai/code/session_01BcGbeukdvSvNSxFuSsCVnp`
