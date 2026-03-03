@@ -52,9 +52,11 @@ function formatDate(iso: string) {
 const WHATSAPP =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
 
+const PJS = '"Plus Jakarta Sans", system-ui, sans-serif';
+
 function ContentRenderer({ sections }: { sections: BlogSection[] }) {
   return (
-    <div className="prose-blog">
+    <div>
       {sections.map((section, i) => {
         switch (section.type) {
           case "paragraph":
@@ -62,7 +64,7 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
               <p
                 key={i}
                 className="text-base md:text-lg leading-relaxed mb-6"
-                style={{ color: "#3a2a2a" }}
+                style={{ color: "#444", fontFamily: "var(--font-sans)" }}
               >
                 {section.text}
               </p>
@@ -72,8 +74,14 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
             return (
               <h2
                 key={i}
-                className="font-display text-2xl md:text-3xl font-semibold mt-10 mb-4"
-                style={{ color: "#5f1e42" }}
+                className="mt-10 mb-4"
+                style={{
+                  fontFamily: PJS,
+                  fontWeight: 700,
+                  fontSize: "clamp(1.35rem, 2.5vw, 1.65rem)",
+                  letterSpacing: "-0.015em",
+                  color: "#5f1e42",
+                }}
               >
                 {section.text}
               </h2>
@@ -83,8 +91,14 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
             return (
               <h3
                 key={i}
-                className="font-display text-xl font-semibold mt-7 mb-3"
-                style={{ color: "#1a0d0d" }}
+                className="mt-7 mb-3"
+                style={{
+                  fontFamily: PJS,
+                  fontWeight: 600,
+                  fontSize: "1.15rem",
+                  letterSpacing: "-0.01em",
+                  color: "#111",
+                }}
               >
                 {section.text}
               </h3>
@@ -96,7 +110,7 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
                 {section.items?.map((item, j) => (
                   <li key={j} className="flex gap-3 items-start">
                     <span
-                      className="mt-1.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
+                      className="mt-2 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
                       style={{ backgroundColor: "rgba(95,30,66,0.1)" }}
                       aria-hidden="true"
                     >
@@ -107,7 +121,7 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
                     </span>
                     <span
                       className="text-base md:text-lg leading-relaxed"
-                      style={{ color: "#3a2a2a" }}
+                      style={{ color: "#444", fontFamily: "var(--font-sans)" }}
                     >
                       {item}
                     </span>
@@ -121,22 +135,19 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
               <div
                 key={i}
                 className="my-8 rounded-2xl p-6 border-l-4"
-                style={{
-                  backgroundColor: "#fdf5d6",
-                  borderLeftColor: "#e8b80d",
-                }}
+                style={{ backgroundColor: "#fdf5d6", borderLeftColor: "#e8b80d" }}
                 role="note"
                 aria-label="Pro tip"
               >
                 <p
                   className="text-xs font-bold uppercase tracking-wider mb-2"
-                  style={{ color: "#b8860b" }}
+                  style={{ color: "#b8860b", fontFamily: PJS }}
                 >
                   Pro Tip
                 </p>
                 <p
                   className="text-base md:text-lg leading-relaxed"
-                  style={{ color: "#3a2a2a" }}
+                  style={{ color: "#444", fontFamily: "var(--font-sans)" }}
                 >
                   {section.text}
                 </p>
@@ -147,26 +158,29 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
             return (
               <blockquote
                 key={i}
-                className="my-8 rounded-2xl p-7 relative"
-                style={{ backgroundColor: "#f5ece4" }}
+                className="my-8 rounded-2xl p-7 relative border"
+                style={{
+                  backgroundColor: "rgba(95,30,66,0.03)",
+                  borderColor: "rgba(95,30,66,0.12)",
+                }}
               >
                 <span
-                  className="font-display text-6xl leading-none absolute top-2 left-6 opacity-20"
-                  style={{ color: "#5f1e42" }}
+                  className="text-6xl leading-none absolute top-2 left-6 opacity-15 select-none"
+                  style={{ color: "#5f1e42", fontFamily: PJS, fontWeight: 800 }}
                   aria-hidden="true"
                 >
                   &ldquo;
                 </span>
                 <p
-                  className="font-display text-xl md:text-2xl italic font-medium leading-snug mb-3 relative"
-                  style={{ color: "#5f1e42" }}
+                  className="text-xl md:text-2xl italic font-medium leading-snug mb-3 relative"
+                  style={{ color: "#5f1e42", fontFamily: "var(--font-sans)" }}
                 >
                   {section.text}
                 </p>
                 {section.author && (
                   <footer
                     className="text-sm font-semibold"
-                    style={{ color: "#8c7b72" }}
+                    style={{ color: "#888", fontFamily: "var(--font-sans)" }}
                   >
                     — {section.author}
                   </footer>
@@ -178,12 +192,15 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
             return (
               <div
                 key={i}
-                className="my-8 rounded-2xl p-7 text-center"
-                style={{ backgroundColor: "rgba(95,30,66,0.04)", border: "1px solid rgba(95,30,66,0.1)" }}
+                className="my-8 rounded-2xl p-7 text-center border"
+                style={{
+                  backgroundColor: "rgba(95,30,66,0.03)",
+                  borderColor: "rgba(95,30,66,0.10)",
+                }}
               >
                 <p
                   className="text-base md:text-lg font-medium mb-5"
-                  style={{ color: "#3a2a2a" }}
+                  style={{ color: "#333", fontFamily: "var(--font-sans)" }}
                 >
                   {section.text}
                 </p>
@@ -194,12 +211,7 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white hover:opacity-90 transition-opacity"
                   style={{ backgroundColor: "#5f1e42" }}
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-4 h-4"
-                    aria-hidden="true"
-                  >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
                     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.199-1.435A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.366l-.358-.213-3.683.853.879-3.596-.234-.37A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
                   </svg>
@@ -262,84 +274,88 @@ export default async function BlogPostPage({ params }: Props) {
       <Navbar />
 
       {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* ── Cover Image Hero ───────────────────────────────────── */}
-      <div className="relative w-full pt-16" style={{ height: "520px" }}>
+      <div className="relative w-full pt-[72px]" style={{ height: "500px" }}>
         <img
           src={post.coverImage}
           alt={post.coverAlt}
           loading="eager"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Dark gradient overlay for legibility */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, rgba(26,13,13,0.82) 0%, rgba(26,13,13,0.35) 50%, rgba(26,13,13,0.15) 100%)",
+              "linear-gradient(to top, rgba(10,4,4,0.88) 0%, rgba(10,4,4,0.4) 50%, rgba(10,4,4,0.1) 100%)",
           }}
           aria-hidden="true"
         />
 
         {/* Hero content pinned to bottom */}
-        <div className="absolute bottom-0 left-0 right-0 px-4 pb-10">
-          <div className="max-w-4xl mx-auto">
+        <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-6 pb-10">
+          <div className="max-w-3xl mx-auto">
             {/* Breadcrumb */}
             <nav
-              className="flex items-center gap-1.5 text-xs font-medium mb-5 text-white/60"
+              className="flex items-center gap-1.5 text-xs font-medium mb-4 text-white/55"
               aria-label="Breadcrumb"
             >
               <a href="/" className="hover:text-white transition-colors">Home</a>
               <span aria-hidden="true">/</span>
               <a href="/blog" className="hover:text-white transition-colors">Blog</a>
               <span aria-hidden="true">/</span>
-              <span className="text-white/90 truncate max-w-[200px]">{post.title}</span>
+              <span className="text-white/80 truncate max-w-[200px]">{post.title}</span>
             </nav>
 
             {/* Category */}
             <span
-              className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white mb-4"
-              style={{ backgroundColor: "rgba(232,184,13,0.9)" , color: "#3a1a00" }}
+              className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
+              style={{ backgroundColor: "rgba(232,184,13,0.9)", color: "#3a1a00" }}
             >
               {post.category}
             </span>
 
             {/* Title */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight mb-5 max-w-3xl">
+            <h1
+              className="text-white leading-tight mb-5 max-w-2xl"
+              style={{
+                fontFamily: PJS,
+                fontWeight: 800,
+                fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
+                letterSpacing: "-0.02em",
+              }}
+            >
               {post.title}
             </h1>
 
             {/* Author + Meta */}
-            <div className="flex flex-wrap items-center gap-4 text-sm text-white/75">
+            <div
+              className="flex flex-wrap items-center gap-4 text-xs text-white/70"
+              style={{ fontFamily: "var(--font-sans)" }}
+            >
               <div className="flex items-center gap-2">
                 <span
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 border-2 border-white/30"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 border border-white/25"
                   style={{ backgroundColor: post.authorColor }}
                   aria-hidden="true"
                 >
                   {post.authorInitials}
                 </span>
                 <div>
-                  <p className="font-semibold text-white leading-none">{post.author}</p>
-                  <p className="text-xs mt-0.5 text-white/60">{post.authorTitle}</p>
+                  <p className="font-semibold text-white text-xs leading-none">{post.author}</p>
+                  <p className="text-xs mt-0.5 text-white/55">{post.authorTitle}</p>
                 </div>
               </div>
-              <span aria-hidden="true" className="opacity-40">|</span>
+              <span aria-hidden="true" className="opacity-30">|</span>
               <span className="flex items-center gap-1.5">
-                <CalendarDays size={13} aria-hidden="true" />
+                <CalendarDays size={12} aria-hidden="true" />
                 {formatDate(post.publishedAt)}
               </span>
-              <span aria-hidden="true" className="opacity-40">|</span>
+              <span aria-hidden="true" className="opacity-30">|</span>
               <span className="flex items-center gap-1.5">
-                <Clock size={13} aria-hidden="true" />
+                <Clock size={12} aria-hidden="true" />
                 {post.readTime} min read
               </span>
             </div>
@@ -348,29 +364,26 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* ── Article Body ───────────────────────────────────────── */}
-      <main
-        className="py-14 px-4"
-        style={{ backgroundColor: "#fdf8f5" }}
-        aria-label="Article content"
-      >
-        <div className="max-w-4xl mx-auto">
+      <main className="bg-white py-14 px-4 sm:px-6" aria-label="Article content">
+        <div className="max-w-3xl mx-auto">
           {/* Back link */}
           <a
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-medium mb-10 transition-colors hover:gap-3"
+            className="inline-flex items-center gap-2 text-xs font-semibold mb-10 transition-all hover:gap-3"
             style={{ color: "#5f1e42" }}
             aria-label="Back to all articles"
           >
-            <ArrowLeft size={15} aria-hidden="true" />
+            <ArrowLeft size={14} aria-hidden="true" />
             All Articles
           </a>
 
           {/* Excerpt / lead */}
           <p
-            className="font-display text-xl md:text-2xl font-medium leading-relaxed mb-10 pb-8 border-b"
+            className="text-lg md:text-xl leading-relaxed mb-10 pb-8 border-b font-medium"
             style={{
               color: "#5f1e42",
-              borderColor: "rgba(95,30,66,0.12)",
+              borderColor: "rgba(95,30,66,0.10)",
+              fontFamily: "var(--font-sans)",
             }}
           >
             {post.excerpt}
@@ -382,14 +395,14 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Tags */}
           <div
             className="mt-10 pt-8 border-t flex flex-wrap gap-2"
-            style={{ borderColor: "rgba(95,30,66,0.12)" }}
+            style={{ borderColor: "rgba(0,0,0,0.07)" }}
           >
             {post.tags.map((tag) => (
               <span
                 key={tag}
                 className="px-3 py-1 rounded-full text-xs font-medium"
                 style={{
-                  backgroundColor: "rgba(95,30,66,0.07)",
+                  backgroundColor: "rgba(95,30,66,0.06)",
                   color: "#5f1e42",
                 }}
               >
@@ -402,29 +415,28 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* ── Related Posts ──────────────────────────────────────── */}
       {related.length > 0 && (
-        <section
-          className="py-16 px-4"
-          style={{ backgroundColor: "#f5ece4" }}
-          aria-label="Related articles"
-        >
-          <div className="max-w-7xl mx-auto">
-            <p className="section-label mb-2">Keep Reading</p>
+        <section className="bg-white border-t py-16 px-4 sm:px-6 lg:px-8" style={{ borderColor: "rgba(0,0,0,0.06)" }} aria-label="Related articles">
+          <div className="max-w-5xl mx-auto">
+            <span className="section-label">Keep Reading</span>
             <h2
-              className="font-display text-3xl font-semibold mb-10"
-              style={{ color: "#5f1e42" }}
+              className="mt-3 mb-10"
+              style={{
+                fontFamily: PJS,
+                fontWeight: 700,
+                fontSize: "clamp(1.5rem, 3vw, 2rem)",
+                letterSpacing: "-0.015em",
+                color: "#111",
+              }}
             >
               You Might Also Like
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {related.map((rPost) => (
                 <article key={rPost.slug}>
                   <a
                     href={`/blog/${rPost.slug}`}
-                    className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-sm border card-hover"
-                    style={{
-                      borderColor: "rgba(95,30,66,0.08)",
-                      backgroundColor: "white",
-                    }}
+                    className="group flex flex-col h-full rounded-2xl overflow-hidden border hover:border-[#5f1e42]/20 hover:-translate-y-0.5 transition-all duration-200"
+                    style={{ borderColor: "rgba(0,0,0,0.06)", backgroundColor: "white" }}
                     aria-label={`Read: ${rPost.title}`}
                   >
                     {/* Thumbnail */}
@@ -446,14 +458,20 @@ export default async function BlogPostPage({ params }: Props) {
                     {/* Content */}
                     <div className="flex flex-col flex-1 p-5 gap-2">
                       <h3
-                        className="font-display text-lg font-semibold leading-snug"
-                        style={{ color: "#1a0d0d" }}
+                        className="leading-snug"
+                        style={{
+                          fontFamily: PJS,
+                          fontWeight: 600,
+                          fontSize: "0.95rem",
+                          letterSpacing: "-0.01em",
+                          color: "#111",
+                        }}
                       >
                         {rPost.title}
                       </h3>
                       <p
-                        className="text-sm leading-relaxed flex-1"
-                        style={{ color: "#8c7b72" }}
+                        className="text-xs leading-relaxed flex-1"
+                        style={{ color: "#666", fontFamily: "var(--font-sans)" }}
                       >
                         {rPost.excerpt.slice(0, 90)}…
                       </p>
@@ -472,13 +490,12 @@ export default async function BlogPostPage({ params }: Props) {
         </section>
       )}
 
-      {/* ── Smooth CTA ─────────────────────────────────────────── */}
+      {/* ── CTA ────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden py-20 px-4"
         style={{ backgroundColor: "#5f1e42" }}
         aria-label="Book an appointment"
       >
-        {/* Decorative circles */}
         <div
           className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-10 pointer-events-none"
           style={{ backgroundColor: "#e8b80d" }}
@@ -493,14 +510,26 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="relative max-w-3xl mx-auto text-center">
           <p
             className="text-xs font-semibold uppercase tracking-widest mb-4"
-            style={{ color: "rgba(232,184,13,0.8)" }}
+            style={{ color: "rgba(232,184,13,0.85)" }}
           >
             Ready to Try It?
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-white mb-5 leading-tight">
-            Turn these tips into your<br className="hidden sm:block" /> real transformation
+          <h2
+            className="text-white mb-5 leading-tight"
+            style={{
+              fontFamily: PJS,
+              fontWeight: 800,
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Turn these tips into your
+            <br className="hidden sm:block" /> real transformation
           </h2>
-          <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          <p
+            className="text-white/70 text-base mb-10 max-w-xl mx-auto leading-relaxed"
+            style={{ fontFamily: "var(--font-sans)" }}
+          >
             Our CIDESCO-certified team in Kankanady, Mangalore is ready to bring the
             advice in this article to life — for your skin, hair, or special occasion.
           </p>
@@ -509,15 +538,10 @@ export default async function BlogPostPage({ params }: Props) {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-semibold text-sm btn-gold shadow-lg hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-semibold text-sm btn-gold hover:opacity-90 transition-opacity"
               style={{ color: "#3a1a00" }}
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-5 h-5"
-                aria-hidden="true"
-              >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.199-1.435A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.366l-.358-.213-3.683.853.879-3.596-.234-.37A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
               </svg>
@@ -525,9 +549,9 @@ export default async function BlogPostPage({ params }: Props) {
             </a>
             <a
               href="/blog"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-sm border border-white/30 text-white hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm border border-white/25 text-white hover:bg-white/10 transition-colors"
             >
-              <ArrowLeft size={15} aria-hidden="true" />
+              <ArrowLeft size={14} aria-hidden="true" />
               More Articles
             </a>
           </div>
