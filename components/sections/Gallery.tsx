@@ -10,51 +10,46 @@ const INSTAGRAM_URL = "https://www.instagram.com/chetanasbeautylounge";
 const feedTiles = [
   {
     id: 1,
-    label: "Bridal Looks",
-    sublabel: "Wedding ready ✨",
-    gradient: "linear-gradient(135deg, #5f1e42 0%, #8b4b6b 60%, #c4849a 100%)",
-    icon: "💍",
-    size: "large", // spans 2 rows on desktop
+    label: "Pedicure Care",
+    sublabel: "Because your feet deserve it",
+    image: "/images/gallery/gallery-pedicure-care.webp",
+    link: "https://www.instagram.com/reel/Dbx-GcnheLg/",
+    // Photo already has "Gentle reminder: PEDICURE" text baked in
+    showOverlayText: false,
   },
   {
     id: 2,
-    label: "Skin Glow",
-    sublabel: "Facials & de-tan",
-    gradient: "linear-gradient(135deg, #c48b3a 0%, #e8b80d 60%, #f5d87a 100%)",
-    icon: "✨",
-    size: "small",
+    label: "Relaxing Massage",
+    sublabel: "Body treatments",
+    image: "/images/gallery/gallery-relaxing-massage.webp",
+    link: "https://www.instagram.com/reel/DbswaGwBhOU/",
+    showOverlayText: true,
   },
   {
     id: 3,
-    label: "Hair Styling",
-    sublabel: "Cuts & colour",
-    gradient: "linear-gradient(135deg, #3a1a2e 0%, #5f1e42 60%, #8c4a6a 100%)",
-    icon: "💇‍♀️",
-    size: "small",
+    label: "Product Tips",
+    sublabel: "Skincare, simplified",
+    image: "/images/gallery/gallery-product-tips.webp",
+    link: "https://www.instagram.com/p/DTSs5s_DZ2N/",
+    // Photo already has "STOP GUESSING WITH RANDOM PRODUCTS" text baked in
+    showOverlayText: false,
   },
   {
     id: 4,
-    label: "Nail Art",
-    sublabel: "Mani & pedi",
-    gradient: "linear-gradient(135deg, #6b2d4a 0%, #a05070 60%, #d4a0b5 100%)",
-    icon: "💅",
-    size: "small",
+    label: "Hair Color Transformation",
+    sublabel: "Cuts & colour",
+    image: "/images/gallery/gallery-hair-color-transformation.webp",
+    link: "https://www.instagram.com/reel/DSzfApTEzL-/",
+    showOverlayText: true,
   },
   {
     id: 5,
-    label: "Spa Day",
-    sublabel: "Body treatments",
-    gradient: "linear-gradient(135deg, #7a5c3a 0%, #b8860b 60%, #e8c57a 100%)",
-    icon: "🌿",
-    size: "small",
-  },
-  {
-    id: 6,
-    label: "Makeovers",
-    sublabel: "Party & events",
-    gradient: "linear-gradient(135deg, #2a0d1f 0%, #5f1e42 50%, #9b4060 100%)",
-    icon: "💋",
-    size: "small",
+    label: "Hair Care Tips",
+    sublabel: "The truth about damage",
+    image: "/images/gallery/gallery-hair-care-tips.webp",
+    link: "https://www.instagram.com/p/DRmd4ZHDTzi/",
+    // Photo already has "THE TRUTH BEHIND HAIR COLORING DAMAGE" text baked in
+    showOverlayText: false,
   },
 ];
 
@@ -77,33 +72,33 @@ function FeedTile({
 }) {
   return (
     <a
-      href={INSTAGRAM_URL}
+      href={tile.link}
       target="_blank"
       rel="noopener noreferrer"
       className={`group relative overflow-hidden rounded-2xl block ${className}`}
       aria-label={`${tile.label} — view on Instagram @chetanasbeautylounge`}
-      style={{ background: tile.gradient }}
     >
-      {/* Texture overlay */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 40%)",
-        }}
-        aria-hidden="true"
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={tile.image}
+        alt={tile.label}
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
       />
 
-      {/* Default state content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 transition-opacity duration-300 group-hover:opacity-0">
-        <span className="text-3xl" role="img" aria-label={tile.label}>
-          {tile.icon}
-        </span>
-        <p className="text-white font-semibold text-sm tracking-wide drop-shadow-sm">
-          {tile.label}
-        </p>
-        <p className="text-white/70 text-xs">{tile.sublabel}</p>
-      </div>
+      {/* Bottom label gradient — only for photos without their own baked-in text */}
+      {tile.showOverlayText && (
+        <div
+          className="absolute inset-x-0 bottom-0 h-2/3 flex flex-col justify-end p-3 transition-opacity duration-300 group-hover:opacity-0"
+          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 70%)" }}
+        >
+          <p className="text-white font-semibold text-sm tracking-wide drop-shadow-sm">
+            {tile.label}
+          </p>
+          <p className="text-white/70 text-xs">{tile.sublabel}</p>
+        </div>
+      )}
 
       {/* Hover overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/50 backdrop-blur-[2px] opacity-0 transition-all duration-300 group-hover:opacity-100">
@@ -196,32 +191,32 @@ export default function Gallery() {
 
             {/* Large tile — spans 2 rows on desktop */}
             <a
-              href={INSTAGRAM_URL}
+              href={largeTile.link}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative overflow-hidden rounded-2xl col-span-1 md:col-span-1 md:row-span-2 min-h-[200px] md:min-h-0 block"
               aria-label={`${largeTile.label} — view on Instagram @chetanasbeautylounge`}
-              style={{ background: largeTile.gradient }}
             >
-              {/* Texture */}
-              <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 40%)",
-                }}
-                aria-hidden="true"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={largeTile.image}
+                alt={largeTile.label}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 transition-opacity duration-300 group-hover:opacity-0">
-                <span className="text-4xl md:text-5xl" role="img" aria-label={largeTile.label}>
-                  {largeTile.icon}
-                </span>
-                <p className="text-white font-semibold text-base md:text-lg tracking-wide drop-shadow-sm">
-                  {largeTile.label}
-                </p>
-                <p className="text-white/70 text-sm">{largeTile.sublabel}</p>
-              </div>
+              {/* Content — only for photos without their own baked-in text */}
+              {largeTile.showOverlayText && (
+                <div
+                  className="absolute inset-x-0 bottom-0 h-2/3 flex flex-col justify-end p-4 transition-opacity duration-300 group-hover:opacity-0"
+                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 70%)" }}
+                >
+                  <p className="text-white font-semibold text-base md:text-lg tracking-wide drop-shadow-sm">
+                    {largeTile.label}
+                  </p>
+                  <p className="text-white/70 text-sm">{largeTile.sublabel}</p>
+                </div>
+              )}
               {/* Hover */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/50 backdrop-blur-[2px] opacity-0 transition-all duration-300 group-hover:opacity-100">
                 <div className="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center ring-2 ring-white/40 group-hover:scale-110 transition-transform duration-300">
