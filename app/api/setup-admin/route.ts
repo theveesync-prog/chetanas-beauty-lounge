@@ -1,4 +1,5 @@
 import { getPayload } from 'payload'
+import { pushDevSchema } from '@payloadcms/drizzle'
 import config from '@/payload.config.ts'
 
 export async function GET(request: Request) {
@@ -20,6 +21,13 @@ export async function GET(request: Request) {
 
   try {
     const payload = await getPayload({ config })
+
+    // payload.db's dev-only schema push is gated on NODE_ENV in the
+    // library's connect.js, which always resolves to 'production' on
+    // Vercel. Call it directly to create tables on first run against
+    // a brand-new, empty database.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    await pushDevSchema(payload.db as any)
 
     const existing = await payload.find({
       collection: 'users',
