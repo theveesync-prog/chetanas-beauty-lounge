@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const WHATSAPP_SALON =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
@@ -102,6 +103,15 @@ export default function Hero() {
           className="absolute top-0 bottom-0 left-0 flex flex-col justify-center"
           style={{ width: "55%", zIndex: 2, padding: "3.5rem 3.5rem 7rem" }}
         >
+          {/* Logo */}
+          <Image
+            src="/logo/chetanas-logo.png"
+            alt="Chetana's Beauty Lounge & Education Foundation"
+            width={2000}
+            height={805}
+            className="hero-reveal reveal h-14 w-auto mb-6"
+          />
+
           {/* H1 */}
           <h1
             className="hero-reveal reveal text-[#2d2d2d] mb-5"
@@ -206,6 +216,15 @@ export default function Hero() {
       >
         {/* Text block */}
         <div className="px-8 pt-10 pb-6">
+          {/* Logo */}
+          <Image
+            src="/logo/chetanas-logo.png"
+            alt="Chetana's Beauty Lounge & Education Foundation"
+            width={2000}
+            height={805}
+            className="hero-reveal reveal h-10 w-auto mb-5"
+          />
+
           <p
             className="hero-reveal reveal text-[#2d2d2d] mb-4"
             style={{

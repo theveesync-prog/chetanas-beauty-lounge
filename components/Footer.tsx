@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 // ─── Constants ─────────────────────────────────────────────────────────────
 const WHATSAPP =
@@ -234,30 +235,17 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <a
               href="/"
-              className="inline-flex items-baseline gap-1.5 mb-3"
+              className="inline-block mb-3 rounded-xl px-3 py-2"
+              style={{ backgroundColor: "rgba(255,255,255,0.95)" }}
               aria-label="Chetana's Beauty — Home"
             >
-              <span
-                style={{
-                  fontFamily: "var(--font-display)",
-                  color: "#e8b80d",
-                  fontSize: "1.4rem",
-                  fontWeight: 700,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                Chetana&apos;s
-              </span>
-              <span
-                style={{
-                  fontFamily: "var(--font-display)",
-                  color: "rgba(255,255,255,0.55)",
-                  fontSize: "1.4rem",
-                  fontWeight: 300,
-                }}
-              >
-                Beauty
-              </span>
+              <Image
+                src="/logo/chetanas-logo.png"
+                alt="Chetana's Beauty Lounge & Education Foundation"
+                width={2000}
+                height={805}
+                className="h-10 w-auto"
+              />
             </a>
             <p className="text-xs leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.4)", maxWidth: "175px" }}>
               Mangalore&rsquo;s CIDESCO-certified ladies salon &amp; beauty academy since 1998.

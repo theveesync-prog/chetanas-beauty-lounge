@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -62,18 +63,17 @@ export default function Navbar() {
         {/* ─── Logo ─────────────────────────────────── */}
         <a
           href="/"
-          className="flex items-center gap-2 flex-shrink-0"
+          className="flex items-center flex-shrink-0"
           aria-label="Chetana's Beauty — Home"
         >
-          <span
-            className="font-display text-xl md:text-2xl font-semibold tracking-tight"
-            style={{ color: "#5f1e42" }}
-          >
-            Chetana&apos;s
-          </span>
-          <span className="font-display text-xl md:text-2xl font-light tracking-tight text-[#8c7b72]">
-            Beauty
-          </span>
+          <Image
+            src="/logo/chetanas-logo.png"
+            alt="Chetana's Beauty Lounge & Education Foundation"
+            width={2000}
+            height={805}
+            priority
+            className="h-9 md:h-10 w-auto"
+          />
         </a>
 
         {/* ─── Desktop Nav ──────────────────────────── */}
