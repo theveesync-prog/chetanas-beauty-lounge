@@ -242,9 +242,9 @@ export default function Footer() {
               <Image
                 src="/logo/chetanas-logo.png"
                 alt="Chetana's Beauty Lounge & Education Foundation"
-                width={2000}
-                height={805}
-                className="h-10 w-auto"
+                width={1656}
+                height={540}
+                className="h-11 w-auto"
               />
             </a>
             <p className="text-xs leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.4)", maxWidth: "175px" }}>

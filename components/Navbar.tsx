@@ -67,12 +67,12 @@ export default function Navbar() {
           aria-label="Chetana's Beauty — Home"
         >
           <Image
-            src="/logo/chetanas-logo.png"
+            src="/logo/chetanas-logo-mark.png"
             alt="Chetana's Beauty Lounge & Education Foundation"
-            width={2000}
-            height={805}
+            width={1656}
+            height={455}
             priority
-            className="h-9 md:h-10 w-auto"
+            className="h-8 md:h-9 w-auto"
           />
         </a>
 
