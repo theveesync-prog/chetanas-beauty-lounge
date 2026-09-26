@@ -120,15 +120,16 @@ function ReviewCard({ review }: { review: typeof reviews[number] }) {
 
 export default function Reviews() {
   const [active, setActive] = useState(0);
+  const [revealed, setRevealed] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   // Reveal animation on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      ([entry]) => entry.isIntersecting && setRevealed(true),
       { threshold: 0.06 }
     );
-    sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -146,12 +147,12 @@ export default function Reviews() {
 
         {/* ── Header ─────────────────────────────────────────── */}
         <div className="text-center mb-16 md:mb-20">
-          <div className="reveal mb-4 flex justify-center">
+          <div className={`reveal mb-4 flex justify-center ${revealed ? "visible" : ""}`}>
             <span className="section-label">Reviews</span>
           </div>
 
           <h2
-            className="reveal reveal-delay-1 text-[#111111] mb-5"
+            className={`reveal reveal-delay-1 text-[#111111] mb-5 ${revealed ? "visible" : ""}`}
             style={{
               fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
               fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
@@ -164,7 +165,7 @@ export default function Reviews() {
             <em className="text-[#5f1e42]" style={{ fontStyle: "italic" }}>appreciation</em>
           </h2>
 
-          <p className="reveal reveal-delay-2 text-base text-[#888] max-w-md mx-auto">
+          <p className={`reveal reveal-delay-2 text-base text-[#888] max-w-md mx-auto ${revealed ? "visible" : ""}`}>
             Real stories from real clients — from bridal transformations to everyday care.
           </p>
         </div>

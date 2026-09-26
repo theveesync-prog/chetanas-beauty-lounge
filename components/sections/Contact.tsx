@@ -44,14 +44,14 @@ export default function Contact() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [comment, setComment] = useState("");
+  const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      ([entry]) => entry.isIntersecting && setRevealed(true),
       { threshold: 0.08 }
     );
-    sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -94,7 +94,7 @@ export default function Contact() {
 
         {/* ── Section header ─────────────────────────────────── */}
         <h2
-          className="reveal reveal-delay-1 text-[#111] mb-10 md:mb-12"
+          className={`reveal reveal-delay-1 text-[#111] mb-10 md:mb-12 ${revealed ? "visible" : ""}`}
           style={{
             fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
             fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
@@ -110,7 +110,7 @@ export default function Contact() {
         </h2>
 
         {/* ── Two-column card ────────────────────────────────── */}
-        <div className="reveal reveal-delay-2 grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl">
+        <div className={`reveal reveal-delay-2 grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl ${revealed ? "visible" : ""}`}>
 
           {/* ══ LEFT: full-bleed image + text overlay ════════════ */}
           <div className="relative hidden lg:block" style={{ minHeight: "600px" }}>

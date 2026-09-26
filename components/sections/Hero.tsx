@@ -18,15 +18,6 @@ const SLIDE_INTERVAL_MS = 4500;
 // Card background — clean white
 const CARD_BG = "#ffffff";
 
-function EstablishedBadgeIcon() {
-  return (
-    <svg viewBox="0 0 40 40" className="w-8 h-8 flex-shrink-0" aria-hidden="true">
-      <circle cx="20" cy="20" r="18" fill="none" stroke="#dadce0" strokeWidth="1.5" />
-      <text x="20" y="25" textAnchor="middle" fontSize="12" fill="#5f1e42" fontFamily="var(--font-instrument-serif), serif" fontWeight="600">98</text>
-    </svg>
-  );
-}
-
 function CheckBadgeIcon() {
   return (
     <svg viewBox="0 0 40 40" className="w-8 h-8 flex-shrink-0" aria-hidden="true">
@@ -39,14 +30,12 @@ function CheckBadgeIcon() {
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [revealed, setRevealed] = useState(false);
   const slideTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const items = heroRef.current?.querySelectorAll(".hero-reveal");
-    if (!items) return;
-    items.forEach((el, i) => {
-      setTimeout(() => el.classList.add("visible"), 80 + i * 120);
-    });
+    const t = setTimeout(() => setRevealed(true), 80);
+    return () => clearTimeout(t);
   }, []);
 
   const goToSlide = useCallback((idx: number) => {
@@ -145,7 +134,7 @@ export default function Hero() {
         >
           {/* H1 */}
           <h1
-            className="hero-reveal reveal text-[#2d2d2d] mb-5"
+            className={`hero-reveal reveal text-[#2d2d2d] mb-5 ${revealed ? "visible" : ""}`}
             style={{
               fontFamily: "var(--font-instrument-serif)",
               fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
@@ -160,7 +149,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p
-            className="hero-reveal reveal reveal-delay-1 leading-relaxed mb-10 max-w-xs"
+            className={`hero-reveal reveal reveal-delay-1 leading-relaxed mb-10 max-w-xs ${revealed ? "visible" : ""}`}
             style={{ fontFamily: "var(--font-raleway)", fontSize: "15px", color: "#666" }}
           >
             Bridal makeup, advanced skin care and quiet pampering in Kankanady, led by
@@ -169,7 +158,7 @@ export default function Hero() {
           </p>
 
           {/* CTA — black pill with green glowing dot */}
-          <div className="hero-reveal reveal reveal-delay-2">
+          <div className={`hero-reveal reveal reveal-delay-2 ${revealed ? "visible" : ""}`}>
             <a
               href={WHATSAPP_SALON}
               target="_blank"
@@ -188,23 +177,9 @@ export default function Hero() {
 
         {/* ── Layer 3 (z-3): Social proof bar — pinned to bottom ── */}
         <div
-          className="hero-reveal reveal reveal-delay-3 absolute bottom-0 left-0 flex items-center gap-5"
+          className={`hero-reveal reveal reveal-delay-3 absolute bottom-0 left-0 flex items-center gap-5 ${revealed ? "visible" : ""}`}
           style={{ zIndex: 3, padding: "1.75rem 3.5rem" }}
         >
-          {/* Established badge */}
-          <div className="flex items-center gap-3">
-            <EstablishedBadgeIcon />
-            <p
-              className="text-sm font-semibold text-[#333]"
-              style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
-            >
-              Since 1998
-            </p>
-          </div>
-
-          {/* Divider */}
-          <span className="w-px h-10 bg-black/10 flex-shrink-0" aria-hidden="true" />
-
           {/* CIDESCO certification */}
           <div className="flex items-center gap-3">
             <CheckBadgeIcon />
@@ -232,7 +207,7 @@ export default function Hero() {
         <div className="px-8 pt-10 pb-6">
 
           <p
-            className="hero-reveal reveal text-[#2d2d2d] mb-4"
+            className={`hero-reveal reveal text-[#2d2d2d] mb-4 ${revealed ? "visible" : ""}`}
             style={{
               fontFamily: "var(--font-instrument-serif)",
               fontSize: "clamp(2.6rem, 9vw, 3.5rem)",
@@ -245,14 +220,14 @@ export default function Hero() {
             Mangalore&apos;s Most Trusted Ladies Salon, <em style={{ fontStyle: "italic" }}>Since 1998</em>
           </p>
           <p
-            className="hero-reveal reveal reveal-delay-1 text-sm leading-relaxed mb-8"
+            className={`hero-reveal reveal reveal-delay-1 text-sm leading-relaxed mb-8 ${revealed ? "visible" : ""}`}
             style={{ fontFamily: "var(--font-raleway)", color: "#666" }}
           >
             Bridal makeup, advanced skin care and quiet pampering in Kankanady, led by
             CIDESCO-certified Chetana Salian. Three generations of Mangalore women have
             trusted her hands. Now it&apos;s your turn.
           </p>
-          <div className="hero-reveal reveal reveal-delay-2">
+          <div className={`hero-reveal reveal reveal-delay-2 ${revealed ? "visible" : ""}`}>
             <a
               href={WHATSAPP_SALON}
               target="_blank"
@@ -319,17 +294,7 @@ export default function Hero() {
         </div>
 
         {/* Social proof */}
-        <div className="hero-reveal reveal reveal-delay-3 px-8 py-5 flex flex-wrap items-center gap-4">
-          <div className="flex items-center gap-2">
-            <EstablishedBadgeIcon />
-            <p
-              className="text-sm font-semibold text-[#333]"
-              style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
-            >
-              Since 1998
-            </p>
-          </div>
-          <span className="w-px h-10 bg-black/10" aria-hidden="true" />
+        <div className={`hero-reveal reveal reveal-delay-3 px-8 py-5 flex flex-wrap items-center gap-4 ${revealed ? "visible" : ""}`}>
           <div className="flex items-center gap-2">
             <CheckBadgeIcon />
             <div>

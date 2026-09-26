@@ -57,15 +57,15 @@ const faqs = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [revealed, setRevealed] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      ([entry]) => entry.isIntersecting && setRevealed(true),
       { threshold: 0.1 }
     );
-    sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -83,7 +83,7 @@ export default function FAQ() {
 
         {/* ─── Section header ──── */}
         <h2
-          className="reveal reveal-delay-1 text-[#111111] leading-tight mb-12 md:mb-14"
+          className={`reveal reveal-delay-1 text-[#111111] leading-tight mb-12 md:mb-14 ${revealed ? "visible" : ""}`}
           style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif', fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.02em" }}
         >
           Answers to your most{" "}
@@ -97,7 +97,7 @@ export default function FAQ() {
             return (
               <div
                 key={i}
-                className={`reveal reveal-delay-${Math.min(i + 1, 4)} transition-colors duration-300 ${
+                className={`reveal reveal-delay-${Math.min(i + 1, 4)} ${revealed ? "visible" : ""} transition-colors duration-300 ${
                   isOpen ? "bg-[#F7F4F1]" : "bg-transparent"
                 }`}
               >
@@ -154,7 +154,7 @@ export default function FAQ() {
         </div>
 
         {/* ─── Bottom CTA ──── */}
-        <div className="reveal mt-12 text-center">
+        <div className={`reveal mt-12 text-center ${revealed ? "visible" : ""}`}>
           <p className="text-[#8c7b72] text-sm mb-4">
             Still have questions? We&apos;re happy to help directly.
           </p>

@@ -29,6 +29,7 @@ const INTERVAL_MS = 5000;
 export default function About() {
   const [active, setActive] = useState(0);
   const [fading, setFading] = useState(false);
+  const [revealed, setRevealed] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -61,10 +62,10 @@ export default function About() {
   // Scroll reveal
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      ([entry]) => entry.isIntersecting && setRevealed(true),
       { threshold: 0.12 }
     );
-    sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -82,25 +83,25 @@ export default function About() {
         <div className="flex-1 w-full lg:max-w-[52%]">
 
           <h2
-            className="reveal reveal-delay-1 text-[#111111] mb-7"
+            className={`reveal reveal-delay-1 text-[#111111] mb-7 ${revealed ? "visible" : ""}`}
             style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif', fontSize: "clamp(2.5rem, 5.5vw, 4rem)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em" }}
           >
             With us, you are<br />
             <em className="text-[#5f1e42]" style={{ fontStyle: "italic" }}>seen &amp; heard.</em>
           </h2>
 
-          <p className="reveal reveal-delay-2 text-base md:text-lg text-[#666] leading-relaxed mb-5 max-w-lg font-light">
+          <p className={`reveal reveal-delay-2 text-base md:text-lg text-[#666] leading-relaxed mb-5 max-w-lg font-light ${revealed ? "visible" : ""}`}>
             Chetana&rsquo;s Beauty Lounge is Mangalore&rsquo;s most trusted ladies-only salon and beauty academy.
             CIDESCO-certified, rooted in Kankanady since 1998 — we&rsquo;ve served over 32,000 clients
             across bridal, skin, hair and wellness services.
           </p>
 
-          <p className="reveal reveal-delay-2 text-base md:text-lg text-[#666] leading-relaxed mb-10 max-w-lg font-light">
+          <p className={`reveal reveal-delay-2 text-base md:text-lg text-[#666] leading-relaxed mb-10 max-w-lg font-light ${revealed ? "visible" : ""}`}>
             Every visit is a private, personalised experience. No rush, no compromise — just the best
             care for you, delivered by experts who truly listen.
           </p>
 
-          <div className="reveal reveal-delay-3">
+          <div className={`reveal reveal-delay-3 ${revealed ? "visible" : ""}`}>
             <a
               href={WHATSAPP_SALON}
               target="_blank"
@@ -117,7 +118,7 @@ export default function About() {
         </div>
 
         {/* ── Right: Image carousel ────────────────────────── */}
-        <div className="reveal reveal-delay-1 w-full lg:w-auto lg:flex-shrink-0" style={{ maxWidth: "min(46%, 440px)", width: "100%" }}>
+        <div className={`reveal reveal-delay-1 w-full lg:w-auto lg:flex-shrink-0 ${revealed ? "visible" : ""}`} style={{ maxWidth: "min(46%, 440px)", width: "100%" }}>
 
           {/* Image container */}
           <div className="relative" style={{ aspectRatio: "4/5" }}>

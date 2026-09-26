@@ -135,6 +135,7 @@ function StatCard({
 export default function Features() {
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
+  const [revealed, setRevealed] = useState(false);
 
   // Trigger counters once on scroll into view
   useEffect(() => {
@@ -151,13 +152,10 @@ export default function Features() {
   // Reveal animation observer
   useEffect(() => {
     const revealObserver = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      ([entry]) => entry.isIntersecting && setRevealed(true),
       { threshold: 0.08 }
     );
-    sectionRef.current
-      ?.querySelectorAll(".reveal")
-      .forEach((el) => revealObserver.observe(el));
+    if (sectionRef.current) revealObserver.observe(sectionRef.current);
     return () => revealObserver.disconnect();
   }, []);
 
@@ -173,7 +171,7 @@ export default function Features() {
       <div className="relative z-10 max-w-5xl mx-auto">
         {/* Section header */}
         <h2
-          className="reveal reveal-delay-1 text-[#111] mb-14 md:mb-16"
+          className={`reveal reveal-delay-1 text-[#111] mb-14 md:mb-16 ${revealed ? "visible" : ""}`}
           style={{
             fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
             fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
@@ -189,7 +187,7 @@ export default function Features() {
         </h2>
 
         {/* 3 glassmorphism cards */}
-        <div className="reveal reveal-delay-2 flex flex-col sm:flex-row gap-5">
+        <div className={`reveal reveal-delay-2 flex flex-col sm:flex-row gap-5 ${revealed ? "visible" : ""}`}>
           {STATS.map((stat, i) => (
             <StatCard key={i} stat={stat} inView={inView} index={i} />
           ))}
