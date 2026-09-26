@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/constants";
 import { ArrowRight, Clock, CalendarDays } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Beauty Blog — Tips, Trends & Expert Advice | Chetana's Beauty Mangalore",
+  title: "Beauty Blog: Tips, Trends & Expert Advice | Chetana's Beauty Mangalore",
   description:
     "Expert beauty advice from Chetana's Beauty, Mangalore's CIDESCO-certified salon. Skin care routines for coastal humidity, bridal makeup tips, keratin vs straightening guides, nail art trends and more.",
   keywords: [
@@ -82,8 +82,8 @@ export default async function BlogPage({ searchParams }: Props) {
             style={{ color: "#555", fontFamily: "var(--font-sans)" }}
           >
             Skin care routines built for Mangalore&apos;s coastal humidity,
-            bridal prep timelines, hair treatment comparisons and nail trends
-            — all from our CIDESCO-certified team.
+            bridal prep timelines, hair treatment comparisons and nail trends,
+            all from our CIDESCO-certified team.
           </p>
         </div>
       </section>
@@ -172,17 +172,6 @@ export default async function BlogPage({ searchParams }: Props) {
                     className="flex flex-wrap items-center gap-3 text-xs"
                     style={{ color: "#888", fontFamily: "var(--font-sans)" }}
                   >
-                    <div className="flex items-center gap-2">
-                      <span
-                        className="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
-                        style={{ backgroundColor: featured.authorColor }}
-                        aria-hidden="true"
-                      >
-                        {featured.authorInitials}
-                      </span>
-                      <span className="font-medium text-[#333]">{featured.author}</span>
-                    </div>
-                    <span aria-hidden="true" className="opacity-40">·</span>
                     <span className="flex items-center gap-1">
                       <CalendarDays size={12} aria-hidden="true" />
                       {formatDate(featured.publishedAt)}
@@ -276,29 +265,12 @@ export default async function BlogPage({ searchParams }: Props) {
                         className="flex items-center justify-between pt-3 border-t"
                         style={{ borderColor: "rgba(0,0,0,0.06)" }}
                       >
-                        <div className="flex items-center gap-2">
-                          <span
-                            className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
-                            style={{ backgroundColor: post.authorColor }}
-                            aria-hidden="true"
-                          >
-                            {post.authorInitials}
-                          </span>
-                          <div>
-                            <p
-                              className="text-xs font-semibold leading-none"
-                              style={{ color: "#333" }}
-                            >
-                              {post.author}
-                            </p>
-                            <p
-                              className="text-xs mt-0.5"
-                              style={{ color: "#888", fontFamily: "var(--font-sans)" }}
-                            >
-                              {formatDate(post.publishedAt)} · {post.readTime} min
-                            </p>
-                          </div>
-                        </div>
+                        <p
+                          className="text-xs"
+                          style={{ color: "#888", fontFamily: "var(--font-sans)" }}
+                        >
+                          {formatDate(post.publishedAt)} · {post.readTime} min
+                        </p>
                         <span
                           className="flex items-center gap-1 text-xs font-semibold transition-all group-hover:gap-2"
                           style={{ color: "#5f1e42" }}
@@ -354,7 +326,7 @@ export default async function BlogPage({ searchParams }: Props) {
             className="text-white/70 text-base mb-10 max-w-xl mx-auto leading-relaxed"
             style={{ fontFamily: "var(--font-sans)" }}
           >
-            From the bridal chair to everyday glow-ups — our CIDESCO-certified
+            From the bridal chair to everyday glow-ups, our CIDESCO-certified
             team in Kankanady, Mangalore is ready to make it happen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

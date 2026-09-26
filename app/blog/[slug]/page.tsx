@@ -27,13 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | Chetana's Beauty Blog`,
     description: post.metaDescription,
     keywords: post.tags,
-    authors: [{ name: post.author }],
     openGraph: {
       title: post.title,
       description: post.metaDescription,
       type: "article",
       publishedTime: post.publishedAt,
-      authors: [post.author],
       images: [{ url: post.coverImage, alt: post.coverAlt }],
     },
     alternates: {
@@ -178,14 +176,6 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
                 >
                   {section.text}
                 </p>
-                {section.author && (
-                  <footer
-                    className="text-sm font-semibold"
-                    style={{ color: "#888", fontFamily: "var(--font-sans)" }}
-                  >
-                    — {section.author}
-                  </footer>
-                )}
               </blockquote>
             );
 
@@ -243,9 +233,8 @@ export default async function BlogPostPage({ params }: Props) {
     description: post.metaDescription,
     image: post.coverImage,
     author: {
-      "@type": "Person",
-      name: post.author,
-      jobTitle: post.authorTitle,
+      "@type": "Organization",
+      name: "Chetana's Beauty",
     },
     publisher: {
       "@type": "Organization",
@@ -331,25 +320,11 @@ export default async function BlogPostPage({ params }: Props) {
               {post.title}
             </h1>
 
-            {/* Author + Meta */}
+            {/* Meta */}
             <div
               className="flex flex-wrap items-center gap-4 text-xs text-white/70"
               style={{ fontFamily: "var(--font-sans)" }}
             >
-              <div className="flex items-center gap-2">
-                <span
-                  className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 border border-white/25"
-                  style={{ backgroundColor: post.authorColor }}
-                  aria-hidden="true"
-                >
-                  {post.authorInitials}
-                </span>
-                <div>
-                  <p className="font-semibold text-white text-xs leading-none">{post.author}</p>
-                  <p className="text-xs mt-0.5 text-white/55">{post.authorTitle}</p>
-                </div>
-              </div>
-              <span aria-hidden="true" className="opacity-30">|</span>
               <span className="flex items-center gap-1.5">
                 <CalendarDays size={12} aria-hidden="true" />
                 {formatDate(post.publishedAt)}
@@ -532,7 +507,7 @@ export default async function BlogPostPage({ params }: Props) {
             style={{ fontFamily: "var(--font-sans)" }}
           >
             Our CIDESCO-certified team in Kankanady, Mangalore is ready to bring the
-            advice in this article to life — for your skin, hair, or special occasion.
+            advice in this article to life, for your skin, hair, or special occasion.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
