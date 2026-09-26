@@ -7,6 +7,7 @@ import {
   getRelatedPosts,
   type BlogSection,
 } from "@/lib/blog-data";
+import { SITE_URL } from "@/lib/constants";
 import { ArrowLeft, ArrowRight, Clock, CalendarDays } from "lucide-react";
 
 interface Props {
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [{ url: post.coverImage, alt: post.coverAlt }],
     },
     alternates: {
-      canonical: `https://chetanasbeauty.in/blog/${post.slug}`,
+      canonical: `${SITE_URL}/blog/${post.slug}`,
     },
   };
 }
@@ -249,13 +250,13 @@ export default async function BlogPostPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "Chetana's Beauty",
-      url: "https://chetanasbeauty.in",
+      url: SITE_URL,
     },
     datePublished: post.publishedAt,
     keywords: post.tags.join(", "),
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://chetanasbeauty.in/blog/${post.slug}`,
+      "@id": `${SITE_URL}/blog/${post.slug}`,
     },
   };
 
@@ -263,9 +264,9 @@ export default async function BlogPostPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://chetanasbeauty.in" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://chetanasbeauty.in/blog" },
-      { "@type": "ListItem", position: 3, name: post.title, item: `https://chetanasbeauty.in/blog/${post.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: `${SITE_URL}/blog/${post.slug}` },
     ],
   };
 

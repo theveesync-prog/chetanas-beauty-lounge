@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Chetana's Beauty Lounge Mangalore",
   description:
     "Privacy Policy for Chetana's Beauty Lounge — how we collect, use and protect your personal information.",
-  alternates: { canonical: "https://chetanasbeauty.in/privacy" },
+  alternates: { canonical: `${SITE_URL}/privacy` },
 };
 
 export default function PrivacyPage() {
@@ -43,8 +44,8 @@ export default function PrivacyPage() {
           <p className="mb-8 text-base">
             This Privacy Policy explains how we collect, use, and safeguard your
             information when you visit{" "}
-            <a href="https://chetanasbeauty.in" className="text-[#5f1e42] hover:underline">
-              chetanasbeauty.in
+            <a href={SITE_URL} className="text-[#5f1e42] hover:underline">
+              chetanasbeautylounge.com
             </a>{" "}
             or contact us via WhatsApp, phone, or in person.
           </p>

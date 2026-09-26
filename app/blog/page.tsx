@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import { blogPosts, blogCategories, getFeaturedPost } from "@/lib/blog-data";
+import { SITE_URL } from "@/lib/constants";
 import { ArrowRight, Clock, CalendarDays } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://chetanasbeauty.in/blog",
+    canonical: `${SITE_URL}/blog`,
   },
 };
 

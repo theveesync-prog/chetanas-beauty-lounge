@@ -5,14 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "migrate": "node --loader tsx/cjs node_modules/payload/bin.js migrate",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "payload": "payload",
+    "seed": "node --loader tsx/cjs scripts/seed.ts"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.90.2",
+    "@payloadcms/plugin-seo": "^3.90.2",
+    "@payloadcms/storage-vercel-blob": "^3.90.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.575.0",
     "next": "16.1.6",
+    "payload": "^3.90.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.5.0"

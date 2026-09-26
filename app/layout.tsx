@@ -3,6 +3,7 @@ import "./globals.css";
 import { CartProvider } from "@/lib/cart-context";
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
+import { SITE_URL, BUSINESS_ADDRESS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Best Ladies Salon in Mangalore | Chetana's Beauty — CIDESCO Certified",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
   },
   alternates: {
-    canonical: "https://chetanasbeauty.in", // TODO: replace with live URL
+    canonical: SITE_URL,
   },
 };
 
@@ -77,15 +78,15 @@ export default function RootLayout({
               name: "Chetana's Beauty",
               description:
                 "CIDESCO-certified ladies-only beauty salon and academy in Kankanady, Mangalore offering bridal makeup, skin treatments and professional beauty courses.",
-              url: "https://chetanasbeauty.in",
+              url: SITE_URL,
               telephone: "+91-9845292411",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Kankanady",
-                addressLocality: "Mangalore",
-                addressRegion: "Karnataka",
-                postalCode: "575002",
-                addressCountry: "IN",
+                streetAddress: BUSINESS_ADDRESS.streetAddress,
+                addressLocality: BUSINESS_ADDRESS.addressLocality,
+                addressRegion: BUSINESS_ADDRESS.addressRegion,
+                postalCode: BUSINESS_ADDRESS.postalCode,
+                addressCountry: BUSINESS_ADDRESS.addressCountry,
               },
               geo: {
                 "@type": "GeoCoordinates",
@@ -107,13 +108,6 @@ export default function RootLayout({
                   closes: "19:00",
                 },
               ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.5",
-                reviewCount: "315",
-                bestRating: "5",
-                worstRating: "1",
-              },
               hasCredential: {
                 "@type": "EducationalOccupationalCredential",
                 name: "CIDESCO International Certification",
