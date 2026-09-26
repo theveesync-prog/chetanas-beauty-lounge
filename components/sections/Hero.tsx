@@ -81,6 +81,7 @@ export default function Hero() {
           borderRadius: "2rem",
           backgroundColor: CARD_BG,
           height: "620px",
+          boxShadow: "0 25px 70px -20px rgba(0,0,0,0.18), 0 8px 24px -8px rgba(0,0,0,0.10)",
         }}
       >
         {/* ── Layer 1 (z-1): Image slideshow — fills right 65% of the card ── */}
@@ -221,7 +222,11 @@ export default function Hero() {
           ═══════════════════════════════════════════════════════════ */}
       <div
         className="lg:hidden mx-3 sm:mx-5 overflow-hidden"
-        style={{ borderRadius: "1.5rem", backgroundColor: CARD_BG }}
+        style={{
+          borderRadius: "1.5rem",
+          backgroundColor: CARD_BG,
+          boxShadow: "0 20px 50px -18px rgba(0,0,0,0.18), 0 6px 18px -6px rgba(0,0,0,0.10)",
+        }}
       >
         {/* Text block */}
         <div className="px-8 pt-10 pb-6">
