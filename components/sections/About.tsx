@@ -7,16 +7,20 @@ const WHATSAPP_SALON =
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=85&auto=format&fit=crop",
-    alt: "Client having hair washed at a professional salon",
+    src: "/images/salon/salon-interior-lounge.webp",
+    alt: "Chetana's Beauty Lounge reception and waiting area in Kankanady, Mangalore",
   },
   {
-    src: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=85&auto=format&fit=crop",
-    alt: "Relaxing skincare facial treatment in progress",
+    src: "/images/salon/salon-hair-wash-stations.webp",
+    alt: "Hair wash and pedicure stations at Chetana's Beauty Lounge Mangalore",
   },
   {
-    src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=85&auto=format&fit=crop",
-    alt: "Happy client with beautiful makeup looking radiant",
+    src: "/images/salon/salon-styling-chairs.webp",
+    alt: "Hair styling chairs and mirror stations at Chetana's Beauty Lounge Mangaluru",
+  },
+  {
+    src: "/images/salon/salon-mirror-stations.webp",
+    alt: "Salon interior with styling stations at Chetana's Beauty Lounge, Mangalore's best ladies salon",
   },
 ];
 

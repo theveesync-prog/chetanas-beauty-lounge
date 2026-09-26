@@ -3,17 +3,23 @@ import "./globals.css";
 import { CartProvider } from "@/lib/cart-context";
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
-import { SITE_URL, BUSINESS_ADDRESS } from "@/lib/constants";
+import { SITE_URL, SITE_NAME, BUSINESS_ADDRESS } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "Best Ladies Salon in Mangalore | Chetana's Beauty — CIDESCO Certified",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Best Ladies Salon in Mangalore | Chetana's Beauty — CIDESCO Certified",
+    template: "%s | Chetana's Beauty Lounge",
+  },
   description:
     "Chetana's Beauty is a CIDESCO-certified ladies salon in Mangalore offering bridal makeup, skin treatments and a beauty academy in Kankanady. Trusted by NRI families from Dubai. Book via WhatsApp.",
   keywords: [
     "best salon in Mangalore",
+    "best ladies salon in Mangalore",
     "ladies salon Mangalore",
+    "beauty salon Mangalore",
     "bridal makeup artist in Mangalore",
     "bridal makeup Tulu wedding Mangalore",
     "best bridal makeup Mangaluru Catholic",
@@ -29,14 +35,42 @@ export const metadata: Metadata = {
     "beauty parlour in Mangalore",
     "ladies salon Kankanady Mangalore",
     "NRI bridal makeup Mangalore",
+    "CIDESCO certified salon Mangalore",
   ],
   authors: [{ name: "Chetana's Beauty" }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "Best Ladies Salon in Mangalore | Chetana's Beauty — CIDESCO Certified",
     description:
       "CIDESCO-certified ladies salon in Mangalore. Bridal makeup, skin treatments, beauty academy. Located in Kankanady.",
     type: "website",
     locale: "en_IN",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    images: [
+      {
+        url: "/images/salon/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Chetana's Beauty Lounge — Mangalore's best ladies salon interior, Kankanady",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Ladies Salon in Mangalore | Chetana's Beauty",
+    description:
+      "CIDESCO-certified ladies salon in Mangalore. Bridal makeup, skin treatments, beauty academy in Kankanady.",
+    images: ["/images/salon/og-image.jpg"],
   },
   alternates: {
     canonical: SITE_URL,
@@ -81,7 +115,18 @@ export default function RootLayout({
               description:
                 "CIDESCO-certified ladies-only beauty salon and academy in Kankanady, Mangalore offering bridal makeup, skin treatments and professional beauty courses.",
               url: SITE_URL,
+              image: `${SITE_URL}/images/salon/og-image.jpg`,
+              priceRange: "₹₹",
               telephone: "+91-9845292411",
+              sameAs: [
+                "https://www.google.com/maps/place/Chetana's+Beauty+Lounge/@12.8699033,74.8605861,17z",
+                "https://www.youtube.com/@ChetanasBeautyLounge",
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5.0",
+                reviewCount: "315",
+              },
               address: {
                 "@type": "PostalAddress",
                 streetAddress: BUSINESS_ADDRESS.streetAddress,
