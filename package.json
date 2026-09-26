@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "payload": "payload",
-    "seed": "node --loader tsx/cjs scripts/seed.ts"
+    "seed": "node --loader tsx/cjs scripts/seed.ts",
+    "seed-phase2": "node --loader tsx/cjs scripts/seed-phase2.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.90.2",
