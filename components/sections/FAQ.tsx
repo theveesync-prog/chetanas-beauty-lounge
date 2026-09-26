@@ -82,9 +82,6 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto">
 
         {/* ─── Section header ──── */}
-        <div className="reveal mb-3">
-          <span className="section-label">FAQ</span>
-        </div>
         <h2
           className="reveal reveal-delay-1 text-[#111111] leading-tight mb-12 md:mb-14"
           style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif', fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.02em" }}

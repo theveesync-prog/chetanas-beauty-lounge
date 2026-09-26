@@ -81,10 +81,6 @@ export default function About() {
         {/* ── Left: Text ──────────────────────────────────── */}
         <div className="flex-1 w-full lg:max-w-[52%]">
 
-          <div className="reveal mb-4">
-            <span className="section-label">About Us</span>
-          </div>
-
           <h2
             className="reveal reveal-delay-1 text-[#111111] mb-7"
             style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif', fontSize: "clamp(2.5rem, 5.5vw, 4rem)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em" }}

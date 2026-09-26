@@ -172,9 +172,6 @@ export default function Features() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto">
         {/* Section header */}
-        <div className="reveal mb-3">
-          <span className="section-label">Why us</span>
-        </div>
         <h2
           className="reveal reveal-delay-1 text-[#111] mb-14 md:mb-16"
           style={{

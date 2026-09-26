@@ -148,10 +148,7 @@ export default function Gallery() {
       <div className="max-w-7xl mx-auto">
 
         {/* ─── Section header ──── */}
-        <div className="reveal mb-3">
-          <span className="section-label">Instagram</span>
-        </div>
-        <div className="reveal reveal-delay-1 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-10 md:mb-12">
+        <div className="reveal flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-10 md:mb-12">
           <div>
             <h2
               className="text-[#111111] leading-tight max-w-lg"
