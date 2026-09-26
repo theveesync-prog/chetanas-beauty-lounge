@@ -1,3 +1,6 @@
-import { RootPage } from '@payloadcms/next/views';
+import React from 'react';
+import { redirect } from 'next/navigation';
 
-export default RootPage;
+export default function AdminPage() {
+  redirect('/api/admin');
+}
