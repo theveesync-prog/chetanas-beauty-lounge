@@ -1,16 +1,17 @@
 import { buildConfig } from 'payload';
 import { postgresAdapter } from '@payloadcms/db-postgres';
+import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import { seoPlugin } from '@payloadcms/plugin-seo';
 import path from 'path';
-import Users from './src/collections/Users';
-import Media from './src/collections/Media';
-import ServiceCategories from './src/collections/ServiceCategories';
-import Services from './src/collections/Services';
-import BlogPosts from './src/collections/BlogPosts';
-import FAQs from './src/collections/FAQs';
-import Gallery from './src/collections/Gallery';
-import Reviews from './src/collections/Reviews';
-import { SiteSettings } from './src/globals/SiteSettings';
+import Users from './src/collections/Users.ts';
+import Media from './src/collections/Media.ts';
+import ServiceCategories from './src/collections/ServiceCategories.ts';
+import Services from './src/collections/Services.ts';
+import BlogPosts from './src/collections/BlogPosts.ts';
+import FAQs from './src/collections/FAQs.ts';
+import Gallery from './src/collections/Gallery.ts';
+import Reviews from './src/collections/Reviews.ts';
+import { SiteSettings } from './src/globals/SiteSettings.ts';
 
 export default buildConfig({
   admin: {
@@ -19,6 +20,7 @@ export default buildConfig({
   },
   collections: [Users, Media, ServiceCategories, Services, BlogPosts, FAQs, Gallery, Reviews],
   globals: [SiteSettings],
+  editor: lexicalEditor(),
   plugins: [
     seoPlugin({
       collections: ['services', 'blog-posts'],
@@ -35,6 +37,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URL || '',
     },
+    push: true,
   }),
   secret: process.env.PAYLOAD_SECRET || 'secret-key-change-this',
   typescript: {

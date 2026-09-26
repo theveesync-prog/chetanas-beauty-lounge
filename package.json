@@ -15,6 +15,7 @@
   "dependencies": {
     "@payloadcms/db-postgres": "^3.90.2",
     "@payloadcms/plugin-seo": "^3.90.2",
+    "@payloadcms/richtext-lexical": "^3.90.2",
     "@payloadcms/storage-vercel-blob": "^3.90.2",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
