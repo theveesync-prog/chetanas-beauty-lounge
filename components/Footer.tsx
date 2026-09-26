@@ -248,7 +248,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-xs leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.4)", maxWidth: "175px" }}>
-              Mangalore&rsquo;s CIDESCO-certified ladies salon &amp; beauty academy since 1998.
+              Led by CIDESCO-certified Chetana Salian, trusted since 1998.
             </p>
             <div
               className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium"
