@@ -116,19 +116,19 @@ export default function Contact() {
           <div className="relative hidden lg:block" style={{ minHeight: "600px" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=85&auto=format&fit=crop"
-              alt="Beauty treatment at Chetana's Beauty Lounge"
+              src="/images/salon/salon-reception-lounge-2.webp"
+              alt="Chetana's Beauty Lounge reception, Kankanady, Mangalore"
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
               decoding="async"
             />
 
-            {/* Gradient overlay — dark at bottom, fades to transparent */}
+            {/* Purple translucent overlay — dark at bottom, fades to transparent */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0) 100%)",
+                  "linear-gradient(to top, rgba(95,30,66,0.88) 0%, rgba(95,30,66,0.35) 55%, rgba(95,30,66,0.05) 100%)",
               }}
             />
 
