@@ -72,7 +72,7 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden scroll-mt-24"
       style={{ backgroundColor: "#ffffff" }}
       aria-label="About Chetana's Beauty"
     >

@@ -86,16 +86,13 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="py-14 md:py-20 px-4 sm:px-6 lg:px-8"
+      className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24"
       style={{ backgroundColor: "#ffffff" }}
       aria-label="Book an appointment at Chetana's Beauty"
     >
       <div className="max-w-6xl mx-auto">
 
         {/* ── Section header ─────────────────────────────────── */}
-        <div className="reveal mb-3">
-          <span className="section-label">Contact</span>
-        </div>
         <h2
           className="reveal reveal-delay-1 text-[#111] mb-10 md:mb-12"
           style={{

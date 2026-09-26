@@ -155,12 +155,12 @@ export default function Hero() {
           <h1
             className="hero-reveal reveal text-[#2d2d2d] mb-5"
             style={{
-              fontFamily: "var(--font-instrument-serif)",
-              fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
-              fontWeight: 400,
+              fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
+              fontSize: "clamp(3rem, 5.2vw, 4.5rem)",
+              fontWeight: 800,
               fontStyle: "normal",
-              lineHeight: 1.05,
-              letterSpacing: "-0.01em",
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
             }}
           >
             Mangalore&apos;s Most Trusted Ladies Salon, <em style={{ fontStyle: "italic" }}>Since 1998</em>
@@ -263,12 +263,12 @@ export default function Hero() {
           <p
             className="hero-reveal reveal text-[#2d2d2d] mb-4"
             style={{
-              fontFamily: "var(--font-instrument-serif)",
-              fontSize: "clamp(2.6rem, 9vw, 3.5rem)",
-              fontWeight: 400,
+              fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
+              fontSize: "clamp(2.4rem, 8.5vw, 3.2rem)",
+              fontWeight: 800,
               fontStyle: "normal",
-              lineHeight: 1.1,
-              letterSpacing: "-0.01em",
+              lineHeight: 1.15,
+              letterSpacing: "-0.02em",
             }}
           >
             Mangalore&apos;s Most Trusted Ladies Salon, <em style={{ fontStyle: "italic" }}>Since 1998</em>

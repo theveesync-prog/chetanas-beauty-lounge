@@ -141,7 +141,7 @@ export default function Gallery() {
     <section
       ref={sectionRef}
       id="gallery"
-      className="py-14 md:py-20 px-4"
+      className="py-14 md:py-20 px-4 scroll-mt-24"
       style={{ backgroundColor: "#ffffff" }}
       aria-label="Instagram feed — Chetana's Beauty Lounge"
     >
