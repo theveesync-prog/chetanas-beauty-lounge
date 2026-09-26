@@ -5,6 +5,7 @@ import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
 import { SITE_URL, BUSINESS_ADDRESS } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Best Ladies Salon in Mangalore | Chetana's Beauty — CIDESCO Certified",
@@ -124,6 +125,7 @@ export default function RootLayout({
           <Footer />
         </CartProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
