@@ -155,21 +155,25 @@ export default function Hero() {
           <h1
             className="hero-reveal reveal text-[#2d2d2d] mb-5"
             style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(4rem, 7vw, 6.5rem)",
-              fontWeight: 700,
+              fontFamily: "var(--font-instrument-serif)",
+              fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
+              fontWeight: 400,
               fontStyle: "normal",
-              lineHeight: 1.0,
-              letterSpacing: "-0.02em",
+              lineHeight: 1.05,
+              letterSpacing: "-0.01em",
             }}
           >
-            Mangalore&apos;s Best Ladies Salon
+            Mangalore&apos;s Most Trusted Ladies Salon, <em style={{ fontStyle: "italic" }}>Since 1998</em>
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-reveal reveal reveal-delay-1 text-[15px] leading-relaxed mb-10 max-w-xs" style={{ color: "#666" }}>
-            Expert bridal makeup, advanced skin treatments &amp; a celebrated
-            beauty academy — rooted in Kankanady since 1998.
+          <p
+            className="hero-reveal reveal reveal-delay-1 leading-relaxed mb-10 max-w-xs"
+            style={{ fontFamily: "var(--font-raleway)", fontSize: "15px", color: "#666" }}
+          >
+            Bridal makeup, advanced skin care and quiet pampering in Kankanady, led by
+            CIDESCO-certified Chetana Salian. Three generations of Mangalore women have
+            trusted her hands. Now it&apos;s your turn.
           </p>
 
           {/* CTA — dark pill with green glowing dot */}
@@ -259,19 +263,23 @@ export default function Hero() {
           <p
             className="hero-reveal reveal text-[#2d2d2d] mb-4"
             style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(2.8rem, 10vw, 4rem)",
-              fontWeight: 700,
+              fontFamily: "var(--font-instrument-serif)",
+              fontSize: "clamp(2.6rem, 9vw, 3.5rem)",
+              fontWeight: 400,
               fontStyle: "normal",
-              lineHeight: 1.05,
-              letterSpacing: "-0.02em",
+              lineHeight: 1.1,
+              letterSpacing: "-0.01em",
             }}
           >
-            Mangalore&apos;s Best Ladies Salon
+            Mangalore&apos;s Most Trusted Ladies Salon, <em style={{ fontStyle: "italic" }}>Since 1998</em>
           </p>
-          <p className="hero-reveal reveal reveal-delay-1 text-sm leading-relaxed mb-8" style={{ color: "#666" }}>
-            Expert bridal makeup, advanced skin treatments &amp; a celebrated beauty academy —
-            rooted in Kankanady since 1998.
+          <p
+            className="hero-reveal reveal reveal-delay-1 text-sm leading-relaxed mb-8"
+            style={{ fontFamily: "var(--font-raleway)", color: "#666" }}
+          >
+            Bridal makeup, advanced skin care and quiet pampering in Kankanady, led by
+            CIDESCO-certified Chetana Salian. Three generations of Mangalore women have
+            trusted her hands. Now it&apos;s your turn.
           </p>
           <div className="hero-reveal reveal reveal-delay-2">
             <a
