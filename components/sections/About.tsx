@@ -118,10 +118,10 @@ export default function About() {
         </div>
 
         {/* ── Right: Image carousel ────────────────────────── */}
-        <div className={`reveal reveal-delay-1 w-full lg:w-auto lg:flex-shrink-0 ${revealed ? "visible" : ""}`} style={{ maxWidth: "min(46%, 440px)", width: "100%" }}>
+        <div className={`reveal reveal-delay-1 w-full lg:w-auto lg:flex-shrink-0 lg:max-w-[min(46%,440px)] ${revealed ? "visible" : ""}`}>
 
           {/* Image container */}
-          <div className="relative" style={{ aspectRatio: "4/5" }}>
+          <div className="relative aspect-[4/3] lg:aspect-[4/5]">
             <div
               className="relative w-full h-full overflow-hidden shadow-xl"
               style={{ borderRadius: "2rem" }}
