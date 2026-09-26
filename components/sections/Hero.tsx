@@ -5,9 +5,6 @@ import { useEffect, useRef, useState, useCallback } from "react";
 const WHATSAPP_SALON =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
 
-const GMB_URL =
-  "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEqqKK6Kz7I0YLRSNagwTko0Nk00NksyTE0xT01OsTKoSLFMS820TTQzNbA0SjNLMvcST85ILUnMS1QvVkhKTSwtqVTIyS_NS08FAL8sGSg&q=chetana%27s+beauty+lounge&sourceid=chrome&ie=UTF-8";
-
 // Editorial slideshow — rotates through client work
 const HERO_IMAGES = [
   { src: "/images/hero/hero-editorial-1.webp", alt: "Bridal makeup and hairstyling by Chetana's Beauty Lounge, Mangalore" },
@@ -21,17 +18,11 @@ const SLIDE_INTERVAL_MS = 4500;
 // Card background — clean white
 const CARD_BG = "#ffffff";
 
-const AVATAR_URLS = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&auto=format&fit=crop&crop=faces",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&q=80&auto=format&fit=crop&crop=faces",
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=64&h=64&q=80&auto=format&fit=crop&crop=faces",
-];
-
-function GoogleWreathIcon() {
+function EstablishedBadgeIcon() {
   return (
     <svg viewBox="0 0 40 40" className="w-8 h-8 flex-shrink-0" aria-hidden="true">
       <circle cx="20" cy="20" r="18" fill="none" stroke="#dadce0" strokeWidth="1.5" />
-      <text x="20" y="25" textAnchor="middle" fontSize="14" fill="#4285F4" fontFamily="sans-serif" fontWeight="700">G</text>
+      <text x="20" y="25" textAnchor="middle" fontSize="12" fill="#5f1e42" fontFamily="var(--font-instrument-serif), serif" fontWeight="600">98</text>
     </svg>
   );
 }
@@ -199,41 +190,16 @@ export default function Hero() {
           className="hero-reveal reveal reveal-delay-3 absolute bottom-0 left-0 flex items-center gap-5"
           style={{ zIndex: 3, padding: "1.75rem 3.5rem" }}
         >
-          {/* Google rating */}
-          <a
-            href={GMB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 hover:opacity-75 transition-opacity"
-          >
-            <GoogleWreathIcon />
-            <div>
-              <div className="flex items-center gap-1 mb-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <svg key={i} viewBox="0 0 20 20" className="w-3 h-3 fill-[#e8b80d]" aria-hidden="true">
-                    <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z" />
-                  </svg>
-                ))}
-              </div>
-              {/* Overlapping avatars */}
-              <div className="flex items-center gap-1.5">
-                <div className="flex">
-                  {AVATAR_URLS.map((src, i) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      key={i}
-                      src={src}
-                      alt=""
-                      aria-hidden="true"
-                      className="w-5 h-5 rounded-full border border-white object-cover"
-                      style={{ marginLeft: i === 0 ? 0 : "-5px", position: "relative", zIndex: 3 - i }}
-                    />
-                  ))}
-                </div>
-                <span className="text-xs text-[#888]">(315)</span>
-              </div>
-            </div>
-          </a>
+          {/* Established badge */}
+          <div className="flex items-center gap-3">
+            <EstablishedBadgeIcon />
+            <p
+              className="text-sm font-semibold text-[#333]"
+              style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
+            >
+              Since 1998
+            </p>
+          </div>
 
           {/* Divider */}
           <span className="w-px h-10 bg-black/10 flex-shrink-0" aria-hidden="true" />
@@ -312,6 +278,16 @@ export default function Hero() {
               decoding="async"
             />
           ))}
+          {/* Gradient: blends image into card bg on top edge */}
+          <div
+            className="absolute inset-x-0 top-0"
+            style={{
+              height: "25%",
+              background: `linear-gradient(to bottom, ${CARD_BG} 0%, ${CARD_BG}cc 30%, transparent 100%)`,
+              pointerEvents: "none",
+            }}
+            aria-hidden="true"
+          />
           {/* Slide dots */}
           <div
             className="absolute bottom-3 right-4 flex items-center gap-1.5"
@@ -339,19 +315,15 @@ export default function Hero() {
 
         {/* Social proof */}
         <div className="hero-reveal reveal reveal-delay-3 px-8 py-5 flex flex-wrap items-center gap-4">
-          <a href={GMB_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-            <GoogleWreathIcon />
-            <div>
-              <div className="flex items-center gap-0.5 mb-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <svg key={i} viewBox="0 0 20 20" className="w-3 h-3 fill-[#e8b80d]" aria-hidden="true">
-                    <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-xs text-[#888]">Rated on Google (315)</p>
-            </div>
-          </a>
+          <div className="flex items-center gap-2">
+            <EstablishedBadgeIcon />
+            <p
+              className="text-sm font-semibold text-[#333]"
+              style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
+            >
+              Since 1998
+            </p>
+          </div>
           <span className="w-px h-10 bg-black/10" aria-hidden="true" />
           <div className="flex items-center gap-2">
             <CheckBadgeIcon />
