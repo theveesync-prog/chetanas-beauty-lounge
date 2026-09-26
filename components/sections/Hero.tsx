@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 const WHATSAPP_SALON =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
@@ -8,9 +8,15 @@ const WHATSAPP_SALON =
 const GMB_URL =
   "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEqqKK6Kz7I0YLRSNagwTko0Nk00NksyTE0xT01OsTKoSLFMS820TTQzNbA0SjNLMvcST85ILUnMS1QvVkhKTSwtqVTIyS_NS08FAL8sGSg&q=chetana%27s+beauty+lounge&sourceid=chrome&ie=UTF-8";
 
-// Woman with botanicals/flowers — matches reference aesthetic
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1588516903720-8ceb67f9ef84?w=1200&q=90&auto=format&fit=crop";
+// Editorial slideshow — rotates through client work
+const HERO_IMAGES = [
+  { src: "/images/hero/hero-editorial-1.webp", alt: "Bridal makeup and hairstyling by Chetana's Beauty Lounge, Mangalore" },
+  { src: "/images/hero/hero-editorial-2.webp", alt: "Editorial hairstyling and makeup by Chetana's Beauty Lounge, Mangalore" },
+  { src: "/images/hero/hero-editorial-3.webp", alt: "Bridal hairstyling with feather headpiece by Chetana's Beauty Lounge, Mangalore" },
+  { src: "/images/hero/hero-editorial-4.webp", alt: "Party makeup and styling by Chetana's Beauty Lounge, Mangalore" },
+];
+
+const SLIDE_INTERVAL_MS = 4500;
 
 // Card warm off-white — matches reference
 const CARD_BG = "#F2F0EC";
@@ -41,6 +47,8 @@ function CheckBadgeIcon() {
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const slideTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     const items = heroRef.current?.querySelectorAll(".hero-reveal");
@@ -48,6 +56,19 @@ export default function Hero() {
     items.forEach((el, i) => {
       setTimeout(() => el.classList.add("visible"), 80 + i * 120);
     });
+  }, []);
+
+  const goToSlide = useCallback((idx: number) => {
+    setActiveSlide(idx);
+  }, []);
+
+  useEffect(() => {
+    slideTimerRef.current = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, SLIDE_INTERVAL_MS);
+    return () => {
+      if (slideTimerRef.current) clearInterval(slideTimerRef.current);
+    };
   }, []);
 
   return (
@@ -71,30 +92,58 @@ export default function Hero() {
           height: "620px",
         }}
       >
-        {/* ── Layer 1 (z-1): Image — fills right 65% of the card ── */}
+        {/* ── Layer 1 (z-1): Image slideshow — fills right 65% of the card ── */}
         <div
           className="absolute top-0 bottom-0 right-0"
           style={{ width: "65%", zIndex: 1 }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={HERO_IMAGE}
-            alt="Beauty portrait at Chetana's Beauty Lounge Mangaluru"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: "center top" }}
-            loading="eager"
-            decoding="async"
-          />
+          {HERO_IMAGES.map((img, i) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+              style={{ objectPosition: "center top", opacity: i === activeSlide ? 1 : 0 }}
+              loading={i === 0 ? "eager" : "lazy"}
+              decoding="async"
+            />
+          ))}
           {/* Gradient: blends image into card bg on the left */}
           <div
             className="absolute inset-y-0 left-0"
             style={{
               width: "40%",
+              zIndex: 2,
               background: `linear-gradient(to right, ${CARD_BG} 0%, ${CARD_BG}cc 30%, transparent 100%)`,
               pointerEvents: "none",
             }}
             aria-hidden="true"
           />
+          {/* Slide dots */}
+          <div
+            className="absolute bottom-5 right-6 flex items-center gap-1.5"
+            style={{ zIndex: 3 }}
+            role="tablist"
+            aria-label="Photo slideshow navigation"
+          >
+            {HERO_IMAGES.map((img, i) => (
+              <button
+                key={img.src}
+                onClick={() => goToSlide(i)}
+                role="tab"
+                aria-selected={i === activeSlide}
+                aria-label={`Slide ${i + 1}`}
+                className="rounded-full transition-all duration-300"
+                style={{
+                  width: i === activeSlide ? "18px" : "6px",
+                  height: "6px",
+                  backgroundColor: i === activeSlide ? "#fff" : "rgba(255,255,255,0.5)",
+                  boxShadow: "0 1px 3px rgba(0,0,0,0.3)",
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* ── Layer 2 (z-2): Text content — left portion ── */}
@@ -241,17 +290,43 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Image */}
+        {/* Image slideshow */}
         <div className="relative w-full" style={{ aspectRatio: "4/3" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={HERO_IMAGE}
-            alt="Beauty portrait at Chetana's Beauty Lounge Mangaluru"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "center top" }}
-            loading="eager"
-            decoding="async"
-          />
+          {HERO_IMAGES.map((img, i) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+              style={{ objectPosition: "center top", opacity: i === activeSlide ? 1 : 0 }}
+              loading={i === 0 ? "eager" : "lazy"}
+              decoding="async"
+            />
+          ))}
+          {/* Slide dots */}
+          <div
+            className="absolute bottom-3 right-4 flex items-center gap-1.5"
+            role="tablist"
+            aria-label="Photo slideshow navigation"
+          >
+            {HERO_IMAGES.map((img, i) => (
+              <button
+                key={img.src}
+                onClick={() => goToSlide(i)}
+                role="tab"
+                aria-selected={i === activeSlide}
+                aria-label={`Slide ${i + 1}`}
+                className="rounded-full transition-all duration-300"
+                style={{
+                  width: i === activeSlide ? "16px" : "6px",
+                  height: "6px",
+                  backgroundColor: i === activeSlide ? "#fff" : "rgba(255,255,255,0.5)",
+                  boxShadow: "0 1px 3px rgba(0,0,0,0.3)",
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Social proof */}
