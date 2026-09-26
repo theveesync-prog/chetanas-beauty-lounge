@@ -155,12 +155,12 @@ export default function Hero() {
           <h1
             className="hero-reveal reveal text-white mb-5"
             style={{
-              fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
-              fontSize: "clamp(3rem, 5.2vw, 4.5rem)",
-              fontWeight: 800,
+              fontFamily: "var(--font-instrument-serif)",
+              fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
+              fontWeight: 400,
               fontStyle: "normal",
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
+              lineHeight: 1.05,
+              letterSpacing: "-0.01em",
             }}
           >
             Mangalore&apos;s Most Trusted Ladies Salon, <em style={{ fontStyle: "italic" }}>Since 1998</em>
@@ -176,14 +176,14 @@ export default function Hero() {
             trusted her hands. Now it&apos;s your turn.
           </p>
 
-          {/* CTA — gold pill with green glowing dot */}
+          {/* CTA — white pill with green glowing dot */}
           <div className="hero-reveal reveal reveal-delay-2">
             <a
               href={WHATSAPP_SALON}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold text-[#3a1226] transition-all hover:opacity-85 hover:-translate-y-0.5"
-              style={{ backgroundColor: "#e8b80d" }}
+              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold text-[#5f1e42] transition-all hover:opacity-85 hover:-translate-y-0.5"
+              style={{ backgroundColor: "#ffffff" }}
             >
               <span className="relative flex h-2.5 w-2.5 flex-shrink-0" aria-hidden="true">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
@@ -263,12 +263,12 @@ export default function Hero() {
           <p
             className="hero-reveal reveal text-white mb-4"
             style={{
-              fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
-              fontSize: "clamp(2.4rem, 8.5vw, 3.2rem)",
-              fontWeight: 800,
+              fontFamily: "var(--font-instrument-serif)",
+              fontSize: "clamp(2.6rem, 9vw, 3.5rem)",
+              fontWeight: 400,
               fontStyle: "normal",
-              lineHeight: 1.15,
-              letterSpacing: "-0.02em",
+              lineHeight: 1.1,
+              letterSpacing: "-0.01em",
             }}
           >
             Mangalore&apos;s Most Trusted Ladies Salon, <em style={{ fontStyle: "italic" }}>Since 1998</em>
@@ -286,8 +286,8 @@ export default function Hero() {
               href={WHATSAPP_SALON}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold text-[#3a1226] transition-all hover:opacity-85"
-              style={{ backgroundColor: "#e8b80d" }}
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold text-[#5f1e42] transition-all hover:opacity-85"
+              style={{ backgroundColor: "#ffffff" }}
             >
               <span className="relative flex h-2.5 w-2.5 flex-shrink-0" aria-hidden="true">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
