@@ -6,6 +6,7 @@ import {
   WHATSAPP_BASE,
 } from "@/lib/services-data";
 import { getFaqsForService } from "@/lib/service-faqs";
+import { SITE_URL } from "@/lib/constants";
 import Navbar from "@/components/Navbar";
 import ServiceImage from "@/components/ServiceImage";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -48,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
     },
     alternates: {
-      canonical: `https://chetanasbeauty.in/services/${category}/${service}`,
+      canonical: `${SITE_URL}/services/${category}/${service}`,
     },
   };
 }
@@ -70,9 +71,9 @@ export default async function ServiceDetailPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://chetanasbeauty.in" },
-      { "@type": "ListItem", position: 2, name: cat.label, item: `https://chetanasbeauty.in/services/${cat.slug}` },
-      { "@type": "ListItem", position: 3, name: svc.name, item: `https://chetanasbeauty.in/services/${cat.slug}/${svc.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: cat.label, item: `${SITE_URL}/services/${cat.slug}` },
+      { "@type": "ListItem", position: 3, name: svc.name, item: `${SITE_URL}/services/${cat.slug}/${svc.slug}` },
     ],
   };
 
@@ -81,11 +82,11 @@ export default async function ServiceDetailPage({ params }: Props) {
     "@type": "Service",
     name: svc.name,
     description: svc.longDescription ?? svc.description,
-    url: `https://chetanasbeauty.in/services/${cat.slug}/${svc.slug}`,
+    url: `${SITE_URL}/services/${cat.slug}/${svc.slug}`,
     provider: {
       "@type": "BeautySalon",
       name: "Chetana's Beauty",
-      url: "https://chetanasbeauty.in",
+      url: SITE_URL,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Mangalore",

@@ -206,7 +206,7 @@ export default function Hero() {
       >
         {/* Text block */}
         <div className="px-8 pt-10 pb-6">
-          <h1
+          <p
             className="hero-reveal reveal text-[#2d2d2d] mb-4"
             style={{
               fontFamily: "var(--font-display)",
@@ -218,7 +218,7 @@ export default function Hero() {
             }}
           >
             Mangalore&apos;s Best Ladies Salon
-          </h1>
+          </p>
           <p className="hero-reveal reveal reveal-delay-1 text-sm leading-relaxed mb-8" style={{ color: "#666" }}>
             Expert bridal makeup, advanced skin treatments &amp; a celebrated beauty academy —
             rooted in Kankanady since 1998.

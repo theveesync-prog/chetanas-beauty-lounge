@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | Chetana's Beauty Lounge Mangalore",
   description:
     "Terms and Conditions for Chetana's Beauty Lounge — booking, cancellation, payment and service policies.",
-  alternates: { canonical: "https://chetanasbeauty.in/terms" },
+  alternates: { canonical: `${SITE_URL}/terms` },
 };
 
 export default function TermsPage() {
@@ -35,8 +36,8 @@ export default function TermsPage() {
 
           <p className="mb-6 text-base">
             These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern your use of the website{" "}
-            <a href="https://chetanasbeauty.in" className="text-[#5f1e42] hover:underline">
-              chetanasbeauty.in
+            <a href={SITE_URL} className="text-[#5f1e42] hover:underline">
+              chetanasbeautylounge.com
             </a>{" "}
             and any services provided by <strong>Chetana&rsquo;s Beauty Lounge</strong>, located
             at 3rd Floor, A Gate, Kankanady Bypass Rd, Kankanady, Mangaluru, Karnataka 575002.

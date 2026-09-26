@@ -6,6 +6,7 @@ import {
 } from "@/lib/services-data";
 import Navbar from "@/components/Navbar";
 import ServicePriceListClient from "@/components/ServicePriceListClient";
+import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
 interface Props {
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
     },
     alternates: {
-      canonical: `https://chetanasbeauty.in/services/${category}`,
+      canonical: `${SITE_URL}/services/${category}`,
     },
   };
 }
@@ -53,8 +54,8 @@ export default async function ServiceCategoryPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://chetanasbeauty.in" },
-      { "@type": "ListItem", position: 2, name: cat.label, item: `https://chetanasbeauty.in/services/${cat.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: cat.label, item: `${SITE_URL}/services/${cat.slug}` },
     ],
   };
 
