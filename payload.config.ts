@@ -7,6 +7,10 @@ import Users from './src/collections/Users';
 import Media from './src/collections/Media';
 import ServiceCategories from './src/collections/ServiceCategories';
 import Services from './src/collections/Services';
+import BlogPosts from './src/collections/BlogPosts';
+import FAQs from './src/collections/FAQs';
+import Gallery from './src/collections/Gallery';
+import Reviews from './src/collections/Reviews';
 import { SiteSettings } from './src/globals/SiteSettings';
 
 export default buildConfig({
@@ -14,14 +18,18 @@ export default buildConfig({
     user: Users.slug,
     disable: false,
   },
-  collections: [Users, Media, ServiceCategories, Services],
+  collections: [Users, Media, ServiceCategories, Services, BlogPosts, FAQs, Gallery, Reviews],
   globals: [SiteSettings],
   plugins: [
     seoPlugin({
-      collections: ['services'],
+      collections: ['services', 'blog-posts'],
       uploadsCollection: 'media',
-      generateTitle: ({ doc }) => `${doc?.name} | Chetana's Beauty`,
-      generateDescription: ({ doc }) => doc?.description,
+      generateTitle: ({ doc }) => {
+        if (doc?.name) return `${doc.name} | Chetana's Beauty`;
+        if (doc?.title) return `${doc.title} | Chetana's Beauty Blog`;
+        return 'Chetana\'s Beauty Lounge';
+      },
+      generateDescription: ({ doc }) => doc?.description || doc?.excerpt || '',
     }),
   ],
   db: postgresAdapter({

@@ -53,3 +53,105 @@ export const getSiteSettings = async () => {
     return null;
   }
 };
+
+export const getAllBlogPosts = async () => {
+  try {
+    const payload = await getPayloadInstance();
+    const posts = await payload.find({
+      collection: 'blog-posts',
+      where: {
+        status: { equals: 'published' },
+      },
+      limit: 1000,
+      sort: '-publishedAt',
+    });
+    return posts.docs || [];
+  } catch (error) {
+    console.error('Error fetching blog posts:', error);
+    return [];
+  }
+};
+
+export const getBlogPostBySlug = async (slug: string) => {
+  try {
+    const payload = await getPayloadInstance();
+    const posts = await payload.find({
+      collection: 'blog-posts',
+      where: {
+        slug: { equals: slug },
+        status: { equals: 'published' },
+      },
+      limit: 1,
+    });
+    return posts.docs?.[0] || null;
+  } catch (error) {
+    console.error('Error fetching blog post:', error);
+    return null;
+  }
+};
+
+export const getFAQsByCategory = async (category: string) => {
+  try {
+    const payload = await getPayloadInstance();
+    const faqs = await payload.find({
+      collection: 'faqs',
+      where: {
+        category: { equals: category },
+      },
+      limit: 1000,
+      sort: 'order',
+    });
+    return faqs.docs || [];
+  } catch (error) {
+    console.error('Error fetching FAQs:', error);
+    return [];
+  }
+};
+
+export const getGalleryByCategory = async (category: string) => {
+  try {
+    const payload = await getPayloadInstance();
+    const gallery = await payload.find({
+      collection: 'gallery',
+      where: {
+        category: { equals: category },
+      },
+      limit: 1000,
+      sort: 'order',
+    });
+    return gallery.docs || [];
+  } catch (error) {
+    console.error('Error fetching gallery:', error);
+    return [];
+  }
+};
+
+export const getAllGallery = async () => {
+  try {
+    const payload = await getPayloadInstance();
+    const gallery = await payload.find({
+      collection: 'gallery',
+      limit: 1000,
+      sort: 'order',
+    });
+    return gallery.docs || [];
+  } catch (error) {
+    console.error('Error fetching gallery:', error);
+    return [];
+  }
+};
+
+export const getReviews = async () => {
+  try {
+    const payload = await getPayloadInstance();
+    const reviews = await payload.find({
+      collection: 'reviews',
+      limit: 1000,
+      sort: '-publishedAt',
+    });
+    return reviews.docs || [];
+  } catch (error) {
+    console.error('Error fetching reviews:', error);
+    return [];
+  }
+};
