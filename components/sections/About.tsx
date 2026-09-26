@@ -15,8 +15,8 @@ const images = [
     alt: "Hair wash and pedicure stations at Chetana's Beauty Lounge Mangalore",
   },
   {
-    src: "/images/salon/salon-styling-chairs.webp",
-    alt: "Hair styling chairs and mirror stations at Chetana's Beauty Lounge Mangaluru",
+    src: "/images/salon/salon-storefront-entrance.webp",
+    alt: "Chetana's Beauty Lounge storefront entrance in Kankanady, Mangalore",
   },
   {
     src: "/images/salon/salon-mirror-stations.webp",
