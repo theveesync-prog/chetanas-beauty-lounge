@@ -1,6 +1,5 @@
 import { buildConfig } from 'payload';
 import { postgresAdapter } from '@payloadcms/db-postgres';
-import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob';
 import { seoPlugin } from '@payloadcms/plugin-seo';
 import path from 'path';
 import Users from './src/collections/Users';
