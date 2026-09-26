@@ -18,8 +18,8 @@ const HERO_IMAGES = [
 
 const SLIDE_INTERVAL_MS = 4500;
 
-// Card warm off-white — matches reference
-const CARD_BG = "#F2F0EC";
+// Card signature brand purple
+const CARD_BG = "#5f1e42";
 
 const AVATAR_URLS = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&auto=format&fit=crop&crop=faces",
@@ -30,7 +30,7 @@ const AVATAR_URLS = [
 function GoogleWreathIcon() {
   return (
     <svg viewBox="0 0 40 40" className="w-8 h-8 flex-shrink-0" aria-hidden="true">
-      <circle cx="20" cy="20" r="18" fill="none" stroke="#dadce0" strokeWidth="1.5" />
+      <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
       <text x="20" y="25" textAnchor="middle" fontSize="14" fill="#4285F4" fontFamily="sans-serif" fontWeight="700">G</text>
     </svg>
   );
@@ -39,7 +39,7 @@ function GoogleWreathIcon() {
 function CheckBadgeIcon() {
   return (
     <svg viewBox="0 0 40 40" className="w-8 h-8 flex-shrink-0" aria-hidden="true">
-      <circle cx="20" cy="20" r="18" fill="none" stroke="#dadce0" strokeWidth="1.5" />
+      <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
       <path d="M13 20l5 5 9-9" fill="none" stroke="#34A853" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -153,7 +153,7 @@ export default function Hero() {
         >
           {/* H1 */}
           <h1
-            className="hero-reveal reveal text-[#2d2d2d] mb-5"
+            className="hero-reveal reveal text-white mb-5"
             style={{
               fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
               fontSize: "clamp(3rem, 5.2vw, 4.5rem)",
@@ -169,21 +169,21 @@ export default function Hero() {
           {/* Subtitle */}
           <p
             className="hero-reveal reveal reveal-delay-1 leading-relaxed mb-10 max-w-xs"
-            style={{ fontFamily: "var(--font-raleway)", fontSize: "15px", color: "#666" }}
+            style={{ fontFamily: "var(--font-raleway)", fontSize: "15px", color: "rgba(255,255,255,0.75)" }}
           >
             Bridal makeup, advanced skin care and quiet pampering in Kankanady, led by
             CIDESCO-certified Chetana Salian. Three generations of Mangalore women have
             trusted her hands. Now it&apos;s your turn.
           </p>
 
-          {/* CTA — dark pill with green glowing dot */}
+          {/* CTA — gold pill with green glowing dot */}
           <div className="hero-reveal reveal reveal-delay-2">
             <a
               href={WHATSAPP_SALON}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-85 hover:-translate-y-0.5"
-              style={{ backgroundColor: "#111111" }}
+              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold text-[#3a1226] transition-all hover:opacity-85 hover:-translate-y-0.5"
+              style={{ backgroundColor: "#e8b80d" }}
             >
               <span className="relative flex h-2.5 w-2.5 flex-shrink-0" aria-hidden="true">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
@@ -230,20 +230,20 @@ export default function Hero() {
                     />
                   ))}
                 </div>
-                <span className="text-xs text-[#888]">(315)</span>
+                <span className="text-xs" style={{ color: "rgba(255,255,255,0.65)" }}>(315)</span>
               </div>
             </div>
           </a>
 
           {/* Divider */}
-          <span className="w-px h-10 bg-black/10 flex-shrink-0" aria-hidden="true" />
+          <span className="w-px h-10 bg-white/20 flex-shrink-0" aria-hidden="true" />
 
           {/* CIDESCO certification */}
           <div className="flex items-center gap-3">
             <CheckBadgeIcon />
             <div>
-              <p className="text-xs font-semibold text-[#333] leading-tight">CIDESCO</p>
-              <p className="text-xs text-[#888] leading-tight">Certified salon</p>
+              <p className="text-xs font-semibold text-white leading-tight">CIDESCO</p>
+              <p className="text-xs leading-tight" style={{ color: "rgba(255,255,255,0.65)" }}>Certified salon</p>
             </div>
           </div>
         </div>
@@ -261,7 +261,7 @@ export default function Hero() {
         <div className="px-8 pt-10 pb-6">
 
           <p
-            className="hero-reveal reveal text-[#2d2d2d] mb-4"
+            className="hero-reveal reveal text-white mb-4"
             style={{
               fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
               fontSize: "clamp(2.4rem, 8.5vw, 3.2rem)",
@@ -275,7 +275,7 @@ export default function Hero() {
           </p>
           <p
             className="hero-reveal reveal reveal-delay-1 text-sm leading-relaxed mb-8"
-            style={{ fontFamily: "var(--font-raleway)", color: "#666" }}
+            style={{ fontFamily: "var(--font-raleway)", color: "rgba(255,255,255,0.75)" }}
           >
             Bridal makeup, advanced skin care and quiet pampering in Kankanady, led by
             CIDESCO-certified Chetana Salian. Three generations of Mangalore women have
@@ -286,8 +286,8 @@ export default function Hero() {
               href={WHATSAPP_SALON}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-85"
-              style={{ backgroundColor: "#111111" }}
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold text-[#3a1226] transition-all hover:opacity-85"
+              style={{ backgroundColor: "#e8b80d" }}
             >
               <span className="relative flex h-2.5 w-2.5 flex-shrink-0" aria-hidden="true">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
@@ -349,15 +349,15 @@ export default function Hero() {
                   </svg>
                 ))}
               </div>
-              <p className="text-xs text-[#888]">Rated on Google (315)</p>
+              <p className="text-xs" style={{ color: "rgba(255,255,255,0.65)" }}>Rated on Google (315)</p>
             </div>
           </a>
-          <span className="w-px h-10 bg-black/10" aria-hidden="true" />
+          <span className="w-px h-10 bg-white/20" aria-hidden="true" />
           <div className="flex items-center gap-2">
             <CheckBadgeIcon />
             <div>
-              <p className="text-xs font-semibold text-[#333] leading-tight">CIDESCO</p>
-              <p className="text-xs text-[#888] leading-tight">Certified salon</p>
+              <p className="text-xs font-semibold text-white leading-tight">CIDESCO</p>
+              <p className="text-xs leading-tight" style={{ color: "rgba(255,255,255,0.65)" }}>Certified salon</p>
             </div>
           </div>
         </div>
