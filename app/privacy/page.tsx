@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Chetana's Beauty Lounge Mangalore",
+  title: "Privacy Policy",
   description:
     "Privacy Policy for Chetana's Beauty Lounge — how we collect, use and protect your personal information.",
   alternates: { canonical: `${SITE_URL}/privacy` },

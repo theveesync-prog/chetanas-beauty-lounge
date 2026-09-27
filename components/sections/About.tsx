@@ -91,9 +91,9 @@ export default function About() {
           </h2>
 
           <p className={`reveal reveal-delay-2 text-base md:text-lg text-[#666] leading-relaxed mb-5 max-w-lg font-light ${revealed ? "visible" : ""}`}>
-            Chetana&rsquo;s Beauty Lounge is Mangalore&rsquo;s most trusted ladies-only salon and beauty academy.
-            CIDESCO-certified, rooted in Kankanady since 1998 — we&rsquo;ve served over 32,000 clients
-            across bridal, skin, hair and wellness services.
+            Chetana&rsquo;s Beauty Lounge is Mangalore&rsquo;s most trusted ladies-only salon, spa and beauty
+            academy. CIDESCO-certified, rooted in Kankanady since 1998 — we&rsquo;ve served over 32,000
+            clients across bridal, skin, hair and wellness services.
           </p>
 
           <p className={`reveal reveal-delay-2 text-base md:text-lg text-[#666] leading-relaxed mb-10 max-w-lg font-light ${revealed ? "visible" : ""}`}>

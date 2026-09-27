@@ -6,7 +6,7 @@ import {
   WHATSAPP_BASE,
 } from "@/lib/services-data";
 import { getFaqsForService } from "@/lib/service-faqs";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, SITE_LEGAL_NAME } from "@/lib/constants";
 import Navbar from "@/components/Navbar";
 import ServiceImage from "@/components/ServiceImage";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -87,7 +87,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     url: `${SITE_URL}/services/${cat.slug}/${svc.slug}`,
     provider: {
       "@type": "BeautySalon",
-      name: "Chetana's Beauty",
+      name: SITE_LEGAL_NAME,
       url: SITE_URL,
       address: {
         "@type": "PostalAddress",

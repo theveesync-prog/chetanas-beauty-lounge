@@ -361,6 +361,10 @@ export default function Footer() {
                 Privacy Policy
               </Link>
               <span style={{ color: "rgba(255,255,255,0.15)" }} aria-hidden="true">·</span>
+              <Link href="/hygiene-safety" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.6)" }}>
+                Hygiene &amp; Safety
+              </Link>
+              <span style={{ color: "rgba(255,255,255,0.15)" }} aria-hidden="true">·</span>
               <a href="/sitemap.xml" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Sitemap
               </a>

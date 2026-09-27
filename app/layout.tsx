@@ -3,7 +3,7 @@ import "./globals.css";
 import { CartProvider } from "@/lib/cart-context";
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
-import { SITE_URL, SITE_NAME, BUSINESS_ADDRESS } from "@/lib/constants";
+import { SITE_URL, SITE_NAME, SITE_LEGAL_NAME, BUSINESS_ADDRESS } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Chetana's Beauty Lounge",
   },
   description:
-    "Chetana's Beauty is a CIDESCO-certified ladies salon in Mangalore offering bridal makeup, skin treatments and a beauty academy in Kankanady. Trusted by NRI families from Dubai. Book via WhatsApp.",
+    "Chetana's Beauty Lounge & Education Foundation is a CIDESCO-certified ladies salon, spa and beauty academy in Mangalore offering bridal makeup, skin treatments and professional courses in Kankanady. Trusted by NRI families from Dubai. Book via WhatsApp.",
   keywords: [
     "best salon in Mangalore",
     "best ladies salon in Mangalore",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "NRI bridal makeup Mangalore",
     "CIDESCO certified salon Mangalore",
   ],
-  authors: [{ name: "Chetana's Beauty" }],
+  authors: [{ name: SITE_LEGAL_NAME }],
   robots: {
     index: true,
     follow: true,
@@ -131,9 +131,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["LocalBusiness", "BeautySalon"],
-              name: "Chetana's Beauty",
+              name: SITE_LEGAL_NAME,
+              alternateName: "Chetana's Beauty Lounge",
               description:
-                "CIDESCO-certified ladies-only beauty salon and academy in Kankanady, Mangalore offering bridal makeup, skin treatments and professional beauty courses.",
+                "CIDESCO-certified ladies-only salon, spa and beauty academy in Kankanady, Mangalore offering bridal makeup, skin treatments, spa services and professional beauty courses.",
               url: SITE_URL,
               image: `${SITE_URL}/images/salon/og-image.jpg`,
               priceRange: "₹₹",

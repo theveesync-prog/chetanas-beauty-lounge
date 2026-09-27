@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Chetana's Beauty Lounge Mangalore",
+  title: "Terms & Conditions",
   description:
     "Terms and Conditions for Chetana's Beauty Lounge — booking, cancellation, payment and service policies.",
   alternates: { canonical: `${SITE_URL}/terms` },

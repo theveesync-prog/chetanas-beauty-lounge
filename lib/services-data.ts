@@ -26,7 +26,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     slug: "hair-care",
     label: "Hair Care",
-    tagline: "Healthy, gorgeous hair starts here",
+    tagline: "Real, wearable colour and cuts that keep your hair healthy, not just an Instagram moment",
     icon: "✂️",
     services: [
       {

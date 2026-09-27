@@ -8,7 +8,7 @@ import {
   getRelatedPosts,
   type BlogSection,
 } from "@/lib/blog-data";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, SITE_LEGAL_NAME } from "@/lib/constants";
 import { ArrowLeft, ArrowRight, Clock, CalendarDays } from "lucide-react";
 
 interface Props {
@@ -310,11 +310,12 @@ export default async function BlogPostPage({ params }: Props) {
     image: post.coverImage,
     author: {
       "@type": "Organization",
-      name: "Chetana's Beauty",
+      name: SITE_LEGAL_NAME,
     },
     publisher: {
       "@type": "Organization",
-      name: "Chetana's Beauty",
+      name: SITE_LEGAL_NAME,
+      alternateName: "Chetana's Beauty Lounge",
       url: SITE_URL,
     },
     datePublished: post.publishedAt,
