@@ -17,7 +17,6 @@ export default function PrivacyPage() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="pt-28 pb-10 px-4" style={{ backgroundColor: "#fdf8f5" }}>
         <div className="max-w-3xl mx-auto">
-          <p className="section-label mb-4">Legal</p>
           <h1
             className="font-display text-4xl sm:text-5xl font-semibold leading-tight mb-3"
             style={{ color: "#5f1e42" }}

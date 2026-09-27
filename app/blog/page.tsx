@@ -65,7 +65,6 @@ export default async function BlogPage({ searchParams }: Props) {
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="bg-white pt-28 pb-12 px-4 sm:px-6 lg:px-8" aria-label="Blog hero">
         <div className="max-w-5xl mx-auto">
-          <span className="section-label">From Our Experts</span>
           <h1
             className="mt-3 mb-4 text-[#111] leading-tight"
             style={{
@@ -122,10 +121,9 @@ export default async function BlogPage({ searchParams }: Props) {
       {featured && activeCategory === "all" && (
         <section className="bg-white py-12 px-4 sm:px-6 lg:px-8" aria-label="Featured article">
           <div className="max-w-5xl mx-auto">
-            <span className="section-label">Featured Article</span>
             <a
               href={`/blog/${featured.slug}`}
-              className="group mt-5 block rounded-3xl overflow-hidden border hover:border-[#5f1e42]/20 hover:-translate-y-0.5 transition-all duration-200"
+              className="group block rounded-3xl overflow-hidden border hover:border-[#5f1e42]/20 hover:-translate-y-0.5 transition-all duration-200"
               style={{ borderColor: "rgba(0,0,0,0.06)", backgroundColor: "white" }}
               aria-label={`Read featured article: ${featured.title}`}
             >
@@ -201,9 +199,17 @@ export default async function BlogPage({ searchParams }: Props) {
       <section className="bg-white pb-20 px-4 sm:px-6 lg:px-8" aria-label="All articles">
         <div className="max-w-5xl mx-auto">
           {activeCategory !== "all" && (
-            <span className="section-label block mb-8">
+            <h2
+              className="mb-8 text-[#111]"
+              style={{
+                fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
+                fontWeight: 700,
+                fontSize: "1.3rem",
+                letterSpacing: "-0.01em",
+              }}
+            >
               {blogCategories.find((c) => c.slug === activeCategory)?.label ?? "Articles"}
-            </span>
+            </h2>
           )}
 
           {gridPosts.length === 0 ? (

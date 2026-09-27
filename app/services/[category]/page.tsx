@@ -70,9 +70,8 @@ export default async function ServiceCategoryPage({ params }: Props) {
       {/* Page header */}
       <div className="bg-white pt-28 pb-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <span className="section-label">Our Services</span>
           <h1
-            className="mt-3 text-[#111]"
+            className="text-[#111]"
             style={{
               fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
               fontSize: "clamp(2.2rem, 5vw, 3.5rem)",

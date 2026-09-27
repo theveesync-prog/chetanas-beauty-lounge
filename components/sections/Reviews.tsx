@@ -147,12 +147,8 @@ export default function Reviews() {
 
         {/* ── Header ─────────────────────────────────────────── */}
         <div className="text-center mb-16 md:mb-20">
-          <div className={`reveal mb-4 flex justify-center ${revealed ? "visible" : ""}`}>
-            <span className="section-label">Reviews</span>
-          </div>
-
           <h2
-            className={`reveal reveal-delay-1 text-[#111111] mb-5 ${revealed ? "visible" : ""}`}
+            className={`reveal text-[#111111] mb-5 ${revealed ? "visible" : ""}`}
             style={{
               fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
               fontSize: "clamp(2.5rem, 6vw, 4.5rem)",

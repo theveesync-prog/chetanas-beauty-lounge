@@ -488,9 +488,8 @@ export default async function BlogPostPage({ params }: Props) {
       {related.length > 0 && (
         <section className="bg-white border-t py-16 px-4 sm:px-6 lg:px-8" style={{ borderColor: "rgba(0,0,0,0.06)" }} aria-label="Related articles">
           <div className="max-w-5xl mx-auto">
-            <span className="section-label">Keep Reading</span>
             <h2
-              className="mt-3 mb-10"
+              className="mb-10"
               style={{
                 fontFamily: PJS,
                 fontWeight: 700,
