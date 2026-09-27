@@ -15,9 +15,10 @@ export interface BlogPost {
 }
 
 export interface BlogSection {
-  type: "paragraph" | "heading" | "subheading" | "list" | "tip" | "quote" | "cta";
+  type: "paragraph" | "heading" | "subheading" | "list" | "tip" | "quote" | "faq" | "cta";
   text?: string;
   items?: string[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -94,6 +95,10 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
+        type: "paragraph",
+        text: "Every Mangalore wedding is different. See how the look can change depending on community and ceremony in our guide to [bridal makeup for Tulu, Konkani, Catholic and Beary brides](/blog/mangalorean-bridal-makeup-tulu-konkani-catholic-beary).",
+      },
+      {
         type: "tip",
         text: "Do a full bridal makeup trial at least 2 weeks before your wedding. That gives you time to adjust the shade, style or lash type without the pressure of the actual day.",
       },
@@ -126,7 +131,7 @@ export const blogPosts: BlogPost[] = [
       "oily skin Mangaluru",
     ],
     metaDescription:
-      "A dermatologist-approved skin care routine for Mangalore's humid coastal climate. Tips for oily skin, tan removal, and pigmentation from Chetana's Beauty experts.",
+      "A skin care routine built for Mangalore's humid coastal climate. Tips for oily skin, tan removal, and pigmentation from Chetana's Beauty experts.",
     coverImage: "/images/salon/salon-mirror-stations.webp",
     coverAlt: "Salon treatment stations at Chetana's Beauty Lounge, Mangalore",
     content: [
@@ -395,6 +400,10 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
+        type: "paragraph",
+        text: "Wondering what bridal makeup actually costs in Mangalore, or how the look and timings might change depending on your community and ceremonies? See our guides to [bridal makeup cost in Mangalore](/blog/bridal-makeup-cost-mangalore-2026) and [bridal makeup by community](/blog/mangalorean-bridal-makeup-tulu-konkani-catholic-beary).",
+      },
+      {
         type: "tip",
         text: "Never try a new product or treatment within 2 weeks of your wedding. If you react, you need time to recover, so anything experimental should be done by the 6-week mark.",
       },
@@ -407,7 +416,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "nail-art-trends-2025-mangalore",
-    title: "Nail Art Trends for 2025: From Mangalorean Weddings to Everyday Chic",
+    title: "Nail Art Trends for 2026: From Mangalorean Weddings to Everyday Chic",
     excerpt:
       "Nail art has evolved from a niche luxury into an everyday expression of personal style. Our nail specialists share the trends dominating salons in Mangalore this year.",
     category: "Nails",
@@ -417,19 +426,19 @@ export const blogPosts: BlogPost[] = [
     featured: false,
     tags: [
       "nail art Mangalore",
-      "nail trends 2025",
+      "nail trends 2026",
       "nail extensions Mangaluru",
       "gel nails Mangalore",
       "bridal nails Mangalore",
     ],
     metaDescription:
-      "Top nail art trends for 2025 from Chetana's Beauty nail specialists in Mangalore. From minimalist gel nails to elaborate bridal nail art for Tulu and Catholic weddings.",
+      "Top nail art trends for 2026 from Chetana's Beauty nail specialists in Mangalore. From minimalist gel nails to elaborate bridal nail art for Tulu and Catholic weddings.",
     coverImage: "/images/gallery/gallery-pedicure-care.webp",
     coverAlt: "Pedicure and nail care session at Chetana's Beauty Lounge",
     content: [
       {
         type: "paragraph",
-        text: "2025 has been the year nail art moved past trendy Instagram aesthetics into designs that actually work with real life: real jobs, real housework, real Mangalorean weather. Our nail specialists have been paying attention to what clients keep asking for, and a few genuinely nice trends have emerged.",
+        text: "2026 is the year nail art moved past trendy Instagram aesthetics into designs that actually work with real life: real jobs, real housework, real Mangalorean weather. Our nail specialists have been paying attention to what clients keep asking for, and a few genuinely nice trends have emerged.",
       },
       {
         type: "heading",
@@ -461,7 +470,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "Florals in nail art aren't new, but 2025's florals are different: less pastel, more tonal. Think a deep burgundy nail with darker burgundy roses in a matte-on-glossy finish, or cream nails with tiny white daisies that look almost three-dimensional. These take time to do, but they're genuinely stunning for weddings and special occasions.",
+        text: "Florals in nail art aren't new, but this year's florals are different: less pastel, more tonal. Think a deep burgundy nail with darker burgundy roses in a matte-on-glossy finish, or cream nails with tiny white daisies that look almost three-dimensional. These take time to do, but they're genuinely stunning for weddings and special occasions.",
       },
       {
         type: "heading",
@@ -492,6 +501,630 @@ export const blogPosts: BlogPost[] = [
       {
         type: "cta",
         text: "Browse our nail services or message us on WhatsApp to book your nail appointment or bridal nail consultation.",
+      },
+    ],
+  },
+
+  {
+    slug: "bridal-makeup-cost-mangalore-2026",
+    title: "Bridal Makeup Cost in Mangalore 2026: HD vs Airbrush, and What You Really Pay For",
+    excerpt:
+      "Bridal makeup prices in Mangalore vary a lot from one studio to the next. Here's how to read a quote, compare HD and airbrush, and book before the November to February wedding rush.",
+    category: "Bridal",
+    categorySlug: "bridal",
+    publishedAt: "2026-10-03",
+    readTime: 7,
+    featured: false,
+    tags: [
+      "bridal makeup cost Mangalore",
+      "bridal makeup price Mangalore",
+      "airbrush bridal makeup Mangalore",
+      "HD bridal makeup Mangalore",
+      "bridal makeup packages Mangalore",
+    ],
+    metaDescription:
+      "How much does bridal makeup cost in Mangalore in 2026? Compare HD and airbrush, see what a package includes, and book before the Nov to Feb wedding rush.",
+    coverImage: "/images/hero/hero-editorial-1.webp",
+    coverAlt: "Bridal makeup and hairstyling session, editorial beauty look",
+    content: [
+      {
+        type: "paragraph",
+        text: "If you have asked three artists for a bridal makeup quote in Mangalore, you have probably received three very different numbers. That is normal, and it does not always mean one artist is better than another. The price depends on the technique, the products, the number of functions, and whether hair and saree draping are included.",
+      },
+      {
+        type: "paragraph",
+        text: "Over the years we have worked with brides from Mangalore, Udupi and visiting NRI families from the Gulf. The same questions come up every season. This guide answers them in plain words so you can compare quotes fairly and avoid surprises on your wedding morning.",
+      },
+      {
+        type: "heading",
+        text: "How Much Does Bridal Makeup Cost in Mangalore in 2026?",
+      },
+      {
+        type: "paragraph",
+        text: "Prices listed publicly for Mangalore in September 2026 give a rough picture:",
+      },
+      {
+        type: "list",
+        items: [
+          "Freelance artists and small studios on wedding directories such as WedMeGood commonly list about ₹5,000 to ₹9,000 per function",
+          "Some Justdial listings for bridal makeup, especially outstation or full-session bookings, show around ₹15,000",
+          "Full-service salons with senior artists, airbrush, hairstyling and draping usually sell a package, and the total sits above these single-function figures",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "These are listed figures, not fixed rates. They change with the season, the look and the number of functions. For a firm quote from us, send your wedding date, venue and the number of looks on WhatsApp and we will reply with exact details.",
+      },
+      {
+        type: "heading",
+        text: "HD vs Airbrush Bridal Makeup: Which Suits a Mangalore Wedding?",
+      },
+      {
+        type: "paragraph",
+        text: "Both are professional techniques. The right choice depends on your skin, the weather, and how your photos will be taken.",
+      },
+      {
+        type: "list",
+        items: [
+          "How it's applied: HD uses brush and sponge with high-definition products, while airbrush is a fine spray of foundation through a machine",
+          "Feel on skin: HD gives fuller coverage and can feel heavier, while airbrush goes on in light, thin layers",
+          "Finish: HD is sharp and detailed, very good for close-up photos, while airbrush gives an even, smooth, soft-focus finish",
+          "In humid weather: HD lasts well when sealed correctly, while airbrush is often preferred for long, humid days",
+          "Best for: HD suits brides who want stronger coverage and a defined look, while airbrush suits brides who want a light feel for a 10-hour day",
+          "Cost: HD is usually lower, while airbrush is usually higher because of the equipment and the skill needed",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "One honest point: the label matters less than the artist. A well-prepared skin and a skilled hand will beat any technique used carelessly. Ask to see real photos of each technique on skin like yours.",
+      },
+      {
+        type: "heading",
+        text: "7 Things That Change the Price of Bridal Makeup",
+      },
+      {
+        type: "list",
+        items: [
+          "The artist's training and experience. Senior, certified artists charge more, and they usually deliver more consistent results",
+          "The technique. HD and airbrush are priced differently",
+          "The products. Premium, long-wear and skin-friendly products cost more per application",
+          "Number of functions. Haldi, mehendi, engagement, wedding and reception each need a different look",
+          "Hair and draping. Some quotes are for makeup only. Others include hairstyle, flowers and saree or dupatta draping",
+          "Venue and travel. A hall in the city and a venue in a village near Udupi are not the same job",
+          "Your date. Peak wedding dates from November to February are priced and booked differently from off-season dates",
+        ],
+      },
+      {
+        type: "heading",
+        text: "What a Fair Bridal Package Should Include",
+      },
+      {
+        type: "paragraph",
+        text: "Before you pay an advance, check that the quote clearly lists:",
+      },
+      {
+        type: "list",
+        items: [
+          "A full makeup trial, and whether the trial fee is adjusted against your booking",
+          "Skin preparation before makeup",
+          "Bridal makeup and hairstyle",
+          "Saree or dupatta draping",
+          "Lashes and other finishing touches",
+          "A touch-up kit or touch-up support during the ceremony",
+          "The exact time the artist will arrive and how long each look takes",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "If any of these is missing, ask. A cheaper quote that leaves out hair and draping can end up costing the same or more.",
+      },
+      {
+        type: "heading",
+        text: "When to Book for a November to February Wedding",
+      },
+      {
+        type: "paragraph",
+        text: "Hindu wedding dates restart after Chaturmas ends in late November 2026, and the best dates fill up quickly. Good artists are often booked months ahead for these dates. A safe plan:",
+      },
+      {
+        type: "list",
+        items: [
+          "4 to 6 months before: book your artist and lock the date",
+          "6 to 8 weeks before: do your full makeup trial and hair trial",
+          "In the final weeks: stay with a simple skin routine and avoid new products",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "For the full skin and hair schedule, read our [pre-bridal timeline](/blog/pre-bridal-packages-what-to-book-and-when).",
+      },
+      {
+        type: "heading",
+        text: "8 Questions to Ask Before You Pay an Advance",
+      },
+      {
+        type: "list",
+        items: [
+          "Who exactly will do my makeup, you or an assistant?",
+          "Is the trial paid, and is it adjusted if I book?",
+          "Which products and brands will you use on my skin?",
+          "Will you do a patch test if I have sensitive skin?",
+          "How many looks are covered in this price?",
+          "Are hair, flowers and draping included?",
+          "What is the advance, and what is the cancellation policy?",
+          "Can I see photos of brides with my skin tone and outfit colours?",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Why Training Matters More Than the Price",
+      },
+      {
+        type: "paragraph",
+        text: "Bridal makeup sits on your skin for many hours, under heat, humidity and camera flash. Skin knowledge is what keeps it comfortable and clean looking. At Chetana's, the team is led by CIDESCO certified Chetana Salian, and we have served brides in Mangalore since 1998. We start with your skin and your outfit, then choose the technique that fits.",
+      },
+      {
+        type: "tip",
+        text: "Ask for your trial at the same time of day as your ceremony, and take photos in daylight and with flash. This shows you how the makeup will actually look on the day and how it holds up after a few hours.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            question: "How much does bridal makeup cost in Mangalore?",
+            answer:
+              "Listed prices for individual artists and small studios in Mangalore are roughly ₹5,000 to ₹15,000 per function in 2026. Premium salons and packages with airbrush, hair and draping cost more. Always ask what is included.",
+          },
+          {
+            question: "Is airbrush makeup worth it for a humid Mangalore wedding?",
+            answer:
+              "Many brides like airbrush for long humid days because it feels light and looks even. HD makeup also lasts well when it is prepared and sealed properly. A trial with both is the best way to decide.",
+          },
+          {
+            question: "How early should I book a bridal makeup artist in Mangalore?",
+            answer:
+              "Book 4 to 6 months ahead for November to February dates. Do your trial about 6 to 8 weeks before the wedding.",
+          },
+          {
+            question: "Do I need a makeup trial?",
+            answer:
+              "Yes. A trial lets you test the shade, the eye look and the lip colour, and check how long it lasts. Ask whether the trial fee is adjusted when you book.",
+          },
+          {
+            question: "Can the artist do makeup for all my functions?",
+            answer:
+              "Most brides book for two or more functions, such as engagement, haldi, wedding and reception. Ask for a quote for the full set of looks.",
+          },
+          {
+            question: "Does bridal makeup last through a long wedding in Mangalore's climate?",
+            answer:
+              "It can, with proper skin prep, long-wear products and sealing. Ask your artist how they prepare the skin and what touch-up plan they recommend.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Ready to get an exact bridal makeup quote? Message us your date, venue and number of functions and we will reply on WhatsApp.",
+      },
+    ],
+  },
+
+  {
+    slug: "mangalorean-bridal-makeup-tulu-konkani-catholic-beary",
+    title: "Mangalorean Bridal Makeup by Community: Tulu, Konkani, Catholic and Beary Looks",
+    excerpt:
+      "A Mangalore wedding is not one wedding. Tulu, Konkani, Catholic and Beary brides each have their own ceremonies, outfits and timings, and the makeup should follow them.",
+    category: "Bridal",
+    categorySlug: "bridal",
+    publishedAt: "2026-10-05",
+    readTime: 8,
+    featured: false,
+    tags: [
+      "Mangalorean bridal makeup",
+      "Christian bridal makeup Mangalore",
+      "Muslim bridal makeup Mangalore",
+      "Tulu bridal makeup",
+      "Konkani bridal makeup",
+    ],
+    metaDescription:
+      "A guide to bridal makeup for Tulu, Konkani, Mangalorean Catholic and Beary brides in Mangalore. Look ideas, timings and what to tell your makeup artist.",
+    coverImage: "/images/hero/hero-editorial-4.webp",
+    coverAlt: "Bridal styling for a Mangalorean wedding, editorial beauty look",
+    content: [
+      {
+        type: "paragraph",
+        text: "Mangalore is one of the few cities where a Tulu Hindu wedding, a Konkani wedding, a Catholic church wedding and a Beary nikah can all happen on the same weekend. Each has its own rituals, its own outfits and its own idea of a beautiful bride. A single bridal look copied from Instagram rarely fits all of them.",
+      },
+      {
+        type: "paragraph",
+        text: "Every family follows its own customs, so treat what follows as common patterns, not rules. Your family, your outfit and your ceremony timings come first. Our job is to plan the makeup around them.",
+      },
+      {
+        type: "heading",
+        text: "Why One Bridal Look Does Not Fit Every Mangalore Bride",
+      },
+      {
+        type: "paragraph",
+        text: "Three things decide your look before the first brush touches your face:",
+      },
+      {
+        type: "list",
+        items: [
+          "The ceremony timings. An early morning muhurat and an evening reception need different planning",
+          "The outfit and jewellery. A silk saree with heavy gold, a white church gown and a richly embroidered nikah outfit all ask for different colours and balance",
+          "The number of looks. Some brides need one look. Others need two or three across several days",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Tulu Hindu Bridal Makeup",
+      },
+      {
+        type: "paragraph",
+        text: "Tulu Hindu weddings often begin early in the morning and run for several hours. Brides commonly wear a rich silk saree, traditional gold jewellery and flowers in the hair. Here's what the makeup should do:",
+      },
+      {
+        type: "list",
+        items: [
+          "Last through a long morning: plan a base that stays comfortable in a warm hall with many guests",
+          "Balance the gold: warm, defined eyes hold their own against gold jewellery and deep silk colours",
+          "Keep the lips steady: choose a long-wear lip that survives rituals and lunch",
+          "Plan hair and flowers together: the hairstyle, the flowers and the jewellery should be decided at the trial, not on the day",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Konkani Bridal Makeup",
+      },
+      {
+        type: "paragraph",
+        text: "Konkani Hindu families also lean towards traditional silk sarees and gold, often with flowers and pearl or gold ornaments on the hair and forehead. Because these ornaments frame the face, the makeup should be planned around them:",
+      },
+      {
+        type: "list",
+        items: [
+          "Keep the face clean and defined: with ornaments near the forehead and hairline, a neat base and shaped brows matter",
+          "Match the saree colour: bring a swatch or a photo of your saree to the trial",
+          "Think about the photos: long ceremonies mean many photographs, so the finish should look good in daylight and under flash",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Mangalorean Catholic Bridal Makeup",
+      },
+      {
+        type: "paragraph",
+        text: "A Mangalorean Catholic wedding is a sequence of events, often starting with the Roce, the coconut milk anointing ritual held before the wedding, followed by the church ceremony and the reception. Many brides wear a white gown and veil for the church and change into a different outfit for the reception. Here's what the makeup should do:",
+      },
+      {
+        type: "list",
+        items: [
+          "Start soft for the Roce and the church: fresh, natural-looking skin suits the Roce and the church ceremony",
+          "Plan a second look: if you change outfits, ask for a look plan that moves from soft to more glamorous, with a quick refresh and hairstyle change",
+          "Work with the veil: your hairstyle and makeup should sit well under a veil and in church photographs",
+          "Book early if you live abroad: many Catholic families in Mangalore have relatives in the Gulf and other countries, and visiting weddings tend to cluster around holiday travel windows",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Beary Muslim Bridal Makeup",
+      },
+      {
+        type: "paragraph",
+        text: "Beary weddings usually include the nikah, a mehendi function and a reception. Brides often wear richly embroidered outfits and heavy jewellery, and many choose a dupatta or head covering for parts of the day. Here's what the makeup should do:",
+      },
+      {
+        type: "list",
+        items: [
+          "Plan around the covering: tell your artist if you will wear a dupatta or head covering, so the base, brows and eyes are balanced for how your face will actually be framed",
+          "Choose different looks for different functions: a softer, fresh look suits the mehendi, while the nikah and reception can be more defined",
+          "Enjoy privacy: a ladies-only salon means you can be fully comfortable during your trial and on the day",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Quick Comparison",
+      },
+      {
+        type: "list",
+        items: [
+          "Tulu Hindu: early morning muhurat and long rituals call for a long-lasting base and warm eyes that balance gold. Bring your saree, jewellery and flower ideas to the trial",
+          "Konkani: morning rituals with forehead and hair ornaments call for a clean, defined face. Bring a saree swatch and ornament photos to the trial",
+          "Catholic: the Roce, church wedding and reception call for a soft church look with a plan for a second look. Bring your gown, veil and reception outfit",
+          "Beary Muslim: nikah, mehendi and reception call for balance with a dupatta or covering, and a different look per function. Bring your outfits, jewellery and covering style",
+        ],
+      },
+      {
+        type: "heading",
+        text: "What Every Mangalore Bride Needs, Whatever the Community",
+      },
+      {
+        type: "list",
+        items: [
+          "A base that survives humidity: coastal weather, warm halls and long hours ask for careful skin prep and long-wear products. Ask about airbrush if you want a light feel. We compare it with HD in our [bridal makeup cost guide](/blog/bridal-makeup-cost-mangalore-2026)",
+          "Skin that is ready: good makeup starts with good skin. Follow our [pre-bridal timeline](/blog/pre-bridal-packages-what-to-book-and-when) and our [humid climate skin routine](/blog/skin-care-routine-mangalore-humid-climate)",
+          "A trial for every important look: if you have more than one function, do a trial for each major look",
+        ],
+      },
+      {
+        type: "heading",
+        text: "How to Brief Your Makeup Artist",
+      },
+      {
+        type: "paragraph",
+        text: "Bring these to your first consultation:",
+      },
+      {
+        type: "list",
+        items: [
+          "Photos of your outfits for each function, or fabric swatches",
+          "Your jewellery and hair ornaments",
+          "A rough timeline of each function and the muhurat time",
+          "Three or four look references you like, and one you do not like",
+          "Any skin sensitivities or products you cannot use",
+        ],
+      },
+      {
+        type: "tip",
+        text: "Tell your artist what your family expects, not only what you like. If your elders want a traditional look, plan it with them in mind, then add small personal touches that feel like you.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            question: "Can one makeup artist do all my functions?",
+            answer:
+              "Usually yes. Ask for a written plan that lists each function, the look, the timing and the artist who will do it.",
+          },
+          {
+            question: "Is airbrush makeup good for a church wedding?",
+            answer:
+              "It can be. Airbrush gives a light, even finish that photographs softly. The best choice depends on your skin and the lighting, so test it at your trial.",
+          },
+          {
+            question: "I will wear a dupatta or head covering. How does that change my makeup?",
+            answer:
+              "Tell your artist in advance. Base, brows and eyes are planned around how your face will be framed, so the look stays balanced.",
+          },
+          {
+            question: "How early should NRI brides book?",
+            answer:
+              "If you are travelling from the Gulf or abroad, book as soon as your dates are fixed, and ask about a trial slot in the first days of your visit.",
+          },
+          {
+            question: "Do you offer bridal makeup for brides from all communities?",
+            answer:
+              "Yes. We have served Tulu, Konkani, Catholic and Beary brides in Mangalore since 1998, and we plan each look around your family's customs.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Message us your ceremony details and outfit photos on WhatsApp and we will help you choose the right look and trial date.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-choose-best-ladies-salon-mangalore",
+    title: "How to Choose the Best Ladies Salon in Mangalore: 10 Things to Check Before You Book",
+    excerpt:
+      "Everyone says they are the best salon in Mangalore. This 10-point checklist helps you decide for yourself, whether you need a facial, a hair treatment or bridal makeup.",
+    category: "Skin Care",
+    categorySlug: "skin-care",
+    publishedAt: "2026-10-08",
+    readTime: 7,
+    featured: false,
+    tags: [
+      "best salon in Mangalore",
+      "best ladies salon in Mangalore",
+      "best beauty services in Mangalore",
+      "ladies beauty parlour Mangalore",
+      "salon in Kankanady",
+    ],
+    metaDescription:
+      "Looking for the best salon in Mangalore? Use this 10-point checklist for training, hygiene, products, pricing and privacy before you book any beauty service.",
+    coverImage: "/images/salon/salon-storefront-entrance.webp",
+    coverAlt: "Chetana's Beauty Lounge storefront entrance, Kankanady, Mangalore",
+    content: [
+      {
+        type: "paragraph",
+        text: "Search for the best salon in Mangalore and you will find dozens of listings, star ratings and top-10 pages. Almost all of them sound alike. So how do you choose?",
+      },
+      {
+        type: "paragraph",
+        text: "Reviews help, but they only tell part of the story. What really decides your result is training, hygiene, products and honest advice. Here are the 10 things we would check before booking any salon, including ours.",
+      },
+      {
+        type: "heading",
+        text: "1. Check the Training and Certification",
+      },
+      {
+        type: "paragraph",
+        text: "Beauty treatments work on your skin and hair, so training matters. Ask who will perform your service and what qualifications they hold. International certifications such as CIDESCO, which is recognised worldwide in skin care and beauty therapy, show a serious standard. A good salon is happy to tell you about its team.",
+      },
+      {
+        type: "heading",
+        text: "2. Look at Hygiene With Your Own Eyes",
+      },
+      {
+        type: "paragraph",
+        text: "You can judge a lot in two minutes at the reception:",
+      },
+      {
+        type: "list",
+        items: [
+          "Are tools stored clean and sealed?",
+          "Are towels and capes fresh for every client?",
+          "Are waxing spatulas, files and other items single-use or properly sterilised?",
+          "Do therapists wash or sanitise their hands between clients?",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "If anything looks careless, walk out. It is your health.",
+      },
+      {
+        type: "heading",
+        text: "3. Ask for a Consultation Before Any Treatment",
+      },
+      {
+        type: "paragraph",
+        text: "A good therapist asks about your skin type, hair history, allergies and goals before recommending anything. If a salon sells you a package in two minutes without asking a single question, be careful.",
+      },
+      {
+        type: "heading",
+        text: "4. Ask About the Products Being Used",
+      },
+      {
+        type: "paragraph",
+        text: "You have the right to know what goes on your skin and hair. Ask which brands are used for facials, hair colour and keratin, and ask for a patch test if you have sensitive skin or have reacted to products before.",
+      },
+      {
+        type: "heading",
+        text: "5. Look for Honest Advice, Not Just Upselling",
+      },
+      {
+        type: "paragraph",
+        text: "A good salon tells you when you do not need a treatment, when to wait, and what to do at home. In humid coastal weather, the right home routine often matters as much as the salon visit. You can start with our [skin care routine for Mangalore's climate](/blog/skin-care-routine-mangalore-humid-climate).",
+      },
+      {
+        type: "heading",
+        text: "6. Compare Prices the Right Way",
+      },
+      {
+        type: "paragraph",
+        text: "Do not compare only the number on the menu. Compare what is included:",
+      },
+      {
+        type: "list",
+        items: [
+          "How long is the service?",
+          "Which products are used?",
+          "Is the treatment done by a senior therapist or a trainee?",
+          "Is a consultation or follow-up included?",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "A slightly higher price with better products and skill usually costs less in the long run than a repeat visit to fix a poor result.",
+      },
+      {
+        type: "heading",
+        text: "7. See Real Work, Not Only Stock Photos",
+      },
+      {
+        type: "paragraph",
+        text: "Ask to see before and after photos of real clients with your skin type or hair type. Check Google reviews for recent, detailed comments, and look for reviews that mention the specific service you want.",
+      },
+      {
+        type: "heading",
+        text: "8. Think About Privacy and Comfort",
+      },
+      {
+        type: "paragraph",
+        text: "For many women, comfort decides everything. A ladies-only salon offers privacy for skin treatments, waxing, hair care and bridal preparation. Also check the practical things: seating, clean washrooms, parking and lift access.",
+      },
+      {
+        type: "heading",
+        text: "9. Ask About Timings, Booking and Parking",
+      },
+      {
+        type: "paragraph",
+        text: "Mangalore traffic is real. Choose a salon that is easy to reach and open when you are free. At our Kankanady salon, we are open every day from 9 AM to 8 PM, with free underground parking and a wheelchair accessible lift.",
+      },
+      {
+        type: "heading",
+        text: "10. Check for Aftercare and Follow-Up",
+      },
+      {
+        type: "paragraph",
+        text: "Good salons explain what to do after the service: what to avoid, how to care for your skin or hair at home, and when to come back. If nobody tells you this, ask.",
+      },
+      {
+        type: "heading",
+        text: "Best Beauty Services in Mangalore: What a Full-Service Ladies Salon Should Offer",
+      },
+      {
+        type: "paragraph",
+        text: "A full-service salon should cover all your needs under one roof, with trained people for each service:",
+      },
+      {
+        type: "list",
+        items: [
+          "[Hair care](/services/hair-care): cuts, colour, hair spa, keratin and smoothening",
+          "[Skin care](/services/skin-care): facials, tan removal, pigmentation and brightening treatments",
+          "[Bridal services](/services/bridal): bridal makeup, hairstyling, draping and pre-bridal packages",
+          "[Nails](/services/nails): manicure, pedicure and nail art",
+          "Body care: waxing, threading and body treatments",
+          "Kids' services: gentle care for younger clients",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Red Flags to Watch For",
+      },
+      {
+        type: "list",
+        items: [
+          "No consultation before treatment",
+          "Pressure to buy a big package on your first visit",
+          "Unwillingness to name the products used",
+          "Unclear or changing prices",
+          "Dirty tools, washrooms or towels",
+          "Promises of instant, permanent results",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Where Chetana's Beauty Lounge Fits",
+      },
+      {
+        type: "paragraph",
+        text: "Chetana's Beauty Lounge is a ladies salon in Kankanady, Mangalore, led by CIDESCO certified Chetana Salian and trusted since 1998. We offer hair, skin, bridal, nail and body services, and we use a consultation-first approach so that you get what your skin and hair actually need. We are not the right choice for everyone, and we would rather you check us against this list than take our word for it.",
+      },
+      {
+        type: "tip",
+        text: "Book a smaller service first, such as a facial or a hair spa. It is the easiest way to judge a salon's hygiene, communication and skill before you trust it with a bigger treatment or your wedding day.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            question: "How do I know if a salon in Mangalore is hygienic?",
+            answer:
+              "Look for clean and sealed tools, fresh towels for each client, single-use items where possible, and staff who sanitise their hands between clients. If the salon is happy to explain its process, that is a good sign.",
+          },
+          {
+            question: "Is a ladies-only salon worth it?",
+            answer:
+              "Many women prefer it for privacy and comfort, especially for waxing, skin treatments and bridal preparation. It is a personal choice.",
+          },
+          {
+            question: "How often should I visit a salon in Mangalore's humid climate?",
+            answer:
+              "For skin, a facial every 4 to 6 weeks suits many people, and your therapist can adjust this to your skin type. Hair spas and treatments depend on your hair condition.",
+          },
+          {
+            question: "Do I need to book an appointment, or can I walk in?",
+            answer:
+              "Booking is safer, especially on weekends and before festivals and wedding dates, when salons are busy. You can book on WhatsApp.",
+          },
+          {
+            question: "Should I do a patch test before a new treatment?",
+            answer:
+              "Yes, if you have sensitive skin or have reacted to products before. A good salon will offer or recommend it.",
+          },
+          {
+            question: "Which services should I try first at a new salon?",
+            answer:
+              "Start with a facial, hair spa or manicure. These show you how the salon handles hygiene, consultation and finish.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Want to see how we work? Message us on WhatsApp to book a consultation or your first service at our Kankanady salon.",
       },
     ],
   },

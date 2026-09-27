@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import {
@@ -53,6 +54,40 @@ const WHATSAPP =
 
 const PJS = '"Plus Jakarta Sans", system-ui, sans-serif';
 
+// Parses simple `[label](url)` markdown links inside otherwise-plain text
+// and returns a mix of plain strings and real <a> elements.
+function renderRichText(text: string) {
+  const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const [, label, href] = match;
+    const isInternal = href.startsWith("/");
+    parts.push(
+      <a
+        key={key++}
+        href={href}
+        {...(!isInternal && { target: "_blank", rel: "noopener noreferrer" })}
+        className="font-semibold underline underline-offset-2"
+        style={{ color: "#5f1e42" }}
+      >
+        {label}
+      </a>
+    );
+    lastIndex = linkPattern.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts;
+}
+
 function ContentRenderer({ sections }: { sections: BlogSection[] }) {
   return (
     <div>
@@ -65,7 +100,7 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
                 className="text-base md:text-lg leading-relaxed mb-6"
                 style={{ color: "#444", fontFamily: "var(--font-sans)" }}
               >
-                {section.text}
+                {section.text ? renderRichText(section.text) : null}
               </p>
             );
 
@@ -122,7 +157,7 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
                       className="text-base md:text-lg leading-relaxed"
                       style={{ color: "#444", fontFamily: "var(--font-sans)" }}
                     >
-                      {item}
+                      {renderRichText(item)}
                     </span>
                   </li>
                 ))}
@@ -177,6 +212,47 @@ function ContentRenderer({ sections }: { sections: BlogSection[] }) {
                   {section.text}
                 </p>
               </blockquote>
+            );
+
+          case "faq":
+            return (
+              <div key={i} className="mt-10 mb-6">
+                <h2
+                  className="mb-5"
+                  style={{
+                    fontFamily: PJS,
+                    fontWeight: 700,
+                    fontSize: "clamp(1.35rem, 2.5vw, 1.65rem)",
+                    letterSpacing: "-0.015em",
+                    color: "#5f1e42",
+                  }}
+                >
+                  Frequently Asked Questions
+                </h2>
+                <div className="space-y-6">
+                  {section.faqs?.map((faq, j) => (
+                    <div key={j}>
+                      <h3
+                        className="mb-1.5"
+                        style={{
+                          fontFamily: PJS,
+                          fontWeight: 600,
+                          fontSize: "1.05rem",
+                          color: "#111",
+                        }}
+                      >
+                        {faq.question}
+                      </h3>
+                      <p
+                        className="text-base leading-relaxed"
+                        style={{ color: "#555", fontFamily: "var(--font-sans)" }}
+                      >
+                        {faq.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             );
 
           case "cta":
@@ -259,6 +335,22 @@ export default async function BlogPostPage({ params }: Props) {
     ],
   };
 
+  const faqSection = post.content.find((s) => s.type === "faq");
+  const faqSchema = faqSection?.faqs
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqSection.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <>
       <Navbar />
@@ -266,6 +358,9 @@ export default async function BlogPostPage({ params }: Props) {
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
 
       {/* ── Cover Image Hero ───────────────────────────────────── */}
       <div className="relative w-full pt-[72px]" style={{ height: "500px" }}>
