@@ -1,6 +1,6 @@
-import { Scissors, Leaf, Sparkles, Heart, Paintbrush, Baby } from "lucide-react";
+import { Scissors, Leaf, Sparkles, Heart, Paintbrush, Baby, Gift } from "lucide-react";
 
-const CATEGORY_STYLES: Record<
+export const CATEGORY_STYLES: Record<
   string,
   { from: string; to: string; icon: typeof Scissors }
 > = {
@@ -10,6 +10,7 @@ const CATEGORY_STYLES: Record<
   bridal: { from: "#5f1e42", to: "#e8b80d", icon: Heart },
   nails: { from: "#8b4b6b", to: "#e8b80d", icon: Paintbrush },
   "for-kids": { from: "#f6dd86", to: "#c4849a", icon: Baby },
+  packages: { from: "#e8b80d", to: "#5f1e42", icon: Gift },
 };
 
 interface ServiceImageProps {

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import { serviceCategories } from "@/lib/services-data";
 import { SITE_URL } from "@/lib/constants";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Gift } from "lucide-react";
+import { CATEGORY_STYLES } from "@/components/ServiceImage";
 
 export const metadata: Metadata = {
   title: "Beauty Services in Mangalore | Hair, Skin, Bridal, Nails & More",
@@ -82,7 +83,9 @@ export default function ServicesPage() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {serviceCategories.map((cat) => (
+            {serviceCategories.map((cat) => {
+              const Icon = CATEGORY_STYLES[cat.slug]?.icon ?? Gift;
+              return (
               <a
                 key={cat.slug}
                 href={`/services/${cat.slug}`}
@@ -90,9 +93,12 @@ export default function ServicesPage() {
                 style={{ borderColor: "rgba(0,0,0,0.06)", backgroundColor: "#fff" }}
                 aria-label={`Explore ${cat.label} services`}
               >
-                <span className="text-4xl mb-4" role="img" aria-hidden="true">
-                  {cat.icon}
-                </span>
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+                  style={{ backgroundColor: "rgba(95,30,66,0.06)" }}
+                >
+                  <Icon size={22} className="text-[#5f1e42]" strokeWidth={1.5} aria-hidden="true" />
+                </div>
                 <h2
                   className="mb-2"
                   style={{
@@ -116,7 +122,8 @@ export default function ServicesPage() {
                   <ArrowRight size={14} aria-hidden="true" />
                 </span>
               </a>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
