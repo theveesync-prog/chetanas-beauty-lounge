@@ -1,4 +1,4 @@
-export const SITE_URL = "https://chetanasbeautylounge.com";
+export const SITE_URL = "https://www.chetanasbeautylounge.com";
 export const SITE_NAME = "Chetana's Beauty";
 export const BUSINESS_ADDRESS = {
   streetAddress: "3rd floor, Gate Building, Suit A, Kankanady Bypass Rd",
