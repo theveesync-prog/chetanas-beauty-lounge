@@ -33,18 +33,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category: cat, service: svc } = result;
   const description = svc.longDescription ?? svc.description;
   return {
-    title: `${svc.name} in Mangalore — ${cat.label} | Chetana's Beauty`,
+    title: `${svc.name} in Mangalore: ${cat.label}`,
     description,
     keywords: [
       `${svc.name} Mangalore`,
       `${svc.name} Mangaluru`,
       `${cat.label.toLowerCase()} Mangalore`,
       `best ${svc.name.toLowerCase()} Mangalore`,
+      `${svc.name.toLowerCase()} near me`,
       "ladies salon Mangalore",
+      "salon near me Mangalore",
       "Chetana's Beauty Lounge",
     ],
     openGraph: {
-      title: `${svc.name} — Chetana's Beauty Mangalore`,
+      title: `${svc.name}, Chetana's Beauty Mangalore`,
       description,
       type: "website",
     },

@@ -10,7 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Best Ladies Salon in Mangalore | Chetana's Beauty — CIDESCO Certified",
+    default: "Best Ladies Salon in Mangalore | Chetana's Beauty, CIDESCO Certified",
     template: "%s | Chetana's Beauty Lounge",
   },
   description:
@@ -20,6 +20,15 @@ export const metadata: Metadata = {
     "best ladies salon in Mangalore",
     "ladies salon Mangalore",
     "beauty salon Mangalore",
+    "best hair salon in Mangalore",
+    "best hair service in Mangalore",
+    "hair salon Mangalore",
+    "salon near me Mangalore",
+    "ladies salon near me",
+    "skin clinic Mangalore",
+    "skin clinic Mangaluru",
+    "hair botox Mangalore",
+    "hair botox treatment Mangaluru",
     "bridal makeup artist in Mangalore",
     "bridal makeup Tulu wedding Mangalore",
     "best bridal makeup Mangaluru Catholic",
@@ -27,6 +36,7 @@ export const metadata: Metadata = {
     "tan removal Mangalore",
     "pigmentation treatment Mangaluru",
     "facial treatment Mangalore",
+    "facials in Mangalore",
     "keratin treatment Mangalore",
     "best beauty academy in Mangalore",
     "beauty academy Dakshina Kannada",
@@ -49,7 +59,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Best Ladies Salon in Mangalore | Chetana's Beauty — CIDESCO Certified",
+    title: "Best Ladies Salon in Mangalore | Chetana's Beauty, CIDESCO Certified",
     description:
       "CIDESCO-certified ladies salon in Mangalore. Bridal makeup, skin treatments, beauty academy. Located in Kankanady.",
     type: "website",
@@ -61,7 +71,7 @@ export const metadata: Metadata = {
         url: "/images/salon/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Chetana's Beauty Lounge — Mangalore's best ladies salon interior, Kankanady",
+        alt: "Chetana's Beauty Lounge, Mangalore's best ladies salon interior, Kankanady",
       },
     ],
   },

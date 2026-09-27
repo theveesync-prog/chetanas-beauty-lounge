@@ -25,11 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: `${post.title} | Chetana's Beauty Blog`,
+    title: post.title,
     description: post.metaDescription,
     keywords: post.tags,
     openGraph: {
-      title: post.title,
+      title: `${post.title} | Chetana's Beauty Lounge`,
       description: post.metaDescription,
       type: "article",
       publishedTime: post.publishedAt,

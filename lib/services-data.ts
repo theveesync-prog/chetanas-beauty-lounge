@@ -54,7 +54,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "deep-conditioning-treatment",
         description: "Intensive moisture mask to restore shine and softness to dry hair.",
         longDescription:
-          "Mangalore's coastal humidity and sun exposure can strip moisture from even healthy hair. Our deep conditioning treatment uses a professional-grade, penetrating mask packed with keratin proteins, amino acids, and botanical oils. Applied to every strand, it repairs damage, replenishes moisture, and restores natural elasticity — leaving your hair softer, shinier, and more manageable for weeks. Ideal for colour-treated, heat-damaged, or naturally dry hair types.",
+          "Mangalore's coastal humidity and sun exposure can strip moisture from even healthy hair. Our deep conditioning treatment uses a professional-grade, penetrating mask packed with keratin proteins, amino acids, and botanical oils. Applied to every strand, it repairs damage, replenishes moisture, and restores natural elasticity, leaving your hair softer, shinier, and more manageable for weeks. Ideal for colour-treated, heat-damaged, or naturally dry hair types.",
         price: "₹450",
         originalPrice: "₹600",
         onSale: true,
@@ -82,9 +82,9 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Keratin Smoothing Treatment",
         slug: "keratin-smoothing-treatment",
-        description: "Banish frizz for up to 3 months with a professional keratin treatment.",
+        description: "Banish frizz for up to 3 months with a professional keratin treatment, also known as hair botox.",
         longDescription:
-          "Mangalore's tropical climate is beautiful — but it's relentless on hair. Our professional keratin smoothing treatment penetrates the hair shaft, filling in the protein gaps that cause frizz and roughness. The result is dramatically smoother, shinier, and more manageable hair that lasts up to 3 months. The treatment is safe for all hair types and colours, and significantly reduces blow-dry time in your daily routine. A true investment in effortless hair.",
+          "Mangalore's tropical climate is beautiful, but it's relentless on hair. Our professional keratin smoothing treatment, sometimes called hair botox, penetrates the hair shaft, filling in the protein gaps that cause frizz and roughness. The result is dramatically smoother, shinier, and more manageable hair that lasts up to 3 months. The treatment is safe for all hair types and colours, and significantly reduces blow-dry time in your daily routine. A true investment in effortless hair.",
         price: "₹3,500",
         duration: "2.5 hrs",
       },
@@ -157,7 +157,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Root Touchup Extra Long (2.5 inch) + Wash",
         slug: "root-touchup-extra-long",
-        description: "Colour coverage for 2.5 inches of new growth — ideal for long gaps between appointments.",
+        description: "Colour coverage for 2.5 inches of new growth, ideal for long gaps between appointments.",
         price: "₹2,200",
         duration: "90 min",
       },
@@ -171,7 +171,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Root Touchup Fashion Colour + Wash",
         slug: "root-touchup-fashion-colour",
-        description: "Bold fashion shade root touchup — vivid, trend-forward colour with a wash finish.",
+        description: "Bold fashion shade root touchup, vivid and trend-forward colour with a wash finish.",
         price: "₹2,500",
         duration: "75 min",
       },
@@ -186,7 +186,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Single Streak",
         slug: "single-streak",
-        description: "One bold or blended streak — perfect for a subtle pop of colour.",
+        description: "One bold or blended streak, perfect for a subtle pop of colour.",
         price: "₹450+",
         duration: "30 min",
         isNew: true,
@@ -218,7 +218,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "full-body-massage",
         description: "Relaxing Swedish massage to melt away tension and improve circulation.",
         longDescription:
-          "Our full body Swedish massage uses long, flowing strokes and targeted pressure to release deep-seated muscle tension, improve blood circulation, and restore your body's natural balance. Performed by trained therapists using warm, aromatic oils, the 60-minute session covers the back, shoulders, legs, arms, and neck — leaving you in a state of deep calm and physical ease. Perfect for stress relief, post-event recovery, or simply a well-deserved indulgence.",
+          "Our full body Swedish massage uses long, flowing strokes and targeted pressure to release deep-seated muscle tension, improve blood circulation, and restore your body's natural balance. Performed by trained therapists using warm, aromatic oils, the 60-minute session covers the back, shoulders, legs, arms, and neck, leaving you in a state of deep calm and physical ease. Perfect for stress relief, post-event recovery, or simply a well-deserved indulgence.",
         price: "₹1,500",
         duration: "60 min",
         bestseller: true,
@@ -237,7 +237,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "body-scrub",
         description: "Exfoliating scrub to remove dead skin and leave you silky smooth.",
         longDescription:
-          "Our indulgent body scrub treatment combines a professional-grade exfoliant — rich in natural sugar crystals, coconut husk, or sea salt — with nourishing botanical oils to buff away dead skin cells, unclog pores, and reveal the fresh, glowing skin beneath. Followed by a warm rinse and a hydrating body butter application, the treatment leaves your skin visibly smoother, softer, and radiant. Ideal before a special event or as a monthly maintenance ritual.",
+          "Our indulgent body scrub treatment combines a professional-grade exfoliant, rich in natural sugar crystals, coconut husk, or sea salt, with nourishing botanical oils to buff away dead skin cells, unclog pores, and reveal the fresh, glowing skin beneath. Followed by a warm rinse and a hydrating body butter application, the treatment leaves your skin visibly smoother, softer, and radiant. Ideal before a special event or as a monthly maintenance ritual.",
         price: "₹1,200",
         duration: "60 min",
         bestseller: true,
@@ -273,65 +273,65 @@ export const serviceCategories: ServiceCategory[] = [
       },
       // ── Threading (menu additions) ───────────────────────────
       {
-        name: "Threading — Upper Lip",
+        name: "Threading: Upper Lip",
         slug: "threading-upper-lip",
         description: "Precise cotton-thread hair removal for the upper lip area.",
         price: "₹30",
         duration: "5 min",
       },
       {
-        name: "Threading — Chin",
+        name: "Threading: Chin",
         slug: "threading-chin",
         description: "Clean, accurate threading to remove unwanted chin hair.",
         price: "₹30",
         duration: "5 min",
       },
       {
-        name: "Threading — Forehead",
+        name: "Threading: Forehead",
         slug: "threading-forehead",
         description: "Tidy the hairline and remove fine forehead hair with threading.",
         price: "₹30",
         duration: "5 min",
       },
       {
-        name: "Threading — Side Lock",
+        name: "Threading: Side Lock",
         slug: "threading-side-lock",
         description: "Threading to remove and define hair along the side of the face.",
         price: "₹70",
         duration: "8 min",
       },
       {
-        name: "Threading — Full Face",
+        name: "Threading: Full Face",
         slug: "threading-full-face",
-        description: "Complete facial threading — brows, upper lip, chin, forehead, and side locks.",
+        description: "Complete facial threading: brows, upper lip, chin, forehead, and side locks.",
         price: "₹250",
         duration: "25 min",
         bestseller: true,
       },
       // ── Brazilian Wax ────────────────────────────────────────
       {
-        name: "Brazilian Wax — Upper Lip",
+        name: "Brazilian Wax: Upper Lip",
         slug: "brazilian-wax-upper-lip",
         description: "Smooth, long-lasting upper lip hair removal using gentle Brazilian wax.",
         price: "₹150",
         duration: "10 min",
       },
       {
-        name: "Brazilian Wax — Chin",
+        name: "Brazilian Wax: Chin",
         slug: "brazilian-wax-chin",
         description: "Brazilian wax for precise, clean chin hair removal.",
         price: "₹150",
         duration: "10 min",
       },
       {
-        name: "Brazilian Wax — Forehead",
+        name: "Brazilian Wax: Forehead",
         slug: "brazilian-wax-forehead",
         description: "Wax for hairline definition and forehead hair removal.",
         price: "₹250",
         duration: "10 min",
       },
       {
-        name: "Brazilian Wax — Eyebrows",
+        name: "Brazilian Wax: Eyebrows",
         slug: "brazilian-wax-eyebrows",
         description: "Eyebrow shaping using Brazilian wax for clean, defined arches.",
         price: "₹400",
@@ -339,21 +339,21 @@ export const serviceCategories: ServiceCategory[] = [
         bestseller: true,
       },
       {
-        name: "Brazilian Wax — Side Lock",
+        name: "Brazilian Wax: Side Lock",
         slug: "brazilian-wax-side-lock",
         description: "Brazilian wax to tidy hair along the side of the face.",
         price: "₹200",
         duration: "10 min",
       },
       {
-        name: "Brazilian Wax — Full Face",
+        name: "Brazilian Wax: Full Face",
         slug: "brazilian-wax-full-face",
         description: "Complete full-face Brazilian wax covering all facial areas.",
         price: "₹950",
         duration: "30 min",
       },
       {
-        name: "Brazilian Wax — Underarms",
+        name: "Brazilian Wax: Underarms",
         slug: "brazilian-wax-underarms",
         description: "Underarm hair removal with soft Brazilian wax for a clean, smooth finish.",
         price: "₹400",
@@ -368,14 +368,14 @@ export const serviceCategories: ServiceCategory[] = [
       },
       // ── Traditional / Sugar Wax ──────────────────────────────
       {
-        name: "Sugar Wax — Half Arms",
+        name: "Sugar Wax: Half Arms",
         slug: "sugar-wax-half-arms",
         description: "Traditional sugar wax for smooth, hair-free forearms.",
         price: "₹300",
         duration: "20 min",
       },
       {
-        name: "Sugar Wax — Full Arms",
+        name: "Sugar Wax: Full Arms",
         slug: "sugar-wax-full-arms",
         description: "Full-arm traditional wax from wrist to shoulder for lasting smoothness.",
         price: "₹400",
@@ -383,21 +383,21 @@ export const serviceCategories: ServiceCategory[] = [
         bestseller: true,
       },
       {
-        name: "Sugar Wax — Half Legs",
+        name: "Sugar Wax: Half Legs",
         slug: "sugar-wax-half-legs",
         description: "Traditional wax from the knee down for smooth, soft lower legs.",
         price: "₹400",
         duration: "25 min",
       },
       {
-        name: "Sugar Wax — 3/4 Legs",
+        name: "Sugar Wax: 3/4 Legs",
         slug: "sugar-wax-three-quarter-legs",
         description: "Sugar wax covering three-quarters of the leg for extended smoothness.",
         price: "₹450",
         duration: "30 min",
       },
       {
-        name: "Sugar Wax — Full Legs",
+        name: "Sugar Wax: Full Legs",
         slug: "sugar-wax-full-legs",
         description: "Complete leg wax from ankle to upper thigh for all-over smooth skin.",
         price: "₹550",
@@ -405,51 +405,51 @@ export const serviceCategories: ServiceCategory[] = [
         bestseller: true,
       },
       {
-        name: "Sugar Wax — Underarms",
+        name: "Sugar Wax: Underarms",
         slug: "sugar-wax-underarms",
         description: "Quick and effective underarm wax using traditional sugar wax.",
         price: "₹150",
         duration: "10 min",
       },
       {
-        name: "Sugar Wax — Full Arms & Underarms",
+        name: "Sugar Wax: Full Arms & Underarms",
         slug: "sugar-wax-full-arms-underarms",
-        description: "Combined full-arm and underarm wax — the most popular arm treatment combo.",
+        description: "Combined full-arm and underarm wax, the most popular arm treatment combo.",
         price: "₹500",
         duration: "35 min",
         bestseller: true,
       },
       {
-        name: "Sugar Wax — Full Arms, Full Legs & Underarms",
+        name: "Sugar Wax: Full Arms, Full Legs & Underarms",
         slug: "sugar-wax-full-arms-legs-underarms",
-        description: "Our most complete wax combo — arms, legs, and underarms in one session.",
+        description: "Our most complete wax combo: arms, legs, and underarms in one session.",
         price: "₹1,000",
         duration: "70 min",
         bestseller: true,
       },
       {
-        name: "Sugar Wax — Full Back",
+        name: "Sugar Wax: Full Back",
         slug: "sugar-wax-full-back",
         description: "Complete back wax for smooth, hair-free skin from shoulders to waist.",
         price: "₹700",
         duration: "30 min",
       },
       {
-        name: "Sugar Wax — Half Back",
+        name: "Sugar Wax: Half Back",
         slug: "sugar-wax-half-back",
         description: "Lower back wax for a clean, smooth result.",
         price: "₹350",
         duration: "20 min",
       },
       {
-        name: "Sugar Wax — Stomach",
+        name: "Sugar Wax: Stomach",
         slug: "sugar-wax-stomach",
         description: "Stomach wax for smooth abdominal skin using traditional sugar wax.",
         price: "₹350",
         duration: "20 min",
       },
       {
-        name: "Sugar Wax — Full Body",
+        name: "Sugar Wax: Full Body",
         slug: "sugar-wax-full-body",
         description: "Comprehensive full-body traditional wax (excluding face and bikini area).",
         price: "₹2,250",
@@ -548,24 +548,24 @@ export const serviceCategories: ServiceCategory[] = [
       },
       // ── A-Z Body Spa combos ──────────────────────────────────
       {
-        name: "A-Z Spa — Head, Face & Body Massage",
+        name: "A-Z Spa: Head, Face & Body Massage",
         slug: "az-spa-head-face-body-massage",
-        description: "Indian Head Massage + Face Massage + Full Body Massage — the complete relaxation combo.",
+        description: "Indian Head Massage + Face Massage + Full Body Massage: the complete relaxation combo.",
         price: "₹2,500+",
         duration: "1 hr 15 min",
         bestseller: true,
       },
       {
-        name: "A-Z Spa — Body Polish & Massage",
+        name: "A-Z Spa: Body Polish & Massage",
         slug: "az-spa-body-polish-massage",
-        description: "Full Body Polishing + Swedish Body Massage — smooth, glowing skin and deep relaxation.",
+        description: "Full Body Polishing + Swedish Body Massage: smooth, glowing skin and deep relaxation.",
         price: "₹3,500+",
         duration: "1 hr 45 min",
       },
       {
-        name: "A-Z Spa — Ultimate Body Experience",
+        name: "A-Z Spa: Ultimate Body Experience",
         slug: "az-spa-ultimate-body-experience",
-        description: "Body Polishing + Body Massage + Cold Compression + Body Wrap + Thermal Wrap — the full spa journey.",
+        description: "Body Polishing + Body Massage + Cold Compression + Body Wrap + Thermal Wrap: the full spa journey.",
         price: "₹5,000+",
         duration: "2 hrs",
         bestseller: true,
@@ -583,7 +583,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "basic-facial",
         description: "Cleanse, exfoliate, and hydrate for an instant glow and smoother texture.",
         longDescription:
-          "The Basic Facial is our most popular everyday skin reset. The treatment begins with a deep double cleanse to remove makeup, sunscreen, and impurities, followed by a gentle steam and manual extraction of blackheads and whiteheads. A brightening exfoliant sloughs away dull surface cells, and the session ends with a hydrating mask and a targeted serum chosen for your skin type. You'll leave with noticeably smoother, more even-toned skin — perfect for maintaining a healthy glow between more intensive treatments.",
+          "The Basic Facial is our most popular everyday skin reset. The treatment begins with a deep double cleanse to remove makeup, sunscreen, and impurities, followed by a gentle steam and manual extraction of blackheads and whiteheads. A brightening exfoliant sloughs away dull surface cells, and the session ends with a hydrating mask and a targeted serum chosen for your skin type. You'll leave with noticeably smoother, more even-toned skin, perfect for maintaining a healthy glow between more intensive treatments.",
         price: "₹800",
         duration: "60 min",
         bestseller: true,
@@ -593,7 +593,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "gold-facial",
         description: "Luxury 24K gold-infused facial to firm, brighten, and rejuvenate skin.",
         longDescription:
-          "The Gold Facial is our signature luxury treatment, using 24K gold-infused serums and masks that have been prized in Ayurvedic and European skincare for centuries. Gold activates the skin's natural collagen production, reduces fine lines, firms the skin, and imparts an unmistakable radiance that no other ingredient can replicate. The 75-minute ritual includes cleansing, gold gel exfoliation, a warming massage to improve circulation, a gold leaf mask, and a finishing serum — delivering visibly younger-looking, luminous skin.",
+          "The Gold Facial is our signature luxury treatment, using 24K gold-infused serums and masks that have been prized in Ayurvedic and European skincare for centuries. Gold activates the skin's natural collagen production, reduces fine lines, firms the skin, and imparts an unmistakable radiance that no other ingredient can replicate. The 75-minute ritual includes cleansing, gold gel exfoliation, a warming massage to improve circulation, a gold leaf mask, and a finishing serum, delivering visibly younger-looking, luminous skin.",
         price: "₹1,500",
         duration: "75 min",
         bestseller: true,
@@ -612,7 +612,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "cleanup",
         description: "A quick but thorough deep cleanse with extraction and a brightening mask.",
         longDescription:
-          "Not every skin day calls for a full facial — that's where the Cleanup shines. In just 30 minutes, we deliver a thorough professional cleanse, gentle steam, targeted blackhead extraction, and a fast-acting brightening mask that gives your complexion a fresh, clean reset. It's the ideal maintenance treatment between full facials, or a quick refresh before a meeting or event. Regular monthly cleanups significantly reduce blackhead build-up and keep skin clear.",
+          "Not every skin day calls for a full facial, and that's where the Cleanup shines. In just 30 minutes, we deliver a thorough professional cleanse, gentle steam, targeted blackhead extraction, and a fast-acting brightening mask that gives your complexion a fresh, clean reset. It's the ideal maintenance treatment between full facials, or a quick refresh before a meeting or event. Regular monthly cleanups significantly reduce blackhead build-up and keep skin clear.",
         price: "₹400",
         duration: "30 min",
         bestseller: true,
@@ -622,7 +622,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "d-tan-pack",
         description: "Effective de-tanning treatment to reverse sun damage and restore fairness.",
         longDescription:
-          "Mangalore's sunshine is glorious — and relentless on exposed skin. Our D-Tan treatment uses a specially formulated pack rich in natural tan-reversing agents like lemon extract, kojic acid, and mulberry root to break down melanin deposits and visibly lighten sun-darkened skin. Applied to the face, neck, and hands (or body on request), the pack draws out impurities and leaves the skin noticeably lighter, smoother, and refreshed after a single session.",
+          "Mangalore's sunshine is glorious, and relentless on exposed skin. Our D-Tan treatment uses a specially formulated pack rich in natural tan-reversing agents like lemon extract, kojic acid, and mulberry root to break down melanin deposits and visibly lighten sun-darkened skin. Applied to the face, neck, and hands (or body on request), the pack draws out impurities and leaves the skin noticeably lighter, smoother, and refreshed after a single session.",
         price: "₹600",
         duration: "45 min",
         originalPrice: "₹800",
@@ -633,7 +633,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "anti-acne-treatment",
         description: "Targeted treatment to calm breakouts, reduce inflammation, and clear pores.",
         longDescription:
-          "Acne-prone skin needs precise, clinical care — not harsh products that strip and aggravate. Our Anti-Acne Treatment begins with a pH-balancing cleanse, followed by a salicylic acid exfoliation to unclog pores, a professional extraction under steamed conditions, and a calming tea tree and niacinamide mask to reduce active inflammation. A lightweight, non-comedogenic moisturiser and SPF are applied to finish. Regular sessions significantly reduce breakout frequency and post-acne hyperpigmentation.",
+          "Acne-prone skin needs precise, clinical care, not harsh products that strip and aggravate. Our Anti-Acne Treatment begins with a pH-balancing cleanse, followed by a salicylic acid exfoliation to unclog pores, a professional extraction under steamed conditions, and a calming tea tree and niacinamide mask to reduce active inflammation. A lightweight, non-comedogenic moisturiser and SPF are applied to finish. Regular sessions significantly reduce breakout frequency and post-acne hyperpigmentation.",
         price: "₹1,000",
         duration: "60 min",
       },
@@ -707,7 +707,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Skeyndor Oil Balanced Facial",
         slug: "skeyndor-oil-balanced-facial",
-        description: "Skeyndor oil-control facial — reduces shine, minimises pores, and mattifies.",
+        description: "Skeyndor oil-control facial that reduces shine, minimises pores, and mattifies.",
         price: "₹2,999",
         duration: "75 min",
       },
@@ -745,34 +745,34 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Power C Brightening Meso Therapy",
         slug: "power-c-meso-therapy",
-        description: "Power C meso therapy — micro-infusion of brightening actives for deep skin renewal.",
+        description: "Power C meso therapy: a micro-infusion of brightening actives for deep skin renewal.",
         price: "₹5,999",
         duration: "90 min",
       },
-      // ── De-Tan / Bleach — area-specific ─────────────────────
+      // ── De-Tan / Bleach: area-specific ─────────────────────
       {
-        name: "De-Tan — Underarms",
+        name: "De-Tan: Underarms",
         slug: "de-tan-underarms",
         description: "Lightening and de-tanning treatment specifically for the underarm area.",
         price: "₹150",
         duration: "15 min",
       },
       {
-        name: "De-Tan — Chin",
+        name: "De-Tan: Chin",
         slug: "de-tan-chin",
         description: "Targeted de-tan treatment to lighten and even out chin skin tone.",
         price: "₹200",
         duration: "15 min",
       },
       {
-        name: "De-Tan — Feet",
+        name: "De-Tan: Feet",
         slug: "de-tan-feet",
         description: "De-tanning treatment to restore brightness and even tone to sun-darkened feet.",
         price: "₹300",
         duration: "20 min",
       },
       {
-        name: "De-Tan — Face & Neck",
+        name: "De-Tan: Face & Neck",
         slug: "de-tan-face-neck",
         description: "Comprehensive de-tan treatment covering the full face and neck.",
         price: "₹500",
@@ -780,50 +780,50 @@ export const serviceCategories: ServiceCategory[] = [
         bestseller: true,
       },
       {
-        name: "De-Tan — Face & Shoulder",
+        name: "De-Tan: Face & Shoulder",
         slug: "de-tan-face-shoulder",
-        description: "De-tanning treatment for the face and shoulder area — ideal for sleeveless outfits.",
+        description: "De-tanning treatment for the face and shoulder area, ideal for sleeveless outfits.",
         price: "₹800",
         duration: "40 min",
       },
       {
-        name: "De-Tan — Blouse Line",
+        name: "De-Tan: Blouse Line",
         slug: "de-tan-blouse-line",
         description: "Targeted de-tan treatment for the blouse/neckline area to prep for saree occasions.",
         price: "₹800",
         duration: "35 min",
       },
       {
-        name: "De-Tan — Hands",
+        name: "De-Tan: Hands",
         slug: "de-tan-hands",
         description: "Brightening de-tan treatment for sun-darkened hands.",
         price: "₹800",
         duration: "30 min",
       },
       {
-        name: "De-Tan — Hands & Half Legs",
+        name: "De-Tan: Hands & Half Legs",
         slug: "de-tan-hands-half-legs",
-        description: "Combined de-tan for hands and lower legs — perfect pre-event treatment.",
+        description: "Combined de-tan for hands and lower legs, perfect pre-event treatment.",
         price: "₹1,800",
         duration: "60 min",
       },
-      // ── Bleach — Ammonia Free ────────────────────────────────
+      // ── Bleach: Ammonia Free ────────────────────────────────
       {
-        name: "Ammonia-Free Bleach — Upper Lip",
+        name: "Ammonia-Free Bleach: Upper Lip",
         slug: "ammonia-free-bleach-upper-lip",
         description: "Gentle ammonia-free bleach to lighten upper lip hair without irritation.",
         price: "₹150",
         duration: "10 min",
       },
       {
-        name: "Ammonia-Free Bleach — Face",
+        name: "Ammonia-Free Bleach: Face",
         slug: "ammonia-free-bleach-face",
         description: "Full face bleach using gentle ammonia-free formula for sensitive skin.",
         price: "₹700",
         duration: "25 min",
       },
       {
-        name: "Ammonia-Free Bleach — Face & Neck",
+        name: "Ammonia-Free Bleach: Face & Neck",
         slug: "ammonia-free-bleach-face-neck",
         description: "Ammonia-free bleach treatment for the face and neck for brightened, even skin.",
         price: "₹1,000",
@@ -831,70 +831,70 @@ export const serviceCategories: ServiceCategory[] = [
       },
       // ── Body Bleach ──────────────────────────────────────────
       {
-        name: "Body Bleach — Upper Lip",
+        name: "Body Bleach: Upper Lip",
         slug: "body-bleach-upper-lip",
         description: "Lightening body bleach application for the upper lip area.",
         price: "₹100",
         duration: "10 min",
       },
       {
-        name: "Body Bleach — Underarms",
+        name: "Body Bleach: Underarms",
         slug: "body-bleach-underarms",
         description: "Underarm bleach to lighten skin and even out discolouration.",
         price: "₹250",
         duration: "15 min",
       },
       {
-        name: "Body Bleach — Feet",
+        name: "Body Bleach: Feet",
         slug: "body-bleach-feet",
         description: "Foot bleach to brighten and even out tanned or darkened feet.",
         price: "₹250",
         duration: "15 min",
       },
       {
-        name: "Body Bleach — Half Arms",
+        name: "Body Bleach: Half Arms",
         slug: "body-bleach-half-arms",
         description: "Bleach treatment for forearms to lighten sun-darkened skin.",
         price: "₹350",
         duration: "20 min",
       },
       {
-        name: "Body Bleach — Half Back",
+        name: "Body Bleach: Half Back",
         slug: "body-bleach-half-back",
         description: "Bleach for the lower back to brighten and even skin tone.",
         price: "₹450",
         duration: "25 min",
       },
       {
-        name: "Body Bleach — Stomach",
+        name: "Body Bleach: Stomach",
         slug: "body-bleach-stomach",
         description: "Stomach bleach to lighten the abdominal area and even skin tone.",
         price: "₹450",
         duration: "25 min",
       },
       {
-        name: "Body Bleach — Full Arms",
+        name: "Body Bleach: Full Arms",
         slug: "body-bleach-full-arms",
         description: "Complete arm bleach from wrists to shoulders for uniformly bright skin.",
         price: "₹600",
         duration: "35 min",
       },
       {
-        name: "Body Bleach — Full Back",
+        name: "Body Bleach: Full Back",
         slug: "body-bleach-full-back",
         description: "Full-back bleach to brighten and even out skin tone from shoulders to waist.",
         price: "₹600",
         duration: "35 min",
       },
       {
-        name: "Body Bleach — Half Legs",
+        name: "Body Bleach: Half Legs",
         slug: "body-bleach-half-legs",
         description: "Bleach treatment for the lower legs to reverse tan and lighten skin.",
         price: "₹750",
         duration: "40 min",
       },
       {
-        name: "Body Bleach — Full Legs",
+        name: "Body Bleach: Full Legs",
         slug: "body-bleach-full-legs",
         description: "Complete full-leg bleach for even, brightened skin from ankle to thigh.",
         price: "₹1,000",
@@ -921,7 +921,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "bridal-makeup",
         description: "Full glam bridal look with airbrush foundation, eye artistry, and long-wear finish.",
         longDescription:
-          "Your bridal makeup is one of the most photographed looks of your life — and it must last from first light to the last dance. Our bridal makeup begins with a skin prep ritual that ensures a flawless base, followed by airbrush foundation for a seamless, camera-perfect finish that will not transfer or fade over a 12-hour day. Eye artistry is custom-designed to complement your eye shape and outfit, and every product used is clinically tested and bridal-grade. We have delivered looks for over 500 Mangalore brides across Tulu, Konkani, Beary, and North Indian wedding traditions.",
+          "Your bridal makeup is one of the most photographed looks of your life, and it must last from first light to the last dance. Our bridal makeup begins with a skin prep ritual that ensures a flawless base, followed by airbrush foundation for a seamless, camera-perfect finish that will not transfer or fade over a 12-hour day. Eye artistry is custom-designed to complement your eye shape and outfit, and every product used is clinically tested and bridal-grade. We have delivered looks for over 500 Mangalore brides across Tulu, Konkani, Beary, and North Indian wedding traditions.",
         price: "₹8,000",
         duration: "3 hrs",
         bestseller: true,
@@ -929,9 +929,9 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Engagement Makeup",
         slug: "engagement-makeup",
-        description: "Radiant, polished look for your engagement ceremony — sophisticated and photo-ready.",
+        description: "Radiant, polished look for your engagement ceremony, sophisticated and photo-ready.",
         longDescription:
-          "An engagement is your first grand debut as a couple, and your look should reflect that. Our engagement makeup strikes the perfect balance between bridal glamour and natural radiance — polished enough for professional photographs yet light enough to feel entirely like yourself. We use long-wear, photo-optimized products and tailor the look to your outfit, skin tone, and the lighting conditions of your venue.",
+          "An engagement is your first grand debut as a couple, and your look should reflect that. Our engagement makeup strikes the perfect balance between bridal glamour and natural radiance, polished enough for professional photographs yet light enough to feel entirely like yourself. We use long-wear, photo-optimized products and tailor the look to your outfit, skin tone, and the lighting conditions of your venue.",
         price: "₹4,500",
         duration: "2 hrs",
         bestseller: true,
@@ -950,7 +950,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "pre-bridal-package",
         description: "Multi-session prep covering facials, waxing, threading & body treatments over 4 weeks.",
         longDescription:
-          "Great bridal makeup starts with great skin. Our Pre-Bridal Package is a structured 4-week programme that prepares your skin and body for the most photographed day of your life. The package covers two gold or pearl facials, full body waxing, eyebrow shaping, D-tan treatments, a deep conditioning hair treatment, and a body scrub — all sequenced strategically in the weeks before your wedding for maximum impact. A free pre-bridal consultation is included to customise the plan to your skin type and wedding date.",
+          "Great bridal makeup starts with great skin. Our Pre-Bridal Package is a structured 4-week programme that prepares your skin and body for the most photographed day of your life. The package covers two gold or pearl facials, full body waxing, eyebrow shaping, D-tan treatments, a deep conditioning hair treatment, and a body scrub, all sequenced strategically in the weeks before your wedding for maximum impact. A free pre-bridal consultation is included to customise the plan to your skin type and wedding date.",
         price: "₹12,000",
         duration: "4 sessions",
         bestseller: true,
@@ -967,20 +967,20 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Saree Draping",
         slug: "saree-draping",
-        description: "Expert draping in your preferred regional style — perfectly pleated every time.",
+        description: "Expert draping in your preferred regional style, perfectly pleated every time.",
         longDescription:
-          "A saree worn imperfectly — no matter how beautiful the fabric — can dampen your confidence. Our expert saree draping service ensures crisp pleats, a perfectly positioned pallu, and a comfortable, secure drape that stays in place all day. We are experienced in Nivi, Maharashtrian, Gujarati, Bengali, and traditional Tulu/Mangalorean saree styles, and will work around your jewellery and blouse fit to create a polished, cohesive bridal look.",
+          "A saree worn imperfectly, no matter how beautiful the fabric, can dampen your confidence. Our expert saree draping service ensures crisp pleats, a perfectly positioned pallu, and a comfortable, secure drape that stays in place all day. We are experienced in Nivi, Maharashtrian, Gujarati, Bengali, and traditional Tulu/Mangalorean saree styles, and will work around your jewellery and blouse fit to create a polished, cohesive bridal look.",
         price: "₹500",
         duration: "30 min",
       },
       // ── Bride Facial & Makeover (menu additions) ─────────────
       {
-        name: "Bride Facial Treatment — Brightening / Hydrating",
+        name: "Bride Facial Treatment: Brightening / Hydrating",
         slug: "bride-facial-treatment",
         description:
-          "Exclusive 6-sitting facial programme for brides — deep brightening and hydration for your most radiant skin ever.",
+          "Exclusive 6-sitting facial programme for brides: deep brightening and hydration for your most radiant skin ever.",
         longDescription:
-          "The Bride Facial Treatment is our most comprehensive pre-wedding skin programme, delivered across 6 professional sittings leading up to your wedding day. Each session is tailored to your skin's current needs — alternating between deep brightening protocols, intensive hydration facials, and targeted pigmentation work. The cumulative effect is a dramatic, visible improvement in skin tone, texture, and luminosity that no single-session treatment can match. Includes a full consultation and personalised home-care plan.",
+          "The Bride Facial Treatment is our most comprehensive pre-wedding skin programme, delivered across 6 professional sittings leading up to your wedding day. Each session is tailored to your skin's current needs, alternating between deep brightening protocols, intensive hydration facials, and targeted pigmentation work. The cumulative effect is a dramatic, visible improvement in skin tone, texture, and luminosity that no single-session treatment can match. Includes a full consultation and personalised home-care plan.",
         price: "₹10,000",
         duration: "6 sessions",
         bestseller: true,
@@ -988,7 +988,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Party Makeover",
         slug: "party-makeover",
-        description: "Full glam party look — flawless base, defined eyes, and a look that lasts all night.",
+        description: "Full glam party look: flawless base, defined eyes, and a look that lasts all night.",
         price: "₹3,500–₹7,500",
         duration: "2–3 hrs",
         bestseller: true,
@@ -996,7 +996,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Party Hairstyle",
         slug: "party-hairstyle",
-        description: "Statement party-ready hairstyle — from elegant up-dos to glamorous blowouts.",
+        description: "Statement party-ready hairstyle, from elegant up-dos to glamorous blowouts.",
         price: "₹1,500–₹4,500",
         duration: "1–2 hrs",
         bestseller: true,
@@ -1011,7 +1011,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "HD Bridal Makeover (Chetana's Team)",
         slug: "hd-bridal-makeover-chetanas-team",
-        description: "HD bridal makeup and hairstyle by Chetana's in-house expert team — the full bridal look.",
+        description: "HD bridal makeup and hairstyle by Chetana's in-house expert team: the full bridal look.",
         price: "₹10,000–₹15,000",
         duration: "3–4 hrs",
         bestseller: true,
@@ -1043,7 +1043,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     slug: "nails",
     label: "Nails",
-    tagline: "From classic to creative — nails that wow",
+    tagline: "From classic to creative, nails that wow",
     icon: "💅",
     services: [
       {
@@ -1061,7 +1061,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "basic-pedicure",
         description: "Soak, scrub, file, and polish for happy, soft feet.",
         longDescription:
-          "Feet carry us everywhere — and they deserve proper care. Our Basic Pedicure begins with a warm bubbling foot soak infused with relaxing essential oils, followed by exfoliation of calluses and dry skin with a foot file and scrub. Nails are trimmed, shaped, and buffed; cuticles are cared for; and the session concludes with a heel massage and your choice of polish. Soft, smooth, pretty feet — every time.",
+          "Feet carry us everywhere, and they deserve proper care. Our Basic Pedicure begins with a warm bubbling foot soak infused with relaxing essential oils, followed by exfoliation of calluses and dry skin with a foot file and scrub. Nails are trimmed, shaped, and buffed; cuticles are cared for; and the session concludes with a heel massage and your choice of polish. Soft, smooth, pretty feet, every time.",
         price: "₹400",
         duration: "45 min",
         bestseller: true,
@@ -1071,7 +1071,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "french-manicure",
         description: "Timeless white-tip French finish for an elegant, clean look.",
         longDescription:
-          "The French manicure is the gold standard of polished, understated elegance — at home in any setting from the office to a wedding. Our technicians hand-paint the classic white tip with precision, finish with a natural pink or beige base, and seal it all with a high-gloss top coat for added durability. The result is clean, classic, and impeccably refined — a look that has never gone out of style.",
+          "The French manicure is the gold standard of polished, understated elegance, at home in any setting from the office to a wedding. Our technicians hand-paint the classic white tip with precision, finish with a natural pink or beige base, and seal it all with a high-gloss top coat for added durability. The result is clean, classic, and impeccably refined: a look that has never gone out of style.",
         price: "₹500",
         duration: "45 min",
       },
@@ -1088,9 +1088,9 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Nail Art (per nail)",
         slug: "nail-art",
-        description: "Custom designs — florals, ombre, stones, foils, and more.",
+        description: "Custom designs: florals, ombre, stones, foils, and more.",
         longDescription:
-          "Nail art is where nails become a canvas. Our nail artists can create virtually any design you can envision: hand-painted florals, geometric patterns, gradient ombre, marble effects, foil accents, rhinestone clusters, and more. Priced per nail so you can choose to accent just a few feature nails or go all-in on a full set. Bring a reference image or let our artist freestyle — either way, you'll leave with wearable art.",
+          "Nail art is where nails become a canvas. Our nail artists can create virtually any design you can envision: hand-painted florals, geometric patterns, gradient ombre, marble effects, foil accents, rhinestone clusters, and more. Priced per nail so you can choose to accent just a few feature nails or go all-in on a full set. Bring a reference image or let our artist freestyle. Either way, you'll leave with wearable art.",
         price: "₹50/nail",
         duration: "Varies",
         originalPrice: "₹80/nail",
@@ -1101,7 +1101,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "acrylic-extensions",
         description: "Strong, sculpted acrylic extensions in any length and shape you desire.",
         longDescription:
-          "Acrylic extensions are the original nail enhancement — and for good reason. Our technicians apply a sculpted acrylic blend over forms or tips to build strong, long-lasting extensions in your preferred length (short, medium, coffin, stiletto, square, or almond). The set is then shaped, buffed, and finished with gel polish for a high-gloss look that resists breaking. A full set lasts 3–4 weeks and can be infilled to extend the life further.",
+          "Acrylic extensions are the original nail enhancement, and for good reason. Our technicians apply a sculpted acrylic blend over forms or tips to build strong, long-lasting extensions in your preferred length (short, medium, coffin, stiletto, square, or almond). The set is then shaped, buffed, and finished with gel polish for a high-gloss look that resists breaking. A full set lasts 3–4 weeks and can be infilled to extend the life further.",
         price: "₹1,200",
         duration: "90 min",
       },
@@ -1132,7 +1132,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Dry Manicure",
         slug: "dry-manicure",
-        description: "Quick waterless manicure — shape, buff, cuticle care, and a top coat finish.",
+        description: "Quick waterless manicure: shape, buff, cuticle care, and a top coat finish.",
         price: "₹200",
         duration: "20 min",
       },
@@ -1170,7 +1170,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Dry Pedicure",
         slug: "dry-pedicure",
-        description: "Waterless pedicure — file, buff, cuticle care, and a neat polish finish.",
+        description: "Waterless pedicure: file, buff, cuticle care, and a neat polish finish.",
         price: "₹250",
         duration: "25 min",
       },
@@ -1184,7 +1184,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Extra Nourishing Pack",
         slug: "extra-nourishing-pack",
-        description: "Add-on nourishing pack for hands or feet — intensive hydration boost.",
+        description: "Add-on nourishing pack for hands or feet, an intensive hydration boost.",
         price: "₹250",
         duration: "15 min",
       },
@@ -1208,7 +1208,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "kids-hair-cut",
         description: "A fun, stress-free haircut in a child-friendly environment.",
         longDescription:
-          "We understand that a child's first salon experience can be nerve-wracking — for both child and parent. Our kids' hair cut service is designed to be relaxed, fun, and completely stress-free. Our stylists are experienced in working with children of all ages and temperaments, and take time to make the little one feel comfortable before picking up scissors. We cut to the parents' brief and always check in throughout to ensure both the child and parent are happy.",
+          "We understand that a child's first salon experience can be nerve-wracking, for both child and parent. Our kids' hair cut service is designed to be relaxed, fun, and completely stress-free. Our stylists are experienced in working with children of all ages and temperaments, and take time to make the little one feel comfortable before picking up scissors. We cut to the parents' brief and always check in throughout to ensure both the child and parent are happy.",
         price: "₹300–₹450",
         duration: "20 min",
         bestseller: true,
@@ -1225,9 +1225,9 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Kids Hair Styling",
         slug: "kids-hair-styling",
-        description: "Braids, buns, curls — whatever style your little one wants for their special day.",
+        description: "Braids, buns, curls, whatever style your little one wants for their special day.",
         longDescription:
-          "Whether it's a school event, birthday party, or a family function, every child deserves to feel special. Our kids' hair styling service creates age-appropriate looks: French braids, Dutch braids, twisted buns, ponytails with accessories, or soft curls — tailored to the child's hair type and the occasion. We use only child-safe, heat-protecting products, and keep the styling time short so even fidgety little ones stay comfortable.",
+          "Whether it's a school event, birthday party, or a family function, every child deserves to feel special. Our kids' hair styling service creates age-appropriate looks: French braids, Dutch braids, twisted buns, ponytails with accessories, or soft curls, tailored to the child's hair type and the occasion. We use only child-safe, heat-protecting products, and keep the styling time short so even fidgety little ones stay comfortable.",
         price: "₹250",
         duration: "20 min",
         bestseller: true,
@@ -1237,7 +1237,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "kids-party-makeup",
         description: "Gentle, hypoallergenic makeup for a magical party-ready look.",
         longDescription:
-          "Light, fun, and completely safe — our kids' party makeup uses only dermatologically tested, hypoallergenic, and easily removable products made for children's sensitive skin. We create age-appropriate, sparkly looks: glitter eyeshadow, rosy cheeks, a touch of lip colour, and face gems. The process is kept fun and interactive so every child enjoys their moment in the chair. Parents are always consulted on the look before we begin.",
+          "Light, fun, and completely safe, our kids' party makeup uses only dermatologically tested, hypoallergenic, and easily removable products made for children's sensitive skin. We create age-appropriate, sparkly looks: glitter eyeshadow, rosy cheeks, a touch of lip colour, and face gems. The process is kept fun and interactive so every child enjoys their moment in the chair. Parents are always consulted on the look before we begin.",
         price: "₹500",
         duration: "30 min",
         bestseller: true,
@@ -1245,18 +1245,18 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Kids Basic Manicure",
         slug: "kids-basic-manicure",
-        description: "File, buff, and a fun pop of colour — safe and non-toxic polish only.",
+        description: "File, buff, and a fun pop of colour, safe and non-toxic polish only.",
         longDescription:
-          "Little nails deserve the same care as grown-up ones. Our kids' basic manicure includes a gentle soak, nail shaping, cuticle care, and a coat of non-toxic, water-based nail polish in the child's favourite colour. We carry a range of bright, fun shades that are completely free from formaldehyde, toluene, and DBP — so parents can relax knowing the products are totally safe.",
+          "Little nails deserve the same care as grown-up ones. Our kids' basic manicure includes a gentle soak, nail shaping, cuticle care, and a coat of non-toxic, water-based nail polish in the child's favourite colour. We carry a range of bright, fun shades that are completely free from formaldehyde, toluene, and DBP, so parents can relax knowing the products are totally safe.",
         price: "₹250",
         duration: "20 min",
       },
       {
         name: "Kids Mehendi",
         slug: "kids-mehendi",
-        description: "Simple, playful henna designs kids will love — using natural henna.",
+        description: "Simple, playful henna designs kids will love, using natural henna.",
         longDescription:
-          "Mehendi for kids is a celebration in itself! Our artists use fresh, natural henna paste — free from any synthetic additives or black henna chemicals — to create simple, playful designs that children adore: butterflies, flowers, peacocks, hearts, and cartoon motifs. The designs are applied on hands and fingers, and the paste is kept on for at least 30 minutes to ensure a good stain. We also advise parents on aftercare to get the deepest, longest-lasting colour.",
+          "Mehendi for kids is a celebration in itself! Our artists use fresh, natural henna paste, free from any synthetic additives or black henna chemicals, to create simple, playful designs that children adore: butterflies, flowers, peacocks, hearts, and cartoon motifs. The designs are applied on hands and fingers, and the paste is kept on for at least 30 minutes to ensure a good stain. We also advise parents on aftercare to get the deepest, longest-lasting colour.",
         price: "₹200",
         duration: "20 min",
       },
@@ -1286,7 +1286,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Kids Hair Spa",
         slug: "kids-hair-spa",
-        description: "Nourishing hair spa treatment designed for children's hair — softens, strengthens, and adds shine.",
+        description: "Nourishing hair spa treatment designed for children's hair that softens, strengthens, and adds shine.",
         price: "₹1,000",
         duration: "40 min",
         isNew: true,
@@ -1297,14 +1297,14 @@ export const serviceCategories: ServiceCategory[] = [
   {
     slug: "packages",
     label: "Packages",
-    tagline: "More value, more pampering — curated bundles for every occasion",
+    tagline: "More value, more pampering: curated bundles for every occasion",
     icon: "🎁",
     services: [
       {
         name: "Classic Package",
         slug: "classic-package",
         description:
-          "Classic Clean Up + Full Arms & Underarms Wax + Haircut with Wash + Eyebrow Threading — your essential salon refresh.",
+          "Classic Clean Up + Full Arms & Underarms Wax + Haircut with Wash + Eyebrow Threading: your essential salon refresh.",
         longDescription:
           "The Classic Package is our most popular entry-level bundle, covering everything you need for a complete refresh in one appointment. Includes a thorough classic clean-up facial, full arms and underarms lipo wax, a professional haircut with wash, and eyebrow threading. Perfectly priced for a regular monthly maintenance session that keeps you looking your best without the planning hassle.",
         price: "₹1,999",
@@ -1315,9 +1315,9 @@ export const serviceCategories: ServiceCategory[] = [
         name: "Elite Package",
         slug: "elite-package",
         description:
-          "Vitamin C Facial + Classic Pedi & Mani + Hair Spa + Full Wax (Arms, Underarms, Legs) + Face De-Tan — the complete elite experience.",
+          "Vitamin C Facial + Classic Pedi & Mani + Hair Spa + Full Wax (Arms, Underarms, Legs) + Face De-Tan: the complete elite experience.",
         longDescription:
-          "The Elite Package elevates your salon day with a step-up in every service. A brightening Vitamin C facial to even and illuminate skin, a classic manicure and pedicure for perfectly groomed hands and feet, a nourishing hair spa, comprehensive full-arms, underarms, and legs wax, and a face de-tan to reverse sun damage — all in one curated session. Exceptional value for everything included.",
+          "The Elite Package elevates your salon day with a step-up in every service. A brightening Vitamin C facial to even and illuminate skin, a classic manicure and pedicure for perfectly groomed hands and feet, a nourishing hair spa, comprehensive full-arms, underarms, and legs wax, and a face de-tan to reverse sun damage, all in one curated session. Exceptional value for everything included.",
         price: "₹5,500",
         duration: "4.5 hrs",
         bestseller: true,
@@ -1326,7 +1326,7 @@ export const serviceCategories: ServiceCategory[] = [
         name: "Divine Package",
         slug: "divine-package",
         description:
-          "Skeyndor Hydrating Facial + Lotus Pedi & Mani + Hair Spa + Full Wax + Face De-Tan + Full Back Bleach — pure indulgence.",
+          "Skeyndor Hydrating Facial + Lotus Pedi & Mani + Hair Spa + Full Wax + Face De-Tan + Full Back Bleach: pure indulgence.",
         longDescription:
           "The Divine Package is your complete day of indulgence. A premium Skeyndor hydrating facial for deep skin nourishment, an elevated Lotus manicure and pedicure, a hair spa for glossy, strengthened hair, full waxing, a face de-tan pack, and a full back bleach for luminous, even-toned skin. Everything in one expertly sequenced appointment.",
         price: "₹8,000",
@@ -1336,9 +1336,9 @@ export const serviceCategories: ServiceCategory[] = [
         name: "Royal Package",
         slug: "royal-package",
         description:
-          "Power C Brightening Facial + Crystal Pedi & Mani + Luxury Hair Spa + Full Body Wax + Full Back Bleach + Body Polishing + De-Tan Face & Neck — the ultimate salon experience.",
+          "Power C Brightening Facial + Crystal Pedi & Mani + Luxury Hair Spa + Full Body Wax + Full Back Bleach + Body Polishing + De-Tan Face & Neck: the ultimate salon experience.",
         longDescription:
-          "The Royal Package is our most comprehensive offering — an entire day of premium treatments curated for maximum impact. A powerful Power C Brightening Antioxidant facial, an indulgent Crystal spa manicure and pedicure, a luxury hair spa, complete full-body wax, full back bleach, revitalising body polishing, and a face and neck de-tan. Reserved for those who want the absolute best in a single, beautifully orchestrated visit.",
+          "The Royal Package is our most comprehensive offering: an entire day of premium treatments curated for maximum impact. A powerful Power C Brightening Antioxidant facial, an indulgent Crystal spa manicure and pedicure, a luxury hair spa, complete full-body wax, full back bleach, revitalising body polishing, and a face and neck de-tan. Reserved for those who want the absolute best in a single, beautifully orchestrated visit.",
         price: "₹8,000",
         duration: "5.5 hrs",
         bestseller: true,

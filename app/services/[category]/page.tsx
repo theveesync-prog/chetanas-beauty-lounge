@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cat = getCategoryBySlug(category);
   if (!cat) return {};
   return {
-    title: `${cat.label} in Mangalore | Chetana's Beauty`,
+    title: `${cat.label} in Mangalore`,
     description: cat.tagline,
     keywords: [
       `${cat.label} Mangalore`,
