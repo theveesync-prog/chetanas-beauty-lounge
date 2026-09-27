@@ -1352,6 +1352,204 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "best-haircut-for-your-face-shape-guide",
+    title: "How to Choose the Right Haircut for Your Face Shape",
+    excerpt:
+      "Round, oval, square or heart-shaped: the right haircut is about proportion, not trend. A practical guide to what actually works for each face shape.",
+    category: "Hair Care",
+    categorySlug: "hair-care",
+    publishedAt: "2026-10-19",
+    readTime: 6,
+    featured: false,
+    tags: [
+      "haircut for round face",
+      "best hairstyle for round face",
+      "haircut for oval face",
+      "haircut for square face",
+      "face shape haircut guide",
+    ],
+    metaDescription:
+      "A practical guide to choosing a haircut for round, oval, square and heart face shapes, plus how a stylist consultation at Chetana's Beauty gets it right for you.",
+    coverImage: "/images/salon/salon-mirror-stations.webp",
+    coverAlt: "Hair styling stations at Chetana's Beauty Lounge, Mangalore",
+    content: [
+      {
+        type: "paragraph",
+        text: "\"What haircut suits my face?\" is one of the most common questions we get, and the honest answer is: it depends less on trend and more on proportion. A cut that photographs beautifully on someone with a long face can overwhelm a round one, and vice versa. Here is a practical breakdown by face shape, followed by what actually happens in a real consultation.",
+      },
+      {
+        type: "heading",
+        text: "Round Face",
+      },
+      {
+        type: "paragraph",
+        text: "A round face has soft, curved lines with width and length roughly equal. The goal is to add the illusion of length and angles. Layered cuts that fall below the chin, side-swept fringes, and styles with height at the crown all work well. Very blunt, chin-length bobs and center-parted styles with width at the cheeks tend to emphasise roundness rather than balance it.",
+      },
+      {
+        type: "heading",
+        text: "Oval Face",
+      },
+      {
+        type: "paragraph",
+        text: "An oval face is considered the most versatile shape, longer than it is wide, with a gently rounded jaw. Most cuts work here, from blunt bobs to long layers to full fringes, because there is no strong angle to correct. The main thing to watch is not covering up naturally balanced proportions with too much heavy, face-hugging length.",
+      },
+      {
+        type: "heading",
+        text: "Square Face",
+      },
+      {
+        type: "paragraph",
+        text: "A square face has a strong, angular jawline and a wide forehead. Soft layers, side-swept fringes, and styles with movement around the jaw help soften the angles. Very blunt, straight-across cuts at jaw length can make the jawline look more pronounced, which some people want and others don't, so this is a case where personal preference matters as much as \"rules.\"",
+      },
+      {
+        type: "heading",
+        text: "Heart-Shaped Face",
+      },
+      {
+        type: "paragraph",
+        text: "A heart-shaped face is wider at the forehead and narrows toward the chin. Chin-length to shoulder-length cuts with volume near the jaw help balance a narrower chin, and a side-swept fringe can soften a wider hairline. Very short, cropped styles can sometimes draw more attention to forehead width.",
+      },
+      {
+        type: "list",
+        items: [
+          "Round face: layers below the chin, side-swept fringe, height at the crown",
+          "Oval face: most cuts work, from blunt bobs to long layers",
+          "Square face: soft layers and movement around the jaw to soften angles",
+          "Heart-shaped face: chin-to-shoulder length with volume near the jaw",
+        ],
+      },
+      {
+        type: "tip",
+        text: "Face shape is a starting point, not a rulebook. Hair texture, how much time you actually want to spend styling, and your day-to-day life matter just as much. A good consultation weighs all of it, not just the shape of your jaw.",
+      },
+      {
+        type: "paragraph",
+        text: "This is exactly why we start every haircut with a real consultation rather than jumping straight to the chair. Our [Haircut by Senior Stylist with Wash](/services/hair-care/haircut-by-senior-stylist-with-wash) includes a proper consultation on face shape, hair texture and how you actually want to style it day to day, before a single cut is made.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            question: "What is the best haircut for a round face?",
+            answer:
+              "Layered cuts that fall below the chin, side-swept fringes, and styles with added height at the crown tend to work well for round faces, since they add the illusion of length.",
+          },
+          {
+            question: "What haircuts work for an oval face shape?",
+            answer:
+              "Oval is considered the most versatile face shape, so most cuts, from blunt bobs to long layers to full fringes, tend to work well.",
+          },
+          {
+            question: "How do I soften a square jawline with a haircut?",
+            answer:
+              "Soft layers and styles with movement around the jaw, rather than very blunt, straight-across cuts at jaw length, tend to soften angular features.",
+          },
+          {
+            question: "Can a stylist tell me my face shape during a consultation?",
+            answer:
+              "Yes. Our Haircut by Senior Stylist service includes a face-shape and hair-texture consultation before any cutting begins.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Not sure what will actually suit you? Message us on WhatsApp and book a consultation with a senior stylist at our Kankanady salon.",
+      },
+    ],
+  },
+
+  {
+    slug: "curly-hair-care-cutting-guide-mangalore-humidity",
+    title: "Curly Hair Care and Cutting: A Guide for Mangalore's Humidity",
+    excerpt:
+      "Curly hair needs a different cutting technique and a different care routine, especially in coastal Karnataka's humidity. Here's what actually helps.",
+    category: "Hair Care",
+    categorySlug: "hair-care",
+    publishedAt: "2026-10-19",
+    readTime: 6,
+    featured: false,
+    tags: [
+      "curly hair haircut",
+      "curly hair care Mangalore",
+      "best haircut for curly hair",
+      "frizzy hair humidity",
+      "curly hair styling",
+    ],
+    metaDescription:
+      "How to cut and care for curly hair in Mangalore's coastal humidity: cutting technique, frizz control, and the treatments that actually help curly and wavy hair.",
+    coverImage: "/images/gallery/gallery-hair-color-transformation.webp",
+    coverAlt: "Hair styling session at Chetana's Beauty Lounge, Mangalore",
+    content: [
+      {
+        type: "paragraph",
+        text: "Curly hair behaves differently from straight hair at every stage, cutting, washing, drying and styling, and Mangalore's coastal humidity adds another layer of difficulty on top of that. A cut and routine that works fine in a dry climate can turn into a frizzy, shapeless mess here. Here's what actually helps.",
+      },
+      {
+        type: "heading",
+        text: "Cutting Curly Hair Is Not the Same as Cutting Straight Hair",
+      },
+      {
+        type: "paragraph",
+        text: "Curls shrink upward as they dry, sometimes by several inches, and each curl pattern behaves a little differently. Cutting curly hair while it's wet and stretched out, without accounting for that shrinkage, is one of the most common reasons a curly cut looks uneven or too short once it dries. A stylist experienced with curly and wavy hair will cut with the curl pattern in mind, often shaping dry or partially dry hair rather than cutting purely on wet, straightened strands.",
+      },
+      {
+        type: "heading",
+        text: "Why Humidity Makes Frizz Worse",
+      },
+      {
+        type: "paragraph",
+        text: "Hair frizzes when it absorbs moisture unevenly from the air, and coastal Karnataka's humidity gives it plenty of moisture to absorb. Curly and wavy hair is more porous and more prone to this than straight hair, which is why a style that looks smooth in the morning can look completely different by afternoon. Managing frizz here is less about fighting humidity and more about controlling how your hair absorbs it.",
+      },
+      {
+        type: "list",
+        items: [
+          "Deep conditioning regularly to keep the hair shaft properly hydrated from within, rather than just coated on the surface",
+          "Avoiding over-washing, which strips natural oils curly hair needs more than straight hair does",
+          "Using a diffuser or air-drying instead of rough towel-drying, which roughs up the hair cuticle and increases frizz",
+          "A smoothing or frizz-control treatment for hair that needs more consistent manageability day to day",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Our [Deep Conditioning Treatment](/services/hair-care/deep-conditioning-treatment) is a good regular maintenance step for curly and wavy hair in this climate. For hair that needs more consistent frizz control on a daily basis, our [Keratin Smoothing Treatment](/services/hair-care/keratin-smoothing-treatment) reduces frizz and cuts down blow-dry time for up to three months, though it does relax the curl pattern, so it's worth discussing with your stylist whether you want to soften curls or keep them defined.",
+      },
+      {
+        type: "tip",
+        text: "If you want to keep your natural curl pattern rather than relax it, ask for a dry cut and a consultation on a curl-friendly care routine rather than reaching straight for a smoothing treatment.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            question: "Should curly hair be cut wet or dry?",
+            answer:
+              "Many stylists cut curly hair dry or partially dry, since curls shrink as they dry and cutting purely on wet, stretched hair can lead to an uneven or shorter-than-expected result.",
+          },
+          {
+            question: "Why is my curly hair frizzier in Mangalore than it used to be elsewhere?",
+            answer:
+              "Coastal humidity means more moisture in the air for porous curly hair to absorb unevenly, which is a major cause of frizz. Deep conditioning and gentler drying methods help manage it.",
+          },
+          {
+            question: "Does keratin smoothing remove curls completely?",
+            answer:
+              "Keratin smoothing relaxes and reduces frizz for up to three months, which does soften the curl pattern. If you want to keep your natural curls, ask about a curl-friendly routine instead.",
+          },
+          {
+            question: "How often should curly hair be deep conditioned?",
+            answer:
+              "This varies by hair type and how it's styled day to day. Our stylists can recommend a schedule during a consultation based on your specific hair.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Want a cut or treatment plan built for your actual curl pattern? Message us on WhatsApp to book a consultation at our Kankanady salon.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
