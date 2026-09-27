@@ -136,6 +136,28 @@ const categoryFaqs: Record<string, ServiceFAQ[]> = {
       answer: "Yes! We can arrange party packages for birthday celebrations and special occasions that include hair styling, mini manicures, and fun party makeup for groups. Please call us at least a week in advance to discuss group size, services, and scheduling so we can prepare everything perfectly.",
     },
   ],
+  "packages": [
+    {
+      question: "Can I customise what's included in a package?",
+      answer: "Our packages are curated as a set combination for the best value, but let us know your preferences when you book and we'll do our best to accommodate swaps, especially if you'd like to skip a service you don't need. Speak to our team before your appointment to check what's possible.",
+    },
+    {
+      question: "How long does a full package appointment take?",
+      answer: "Package durations are listed on each package and range from about 3 to 5.5 hours, since several services are combined into one visit. We recommend blocking out your full day and arriving without a tight schedule afterward, so you can relax through each step.",
+    },
+    {
+      question: "Can I split a package across two visits?",
+      answer: "In most cases, yes. If a full package feels like too much in one sitting, let us know when booking and we can help you plan which services to do first and which to schedule for a follow-up visit.",
+    },
+    {
+      question: "Are packages good value compared to booking services individually?",
+      answer: "Yes. Our packages bundle multiple services at a combined price that works out better than booking each one separately, on top of the convenience of getting everything done in a single, well-sequenced visit.",
+    },
+    {
+      question: "Can I book a package for someone else as a gift?",
+      answer: "Yes, packages make a popular gift for birthdays, anniversaries or just a well-deserved treat. Message us on WhatsApp with the recipient's details and we'll help you arrange the booking.",
+    },
+  ],
 };
 
 export function getFaqsForService(

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Best Ladies Salon in Mangalore | Chetana's Beauty, CIDESCO Certified",
-    template: "%s | Chetana's Beauty Lounge",
+    template: "%s | Chetana's Beauty",
   },
   description:
     "Chetana's Beauty Lounge & Education Foundation is a CIDESCO-certified ladies salon, spa and beauty academy in Mangalore offering bridal makeup, skin treatments and professional courses in Kankanady. Trusted by NRI families from Dubai. Book via WhatsApp.",

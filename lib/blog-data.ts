@@ -24,7 +24,7 @@ export interface BlogSection {
 export const blogPosts: BlogPost[] = [
   {
     slug: "bridal-makeup-tips-mangalore",
-    title: "5 Bridal Makeup Tips from Our CIDESCO-Certified Artists in Mangalore",
+    title: "5 Bridal Makeup Tips from CIDESCO-Certified Artists",
     excerpt:
       "Your wedding day deserves makeup that lasts from the morning ceremonies to the evening reception. Our CIDESCO-certified artists share their top tips for brides in Mangalore.",
     category: "Bridal",
@@ -115,7 +115,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "skin-care-routine-mangalore-humid-climate",
-    title: "The Complete Skin Care Routine for Mangalore's Humid Climate",
+    title: "The Complete Skin Care Routine for Humid Climates",
     excerpt:
       "Living by the sea means your skin faces its own set of challenges: humidity, sun exposure and salt air. Here's the routine our skin specialists actually recommend for Mangalorean skin.",
     category: "Skin Care",
@@ -210,7 +210,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "keratin-treatment-vs-straightening",
-    title: "Keratin Treatment vs Hair Straightening: Which Is Right for You?",
+    title: "Keratin vs Hair Straightening: Which Is Right?",
     excerpt:
       "These are two of our most-requested services, but they work in completely different ways and suit different hair types. Our senior stylists break down what you need to know before booking.",
     category: "Hair Care",
@@ -302,7 +302,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "pre-bridal-packages-what-to-book-and-when",
-    title: "Pre-Bridal Packages: What to Book and When (Your Complete Timeline)",
+    title: "Pre-Bridal Packages: What to Book and When",
     excerpt:
       "Most brides start their pre-bridal prep too late. With the right timeline, you can walk into your wedding with your best skin, hair and confidence. Here's the schedule our bridal team recommends.",
     category: "Bridal",
@@ -416,7 +416,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "nail-art-trends-2025-mangalore",
-    title: "Nail Art Trends for 2026: From Mangalorean Weddings to Everyday Chic",
+    title: "Nail Art Trends for 2026: Bridal to Everyday",
     excerpt:
       "Nail art has evolved from a niche luxury into an everyday expression of personal style. Our nail specialists share the trends dominating salons in Mangalore this year.",
     category: "Nails",
@@ -507,7 +507,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "bridal-makeup-cost-mangalore-2026",
-    title: "Bridal Makeup Cost in Mangalore 2026: HD vs Airbrush, and What You Really Pay For",
+    title: "Bridal Makeup Cost in Mangalore: HD vs Airbrush",
     excerpt:
       "Bridal makeup prices in Mangalore vary a lot from one studio to the next. Here's how to read a quote, compare HD and airbrush, and book before the November to February wedding rush.",
     category: "Bridal",
@@ -711,7 +711,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "mangalorean-bridal-makeup-tulu-konkani-catholic-beary",
-    title: "Mangalorean Bridal Makeup by Community: Tulu, Konkani, Catholic and Beary Looks",
+    title: "Bridal Makeup for Tulu, Konkani, Catholic, Beary",
     excerpt:
       "A Mangalore wedding is not one wedding. Tulu, Konkani, Catholic and Beary brides each have their own ceremonies, outfits and timings, and the makeup should follow them.",
     category: "Bridal",
@@ -907,7 +907,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "best-salon-in-mangalore-kimera-naturals-toni-guy-compared",
-    title: "Kimera, Naturals, Toni & Guy or Chetana's: How to Pick the Right Salon in Mangalore",
+    title: "Kimera, Naturals, Toni & Guy or Chetana's?",
     excerpt:
       "Mangalore has several well-known names in beauty and hair, from local favourites to national chains and international franchises. Here's how they differ, and what to actually check before you book anywhere.",
     category: "Skin Care",
@@ -1035,7 +1035,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "how-to-choose-best-ladies-salon-mangalore",
-    title: "How to Choose the Best Ladies Salon in Mangalore: 10 Things to Check Before You Book",
+    title: "How to Choose the Best Ladies Salon in Mangalore",
     excerpt:
       "Everyone says they are the best salon in Mangalore. This 10-point checklist helps you decide for yourself, whether you need a facial, a hair treatment or bridal makeup.",
     category: "Skin Care",
@@ -1259,7 +1259,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "chetanas-beauty-academy-cidesco-certified-training-mangalore",
-    title: "Inside Chetana's Beauty Academy: CIDESCO-Certified Training in Mangalore",
+    title: "Inside Chetana's Beauty Academy: CIDESCO Training",
     excerpt:
       "Chetana's Beauty Lounge is also an education foundation. Here's what that actually means, and why training under a working salon is different from a classroom-only course.",
     category: "Academy",
@@ -1355,7 +1355,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "best-haircut-for-your-face-shape-guide",
-    title: "How to Choose the Right Haircut for Your Face Shape",
+    title: "How to Choose a Haircut for Your Face Shape",
     excerpt:
       "Round, oval, square or heart-shaped: the right haircut is about proportion, not trend. A practical guide to what actually works for each face shape.",
     category: "Hair Care",
@@ -1462,7 +1462,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "curly-hair-care-cutting-guide-mangalore-humidity",
-    title: "Curly Hair Care and Cutting: A Guide for Mangalore's Humidity",
+    title: "Curly Hair Care and Cutting Guide for Mangalore",
     excerpt:
       "Curly hair needs a different cutting technique and a different care routine, especially in coastal Karnataka's humidity. Here's what actually helps.",
     category: "Hair Care",

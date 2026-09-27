@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category: cat, service: svc } = result;
   const description = svc.longDescription ?? svc.description;
   return {
-    title: `${svc.name} in Mangalore: ${cat.label}`,
+    title: `${svc.name} in Mangalore`,
     description,
     keywords: [
       `${svc.name} Mangalore`,
