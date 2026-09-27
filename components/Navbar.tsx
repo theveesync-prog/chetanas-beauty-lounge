@@ -12,7 +12,7 @@ const serviceLinks = [
   { label: "Bridal Services", href: "/services/bridal" },
   { label: "Nails", href: "/services/nails" },
   { label: "For Kids", href: "/services/for-kids" },
-  { label: "Packages 🎁", href: "/services/packages" },
+  { label: "Packages", href: "/services/packages" },
 ];
 
 const navLinks = [
