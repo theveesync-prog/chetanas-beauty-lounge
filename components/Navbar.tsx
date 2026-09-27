@@ -160,6 +160,7 @@ export default function Navbar() {
           boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
         }}
         aria-hidden={!mobileOpen}
+        inert={!mobileOpen}
       >
         <div className="px-4 pt-4 pb-6 space-y-1">
           {navLinks.map((link) =>

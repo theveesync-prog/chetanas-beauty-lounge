@@ -170,7 +170,7 @@ export default function Contact() {
             >
               Book an appointment
             </h3>
-            <p className="text-sm text-[#999] mb-8">
+            <p className="text-sm text-[#6b6b6b] mb-8">
               Fill in your details and we&apos;ll open WhatsApp with your message ready to send.
             </p>
 

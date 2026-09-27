@@ -88,7 +88,7 @@ export default function Footer() {
             >
               Visit us
             </h2>
-            <p className="mt-3 text-sm text-[#888] leading-relaxed max-w-xs">
+            <p className="mt-3 text-sm text-[#6b6b6b] leading-relaxed max-w-xs">
               Questions or want to book? Come find us in Kankanady — we&apos;re here every day, 9 AM to 8 PM.
             </p>
 
@@ -247,7 +247,7 @@ export default function Footer() {
                 className="h-11 w-auto"
               />
             </a>
-            <p className="text-xs leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.4)", maxWidth: "175px" }}>
+            <p className="text-xs leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.6)", maxWidth: "175px" }}>
               Led by CIDESCO-certified Chetana Salian, trusted since 1998.
             </p>
             <div
@@ -264,7 +264,7 @@ export default function Footer() {
 
           {/* Col 2: Pages */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.3)" }}>
+            <h3 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.55)" }}>
               Pages
             </h3>
             <ul className="space-y-2.5">
@@ -284,7 +284,7 @@ export default function Footer() {
 
           {/* Col 3: Address */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.3)" }}>
+            <h3 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.55)" }}>
               Address
             </h3>
             <address className="not-italic text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -309,7 +309,7 @@ export default function Footer() {
 
           {/* Col 4: Open times + Social */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.3)" }}>
+            <h3 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.55)" }}>
               Open times
             </h3>
             <div className="mb-6">
@@ -349,19 +349,19 @@ export default function Footer() {
           style={{ borderColor: "rgba(255,255,255,0.07)" }}
         >
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 py-5">
-            <p className="text-xs text-center sm:text-left" style={{ color: "rgba(255,255,255,0.3)" }}>
+            <p className="text-xs text-center sm:text-left" style={{ color: "rgba(255,255,255,0.55)" }}>
               © 2026 Chetana&apos;s Beauty Lounge · All rights reserved
             </p>
             <div className="flex items-center flex-wrap justify-center gap-3 sm:gap-4">
-              <Link href="/terms" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <Link href="/terms" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Terms &amp; Conditions
               </Link>
               <span style={{ color: "rgba(255,255,255,0.15)" }} aria-hidden="true">·</span>
-              <Link href="/privacy" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <Link href="/privacy" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Privacy Policy
               </Link>
               <span style={{ color: "rgba(255,255,255,0.15)" }} aria-hidden="true">·</span>
-              <a href="/sitemap.xml" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <a href="/sitemap.xml" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Sitemap
               </a>
               {/* Scroll-to-top */}

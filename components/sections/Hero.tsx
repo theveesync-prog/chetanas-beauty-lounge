@@ -103,7 +103,7 @@ export default function Hero() {
           />
           {/* Slide dots */}
           <div
-            className="absolute bottom-5 right-6 flex items-center gap-1.5"
+            className="absolute bottom-5 right-6 flex items-center gap-2"
             style={{ zIndex: 3 }}
             role="tablist"
             aria-label="Photo slideshow navigation"
@@ -121,6 +121,9 @@ export default function Hero() {
                   height: "6px",
                   backgroundColor: i === activeSlide ? "#fff" : "rgba(255,255,255,0.5)",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.3)",
+                  padding: "4px",
+                  margin: "-4px",
+                  backgroundClip: "content-box",
                 }}
               />
             ))}
@@ -185,7 +188,7 @@ export default function Hero() {
             <CheckBadgeIcon />
             <div>
               <p className="text-xs font-semibold text-[#333] leading-tight">CIDESCO</p>
-              <p className="text-xs text-[#888] leading-tight">Certified salon</p>
+              <p className="text-xs text-[#6b6b6b] leading-tight">Certified salon</p>
             </div>
           </div>
         </div>
@@ -270,7 +273,7 @@ export default function Hero() {
           />
           {/* Slide dots */}
           <div
-            className="absolute bottom-3 right-4 flex items-center gap-1.5"
+            className="absolute bottom-3 right-4 flex items-center gap-2"
             role="tablist"
             aria-label="Photo slideshow navigation"
           >
@@ -287,6 +290,9 @@ export default function Hero() {
                   height: "6px",
                   backgroundColor: i === activeSlide ? "#fff" : "rgba(255,255,255,0.5)",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.3)",
+                  padding: "4px",
+                  margin: "-4px",
+                  backgroundClip: "content-box",
                 }}
               />
             ))}
@@ -299,7 +305,7 @@ export default function Hero() {
             <CheckBadgeIcon />
             <div>
               <p className="text-xs font-semibold text-[#333] leading-tight">CIDESCO</p>
-              <p className="text-xs text-[#888] leading-tight">Certified salon</p>
+              <p className="text-xs text-[#6b6b6b] leading-tight">Certified salon</p>
             </div>
           </div>
         </div>

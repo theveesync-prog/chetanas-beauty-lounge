@@ -134,6 +134,7 @@ export default function CartDrawer() {
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 hover:bg-[#fdf8f5] rounded-full"
+            aria-label="Close cart"
           >
             <X size={20} className="text-[#8c7b72]" />
           </button>
@@ -171,6 +172,7 @@ export default function CartDrawer() {
               <button
                 onClick={() => removeItem(item.serviceSlug)}
                 className="p-1.5 hover:bg-white rounded-lg flex-shrink-0"
+                aria-label={`Remove ${item.name} from cart`}
               >
                 <Trash2 size={14} className="text-[#8c7b72]" />
               </button>
