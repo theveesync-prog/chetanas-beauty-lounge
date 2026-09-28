@@ -18,15 +18,6 @@ const SLIDE_INTERVAL_MS = 4500;
 // Card background — clean white
 const CARD_BG = "#ffffff";
 
-function CheckBadgeIcon() {
-  return (
-    <svg viewBox="0 0 40 40" className="w-8 h-8 flex-shrink-0" aria-hidden="true">
-      <circle cx="20" cy="20" r="18" fill="none" stroke="#dadce0" strokeWidth="1.5" />
-      <path d="M13 20l5 5 9-9" fill="none" stroke="#34A853" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -178,20 +169,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Layer 3 (z-3): Social proof bar — pinned to bottom ── */}
-        <div
-          className={`hero-reveal reveal reveal-delay-3 absolute bottom-0 left-0 flex items-center gap-5 ${revealed ? "visible" : ""}`}
-          style={{ zIndex: 3, padding: "1.75rem 3.5rem" }}
-        >
-          {/* CIDESCO certification */}
-          <div className="flex items-center gap-3">
-            <CheckBadgeIcon />
-            <div>
-              <p className="text-xs font-semibold text-[#333] leading-tight">CIDESCO</p>
-              <p className="text-xs text-[#6b6b6b] leading-tight">Certified salon</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* ═══════════════════════════════════════════════════════════
@@ -299,16 +276,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Social proof */}
-        <div className={`hero-reveal reveal reveal-delay-3 px-8 py-5 flex flex-wrap items-center gap-4 ${revealed ? "visible" : ""}`}>
-          <div className="flex items-center gap-2">
-            <CheckBadgeIcon />
-            <div>
-              <p className="text-xs font-semibold text-[#333] leading-tight">CIDESCO</p>
-              <p className="text-xs text-[#6b6b6b] leading-tight">Certified salon</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* ── Floating WhatsApp FAB ── */}
