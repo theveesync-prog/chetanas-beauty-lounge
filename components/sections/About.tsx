@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 const WHATSAPP_SALON =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
@@ -25,6 +26,39 @@ const images = [
 ];
 
 const INTERVAL_MS = 5000;
+
+const aboutFaqs = [
+  {
+    question: "We Adapt to Your Needs",
+    answer:
+      "We understand every client has her own schedule. If needed, we can start earlier, stay open past closing, or arrange an appointment ahead of an important event. Our aim is for the salon to fit into your life, not the other way round.",
+  },
+  {
+    question: "We Value Your Time",
+    answer:
+      "We can combine 2 to 3 services into a single appointment, hair, nails, makeup or skincare. This is ideal if you want the full result without spending half a day at the salon.",
+  },
+  {
+    question: "One Standard, Every Visit",
+    answer:
+      "Chetana's is not just a group of individual stylists, but a system. We hold internal standards for service, consultation, cleanliness, communication and quality, so every guest gets a consistent experience with every artist, at every visit.",
+  },
+  {
+    question: "We Care About Safety",
+    answer:
+      "We use a professional instrument sterilisation system, including medical-grade autoclaves. For us, client safety is not just a detail, but a mandatory standard.",
+  },
+  {
+    question: "We Train Our Specialists",
+    answer:
+      "We invest in ongoing internal training so our stylists and therapists stay current on technique and follow one consistent standard of service. This helps us maintain the professional calibre of our team and keep our approach consistent.",
+  },
+  {
+    question: "We Monitor Quality",
+    answer:
+      "We have a dedicated quality assurance process. If you have any comments, suggestions or questions after your visit, we welcome them. Our team will look into the matter and find a solution.",
+  },
+];
 
 export default function About() {
   const [active, setActive] = useState(0);
@@ -182,6 +216,22 @@ export default function About() {
           </div>
         </div>
 
+      </div>
+
+      {/* ── What You Can Expect (accordion) ──────────────── */}
+      <div className={`reveal reveal-delay-4 max-w-3xl mx-auto mt-16 lg:mt-20 ${revealed ? "visible" : ""}`}>
+        <h3
+          className="text-[#111111] mb-6 text-center"
+          style={{
+            fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
+            fontSize: "clamp(1.6rem, 3vw, 2.1rem)",
+            fontWeight: 800,
+            letterSpacing: "-0.015em",
+          }}
+        >
+          What You Can Expect
+        </h3>
+        <FAQAccordion faqs={aboutFaqs} />
       </div>
     </section>
   );
