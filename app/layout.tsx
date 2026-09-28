@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Chetana's Beauty",
   },
   description:
-    "Chetana's Beauty Lounge & Education Foundation is a CIDESCO-certified ladies salon, spa and beauty academy in Mangalore offering bridal makeup, skin treatments and professional courses in Kankanady. Trusted by NRI families from Dubai. Book via WhatsApp.",
+    "Chetana's Beauty Lounge is a CIDESCO-certified ladies salon and spa in Mangalore offering bridal makeup and skin treatments in Kankanady. Trusted by NRI families from Dubai. Book via WhatsApp.",
   keywords: [
     "best salon in Mangalore",
     "best ladies salon in Mangalore",
@@ -38,10 +38,6 @@ export const metadata: Metadata = {
     "facial treatment Mangalore",
     "facials in Mangalore",
     "keratin treatment Mangalore",
-    "best beauty academy in Mangalore",
-    "beauty academy Dakshina Kannada",
-    "professional makeup course Mangaluru",
-    "beautician course Dakshina Kannada",
     "beauty parlour in Mangalore",
     "ladies salon Kankanady Mangalore",
     "NRI bridal makeup Mangalore",
@@ -61,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Ladies Salon in Mangalore | Chetana's Beauty, CIDESCO Certified",
     description:
-      "CIDESCO-certified ladies salon in Mangalore. Bridal makeup, skin treatments, beauty academy. Located in Kankanady.",
+      "CIDESCO-certified ladies salon in Mangalore. Bridal makeup, skin treatments, spa. Located in Kankanady.",
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
@@ -79,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Best Ladies Salon in Mangalore | Chetana's Beauty",
     description:
-      "CIDESCO-certified ladies salon in Mangalore. Bridal makeup, skin treatments, beauty academy in Kankanady.",
+      "CIDESCO-certified ladies salon in Mangalore. Bridal makeup, skin treatments, spa in Kankanady.",
     images: ["/images/salon/og-image.jpg"],
   },
   alternates: {
@@ -132,9 +128,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": ["LocalBusiness", "BeautySalon"],
               name: SITE_LEGAL_NAME,
-              alternateName: "Chetana's Beauty Lounge",
               description:
-                "CIDESCO-certified ladies-only salon, spa and beauty academy in Kankanady, Mangalore offering bridal makeup, skin treatments, spa services and professional beauty courses.",
+                "CIDESCO-certified ladies-only salon and spa in Kankanady, Mangalore offering bridal makeup, skin treatments and spa services.",
               url: SITE_URL,
               image: `${SITE_URL}/images/salon/og-image.jpg`,
               priceRange: "₹₹",

@@ -1258,102 +1258,6 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
-    slug: "chetanas-beauty-academy-cidesco-certified-training-mangalore",
-    title: "Inside Chetana's Beauty Academy: CIDESCO Training",
-    excerpt:
-      "Chetana's Beauty Lounge is also an education foundation. Here's what that actually means, and why training under a working salon is different from a classroom-only course.",
-    category: "Academy",
-    categorySlug: "academy",
-    publishedAt: "2026-10-16",
-    readTime: 5,
-    featured: false,
-    tags: [
-      "beauty academy Mangalore",
-      "CIDESCO certification India",
-      "beautician course Mangaluru",
-      "beauty academy Dakshina Kannada",
-      "makeup course Mangalore",
-    ],
-    metaDescription:
-      "Chetana's Beauty Lounge & Education Foundation trains students under CIDESCO-certified standards inside a working Mangalore salon. What the academy covers and how it's structured.",
-    coverImage: "/images/salon/salon-hair-wash-stations.webp",
-    coverAlt: "Training stations inside Chetana's Beauty Lounge, Kankanady, Mangalore",
-    content: [
-      {
-        type: "paragraph",
-        text: "Chetana's Beauty Lounge is often found through a search for bridal makeup or a facial, but the business's full name is Chetana's Beauty Lounge & Education Foundation, and training has been part of it since the beginning in 1998. If you're researching a beautician or makeup course in Mangalore, here's what the academy side actually covers.",
-      },
-      {
-        type: "heading",
-        text: "A Salon First, a Classroom Second",
-      },
-      {
-        type: "paragraph",
-        text: "The academy operates inside a working salon, not a separate classroom building. That means students train on real appointments, real skin types, and real client expectations under the supervision of senior artists, rather than only practising on mannequins or each other. It's a slower way to teach some fundamentals, but it means what a student learns is immediately tested against how an actual client reacts.",
-      },
-      {
-        type: "heading",
-        text: "CIDESCO as the Standard",
-      },
-      {
-        type: "paragraph",
-        text: "Chetana Salian, who leads the salon and the academy, holds CIDESCO International Certification, one of the most recognised standards in skin care and beauty therapy worldwide. Training and service protocols at Chetana's are built around that standard, not a locally invented one, which matters if you're comparing academies and want to know the qualification behind the person teaching you.",
-      },
-      {
-        type: "heading",
-        text: "What the Academy Covers",
-      },
-      {
-        type: "list",
-        items: [
-          "Skin care and facial techniques, including consultation and skin analysis before recommending any treatment",
-          "Bridal and occasion makeup, including long-wear and HD techniques suited to Mangalore's humid coastal climate",
-          "Hair styling and haircare fundamentals",
-          "Hygiene and safety protocols as a working standard, not a one-off lesson",
-          "Client communication: how to consult, explain options at different budgets, and get informed consent before a service",
-        ],
-      },
-      {
-        type: "tip",
-        text: "If you're comparing academies, ask whether students train on real clients or only on models and each other, and ask who is actually supervising that training day to day.",
-      },
-      {
-        type: "paragraph",
-        text: "Nearly three decades in Kankanady means the academy has also produced staff who now work inside the salon itself, alongside students who have gone on to work elsewhere. We're building out more detailed, documented outcomes from the academy and will share those as that record grows.",
-      },
-      {
-        type: "faq",
-        faqs: [
-          {
-            question: "Is Chetana's Beauty Academy CIDESCO certified?",
-            answer:
-              "The academy is led by Chetana Salian, who holds CIDESCO International Certification, and training standards are built around that certification.",
-          },
-          {
-            question: "Do students at the academy work on real clients?",
-            answer:
-              "Yes. The academy operates inside a working salon, so students train on real appointments under the supervision of senior artists, alongside classroom and model-based practice.",
-          },
-          {
-            question: "What subjects does the academy teach?",
-            answer:
-              "Skin care and facials, bridal and occasion makeup, hair styling fundamentals, hygiene and safety protocols, and client consultation skills.",
-          },
-          {
-            question: "Where is Chetana's Beauty Academy located?",
-            answer:
-              "Inside Chetana's Beauty Lounge & Education Foundation in Kankanady, Mangalore, open every day from 9 AM to 8 PM.",
-          },
-        ],
-      },
-      {
-        type: "cta",
-        text: "Curious about training at Chetana's Beauty Academy? Message us on WhatsApp to ask about courses and intake.",
-      },
-    ],
-  },
-
-  {
     slug: "best-haircut-for-your-face-shape-guide",
     title: "How to Choose a Haircut for Your Face Shape",
     excerpt:
@@ -1579,5 +1483,4 @@ export const blogCategories = [
   { label: "Skin Care", slug: "skin-care" },
   { label: "Hair Care", slug: "hair-care" },
   { label: "Nails", slug: "nails" },
-  { label: "Academy", slug: "academy" },
 ];

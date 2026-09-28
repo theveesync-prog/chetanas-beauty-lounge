@@ -56,7 +56,7 @@ export default function Hero() {
       ref={heroRef}
       className="bg-white"
       style={{ paddingTop: "5.5rem", paddingBottom: "3rem" }}
-      aria-label="Hero — Mangalore's best ladies salon"
+      aria-label="Hero, Mangalore's best ladies salon"
     >
       {/* ═══════════════════════════════════════════════════════════
           DESKTOP CARD (lg+)

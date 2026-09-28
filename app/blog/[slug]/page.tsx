@@ -315,7 +315,6 @@ export default async function BlogPostPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: SITE_LEGAL_NAME,
-      alternateName: "Chetana's Beauty Lounge",
       url: SITE_URL,
     },
     datePublished: post.publishedAt,

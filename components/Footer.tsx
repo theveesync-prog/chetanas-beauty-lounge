@@ -89,7 +89,7 @@ export default function Footer() {
               Visit us
             </h2>
             <p className="mt-3 text-sm text-[#6b6b6b] leading-relaxed max-w-xs">
-              Questions or want to book? Come find us in Kankanady — we&apos;re here every day, 9 AM to 8 PM.
+              Questions or want to book? Come find us in Kankanady, we&apos;re here every day, 9 AM to 8 PM.
             </p>
 
             {/* CTA buttons */}
@@ -237,11 +237,11 @@ export default function Footer() {
               href="/"
               className="inline-block mb-3 rounded-xl px-3 py-2"
               style={{ backgroundColor: "rgba(255,255,255,0.95)" }}
-              aria-label="Chetana's Beauty — Home"
+              aria-label="Chetana's Beauty, Home"
             >
               <Image
                 src="/logo/chetanas-logo.png"
-                alt="Chetana's Beauty Lounge & Education Foundation"
+                alt="Chetana's Beauty Lounge"
                 width={1656}
                 height={540}
                 className="h-11 w-auto"

@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "How do I book an appointment at Chetana's Beauty?",
     answer:
-      "Booking is easiest via WhatsApp — just tap the 'Book on WhatsApp' button anywhere on this page. You can choose your preferred service, date and time and we'll confirm within a few hours. Walk-ins are also welcome subject to availability.",
+      "Booking is easiest via WhatsApp. Just tap the 'Book on WhatsApp' button anywhere on this page. You can choose your preferred service, date and time and we'll confirm within a few hours. Walk-ins are also welcome subject to availability.",
   },
   {
     question: "Do you accept walk-in clients, or is it by appointment only?",
@@ -16,12 +16,12 @@ const faqs = [
   {
     question: "What are your salon working hours?",
     answer:
-      "We are open Monday to Saturday, 9:00 AM to 7:00 PM. We are closed on Sundays and major public holidays. During wedding season (October–March) we sometimes extend hours — check with us on WhatsApp.",
+      "We are open Monday to Saturday, 9:00 AM to 7:00 PM. We are closed on Sundays and major public holidays. During wedding season (October–March) we sometimes extend hours, so check with us on WhatsApp.",
   },
   {
     question: "Which bridal makeup styles do you specialise in?",
     answer:
-      "We specialise in a wide range of bridal looks — Tulu Hindu, Konkani Catholic, Beary Muslim, South Indian traditional, and modern airbrush bridal makeup. We also cater to NRI brides flying in from the Gulf and abroad who prefer specific international looks.",
+      "We specialise in a wide range of bridal looks: Tulu Hindu, Konkani Catholic, Beary Muslim, South Indian traditional, and modern airbrush bridal makeup. We also cater to NRI brides flying in from the Gulf and abroad who prefer specific international looks.",
   },
   {
     question: "Are the products and treatments safe for sensitive skin?",
@@ -31,12 +31,12 @@ const faqs = [
   {
     question: "What does a bridal package typically include?",
     answer:
-      "Our bridal packages are customised to your wedding type and duration. A typical package covers: pre-bridal skin prep sessions, hair treatment, bridal makeup on the wedding day, a trial session, and saree/lehenga draping. We'll share a detailed quote after a free 15-minute consultation — message us on WhatsApp to schedule.",
+      "Our bridal packages are customised to your wedding type and duration. A typical package covers: pre-bridal skin prep sessions, hair treatment, bridal makeup on the wedding day, a trial session, and saree/lehenga draping. We'll share a detailed quote after a free 15-minute consultation. Message us on WhatsApp to schedule.",
   },
   {
     question: "Can I book a trial makeup session before my wedding day?",
     answer:
-      "Absolutely — and we highly recommend it! A trial run lets you test the exact look, check for product reactions and make adjustments so your actual wedding day runs stress-free. Trial sessions are usually booked 4–6 weeks before the wedding.",
+      "Absolutely, and we highly recommend it! A trial run lets you test the exact look, check for product reactions and make adjustments so your actual wedding day runs stress-free. Trial sessions are usually booked 4–6 weeks before the wedding.",
   },
   {
     question: "Do you offer group or family packages?",
@@ -46,12 +46,12 @@ const faqs = [
   {
     question: "Where exactly is the salon located in Mangalore?",
     answer:
-      "Chetana's Beauty is located in Kankanady, Mangalore — a central, well-connected neighbourhood easily accessible by auto, cab or private vehicle. Parking is available nearby. Message us on WhatsApp for the exact address and directions pin.",
+      "Chetana's Beauty is located in Kankanady, Mangalore, a central, well-connected neighbourhood easily accessible by auto, cab or private vehicle. Parking is available nearby. Message us on WhatsApp for the exact address and directions pin.",
   },
   {
     question: "What is your cancellation or rescheduling policy?",
     answer:
-      "We understand plans change! Please give us at least 24 hours' notice to reschedule or cancel. For bridal bookings with an advance deposit, cancellations within 48 hours of the appointment may forfeit the deposit. Rescheduling is always accommodated where possible — just message us.",
+      "We understand plans change! Please give us at least 24 hours' notice to reschedule or cancel. For bridal bookings with an advance deposit, cancellations within 48 hours of the appointment may forfeit the deposit. Rescheduling is always accommodated where possible, just message us.",
   },
 ];
 

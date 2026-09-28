@@ -4,13 +4,13 @@ import { useState, useEffect, useRef } from "react";
 
 const STATS = [
   {
-    num: 5000,
+    num: 15000,
     suffix: "+",
     label: "Clients trust us",
     icon: "heart",
   },
   {
-    num: 30,
+    num: 28,
     suffix: "+",
     label: "Years in the industry",
     icon: "award",

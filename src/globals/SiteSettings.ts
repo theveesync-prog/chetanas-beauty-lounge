@@ -22,7 +22,7 @@ export const SiteSettings: GlobalConfig = {
           type: 'textarea',
           required: true,
           defaultValue:
-            'Expert bridal makeup, advanced skin treatments & a celebrated beauty academy — rooted in Kankanady since 1998.',
+            'Expert bridal makeup and advanced skin treatments, rooted in Kankanady since 1998.',
         },
         {
           name: 'video',

@@ -234,7 +234,7 @@ export default function ServicePriceListClient({
           <div className="rounded-2xl border border-black/6 px-6 py-10 text-center">
             <p className="text-[#555] text-sm leading-relaxed">
               Couldn&apos;t find what you&apos;re looking for? Our team is happy
-              to help — give us a call and we&apos;ll guide you to the right treatment.
+              to help, give us a call and we&apos;ll guide you to the right treatment.
             </p>
             <p className="mt-5 text-[10px] uppercase tracking-widest text-[#bbb] font-semibold">
               Reach us directly

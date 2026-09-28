@@ -6,14 +6,14 @@ const GMB_URL =
   "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEqqKK6Kz7I0YLRSNagwTko0Nk00NksyTE0xT01OsTKoSLFMS000TTQzNbA0SjNLMvcST85ILUnMS1QvVkhKTSwtqVTIyS_NS08FAL8sGSg&q=chetana%27s+beauty+lounge&sourceid=chrome&ie=UTF-8";
 
 const reviews = [
-  { id: 1, initials: "A", bg: "#c4849a", name: "Ananya R.", service: "Bridal Makeup", rating: 5, text: "Absolutely stunning work for my Tulu wedding! The bridal look was exactly what I had dreamed of — flawless skin, perfect eye makeup and it lasted all day. Chetana ma'am has such an artist's eye." },
+  { id: 1, initials: "A", bg: "#c4849a", name: "Ananya R.", service: "Bridal Makeup", rating: 5, text: "Absolutely stunning work for my Tulu wedding! The bridal look was exactly what I had dreamed of: flawless skin, perfect eye makeup and it lasted all day. Chetana ma'am has such an artist's eye." },
   { id: 2, initials: "P", bg: "#b8860b", name: "Priya M.", service: "Keratin Treatment", rating: 5, text: "Had the keratin smoothing done here and my hair has never felt better. The team is highly skilled and explained each step. I've been coming back every 6 months for the past 3 years!" },
   { id: 3, initials: "S", bg: "#5f1e42", name: "Sheela D.", service: "Skin Treatment", rating: 5, text: "Came in for pigmentation and tan removal. After just 3 sessions my skin tone has evened out significantly. The products they use are top-quality and very safe." },
   { id: 4, initials: "N", bg: "#8b4b6b", name: "Nisha K.", service: "Pre-Bridal Package", rating: 5, text: "Booked the 3-month pre-bridal package for my Konkani wedding. Every session was relaxing and results are so visible. My skin literally glowed on my wedding day. Cannot recommend enough!" },
   { id: 5, initials: "R", bg: "#9b7048", name: "Roshni A.", service: "Hair Colouring", rating: 5, text: "Got highlights and balayage done here. The colourist matched my skin tone perfectly and the colour has held so well. Staff are professional, courteous and the salon is beautifully maintained." },
-  { id: 6, initials: "D", bg: "#4a7a8b", name: "Divya S.", service: "Nail Art", rating: 5, text: "The nail art designs here are so creative and detailed. I get my nails done here before every event and they always exceed my expectations. Love the women-only environment — so comfortable!" },
+  { id: 6, initials: "D", bg: "#4a7a8b", name: "Divya S.", service: "Nail Art", rating: 5, text: "The nail art designs here are so creative and detailed. I get my nails done here before every event and they always exceed my expectations. Love the women-only environment, so comfortable!" },
   { id: 7, initials: "M", bg: "#2d6a4a", name: "Meena T.", service: "Spa Body Polishing", rating: 5, text: "The A-Z spa package is absolutely divine. I came in for the full body treatment and left completely rejuvenated. The therapists were professional and the experience was truly luxurious." },
-  { id: 8, initials: "V", bg: "#3d4a8b", name: "Vidya P.", service: "HD Bridal Package", rating: 5, text: "Booked the Royal Bridal Package for my daughter's wedding — we couldn't be happier. From the makeup to the saree draping, every detail was perfect." },
+  { id: 8, initials: "V", bg: "#3d4a8b", name: "Vidya P.", service: "HD Bridal Package", rating: 5, text: "Booked the Royal Bridal Package for my daughter's wedding. We couldn't be happier. From the makeup to the saree draping, every detail was perfect." },
 ];
 
 const n = reviews.length;
@@ -162,7 +162,7 @@ export default function Reviews() {
           </h2>
 
           <p className={`reveal reveal-delay-2 text-base text-[#888] max-w-md mx-auto ${revealed ? "visible" : ""}`}>
-            Real stories from real clients — from bridal transformations to everyday care.
+            Real stories from real clients, from bridal transformations to everyday care.
           </p>
         </div>
       </div>

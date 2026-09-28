@@ -36,7 +36,6 @@ const Gallery: CollectionConfig = {
         { label: 'Hair', value: 'hair' },
         { label: 'Skin', value: 'skin' },
         { label: 'Nails', value: 'nails' },
-        { label: 'Academy', value: 'academy' },
       ],
       required: true,
     },

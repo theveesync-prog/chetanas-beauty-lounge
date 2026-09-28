@@ -64,11 +64,11 @@ export default function Navbar() {
         <a
           href="/"
           className="flex items-center flex-shrink-0"
-          aria-label="Chetana's Beauty — Home"
+          aria-label="Chetana's Beauty, Home"
         >
           <Image
             src="/logo/chetanas-logo-mark.png"
-            alt="Chetana's Beauty Lounge & Education Foundation"
+            alt="Chetana's Beauty Lounge"
             width={1656}
             height={455}
             priority

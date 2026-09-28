@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Chetana's Beauty Lounge — how we collect, use and protect your personal information.",
+    "Privacy Policy for Chetana's Beauty Lounge: how we collect, use and protect your personal information.",
   alternates: { canonical: `${SITE_URL}/privacy` },
 };
 
@@ -56,9 +56,9 @@ export default function PrivacyPage() {
                 <>
                   <p className="mb-3">We may collect the following types of information:</p>
                   <ul className="list-disc pl-6 space-y-2 mb-4 text-sm">
-                    <li><strong>Contact details</strong> — your name, phone number, and/or WhatsApp number when you enquire about or book an appointment.</li>
-                    <li><strong>Service preferences</strong> — services you are interested in, preferred dates/times, and any special requirements you share with us.</li>
-                    <li><strong>Usage data</strong> — standard analytics data about how visitors interact with our website (pages visited, browser type, device). This does not personally identify you.</li>
+                    <li><strong>Contact details:</strong> your name, phone number, and/or WhatsApp number when you enquire about or book an appointment.</li>
+                    <li><strong>Service preferences:</strong> services you are interested in, preferred dates/times, and any special requirements you share with us.</li>
+                    <li><strong>Usage data:</strong> standard analytics data about how visitors interact with our website (pages visited, browser type, device). This does not personally identify you.</li>
                   </ul>
                   <p className="text-sm">We do not collect sensitive personal data such as Aadhaar numbers, financial account details, or medical records through this website.</p>
                 </>
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
                     <li>Respond to your appointment enquiries and booking requests.</li>
                     <li>Send appointment confirmations and reminders via WhatsApp or phone.</li>
                     <li>Improve our services based on client feedback and preferences.</li>
-                    <li>Send occasional updates about offers or new services — only if you have opted in.</li>
+                    <li>Send occasional updates about offers or new services, only if you have opted in.</li>
                     <li>Comply with applicable Indian laws and regulations.</li>
                   </ul>
                   <p className="text-sm">We do <strong>not</strong> sell, rent, or share your personal information with third parties for marketing purposes.</p>

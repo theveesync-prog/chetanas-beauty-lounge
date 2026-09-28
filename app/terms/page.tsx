@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Terms and Conditions for Chetana's Beauty Lounge — booking, cancellation, payment and service policies.",
+    "Terms and Conditions for Chetana's Beauty Lounge: booking, cancellation, payment and service policies.",
   alternates: { canonical: `${SITE_URL}/terms` },
 };
 
@@ -50,8 +50,8 @@ export default function TermsPage() {
                 <>
                   <p className="mb-3 text-sm">
                     Chetana&rsquo;s Beauty Lounge is a ladies-only CIDESCO-certified beauty salon
-                    and academy in Mangaluru. We offer bridal makeup, hair treatments, skin care,
-                    body care, nail services, spa treatments, and beauty courses.
+                    in Mangaluru. We offer bridal makeup, hair treatments, skin care,
+                    body care, nail services, and spa treatments.
                   </p>
                   <p className="text-sm">
                     All services are subject to availability and may be withdrawn or modified at
@@ -140,8 +140,8 @@ export default function TermsPage() {
               body: (
                 <>
                   <p className="mb-3 text-sm">
-                    Content on our website — including text, images, pricing, and service
-                    descriptions — is for informational purposes only and may be updated without
+                    Content on our website, including text, images, pricing, and service
+                    descriptions, is for informational purposes only and may be updated without
                     notice. While we endeavour to keep information accurate, we make no warranties
                     regarding its completeness or accuracy.
                   </p>

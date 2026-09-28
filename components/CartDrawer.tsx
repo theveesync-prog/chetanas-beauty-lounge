@@ -69,7 +69,7 @@ export default function CartDrawer() {
       "",
       ...items.map(
         (item, i) =>
-          `${i + 1}. ${item.name} (${item.categoryLabel}) — ${item.price}`
+          `${i + 1}. ${item.name} (${item.categoryLabel}): ${item.price}`
       ),
       "",
       `Subtotal: ₹${subtotal.toLocaleString("en-IN")}`,

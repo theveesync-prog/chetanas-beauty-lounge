@@ -75,8 +75,8 @@ export default function HygieneSafetyPage() {
       <div className="bg-white pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <p className="text-base text-[#555] leading-relaxed mb-10 max-w-2xl">
-            {SITE_LEGAL_NAME} is a CIDESCO-certified salon, spa and academy, and hygiene is one of the
-            standards we hold ourselves to across all three. This is what that actually means in practice.
+            {SITE_LEGAL_NAME} is a CIDESCO-certified salon and spa, and hygiene is one of the
+            standards we hold ourselves to across both. This is what that actually means in practice.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">

@@ -76,7 +76,7 @@ function FeedTile({
       target="_blank"
       rel="noopener noreferrer"
       className={`group relative overflow-hidden rounded-2xl block ${className}`}
-      aria-label={`${tile.label} — view on Instagram @chetanasbeautylounge`}
+      aria-label={`${tile.label}, view on Instagram @chetanasbeautylounge`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -138,7 +138,7 @@ export default function Gallery() {
       id="gallery"
       className="py-14 md:py-20 px-4 scroll-mt-24"
       style={{ backgroundColor: "#ffffff" }}
-      aria-label="Instagram feed — Chetana's Beauty Lounge"
+      aria-label="Instagram feed, Chetana's Beauty Lounge"
     >
       <div className="max-w-7xl mx-auto">
 
@@ -195,7 +195,7 @@ export default function Gallery() {
               target="_blank"
               rel="noopener noreferrer"
               className="group relative overflow-hidden rounded-2xl col-span-1 md:col-span-1 md:row-span-2 min-h-[200px] md:min-h-0 block"
-              aria-label={`${largeTile.label} — view on Instagram @chetanasbeautylounge`}
+              aria-label={`${largeTile.label}, view on Instagram @chetanasbeautylounge`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -260,7 +260,7 @@ export default function Gallery() {
               </div>
               <div>
                 <p className="font-semibold text-base">@chetanasbeautylounge</p>
-                <p className="text-white/60 text-sm">Bridal · Hair · Skin · Nails · Spa — Mangalore</p>
+                <p className="text-white/60 text-sm">Bridal · Hair · Skin · Nails · Spa · Mangalore</p>
               </div>
             </div>
             <span
