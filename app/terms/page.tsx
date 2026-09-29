@@ -65,7 +65,7 @@ export default function TermsPage() {
               title: "2. Appointments & Bookings",
               body: (
                 <ul className="list-disc pl-6 space-y-2 text-sm">
-                  <li>Appointments can be made via WhatsApp at <a href="tel:+919845292411" className="text-[#5f1e42] hover:underline">+91 98452 92411</a> or <a href="tel:+919108583714" className="text-[#5f1e42] hover:underline">+91 91085 83714</a>.</li>
+                  <li>Appointments can be made via WhatsApp at <a href="tel:+919845292411" className="text-[#5f1e42] hover:underline">+91 98452 92411</a>.</li>
                   <li>Bookings are confirmed only after receiving an acknowledgement from our team via WhatsApp or phone.</li>
                   <li>Please arrive at least 5 minutes before your scheduled appointment. Late arrivals may result in a shortened service or rescheduling.</li>
                   <li>Walk-in clients are welcome subject to stylist/therapist availability.</li>
@@ -192,7 +192,6 @@ export default function TermsPage() {
                   <li>
                     Phone:{" "}
                     <a href="tel:+919845292411" className="text-[#5f1e42] hover:underline">+91 98452 92411</a>
-                    {" "}/ <a href="tel:+919108583714" className="text-[#5f1e42] hover:underline">+91 91085 83714</a>
                   </li>
                 </ul>
               ),

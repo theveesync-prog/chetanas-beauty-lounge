@@ -248,14 +248,6 @@ export default function ServicePriceListClient({
                 <Phone size={13} />
                 +91 98452 92411
               </a>
-              <a
-                href="tel:+919108583714"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium text-[#111] transition-all duration-200 hover:bg-[#5f1e42] hover:text-white"
-                style={{ background: "rgba(0,0,0,0.04)" }}
-              >
-                <Phone size={13} />
-                +91 91085 83714
-              </a>
             </div>
             <button
               onClick={() => setQuery("")}

@@ -99,9 +99,8 @@ style={{
 // lib/services-data.ts
 WHATSAPP_BASE = "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book..."
 
-// Phone numbers
+// Phone number (single number site-wide, for NAP consistency)
 +91 98452 92411
-+91 91085 83714
 
 // Address
 3rd Floor, A Gate, Kankanady Bypass Rd, Kankanady, Mangaluru, Karnataka 575002

@@ -142,10 +142,6 @@ export default function Footer() {
                 <a href="tel:+919845292411" className="font-medium hover:opacity-70 transition-opacity" style={{ color: "#5f1e42" }}>
                   +91 98452 92411
                 </a>
-                <span className="text-[#ccc]">·</span>
-                <a href="tel:+919108583714" className="font-medium hover:opacity-70 transition-opacity" style={{ color: "#5f1e42" }}>
-                  +91 91085 83714
-                </a>
               </div>
             </div>
 

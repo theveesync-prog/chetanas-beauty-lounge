@@ -48,11 +48,6 @@ export const SiteSettings: GlobalConfig = {
           defaultValue: '919845292411',
         },
         {
-          name: 'phoneSecondary',
-          type: 'text',
-          defaultValue: '+91 91085 83714',
-        },
-        {
           name: 'address',
           type: 'textarea',
           required: true,
