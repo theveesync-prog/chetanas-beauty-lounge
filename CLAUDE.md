@@ -103,7 +103,7 @@ WHATSAPP_BASE = "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20boo
 +91 98452 92411
 
 // Address
-3rd Floor, A Gate, Kankanady Bypass Rd, Kankanady, Mangaluru, Karnataka 575002
+Suite A, Kankanady Gate Building, 3rd Floor, Kankanady Bypass Road, Kankanady, Mangaluru, Karnataka 575002
 
 // Maps embed
 https://maps.google.com/maps?q=12.8698,74.8426&z=16&ie=UTF8&iwloc=&output=embed

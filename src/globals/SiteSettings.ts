@@ -52,7 +52,7 @@ export const SiteSettings: GlobalConfig = {
           type: 'textarea',
           required: true,
           defaultValue:
-            '3rd floor, Gate Building, Suit A, Kankanady Bypass Rd, Kankanady, Mangaluru, Karnataka 575002',
+            'Suite A, Kankanady Gate Building, 3rd Floor, Kankanady Bypass Road, Kankanady, Mangaluru, Karnataka 575002',
         },
         {
           name: 'openingHours',

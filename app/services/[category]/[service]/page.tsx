@@ -6,7 +6,7 @@ import {
   WHATSAPP_BASE,
 } from "@/lib/services-data";
 import { getFaqsForService } from "@/lib/service-faqs";
-import { SITE_URL, SITE_LEGAL_NAME } from "@/lib/constants";
+import { SITE_URL, SITE_LEGAL_NAME, BUSINESS_ADDRESS } from "@/lib/constants";
 import Navbar from "@/components/Navbar";
 import ServiceImage from "@/components/ServiceImage";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -91,9 +91,11 @@ export default async function ServiceDetailPage({ params }: Props) {
       url: SITE_URL,
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Mangalore",
-        addressRegion: "Karnataka",
-        addressCountry: "IN",
+        streetAddress: BUSINESS_ADDRESS.streetAddress,
+        addressLocality: BUSINESS_ADDRESS.addressLocality,
+        addressRegion: BUSINESS_ADDRESS.addressRegion,
+        postalCode: BUSINESS_ADDRESS.postalCode,
+        addressCountry: BUSINESS_ADDRESS.addressCountry,
       },
     },
     areaServed: {

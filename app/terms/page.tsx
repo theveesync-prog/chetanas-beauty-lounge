@@ -39,7 +39,7 @@ export default function TermsPage() {
               chetanasbeautylounge.com
             </a>{" "}
             and any services provided by <strong>Chetana&rsquo;s Beauty Lounge</strong>, located
-            at 3rd Floor, A Gate, Kankanady Bypass Rd, Kankanady, Mangaluru, Karnataka 575002.
+            at Suite A, Kankanady Gate Building, 3rd Floor, Kankanady Bypass Road, Kankanady, Mangaluru, Karnataka 575002.
             By accessing our website or booking a service, you agree to be bound by these Terms.
           </p>
 
@@ -188,7 +188,7 @@ export default function TermsPage() {
               body: (
                 <ul className="space-y-1 text-sm">
                   <li><strong>Chetana&rsquo;s Beauty Lounge</strong></li>
-                  <li>3rd Floor, A Gate, Kankanady Bypass Rd, Kankanady, Mangaluru – 575002</li>
+                  <li>Suite A, Kankanady Gate Building, 3rd Floor, Kankanady Bypass Road, Kankanady, Mangaluru – 575002</li>
                   <li>
                     Phone:{" "}
                     <a href="tel:+919845292411" className="text-[#5f1e42] hover:underline">+91 98452 92411</a>

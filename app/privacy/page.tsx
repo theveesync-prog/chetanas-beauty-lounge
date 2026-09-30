@@ -35,8 +35,8 @@ export default function PrivacyPage() {
 
           <p className="mb-6 text-base">
             Welcome to <strong>Chetana&rsquo;s Beauty Lounge</strong> (&ldquo;we&rdquo;,
-            &ldquo;our&rdquo;, or &ldquo;us&rdquo;), located at 3rd Floor, A Gate,
-            Kankanady Bypass Rd, Kankanady, Mangaluru, Karnataka 575002. We are
+            &ldquo;our&rdquo;, or &ldquo;us&rdquo;), located at Suite A, Kankanady Gate
+            Building, 3rd Floor, Kankanady Bypass Road, Kankanady, Mangaluru, Karnataka 575002. We are
             committed to protecting the privacy and personal information of our clients
             and website visitors.
           </p>
@@ -166,7 +166,7 @@ export default function PrivacyPage() {
               body: (
                 <ul className="space-y-1 text-sm">
                   <li><strong>Chetana&rsquo;s Beauty Lounge</strong></li>
-                  <li>3rd Floor, A Gate, Kankanady Bypass Rd, Kankanady, Mangaluru – 575002</li>
+                  <li>Suite A, Kankanady Gate Building, 3rd Floor, Kankanady Bypass Road, Kankanady, Mangaluru – 575002</li>
                   <li>
                     Phone:{" "}
                     <a href="tel:+919845292411" className="text-[#5f1e42] hover:underline">+91 98452 92411</a>

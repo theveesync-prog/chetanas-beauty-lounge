@@ -128,8 +128,9 @@ export default function Footer() {
                 <circle cx="12" cy="9" r="2.5" />
               </svg>
               <address className="not-italic text-sm text-[#555] leading-relaxed">
-                3rd Floor, A Gate, Kankanady Bypass Rd,<br />
-                Mangaluru, Karnataka 575002
+                Suite A, Kankanady Gate Building,<br />
+                3rd Floor, Kankanady Bypass Road,<br />
+                Kankanady, Mangaluru, Karnataka 575002
               </address>
             </div>
 
@@ -284,8 +285,8 @@ export default function Footer() {
               Address
             </h3>
             <address className="not-italic text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-              3rd Floor, A Gate,<br />
-              Kankanady Bypass Rd,<br />
+              Suite A, Kankanady Gate Building,<br />
+              3rd Floor, Kankanady Bypass Road,<br />
               Kankanady, Mangaluru,<br />
               Karnataka 575002
             </address>
