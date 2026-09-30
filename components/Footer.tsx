@@ -8,8 +8,6 @@ const WHATSAPP =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
 const INSTAGRAM = "https://www.instagram.com/chetanasbeautylounge";
 const YOUTUBE = "https://www.youtube.com/@ChetanasBeautyLounge";
-const GMB =
-  "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEqqKK6Kz7I0YLRSNagwTko0Nk00NksyTE0xT01OsTKoSLFMS000TTQzNbA0SjNLMvcST85ILUnMS1QvVkhKTSwtqVTIyS_NS08FAL8sGSg&q=chetana%27s+beauty+lounge&sourceid=chrome&ie=UTF-8";
 const MAPS_EMBED =
   "https://maps.google.com/maps?q=12.8699033,74.8605861&z=17&ie=UTF8&iwloc=&output=embed";
 const MAPS_DIRECTIONS =
@@ -290,6 +288,9 @@ export default function Footer() {
               Kankanady, Mangaluru,<br />
               Karnataka 575002
             </address>
+            <p className="text-xs mt-2" style={{ color: "rgba(255,255,255,0.4)" }}>
+              GSTIN: 29AGTPC2122N1Z4
+            </p>
             <a
               href={MAPS_DIRECTIONS}
               target="_blank"
@@ -322,7 +323,7 @@ export default function Footer() {
                 { href: INSTAGRAM, label: "Follow on Instagram", Icon: InstagramIcon },
                 { href: YOUTUBE, label: "Subscribe on YouTube", Icon: YouTubeIcon },
                 { href: WHATSAPP, label: "Chat on WhatsApp", Icon: WhatsAppIcon },
-                { href: GMB, label: "Find us on Google Maps", Icon: GoogleMapsIcon },
+                { href: MAPS_DIRECTIONS, label: "Find us on Google Maps", Icon: GoogleMapsIcon },
               ].map(({ href, label, Icon }) => (
                 <a
                   key={href}
@@ -360,6 +361,10 @@ export default function Footer() {
               <span style={{ color: "rgba(255,255,255,0.15)" }} aria-hidden="true">·</span>
               <Link href="/hygiene-safety" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Hygiene &amp; Safety
+              </Link>
+              <span style={{ color: "rgba(255,255,255,0.15)" }} aria-hidden="true">·</span>
+              <Link href="/cookies" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.6)" }}>
+                Cookie Policy
               </Link>
               <span style={{ color: "rgba(255,255,255,0.15)" }} aria-hidden="true">·</span>
               <a href="/sitemap.xml" className="text-xs transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.6)" }}>

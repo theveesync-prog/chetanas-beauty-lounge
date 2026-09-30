@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const GMB_URL =
-  "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEqqKK6Kz7I0YLRSNagwTko0Nk00NksyTE0xT01OsTKoSLFMS000TTQzNbA0SjNLMvcST85ILUnMS1QvVkhKTSwtqVTIyS_NS08FAL8sGSg&q=chetana%27s+beauty+lounge&sourceid=chrome&ie=UTF-8";
+const GMB_URL = "https://g.page/r/ChetanasBeautyLounge/review";
 
 const reviews = [
   { id: 1, initials: "A", bg: "#c4849a", name: "Ananya R.", service: "Bridal Makeup", rating: 5, text: "Absolutely stunning work for my Tulu wedding! The bridal look was exactly what I had dreamed of: flawless skin, perfect eye makeup and it lasted all day. Chetana ma'am has such an artist's eye." },

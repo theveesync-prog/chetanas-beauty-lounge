@@ -24,7 +24,7 @@ export default function TermsPage() {
             Terms &amp; Conditions
           </h1>
           <p className="text-sm" style={{ color: "#8c7b72" }}>
-            Last updated: 1 January 2025
+            Last updated: 30 September 2026
           </p>
         </div>
       </section>
@@ -76,20 +76,20 @@ export default function TermsPage() {
               title: "3. Cancellations & Rescheduling",
               body: (
                 <ul className="list-disc pl-6 space-y-2 text-sm">
-                  <li>We request at least <strong>24 hours&rsquo; notice</strong> for cancellations or rescheduling of regular appointments.</li>
-                  <li>For bridal and pre-bridal packages, a minimum of <strong>72 hours&rsquo; notice</strong> is required to avoid a cancellation fee.</li>
-                  <li>Same-day cancellations or no-shows may attract a charge equivalent to 25% of the booked service value.</li>
+                  <li>We request at least <strong>12 hours&rsquo; notice</strong> to cancel or reschedule a regular appointment; <strong>24 hours&rsquo; notice</strong> is appreciated where possible.</li>
+                  <li>For bridal and pre-bridal packages secured with an advance payment, please see our Refund Policy in Section 4 below: the advance is non-refundable regardless of the notice given.</li>
+                  <li>Same-day cancellations or no-shows on regular appointments may attract a charge equivalent to 25% of the booked service value.</li>
                   <li>We reserve the right to reschedule appointments due to stylist unavailability or unforeseen circumstances, with prior notice and an alternative date offered.</li>
                 </ul>
               ),
             },
             {
-              title: "4. Payments",
+              title: "4. Payments & Refund Policy",
               body: (
                 <ul className="list-disc pl-6 space-y-2 text-sm">
                   <li>Payments are accepted in cash, UPI (GPay / PhonePe / Paytm), and net banking at the salon.</li>
                   <li>For bridal packages, an advance deposit may be required to secure the booking date. This will be communicated at the time of booking.</li>
-                  <li>Deposits are non-refundable in the event of cancellation within 72 hours of the scheduled service.</li>
+                  <li><strong>Refund Policy:</strong> advance payments and deposits are non-refundable once paid, regardless of when a cancellation is made. This applies to bridal and pre-bridal package advances (Section 5), gift vouchers (Section 8), and any other advance payment collected to secure a booking.</li>
                   <li>All prices are inclusive of applicable taxes unless stated otherwise.</li>
                 </ul>
               ),
@@ -193,6 +193,7 @@ export default function TermsPage() {
                     Phone:{" "}
                     <a href="tel:+919845292411" className="text-[#5f1e42] hover:underline">+91 98452 92411</a>
                   </li>
+                  <li>GSTIN: 29AGTPC2122N1Z4</li>
                 </ul>
               ),
             },

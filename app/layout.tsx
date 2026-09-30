@@ -138,11 +138,6 @@ export default function RootLayout({
                 "https://www.google.com/maps/place/Chetana's+Beauty+Lounge/@12.8699033,74.8605861,17z",
                 "https://www.youtube.com/@ChetanasBeautyLounge",
               ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0",
-                reviewCount: "315",
-              },
               address: {
                 "@type": "PostalAddress",
                 streetAddress: BUSINESS_ADDRESS.streetAddress,

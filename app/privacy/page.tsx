@@ -24,7 +24,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm" style={{ color: "#8c7b72" }}>
-            Last updated: 1 January 2025
+            Last updated: 30 September 2026
           </p>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
                     <li>Send appointment confirmations and reminders via WhatsApp or phone.</li>
                     <li>Improve our services based on client feedback and preferences.</li>
                     <li>Send occasional updates about offers or new services, only if you have opted in.</li>
-                    <li>Comply with applicable Indian laws and regulations.</li>
+                    <li>Comply with applicable Indian laws and regulations, including the Digital Personal Data Protection Act, 2023.</li>
                   </ul>
                   <p className="text-sm">We do <strong>not</strong> sell, rent, or share your personal information with third parties for marketing purposes.</p>
                 </>
@@ -97,10 +97,13 @@ export default function PrivacyPage() {
               title: "4. Cookies & Analytics",
               body: (
                 <p className="text-sm">
-                  Our website may use essential cookies to ensure the site functions correctly
-                  and privacy-respecting analytics tools to understand how visitors use the site.
-                  These tools do not track you across other websites or build advertising profiles.
-                  You can disable cookies in your browser settings at any time.
+                  We use Vercel Analytics and Vercel Speed Insights to understand how visitors use
+                  our site; both are cookieless and do not track you across other websites or build
+                  advertising profiles. Our website also loads fonts from Google Fonts and embeds a
+                  Google Maps map in our footer, each of which may involve a request to Google. We
+                  do not use any advertising or cross-site tracking cookies. See our{" "}
+                  <a href="/cookies" className="text-[#5f1e42] hover:underline">Cookie Policy</a>{" "}
+                  for full details, including how to control this in your browser.
                 </p>
               ),
             },
@@ -108,9 +111,14 @@ export default function PrivacyPage() {
               title: "5. Data Storage & Security",
               body: (
                 <p className="text-sm">
-                  Information you share with us is stored only for as long as necessary to fulfil
-                  your appointment and for a reasonable period thereafter. We implement reasonable
-                  security measures to protect your data from unauthorised access or disclosure.
+                  Our booking and contact forms do not store your information on our servers or in
+                  any database. When you submit a form, it opens a pre-filled WhatsApp message that
+                  you choose to send from your own device, so that conversation is retained in
+                  WhatsApp/Meta and in our salon&rsquo;s own WhatsApp Business account, subject to
+                  their respective retention practices, not on this website. We keep information
+                  shared this way only for as long as necessary to fulfil your appointment and for
+                  a reasonable period thereafter, and we implement reasonable security measures
+                  throughout.
                 </p>
               ),
             },
@@ -126,8 +134,9 @@ export default function PrivacyPage() {
                     <li>Opt out of promotional messages at any time.</li>
                   </ul>
                   <p className="text-sm">
-                    To exercise any of these rights, contact us at{" "}
-                    <a href="tel:+919845292411" className="text-[#5f1e42] hover:underline">+91 98452 92411</a> or via WhatsApp.
+                    To exercise any of these rights, or to raise any privacy concern or complaint,
+                    contact our salon management at{" "}
+                    <a href="tel:+919845292411" className="text-[#5f1e42] hover:underline">+91 98452 92411</a> or via WhatsApp. We will respond within a reasonable time.
                   </p>
                 </>
               ),

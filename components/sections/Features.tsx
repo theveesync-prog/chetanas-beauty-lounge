@@ -18,7 +18,7 @@ const STATS = [
   {
     num: 100,
     suffix: "%",
-    label: "Women's only salon in Mangalore",
+    label: "Women-only, always",
     icon: "shield",
   },
 ];

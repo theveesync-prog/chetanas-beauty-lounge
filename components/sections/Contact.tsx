@@ -44,7 +44,11 @@ export default function Contact() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [comment, setComment] = useState("");
+  const [consent, setConsent] = useState(false);
   const [revealed, setRevealed] = useState(false);
+
+  const phoneDigits = phone.replace(/\D/g, "");
+  const phoneValid = phoneDigits.length === 0 || /^[6-9]\d{9}$/.test(phoneDigits);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,7 +68,7 @@ export default function Contact() {
       "Hi! I'd like to book an appointment at Chetana's Beauty Lounge, Mangalore.",
       "",
       (firstName || lastName) ? `Name: ${[firstName, lastName].filter(Boolean).join(" ")}` : null,
-      phone ? `Phone: +91 ${phone}` : null,
+      phoneDigits ? `Phone: +91 ${phoneDigits}` : null,
       finalService ? `Service: ${finalService}` : null,
       date ? `Preferred Date: ${date}` : null,
       time ? `Preferred Time: ${time}` : null,
@@ -219,8 +223,15 @@ export default function Contact() {
                     placeholder="98452 92411"
                     className="flex-1 px-3 py-3 text-sm outline-none bg-white text-[#111] placeholder:text-gray-400"
                     autoComplete="tel"
+                    aria-invalid={!phoneValid}
+                    aria-describedby={!phoneValid ? "contact-phone-error" : undefined}
                   />
                 </div>
+                {!phoneValid && (
+                  <p id="contact-phone-error" className="text-xs text-red-600 mt-1.5">
+                    Please enter a valid 10-digit Indian mobile number.
+                  </p>
+                )}
               </div>
 
               {/* Treatment dropdown */}
@@ -313,10 +324,28 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Consent */}
+              <div className="flex items-start gap-2.5">
+                <input
+                  id="contact-consent"
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 flex-shrink-0 rounded border-gray-300 text-[#5f1e42] focus:ring-2 focus:ring-[#5f1e42]/30"
+                />
+                <label htmlFor="contact-consent" className="text-xs text-[#666] leading-relaxed">
+                  I agree to the{" "}
+                  <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#5f1e42] hover:underline">
+                    Privacy Policy
+                  </a>{" "}
+                  and understand my details will be sent to Chetana&apos;s Beauty Lounge via WhatsApp.
+                </label>
+              </div>
+
               {/* Send button */}
               <button
                 type="submit"
-                disabled={!service || (service === "Other" && !customService.trim())}
+                disabled={!service || (service === "Other" && !customService.trim()) || !phoneValid || !consent}
                 className="w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white transition-all hover:opacity-85 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:translate-y-0"
                 style={{ backgroundColor: "#111" }}
               >

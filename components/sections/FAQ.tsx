@@ -51,7 +51,7 @@ const faqs = [
   {
     question: "What is your cancellation or rescheduling policy?",
     answer:
-      "We understand plans change! Please give us at least 24 hours' notice to reschedule or cancel. For bridal bookings with an advance deposit, cancellations within 48 hours of the appointment may forfeit the deposit. Rescheduling is always accommodated where possible, just message us.",
+      "We understand plans change! Please give us at least 12 hours' notice to reschedule or cancel a regular appointment, 24 hours' notice is appreciated where possible. For bridal bookings with an advance deposit, the deposit is non-refundable once paid, regardless of when you cancel. Rescheduling is always accommodated where possible, just message us.",
   },
 ];
 
