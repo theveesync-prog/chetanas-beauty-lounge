@@ -53,7 +53,7 @@ export default function ServiceSearch() {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setIsFocused(true)}
           placeholder="Search all services... e.g. facial, keratin, bridal"
-          className="w-full pl-11 pr-10 py-3 rounded-full border border-[#5f1e42]/15 bg-white text-sm text-[#1a0d0d] placeholder:text-[#c0b0a8] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition-all"
+          className="w-full pl-11 pr-10 py-3 rounded-full border border-[#5f1e42]/15 bg-white text-sm text-[#1a0d0d] placeholder:text-[#c0b0a8] outline-none focus:border-[#5f1e42]/40 focus:ring-2 focus:ring-[#5f1e42]/8 transition"
         />
         {query && (
           <button

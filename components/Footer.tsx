@@ -96,7 +96,7 @@ export default function Footer() {
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border text-[#111] transition-all hover:bg-[#111] hover:text-white hover:border-transparent"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border text-[#111] transition hover:bg-[#111] hover:text-white hover:border-transparent"
                 style={{ borderColor: "rgba(0,0,0,0.12)" }}
               >
                 Book on WhatsApp
@@ -374,7 +374,7 @@ export default function Footer() {
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 aria-label="Scroll to top"
-                className="w-7 h-7 rounded-full flex items-center justify-center transition-all hover:text-white ml-1"
+                className="w-7 h-7 rounded-full flex items-center justify-center transition hover:text-white ml-1"
                 style={{ backgroundColor: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.4)" }}
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5" aria-hidden="true">

@@ -157,7 +157,7 @@ export default function Hero() {
               href={WHATSAPP_SALON}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-85 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition hover:opacity-85 hover:-translate-y-0.5"
               style={{ backgroundColor: "#111111" }}
             >
               <span className="relative flex h-2.5 w-2.5 flex-shrink-0" aria-hidden="true">
@@ -212,7 +212,7 @@ export default function Hero() {
               href={WHATSAPP_SALON}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-85"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold text-white transition hover:opacity-85"
               style={{ backgroundColor: "#111111" }}
             >
               <span className="relative flex h-2.5 w-2.5 flex-shrink-0" aria-hidden="true">

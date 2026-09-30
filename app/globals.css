@@ -146,6 +146,13 @@ body {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transform: none;
+    transition: opacity 0.3s ease;
+  }
+}
+
 /* ─── Marquee / Auto-Scroll ────────────────────────────────── */
 @keyframes marquee-ltr {
   from { transform: translateX(0); }

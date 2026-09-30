@@ -29,7 +29,7 @@ const TIME_SLOTS = [
 
 // Shared input / select / textarea class
 const fieldCls =
-  "w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-[#111] placeholder:text-gray-400 outline-none transition-all focus:border-[#5f1e42]/50 focus:ring-2 focus:ring-[#5f1e42]/10";
+  "w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-[#111] placeholder:text-gray-400 outline-none transition focus:border-[#5f1e42]/50 focus:ring-2 focus:ring-[#5f1e42]/10";
 
 const labelCls = "block text-xs text-[#888] mb-1.5";
 
@@ -211,7 +211,7 @@ export default function Contact() {
               {/* Phone with +91 prefix */}
               <div>
                 <label htmlFor="contact-phone" className={labelCls}>Phone</label>
-                <div className="flex rounded-xl border border-gray-200 overflow-hidden transition-all focus-within:border-[#5f1e42]/50 focus-within:ring-2 focus-within:ring-[#5f1e42]/10">
+                <div className="flex rounded-xl border border-gray-200 overflow-hidden transition focus-within:border-[#5f1e42]/50 focus-within:ring-2 focus-within:ring-[#5f1e42]/10">
                   <span className="flex items-center gap-1.5 px-3 bg-gray-50 border-r border-gray-200 text-sm text-[#555] flex-shrink-0 select-none">
                     🇮🇳 +91
                   </span>
@@ -346,7 +346,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={!service || (service === "Other" && !customService.trim()) || !phoneValid || !consent}
-                className="w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white transition-all hover:opacity-85 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:translate-y-0"
+                className="w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white transition hover:opacity-85 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:translate-y-0"
                 style={{ backgroundColor: "#111" }}
               >
                 Send

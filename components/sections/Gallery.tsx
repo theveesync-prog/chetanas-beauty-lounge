@@ -101,7 +101,7 @@ function FeedTile({
       )}
 
       {/* Hover overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/50 backdrop-blur-[2px] opacity-0 transition-all duration-300 group-hover:opacity-100">
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/50 backdrop-blur-[2px] opacity-0 transition duration-300 group-hover:opacity-100">
         <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center ring-2 ring-white/40 group-hover:scale-110 transition-transform duration-300">
           <InstagramIcon className="w-6 h-6 text-white" />
         </div>
@@ -173,7 +173,7 @@ export default function Gallery() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold text-white flex-shrink-0 self-start sm:self-auto transition-all hover:scale-[1.03] active:scale-100"
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold text-white flex-shrink-0 self-start sm:self-auto transition hover:scale-[1.03] active:scale-100"
             style={{
               background: "linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)",
             }}
@@ -218,7 +218,7 @@ export default function Gallery() {
                 </div>
               )}
               {/* Hover */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/50 backdrop-blur-[2px] opacity-0 transition-all duration-300 group-hover:opacity-100">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/50 backdrop-blur-[2px] opacity-0 transition duration-300 group-hover:opacity-100">
                 <div className="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center ring-2 ring-white/40 group-hover:scale-110 transition-transform duration-300">
                   <InstagramIcon className="w-7 h-7 text-white" />
                 </div>

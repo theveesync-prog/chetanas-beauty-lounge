@@ -47,7 +47,7 @@ export default function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50 pt-3 px-4 pointer-events-none">
       <nav
         className={cn(
-          "max-w-6xl mx-auto px-4 sm:px-5 h-14 flex items-center justify-between gap-6 rounded-2xl pointer-events-auto transition-all duration-300",
+          "max-w-6xl mx-auto px-4 sm:px-5 h-14 flex items-center justify-between gap-6 rounded-2xl pointer-events-auto transition duration-300",
         )}
         style={{
           background: scrolled ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.78)",

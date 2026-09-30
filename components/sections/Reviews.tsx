@@ -201,7 +201,7 @@ export default function Reviews() {
         <button
           onClick={prev}
           aria-label="Previous review"
-          className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:bg-[#111] hover:text-white hover:border-[#111] text-[#444]"
+          className="w-10 h-10 rounded-full border flex items-center justify-center transition hover:bg-[#111] hover:text-white hover:border-[#111] text-[#444]"
           style={{ borderColor: "rgba(0,0,0,0.15)" }}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
@@ -235,7 +235,7 @@ export default function Reviews() {
         <button
           onClick={next}
           aria-label="Next review"
-          className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:bg-[#111] hover:text-white hover:border-[#111] text-[#444]"
+          className="w-10 h-10 rounded-full border flex items-center justify-center transition hover:bg-[#111] hover:text-white hover:border-[#111] text-[#444]"
           style={{ borderColor: "rgba(0,0,0,0.15)" }}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
@@ -250,7 +250,7 @@ export default function Reviews() {
           href={GMB_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold border transition-all hover:bg-[#111] hover:text-white hover:border-[#111] hover:-translate-y-0.5 text-[#111]"
+          className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold border transition hover:bg-[#111] hover:text-white hover:border-[#111] hover:-translate-y-0.5 text-[#111]"
           style={{ borderColor: "rgba(0,0,0,0.12)" }}
         >
           Read more reviews

@@ -46,7 +46,7 @@ function BagButton({
     <button
       onClick={handleClick}
       aria-label={added ? "Added to bag" : "Add to bag"}
-      className={`w-8 h-8 rounded-full border flex-shrink-0 flex items-center justify-center transition-all duration-200 ${
+      className={`w-8 h-8 rounded-full border flex-shrink-0 flex items-center justify-center transition duration-200 ${
         added
           ? "bg-green-50 text-green-600 border-green-200 scale-110"
           : "border-black/10 text-[#aaa] hover:bg-[#5f1e42] hover:text-white hover:border-transparent hover:scale-110"
@@ -177,7 +177,7 @@ export default function ServicePriceListClient({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search services, e.g. threading, facial…"
-          className="w-full pl-10 pr-9 py-3 rounded-2xl text-sm text-[#111] placeholder:text-[#bbb] bg-white outline-none focus:ring-2 focus:ring-[#5f1e42]/10 focus:border-[#5f1e42]/30 transition-all"
+          className="w-full pl-10 pr-9 py-3 rounded-2xl text-sm text-[#111] placeholder:text-[#bbb] bg-white outline-none focus:ring-2 focus:ring-[#5f1e42]/10 focus:border-[#5f1e42]/30 transition"
           style={{ border: "1px solid rgba(0,0,0,0.09)" }}
         />
         {query && (
@@ -199,7 +199,7 @@ export default function ServicePriceListClient({
             <button
               key={f.key}
               onClick={() => setFilter(isActive ? null : f.key)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition duration-200"
               style={
                 isActive
                   ? {
@@ -242,7 +242,7 @@ export default function ServicePriceListClient({
             <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2.5">
               <a
                 href="tel:+919845292411"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium text-[#111] transition-all duration-200 hover:bg-[#5f1e42] hover:text-white"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium text-[#111] transition duration-200 hover:bg-[#5f1e42] hover:text-white"
                 style={{ background: "rgba(0,0,0,0.04)" }}
               >
                 <Phone size={13} />

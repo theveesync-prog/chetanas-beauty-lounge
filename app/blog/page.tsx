@@ -123,7 +123,7 @@ export default async function BlogPage({ searchParams }: Props) {
           <div className="max-w-5xl mx-auto">
             <a
               href={`/blog/${featured.slug}`}
-              className="group block rounded-3xl overflow-hidden border hover:border-[#5f1e42]/20 hover:-translate-y-0.5 transition-all duration-200"
+              className="group block rounded-3xl overflow-hidden border hover:border-[#5f1e42]/20 hover:-translate-y-0.5 transition duration-200"
               style={{ borderColor: "rgba(0,0,0,0.06)", backgroundColor: "white" }}
               aria-label={`Read featured article: ${featured.title}`}
             >
@@ -222,7 +222,7 @@ export default async function BlogPage({ searchParams }: Props) {
                 <article key={post.slug}>
                   <a
                     href={`/blog/${post.slug}`}
-                    className="group flex flex-col h-full rounded-2xl overflow-hidden border hover:border-[#5f1e42]/20 hover:-translate-y-0.5 transition-all duration-200"
+                    className="group flex flex-col h-full rounded-2xl overflow-hidden border hover:border-[#5f1e42]/20 hover:-translate-y-0.5 transition duration-200"
                     style={{
                       borderColor: "rgba(0,0,0,0.06)",
                       backgroundColor: "white",

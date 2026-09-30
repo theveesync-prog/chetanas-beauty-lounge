@@ -89,7 +89,7 @@ export default function ServicesPage() {
               <a
                 key={cat.slug}
                 href={`/services/${cat.slug}`}
-                className="group flex flex-col rounded-2xl p-7 border transition-all duration-200 hover:-translate-y-0.5 hover:border-[#5f1e42]/20"
+                className="group flex flex-col rounded-2xl p-7 border transition duration-200 hover:-translate-y-0.5 hover:border-[#5f1e42]/20"
                 style={{ borderColor: "rgba(0,0,0,0.06)", backgroundColor: "#fff" }}
                 aria-label={`Explore ${cat.label} services`}
               >

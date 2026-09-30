@@ -290,7 +290,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <Link
                   key={related.slug}
                   href={`/services/${cat.slug}/${related.slug}`}
-                  className="rounded-2xl p-5 hover:border-[#5f1e42]/25 hover:-translate-y-0.5 transition-all shadow-sm block group"
+                  className="rounded-2xl p-5 hover:border-[#5f1e42]/25 hover:-translate-y-0.5 transition shadow-sm block group"
                   style={{ border: "1px solid rgba(0,0,0,0.07)" }}
                 >
                   <h3

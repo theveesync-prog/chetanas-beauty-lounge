@@ -505,7 +505,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <article key={rPost.slug}>
                   <a
                     href={`/blog/${rPost.slug}`}
-                    className="group flex flex-col h-full rounded-2xl overflow-hidden border hover:border-[#5f1e42]/20 hover:-translate-y-0.5 transition-all duration-200"
+                    className="group flex flex-col h-full rounded-2xl overflow-hidden border hover:border-[#5f1e42]/20 hover:-translate-y-0.5 transition duration-200"
                     style={{ borderColor: "rgba(0,0,0,0.06)", backgroundColor: "white" }}
                     aria-label={`Read: ${rPost.title}`}
                   >

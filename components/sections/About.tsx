@@ -140,7 +140,7 @@ export default function About() {
               href={WHATSAPP_SALON}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-85 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition hover:opacity-85 hover:-translate-y-0.5"
               style={{ backgroundColor: "#111111" }}
             >
               Book an Appointment
@@ -175,7 +175,7 @@ export default function About() {
             <button
               onClick={() => { resetTimer(); prev(); }}
               aria-label="Previous image"
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-110"
               style={{ backgroundColor: "rgba(255,255,255,0.88)", backdropFilter: "blur(6px)", boxShadow: "0 2px 12px rgba(0,0,0,0.12)" }}
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
@@ -187,7 +187,7 @@ export default function About() {
             <button
               onClick={() => { resetTimer(); next(); }}
               aria-label="Next image"
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-110"
               style={{ backgroundColor: "rgba(255,255,255,0.88)", backdropFilter: "blur(6px)", boxShadow: "0 2px 12px rgba(0,0,0,0.12)" }}
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
