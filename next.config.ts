@@ -43,6 +43,15 @@ const nextConfig: NextConfig = {
     '@payloadcms/drizzle',
     'drizzle-kit',
   ],
+  async redirects() {
+    return [
+      {
+        source: "/services/bridal",
+        destination: "/bridal",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

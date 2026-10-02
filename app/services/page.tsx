@@ -33,12 +33,14 @@ export const metadata: Metadata = {
   },
 };
 
+const hubCategories = serviceCategories.filter((cat) => cat.slug !== "bridal");
+
 export default function ServicesPage() {
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Beauty Services at Chetana's Beauty Lounge, Mangalore",
-    itemListElement: serviceCategories.map((cat, i) => ({
+    itemListElement: hubCategories.map((cat, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: cat.label,
@@ -83,7 +85,7 @@ export default function ServicesPage() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {serviceCategories.map((cat) => {
+            {hubCategories.map((cat) => {
               const Icon = CATEGORY_STYLES[cat.slug]?.icon ?? Gift;
               return (
               <a

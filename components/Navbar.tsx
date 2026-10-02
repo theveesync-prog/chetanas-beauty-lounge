@@ -9,7 +9,6 @@ const serviceLinks = [
   { label: "Hair Care", href: "/services/hair-care" },
   { label: "Body Care", href: "/services/body-care" },
   { label: "Skin Care", href: "/services/skin-care" },
-  { label: "Bridal Services", href: "/services/bridal" },
   { label: "Nails", href: "/services/nails" },
   { label: "For Kids", href: "/services/for-kids" },
   { label: "Packages", href: "/services/packages" },
@@ -18,6 +17,7 @@ const serviceLinks = [
 const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/services/hair-care", hasDropdown: true },
+  { label: "Bridal", href: "/bridal" },
   { label: "Reviews", href: "/#reviews" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },

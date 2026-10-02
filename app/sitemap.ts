@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/bridal`,
+      lastModified: today,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: today,
       changeFrequency: "weekly",
@@ -52,14 +58,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Add all service categories
+  // Add all service categories (bridal's hub now redirects to /bridal, so
+  // it's excluded here — its individual service detail pages stay listed)
   serviceCategories.forEach((category) => {
-    routes.push({
-      url: `${baseUrl}/services/${category.slug}`,
-      lastModified: today,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    });
+    if (category.slug !== "bridal") {
+      routes.push({
+        url: `${baseUrl}/services/${category.slug}`,
+        lastModified: today,
+        changeFrequency: "weekly",
+        priority: 0.85,
+      });
+    }
 
     // Add all services within each category
     category.services.forEach((service) => {
