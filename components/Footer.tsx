@@ -87,7 +87,7 @@ export default function Footer() {
               Visit us
             </h2>
             <p className="mt-3 text-sm text-[#6b6b6b] leading-relaxed max-w-xs">
-              Questions or want to book? Come find us in Kankanady, we&apos;re here every day, 9 AM to 8 PM.
+              Questions or want to book? Come find us in Kankanady, we&apos;re open daily from 9 AM to 8 PM, closed Tuesdays.
             </p>
 
             {/* CTA buttons */}
@@ -151,7 +151,8 @@ export default function Footer() {
                 <path d="M12 6v6l4 2" strokeLinecap="round" />
               </svg>
               <div className="text-sm text-[#555]">
-                <p>Every day: 9:00 AM – 8:00 PM</p>
+                <p>9:00 AM – 8:00 PM</p>
+                <p className="text-xs text-[#888] mt-0.5">Closed on Tuesdays</p>
               </div>
             </div>
 
@@ -311,7 +312,7 @@ export default function Footer() {
               Open times
             </h3>
             <div className="mb-6">
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>Every day</p>
+              <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>Open daily, except Tue</p>
               <p className="text-sm font-semibold mt-0.5" style={{ color: "rgba(255,255,255,0.85)" }}>
                 9:00 AM – 8:00 PM
               </p>

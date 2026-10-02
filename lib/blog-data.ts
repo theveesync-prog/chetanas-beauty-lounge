@@ -1022,7 +1022,7 @@ export const blogPosts: BlogPost[] = [
           {
             question: "Where is Chetana's Beauty Lounge located?",
             answer:
-              "We are in Kankanady, Mangalore, open every day from 9 AM to 8 PM, with free underground parking and a wheelchair accessible lift.",
+              "We are in Kankanady, Mangalore, open every day except Tuesday, from 9 AM to 8 PM, with free underground parking and a wheelchair accessible lift.",
           },
         ],
       },
@@ -1159,7 +1159,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "Mangalore traffic is real. Choose a salon that is easy to reach and open when you are free. At our Kankanady salon, we are open every day from 9 AM to 8 PM, with free underground parking and a wheelchair accessible lift.",
+        text: "Mangalore traffic is real. Choose a salon that is easy to reach and open when you are free. At our Kankanady salon, we are open every day except Tuesday, from 9 AM to 8 PM, with free underground parking and a wheelchair accessible lift.",
       },
       {
         type: "heading",

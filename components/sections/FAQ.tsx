@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "What are your salon working hours?",
     answer:
-      "We are open Monday to Saturday, 9:00 AM to 7:00 PM. We are closed on Sundays and major public holidays. During wedding season (October–March) we sometimes extend hours, so check with us on WhatsApp.",
+      "We are open every day from 9:00 AM to 8:00 PM, except Tuesdays when the salon is closed. During wedding season (October–March) we sometimes extend hours, so check with us on WhatsApp.",
   },
   {
     question: "Which bridal makeup styles do you specialise in?",

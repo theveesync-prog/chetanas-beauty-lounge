@@ -57,7 +57,7 @@ export const SiteSettings: GlobalConfig = {
         {
           name: 'openingHours',
           type: 'textarea',
-          defaultValue: 'Mon–Sat: 10:00 AM – 7:00 PM\nSun: 12:00 PM – 6:00 PM',
+          defaultValue: 'Mon, Wed–Sun: 9:00 AM – 8:00 PM\nTue: Closed',
         },
         {
           name: 'mapEmbedUrl',
