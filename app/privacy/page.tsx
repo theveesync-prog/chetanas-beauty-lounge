@@ -24,7 +24,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm" style={{ color: "#8c7b72" }}>
-            Last updated: 30 September 2026
+            Last updated: 3 October 2026
           </p>
         </div>
       </section>
@@ -97,11 +97,13 @@ export default function PrivacyPage() {
               title: "4. Cookies & Analytics",
               body: (
                 <p className="text-sm">
-                  We use Vercel Analytics and Vercel Speed Insights to understand how visitors use
-                  our site; both are cookieless and do not track you across other websites or build
-                  advertising profiles. Our website also loads fonts from Google Fonts and embeds a
-                  Google Maps map in our footer, each of which may involve a request to Google. We
-                  do not use any advertising or cross-site tracking cookies. See our{" "}
+                  We use Vercel Analytics and Vercel Speed Insights (cookieless, do not track you
+                  across other websites or build advertising profiles) and Google Analytics (which
+                  sets first-party cookies to recognise repeat visits) to understand how visitors
+                  use our site. We have not enabled any advertising or cross-site tracking features
+                  in our Google Analytics configuration, and do not use any other advertising or
+                  cross-site tracking cookies. Our footer also embeds a Google Maps map, which may
+                  involve a request to Google when you scroll to it. See our{" "}
                   <a href="/cookies" className="text-[#5f1e42] hover:underline">Cookie Policy</a>{" "}
                   for full details, including how to control this in your browser.
                 </p>

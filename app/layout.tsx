@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { SITE_URL, SITE_NAME, SITE_LEGAL_NAME, BUSINESS_ADDRESS } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 // Self-hosted via next/font — eliminates the render-blocking external
 // fonts.googleapis.com/fonts.gstatic.com requests (~2.5s on mobile per
@@ -195,6 +196,7 @@ export default function RootLayout({
         </CartProvider>
         <Analytics />
         <SpeedInsights />
+        <GoogleAnalytics gaId="G-2V6N81XBVD" />
       </body>
     </html>
   );

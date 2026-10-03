@@ -13,6 +13,7 @@
     "seed-phase2": "node --loader tsx/cjs scripts/seed-phase2.ts"
   },
   "dependencies": {
+    "@next/third-parties": "^16.3.8",
     "@payloadcms/db-postgres": "^3.90.2",
     "@payloadcms/next": "^3.90.2",
     "@payloadcms/plugin-seo": "^3.90.2",
