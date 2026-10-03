@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { ShoppingBag, X, Trash2 } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
 import { parsePrice } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 import {
   validateDiscountCode,
   calculateDiscount,
@@ -269,7 +270,10 @@ export default function CartDrawer() {
             <button
               type="button"
               disabled={!consent}
-              onClick={() => window.open(whatsappUrl, "_blank", "noopener,noreferrer")}
+              onClick={() => {
+                trackEvent("whatsapp_click", { location: "cart_drawer" });
+                window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+              }}
               className="btn-gold flex items-center justify-center gap-2 w-full py-4 rounded-xl text-sm font-semibold shadow-md disabled:opacity-40 disabled:cursor-not-allowed"
             >
               <svg

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
 
 const WHATSAPP_BRIDAL =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20a%20bridal%20consultation%20at%20Chetana%27s%20Beauty%20Lounge.";
@@ -159,6 +160,7 @@ export default function BridalHero() {
               href={WHATSAPP_BRIDAL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent("whatsapp_click", { location: "bridal_hero_desktop" })}
               className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition hover:opacity-85 hover:-translate-y-0.5"
               style={{ backgroundColor: "#111111" }}
             >
@@ -214,6 +216,7 @@ export default function BridalHero() {
               href={WHATSAPP_BRIDAL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent("whatsapp_click", { location: "bridal_hero_mobile" })}
               className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold text-white transition hover:opacity-85"
               style={{ backgroundColor: "#111111" }}
             >
@@ -286,6 +289,7 @@ export default function BridalHero() {
         href={WHATSAPP_BRIDAL}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackEvent("whatsapp_click", { location: "bridal_hero_fab" })}
         aria-label="Chat on WhatsApp"
         className="fixed bottom-5 right-4 z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95"
         style={{ background: "#25D366" }}

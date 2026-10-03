@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import FAQAccordion from "@/components/FAQAccordion";
+import { trackEvent } from "@/lib/analytics";
 
 const WHATSAPP_SALON =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
@@ -140,6 +141,7 @@ export default function About() {
             <a
               href={WHATSAPP_SALON}
               target="_blank"
+              onClick={() => trackEvent("whatsapp_click", { location: "about" })}
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition hover:opacity-85 hover:-translate-y-0.5"
               style={{ backgroundColor: "#111111" }}

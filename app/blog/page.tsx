@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import { blogPosts, blogCategories, getFeaturedPost } from "@/lib/blog-data";
 import { SITE_URL } from "@/lib/constants";
 import { ArrowRight, Clock, CalendarDays } from "lucide-react";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 export const metadata: Metadata = {
   title: "Beauty Blog: Tips, Trends & Expert Advice | Chetana's Beauty Mangalore",
@@ -336,10 +337,9 @@ export default async function BlogPage({ searchParams }: Props) {
             team in Kankanady, Mangalore is ready to make it happen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <WhatsAppLink
               href={WHATSAPP}
-              target="_blank"
-              rel="noopener noreferrer"
+              location="blog_hub"
               className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-semibold text-sm btn-gold hover:opacity-90 transition-opacity"
               style={{ color: "#3a1a00" }}
             >
@@ -348,7 +348,7 @@ export default async function BlogPage({ searchParams }: Props) {
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.199-1.435A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.366l-.358-.213-3.683.853.879-3.596-.234-.37A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
               </svg>
               Book via WhatsApp
-            </a>
+            </WhatsAppLink>
             <a
               href="/services/hair-care"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm border border-white/25 text-white hover:bg-white/10 transition-colors"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const faqs = [
   {
@@ -162,6 +163,7 @@ export default function FAQ() {
             href="https://wa.me/919845292411?text=Hi%2C%20I%20have%20a%20question%20about%20Chetana%27s%20Beauty%20Lounge."
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("whatsapp_click", { location: "faq" })}
             className="btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold shadow-md"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">

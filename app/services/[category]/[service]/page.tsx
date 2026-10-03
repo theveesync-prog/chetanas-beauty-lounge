@@ -11,6 +11,7 @@ import Navbar from "@/components/Navbar";
 import ServiceImage from "@/components/ServiceImage";
 import FAQAccordion from "@/components/FAQAccordion";
 import AddToCartButton from "@/components/AddToCartButton";
+import WhatsAppLink from "@/components/WhatsAppLink";
 import type { Metadata } from "next";
 
 interface Props {
@@ -216,10 +217,9 @@ export default async function ServiceDetailPage({ params }: Props) {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <a
+                <WhatsAppLink
                   href={waLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  location={`service_detail:${cat.slug}/${svc.slug}`}
                   className="btn-gold flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold shadow-sm"
                 >
                   <svg
@@ -232,7 +232,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.199-1.435A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.366l-.358-.213-3.683.853.879-3.596-.234-.37A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
                   </svg>
                   Book Now on WhatsApp
-                </a>
+                </WhatsAppLink>
                 <AddToCartButton
                   item={{
                     serviceSlug: svc.slug,

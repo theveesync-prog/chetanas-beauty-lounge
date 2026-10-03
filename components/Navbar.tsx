@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 const serviceLinks = [
   { label: "Hair Care", href: "/services/hair-care" },
@@ -121,6 +122,7 @@ export default function Navbar() {
         <a
           href={WHATSAPP_SALON}
           target="_blank"
+          onClick={() => trackEvent("whatsapp_click", { location: "navbar_desktop" })}
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-[#111111] hover:bg-[#333] transition-colors shadow-sm flex-shrink-0"
         >
@@ -210,7 +212,10 @@ export default function Navbar() {
               href={WHATSAPP_SALON}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={closeMobile}
+              onClick={() => {
+                trackEvent("whatsapp_click", { location: "navbar_mobile" });
+                closeMobile();
+              }}
               className="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-full text-sm font-semibold text-white bg-[#5f1e42] hover:bg-[#4a1733] transition-colors"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ShoppingBag, Check, Sparkles, Star, Tag, Search, X, Phone } from "lucide-react";
 import type { Service } from "@/lib/services-data";
 import { useCart } from "@/lib/cart-context";
+import { trackEvent } from "@/lib/analytics";
 
 type Filter = "bestseller" | "sale" | "new" | null;
 
@@ -36,6 +37,7 @@ function BagButton({
       e.stopPropagation();
       e.preventDefault();
       addItem(item);
+      trackEvent("add_to_cart", { item_name: item.name, price: item.price });
       setAdded(true);
       setTimeout(() => setAdded(false), 1200);
     },
@@ -242,6 +244,7 @@ export default function ServicePriceListClient({
             <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2.5">
               <a
                 href="tel:+919845292411"
+                onClick={() => trackEvent("phone_click", { location: "service_price_list_empty_state" })}
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium text-[#111] transition duration-200 hover:bg-[#5f1e42] hover:text-white"
                 style={{ background: "rgba(0,0,0,0.04)" }}
               >
@@ -388,6 +391,7 @@ export default function ServicePriceListClient({
           href={waLink}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackEvent("whatsapp_click", { location: `service_price_list:${categorySlug}` })}
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
           style={{ backgroundColor: "#5f1e42" }}
         >

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import { WHATSAPP_BASE } from "@/lib/services-data";
 import { SITE_URL, SITE_LEGAL_NAME } from "@/lib/constants";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 export const metadata: Metadata = {
   title: "Hygiene & Safety Promise",
@@ -107,15 +108,14 @@ export default function HygieneSafetyPage() {
               Have a question about a specific service, a skin sensitivity, or an allergy? Ask us before you
               book, we would rather answer a question up front than have you worry during a treatment.
             </p>
-            <a
+            <WhatsAppLink
               href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
+              location="hygiene_safety"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-colors"
               style={{ backgroundColor: "#5f1e42" }}
             >
               Ask us on WhatsApp
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
       </div>

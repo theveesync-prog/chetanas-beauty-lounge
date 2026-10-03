@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
 
 // ─── Constants ─────────────────────────────────────────────────────────────
 const WHATSAPP =
@@ -19,6 +20,7 @@ const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${SA
 // the destination-only link (default href) if geolocation is denied,
 // unsupported, or times out.
 function openDirections(e: React.MouseEvent<HTMLAnchorElement>) {
+  trackEvent("directions_click", { location: "footer" });
   if (!navigator.geolocation) return; // let the default href handle it
   e.preventDefault();
   navigator.geolocation.getCurrentPosition(
@@ -118,6 +120,7 @@ export default function Footer() {
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent("whatsapp_click", { location: "footer_main" })}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border text-[#111] transition hover:bg-[#111] hover:text-white hover:border-transparent"
                 style={{ borderColor: "rgba(0,0,0,0.12)" }}
               >
@@ -128,6 +131,7 @@ export default function Footer() {
               </a>
               <a
                 href="tel:+919845292411"
+                onClick={() => trackEvent("phone_click", { location: "footer_main" })}
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#5f1e42] hover:opacity-70 transition-opacity"
               >
                 Call us
@@ -160,7 +164,7 @@ export default function Footer() {
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.05 2.22 2 2 0 012 .05h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <div className="flex flex-wrap gap-x-2 gap-y-0.5 text-sm">
-                <a href="tel:+919845292411" className="font-medium hover:opacity-70 transition-opacity" style={{ color: "#5f1e42" }}>
+                <a href="tel:+919845292411" onClick={() => trackEvent("phone_click", { location: "footer_dark_column" })} className="font-medium hover:opacity-70 transition-opacity" style={{ color: "#5f1e42" }}>
                   +91 98452 92411
                 </a>
               </div>
@@ -347,7 +351,7 @@ export default function Footer() {
               {[
                 { href: INSTAGRAM, label: "Follow on Instagram", Icon: InstagramIcon },
                 { href: YOUTUBE, label: "Subscribe on YouTube", Icon: YouTubeIcon },
-                { href: WHATSAPP, label: "Chat on WhatsApp", Icon: WhatsAppIcon },
+                { href: WHATSAPP, label: "Chat on WhatsApp", Icon: WhatsAppIcon, onClick: () => trackEvent("whatsapp_click", { location: "footer_social" }) },
                 { href: MAPS_DIRECTIONS, label: "Find us on Google Maps", Icon: GoogleMapsIcon, onClick: openDirections },
               ].map(({ href, label, Icon, onClick }) => (
                 <a

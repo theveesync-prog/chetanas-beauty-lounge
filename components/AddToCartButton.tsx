@@ -2,6 +2,7 @@
 
 import { ShoppingBag, Check } from "lucide-react";
 import { useCart, type CartItem } from "@/lib/cart-context";
+import { trackEvent } from "@/lib/analytics";
 
 interface Props {
   item: CartItem;
@@ -18,8 +19,12 @@ export default function AddToCartButton({
   const inCart = isInCart(item.serviceSlug);
 
   const handleClick = () => {
-    if (inCart) removeItem(item.serviceSlug);
-    else addItem(item);
+    if (inCart) {
+      removeItem(item.serviceSlug);
+    } else {
+      addItem(item);
+      trackEvent("add_to_cart", { item_name: item.name, price: item.price });
+    }
   };
 
   if (variant === "outline") {

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, FormEvent } from "react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
 
 const WHATSAPP_NUMBER = "919845292411";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -80,6 +81,7 @@ export default function Contact() {
       .filter((l) => l !== null)
       .join("\n");
 
+    trackEvent("whatsapp_click", { location: "contact_form" });
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`,
       "_blank",
@@ -155,6 +157,7 @@ export default function Contact() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent("whatsapp_click", { location: "contact_sidebar" })}
                 className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-white transition-opacity hover:opacity-75"
                 style={{ textDecoration: "underline", textUnderlineOffset: "4px", textDecorationColor: "rgba(255,255,255,0.5)" }}
               >
