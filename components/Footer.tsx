@@ -10,8 +10,30 @@ const INSTAGRAM = "https://www.instagram.com/chetanasbeautylounge";
 const YOUTUBE = "https://www.youtube.com/@ChetanasBeautyLounge";
 const MAPS_EMBED =
   "https://maps.google.com/maps?q=12.8699033,74.8605861&z=17&ie=UTF8&iwloc=&output=embed";
-const MAPS_DIRECTIONS =
-  "https://www.google.com/maps/place/Chetana's+Beauty+Lounge/@12.8699033,74.8605861,17z/data=!3m1!5s0x3ba35a324415639f:0xc6fd06eb698bc783!4m14!1m7!3m6!1s0x3ba35a36b1ed7ecd:0xd9fea5a65092f6b7!2sChetana's+Beauty+Lounge!8m2!3d12.8699033!4d74.8605861!16s%2Fg%2F11bbxsz_j9!3m5!1s0x3ba35a36b1ed7ecd:0xd9fea5a65092f6b7!8m2!3d12.8699033!4d74.8605861!16s%2Fg%2F11bbxsz_j9";
+const SALON_COORDS = "12.8699033,74.8605861";
+const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${SALON_COORDS}`;
+
+// Enhances the plain destination-only link with the visitor's current
+// location as the origin, so Maps opens straight into a route with
+// live ETA/distance instead of just the destination pin. Falls back to
+// the destination-only link (default href) if geolocation is denied,
+// unsupported, or times out.
+function openDirections(e: React.MouseEvent<HTMLAnchorElement>) {
+  if (!navigator.geolocation) return; // let the default href handle it
+  e.preventDefault();
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      const origin = `${pos.coords.latitude},${pos.coords.longitude}`;
+      window.open(
+        `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${SALON_COORDS}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    },
+    () => window.open(MAPS_DIRECTIONS, "_blank", "noopener,noreferrer"),
+    { timeout: 5000, maximumAge: 300000 }
+  );
+}
 
 const pageLinks = [
   { label: "Home", href: "/" },
@@ -193,11 +215,12 @@ export default function Footer() {
             className="absolute bottom-0 inset-x-0 h-20 flex items-end justify-end px-4 pb-3.5 pointer-events-none z-10"
             style={{ background: "linear-gradient(to top, rgba(0,0,0,0.42) 0%, transparent 100%)" }}
           >
-            {/* Open in Maps button */}
+            {/* Get Directions button */}
             <a
               href={MAPS_DIRECTIONS}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={openDirections}
               className="pointer-events-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-white transition-opacity hover:opacity-85 active:scale-95"
               style={{
                 background: "rgba(232,184,13,0.9)",
@@ -211,7 +234,7 @@ export default function Footer() {
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" strokeLinecap="round" strokeLinejoin="round" />
                 <circle cx="12" cy="9" r="2.2" />
               </svg>
-              Open in Maps
+              Get Directions
             </a>
           </div>
         </div>
@@ -296,6 +319,7 @@ export default function Footer() {
               href={MAPS_DIRECTIONS}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={openDirections}
               className="inline-flex items-center gap-1 mt-4 text-xs transition-opacity hover:opacity-70"
               style={{ color: "#e8b80d" }}
             >
@@ -324,13 +348,14 @@ export default function Footer() {
                 { href: INSTAGRAM, label: "Follow on Instagram", Icon: InstagramIcon },
                 { href: YOUTUBE, label: "Subscribe on YouTube", Icon: YouTubeIcon },
                 { href: WHATSAPP, label: "Chat on WhatsApp", Icon: WhatsAppIcon },
-                { href: MAPS_DIRECTIONS, label: "Find us on Google Maps", Icon: GoogleMapsIcon },
-              ].map(({ href, label, Icon }) => (
+                { href: MAPS_DIRECTIONS, label: "Find us on Google Maps", Icon: GoogleMapsIcon, onClick: openDirections },
+              ].map(({ href, label, Icon, onClick }) => (
                 <a
                   key={href}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={onClick}
                   aria-label={label}
                   className="w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:text-white"
                   style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.45)" }}
