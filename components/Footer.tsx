@@ -11,8 +11,13 @@ const INSTAGRAM = "https://www.instagram.com/chetanasbeautylounge";
 const YOUTUBE = "https://www.youtube.com/@ChetanasBeautyLounge";
 const MAPS_EMBED =
   "https://maps.google.com/maps?q=12.8699033,74.8605861&z=17&ie=UTF8&iwloc=&output=embed";
-const SALON_COORDS = "12.8699033,74.8605861";
-const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${SALON_COORDS}`;
+// Name + address, not bare coordinates — Maps resolves this via its own
+// place search to the real GMB listing. Bare lat/lng instead gets
+// reverse-geocoded to whatever POI Google has registered at that exact
+// point, which can be a different business sharing the same building.
+const SALON_NAME_ADDRESS =
+  "Chetana's Beauty Lounge, Suite A, Kankanady Gate Building, 3rd Floor, Kankanady Bypass Road, Kankanady, Mangaluru";
+const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SALON_NAME_ADDRESS)}`;
 
 // Enhances the plain destination-only link with the visitor's current
 // location as the origin, so Maps opens straight into a route with
@@ -27,7 +32,7 @@ function openDirections(e: React.MouseEvent<HTMLAnchorElement>) {
     (pos) => {
       const origin = `${pos.coords.latitude},${pos.coords.longitude}`;
       window.open(
-        `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${SALON_COORDS}`,
+        `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodeURIComponent(SALON_NAME_ADDRESS)}`,
         "_blank",
         "noopener,noreferrer"
       );
