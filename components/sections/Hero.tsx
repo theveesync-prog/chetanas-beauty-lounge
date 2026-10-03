@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 
 const WHATSAPP_SALON =
   "https://wa.me/919845292411?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chetana%27s%20Beauty%20Lounge.";
@@ -70,15 +71,16 @@ export default function Hero() {
           style={{ width: "65%", zIndex: 1 }}
         >
           {HERO_IMAGES.map((img, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               key={img.src}
               src={img.src}
               alt={img.alt}
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+              fill
+              sizes="(min-width: 1024px) 65vw, 100vw"
+              priority={i === 0}
+              fetchPriority={i === 0 ? "high" : undefined}
+              className="object-cover transition-opacity duration-1000"
               style={{ objectPosition: "center top", opacity: i === activeSlide ? 1 : 0 }}
-              loading={i === 0 ? "eager" : "lazy"}
-              decoding="async"
             />
           ))}
           {/* Gradient: blends image into card bg on the left */}
@@ -227,15 +229,16 @@ export default function Hero() {
         {/* Image slideshow */}
         <div className="relative w-full" style={{ aspectRatio: "4/3" }}>
           {HERO_IMAGES.map((img, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               key={img.src}
               src={img.src}
               alt={img.alt}
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+              fill
+              sizes="100vw"
+              priority={i === 0}
+              fetchPriority={i === 0 ? "high" : undefined}
+              className="object-cover transition-opacity duration-1000"
               style={{ objectPosition: "center top", opacity: i === activeSlide ? 1 : 0 }}
-              loading={i === 0 ? "eager" : "lazy"}
-              decoding="async"
             />
           ))}
           {/* Gradient: blends image into card bg on top edge */}

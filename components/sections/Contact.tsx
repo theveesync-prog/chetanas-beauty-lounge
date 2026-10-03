@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, FormEvent } from "react";
+import Image from "next/image";
 
 const WHATSAPP_NUMBER = "919845292411";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -118,13 +119,12 @@ export default function Contact() {
 
           {/* ══ LEFT: full-bleed image + text overlay ════════════ */}
           <div className="relative hidden lg:block" style={{ minHeight: "600px" }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/salon/salon-reception-lounge-2.webp"
               alt="Chetana's Beauty Lounge reception, Kankanady, Mangalore"
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
+              fill
+              sizes="50vw"
+              className="object-cover"
             />
 
             {/* Purple translucent overlay — dark at bottom, fades to transparent */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const INSTAGRAM_URL = "https://www.instagram.com/chetanasbeautylounge";
 
@@ -78,13 +79,12 @@ function FeedTile({
       className={`group relative overflow-hidden rounded-2xl block ${className}`}
       aria-label={`${tile.label}, view on Instagram @chetanasbeautylounge`}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={tile.image}
         alt={tile.label}
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
-        decoding="async"
+        fill
+        sizes="(min-width: 768px) 33vw, 50vw"
+        className="object-cover"
       />
 
       {/* Bottom label gradient — only for photos without their own baked-in text */}
@@ -197,13 +197,12 @@ export default function Gallery() {
               className="group relative overflow-hidden rounded-2xl col-span-1 md:col-span-1 md:row-span-2 min-h-[200px] md:min-h-0 block"
               aria-label={`${largeTile.label}, view on Instagram @chetanasbeautylounge`}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={largeTile.image}
                 alt={largeTile.label}
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
+                fill
+                sizes="(min-width: 768px) 33vw, 50vw"
+                className="object-cover"
               />
               {/* Content — only for photos without their own baked-in text */}
               {largeTile.showOverlayText && (

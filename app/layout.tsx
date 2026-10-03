@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, DM_Sans, Plus_Jakarta_Sans, Instrument_Serif, Raleway } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/lib/cart-context";
 import CartDrawer from "@/components/CartDrawer";
@@ -6,6 +7,44 @@ import Footer from "@/components/Footer";
 import { SITE_URL, SITE_NAME, SITE_LEGAL_NAME, BUSINESS_ADDRESS } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+
+// Self-hosted via next/font — eliminates the render-blocking external
+// fonts.googleapis.com/fonts.gstatic.com requests (~2.5s on mobile per
+// Lighthouse). Variable names match app/globals.css's @theme tokens so
+// every existing var(--font-*) usage keeps working unchanged.
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
+});
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-heading",
+  display: "swap",
+});
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-raleway",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -89,37 +128,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${cormorantGaramond.variable} ${dmSans.variable} ${plusJakartaSans.variable} ${instrumentSerif.variable} ${raleway.variable}`}
+    >
       <head>
-        {/* Google Fonts — loaded at runtime for build-time compatibility */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Cormorant Garamond (display/headings) */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-          rel="stylesheet"
-        />
-        {/* DM Sans (body text) */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
-          rel="stylesheet"
-        />
-        {/* Plus Jakarta Sans (hero heading) */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-        {/* Instrument Serif (hero heading) */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
-        {/* Raleway (hero subheading) */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
-          rel="stylesheet"
-        />
-
         {/* LocalBusiness + BeautySalon Schema */}
         <script
           type="application/ld+json"

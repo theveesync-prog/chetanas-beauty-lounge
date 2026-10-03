@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 import FAQAccordion from "@/components/FAQAccordion";
 
 const WHATSAPP_SALON =
@@ -152,7 +153,7 @@ export default function About() {
         </div>
 
         {/* ── Right: Image carousel ────────────────────────── */}
-        <div className={`reveal reveal-delay-1 w-full lg:w-auto lg:flex-shrink-0 lg:max-w-[min(46%,440px)] ${revealed ? "visible" : ""}`}>
+        <div className={`reveal reveal-delay-1 w-full lg:w-[min(46%,440px)] lg:flex-shrink-0 ${revealed ? "visible" : ""}`}>
 
           {/* Image container */}
           <div className="relative aspect-[4/3] lg:aspect-[4/5]">
@@ -160,14 +161,13 @@ export default function About() {
               className="relative w-full h-full overflow-hidden shadow-xl"
               style={{ borderRadius: "2rem" }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={images[active].src}
                 alt={images[active].alt}
-                className="w-full h-full object-cover transition-opacity duration-300"
+                fill
+                sizes="(min-width: 1024px) 440px, 100vw"
+                className="object-cover transition-opacity duration-300"
                 style={{ opacity: fading ? 0 : 1 }}
-                loading="lazy"
-                decoding="async"
               />
             </div>
 

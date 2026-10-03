@@ -12,12 +12,9 @@
   --color-cream-dark:        #f5ece4;
   --color-warm-gray:         #8c7b72;
 
-  /* Fonts — loaded via <link> in layout.tsx at runtime */
-  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-sans:    "DM Sans", system-ui, -apple-system, sans-serif;
-  --font-heading: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --font-instrument-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --font-raleway: "Raleway", system-ui, -apple-system, sans-serif;
+  /* Fonts — self-hosted via next/font/google (see app/layout.tsx), which
+     defines these same --font-* variables on <html> with built-in
+     fallback metrics. Nothing to declare here. */
 
   /* Container */
   --container-max-width: 1280px;
