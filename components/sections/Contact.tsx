@@ -8,7 +8,7 @@ import { getAllServices } from "@/lib/services-data";
 const WHATSAPP_NUMBER = "919845292411";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-const NOT_SURE_VALUE = "Not sure — please recommend a treatment";
+const NOT_SURE_VALUE = "Please recommend a treatment for me.";
 
 const ALL_SERVICES = getAllServices();
 
@@ -286,7 +286,7 @@ export default function Contact() {
                       }}
                       className="w-full text-left px-4 py-2.5 text-sm font-medium text-[#5f1e42] hover:bg-[#5f1e42]/5 transition-colors border-b border-gray-100"
                     >
-                      Not sure? Get a consultation
+                      Not sure (our team will guide you)
                     </button>
                     {treatmentMatches.map(({ name }) => (
                       <button
