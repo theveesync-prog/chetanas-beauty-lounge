@@ -168,7 +168,7 @@ export default function About() {
                 alt={images[active].alt}
                 fill
                 sizes="(min-width: 1024px) 440px, 100vw"
-                quality={85}
+                quality={95}
                 className="object-cover transition-opacity duration-300"
                 style={{ opacity: fading ? 0 : 1 }}
               />

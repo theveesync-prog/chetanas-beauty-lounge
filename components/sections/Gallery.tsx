@@ -84,7 +84,7 @@ function FeedTile({
         alt={tile.label}
         fill
         sizes="(min-width: 768px) 33vw, 50vw"
-        quality={85}
+        quality={95}
         className="object-cover"
       />
 
@@ -203,7 +203,7 @@ export default function Gallery() {
                 alt={largeTile.label}
                 fill
                 sizes="(min-width: 768px) 33vw, 50vw"
-                quality={85}
+                quality={95}
                 className="object-cover"
               />
               {/* Content — only for photos without their own baked-in text */}

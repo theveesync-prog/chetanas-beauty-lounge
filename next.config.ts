@@ -40,8 +40,8 @@ const nextConfig: NextConfig = {
   images: {
     // Next.js 16 clamps any <Image quality={N}> to the closest value in
     // this list — 75 is the framework default (kept for images that don't
-    // set quality, e.g. the logo), 85 is what the photo components use.
-    qualities: [75, 85],
+    // set quality, e.g. the logo), 95 is what the photo components use.
+    qualities: [75, 95],
   },
   serverExternalPackages: [
     'payload',
