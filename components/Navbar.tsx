@@ -17,6 +17,7 @@ const serviceLinks = [
 
 const navLinks = [
   { label: "About", href: "/#about" },
+  { label: "Academy", href: "https://chetanasbeautyacademy.com/", external: true },
   { label: "Services", href: "/services/hair-care", hasDropdown: true },
   { label: "Bridal", href: "/bridal" },
   { label: "Reviews", href: "/#reviews" },
@@ -109,6 +110,8 @@ export default function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="block px-3 py-2 text-sm font-medium text-[#333333] hover:text-[#5f1e42] transition-colors rounded-full hover:bg-[#5f1e42]/5"
                 >
                   {link.label}
@@ -199,6 +202,8 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={closeMobile}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className="block px-4 py-3 text-sm font-medium text-[#333333] hover:text-[#5f1e42] hover:bg-[#5f1e42]/5 rounded-xl transition-colors"
               >
                 {link.label}

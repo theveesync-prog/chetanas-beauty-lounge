@@ -46,6 +46,7 @@ const pageLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/#services" },
   { label: "About", href: "/#about" },
+  { label: "Academy", href: "https://chetanasbeautyacademy.com/", external: true },
   { label: "Gallery", href: "/#gallery" },
   { label: "Reviews", href: "/#reviews" },
   { label: "FAQ", href: "/#faq" },
@@ -298,13 +299,25 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {pageLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm transition-colors hover:text-white"
-                    style={{ color: "rgba(255,255,255,0.5)" }}
-                  >
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm transition-colors hover:text-white"
+                      style={{ color: "rgba(255,255,255,0.5)" }}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm transition-colors hover:text-white"
+                      style={{ color: "rgba(255,255,255,0.5)" }}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
