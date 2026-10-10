@@ -17,10 +17,10 @@ const serviceLinks = [
 
 const navLinks = [
   { label: "About", href: "/#about" },
-  { label: "Academy", href: "https://chetanasbeautyacademy.com/", external: true },
   { label: "Services", href: "/services/hair-care", hasDropdown: true },
   { label: "Bridal", href: "/bridal" },
   { label: "Reviews", href: "/#reviews" },
+  { label: "Academy", href: "https://chetanasbeautyacademy.com/", external: true },
 ];
 
 export default function Navbar() {
