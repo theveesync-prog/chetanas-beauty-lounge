@@ -1,26 +1,30 @@
 "use client";
 
-import { useState, useEffect, useRef, FormEvent } from "react";
+import { useState, useEffect, useMemo, useRef, FormEvent } from "react";
 import Image from "next/image";
 import { trackEvent } from "@/lib/analytics";
+import { getAllServices } from "@/lib/services-data";
 
 const WHATSAPP_NUMBER = "919845292411";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-const SERVICES = [
-  "Bridal Makeup",
-  "Pre-Bridal Package (3-Month)",
-  "Hair Cut & Styling",
-  "Keratin Treatment",
-  "Hair Colouring",
-  "Facial & Skin Treatment",
-  "Tan Removal",
-  "Threading & Waxing",
-  "Nail Art & Extensions",
-  "Mehendi (Henna)",
-  "Beauty Consultation",
-  "Other",
-];
+const NOT_SURE_VALUE = "Not sure — please recommend a treatment";
+
+const ALL_SERVICES = getAllServices();
+
+// Same scoring approach as ServicePriceListClient's search, for consistent
+// search behaviour sitewide.
+function scoreMatch(name: string, raw: string): number {
+  const q = raw.toLowerCase().trim();
+  if (!q) return 0;
+  const haystack = name.toLowerCase();
+  let score = 0;
+  for (const word of q.split(/\s+/)) {
+    if (word.length < 2) continue;
+    if (haystack.includes(word)) score += word.length > 3 ? 2 : 1;
+  }
+  return score;
+}
 
 const TIME_SLOTS = [
   "Morning (9–11 AM)",
@@ -42,7 +46,7 @@ export default function Contact() {
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
-  const [customService, setCustomService] = useState("");
+  const [treatmentOpen, setTreatmentOpen] = useState(false);
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [comment, setComment] = useState("");
@@ -51,6 +55,15 @@ export default function Contact() {
 
   const phoneDigits = phone.replace(/\D/g, "");
   const phoneValid = phoneDigits.length === 0 || /^[6-9]\d{9}$/.test(phoneDigits);
+
+  const treatmentMatches = useMemo(() => {
+    if (!service.trim()) return [];
+    return ALL_SERVICES
+      .map(({ service: svc }) => ({ name: svc.name, score: scoreMatch(svc.name, service) }))
+      .filter(({ score }) => score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 6);
+  }, [service]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,13 +78,12 @@ export default function Contact() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const finalService = service === "Other" ? customService : service;
     const lines = [
       "Hi! I'd like to book an appointment at Chetana's Beauty Lounge, Mangalore.",
       "",
       (firstName || lastName) ? `Name: ${[firstName, lastName].filter(Boolean).join(" ")}` : null,
       phoneDigits ? `Phone: +91 ${phoneDigits}` : null,
-      finalService ? `Service: ${finalService}` : null,
+      service.trim() ? `Service: ${service.trim()}` : null,
       date ? `Preferred Date: ${date}` : null,
       time ? `Preferred Time: ${time}` : null,
       comment ? `Notes: ${comment}` : null,
@@ -237,42 +249,61 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Treatment dropdown */}
-              <div>
+              {/* Treatment search */}
+              <div className="relative">
                 <label htmlFor="contact-service" className={labelCls}>
                   Treatment <span className="text-[#5f1e42]">*</span>
                 </label>
-                <select
+                <input
                   id="contact-service"
+                  type="text"
                   required
+                  autoComplete="off"
                   value={service}
-                  onChange={(e) => setService(e.target.value)}
-                  className={fieldCls}
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 0.75rem center",
-                    backgroundSize: "1rem",
-                    paddingRight: "2.25rem",
-                    appearance: "none",
+                  onChange={(e) => {
+                    setService(e.target.value);
+                    setTreatmentOpen(true);
                   }}
-                >
-                  <option value="" disabled>Select a treatment…</option>
-                  {SERVICES.map((s) => (
-                    <option key={s} value={s}>{s}</option>
-                  ))}
-                </select>
+                  onFocus={() => setTreatmentOpen(true)}
+                  onBlur={() => setTreatmentOpen(false)}
+                  onKeyDown={(e) => e.key === "Escape" && setTreatmentOpen(false)}
+                  placeholder="What are you looking for? e.g. keratin, bridal makeup…"
+                  className={fieldCls}
+                />
 
-                {/* "Other" free-text reveal */}
-                {service === "Other" && (
-                  <input
-                    type="text"
-                    value={customService}
-                    onChange={(e) => setCustomService(e.target.value)}
-                    placeholder="Describe your treatment…"
-                    className={`${fieldCls} mt-2`}
-                    aria-label="Describe your custom treatment"
-                  />
+                {treatmentOpen && (
+                  <div
+                    role="listbox"
+                    className="absolute z-10 mt-1.5 w-full rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden"
+                  >
+                    <button
+                      type="button"
+                      role="option"
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => {
+                        setService(NOT_SURE_VALUE);
+                        setTreatmentOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-2.5 text-sm font-medium text-[#5f1e42] hover:bg-[#5f1e42]/5 transition-colors border-b border-gray-100"
+                    >
+                      Not sure? Get a consultation
+                    </button>
+                    {treatmentMatches.map(({ name }) => (
+                      <button
+                        key={name}
+                        type="button"
+                        role="option"
+                        onMouseDown={(e) => e.preventDefault()}
+                        onClick={() => {
+                          setService(name);
+                          setTreatmentOpen(false);
+                        }}
+                        className="w-full text-left px-4 py-2.5 text-sm text-[#111] hover:bg-[#5f1e42]/5 transition-colors"
+                      >
+                        {name}
+                      </button>
+                    ))}
+                  </div>
                 )}
               </div>
 
@@ -348,7 +379,7 @@ export default function Contact() {
               {/* Send button */}
               <button
                 type="submit"
-                disabled={!service || (service === "Other" && !customService.trim()) || !phoneValid || !consent}
+                disabled={!service.trim() || !phoneValid || !consent}
                 className="w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white transition hover:opacity-85 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:translate-y-0"
                 style={{ backgroundColor: "#111" }}
               >
@@ -359,7 +390,8 @@ export default function Contact() {
               </button>
 
               <p className="text-center text-[11px] text-[#bbb]">
-                Tapping Send opens WhatsApp with your details pre-filled.
+                Tapping Send opens WhatsApp with your message ready — once you send it,
+                we&apos;ll get back to you within a couple of hours.
               </p>
             </form>
           </div>
