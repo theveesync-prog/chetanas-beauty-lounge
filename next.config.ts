@@ -37,6 +37,12 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  images: {
+    // Next.js 16 clamps any <Image quality={N}> to the closest value in
+    // this list — 75 is the framework default (kept for images that don't
+    // set quality, e.g. the logo), 85 is what the photo components use.
+    qualities: [75, 85],
+  },
   serverExternalPackages: [
     'payload',
     '@payloadcms/db-postgres',

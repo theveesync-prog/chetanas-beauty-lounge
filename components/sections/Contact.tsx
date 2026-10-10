@@ -138,6 +138,7 @@ export default function Contact() {
               alt="Chetana's Beauty Lounge reception, Kankanady, Mangalore"
               fill
               sizes="50vw"
+              quality={85}
               className="object-cover"
             />
 

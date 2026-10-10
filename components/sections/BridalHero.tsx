@@ -78,6 +78,7 @@ export default function BridalHero() {
               alt={img.alt}
               fill
               sizes="(min-width: 1024px) 65vw, 100vw"
+              quality={85}
               priority={i === 0}
               fetchPriority={i === 0 ? "high" : undefined}
               className="object-cover transition-opacity duration-1000"
@@ -238,6 +239,7 @@ export default function BridalHero() {
               alt={img.alt}
               fill
               sizes="100vw"
+              quality={85}
               priority={i === 0}
               fetchPriority={i === 0 ? "high" : undefined}
               className="object-cover transition-opacity duration-1000"
